@@ -50,14 +50,14 @@
      <property name="geometry">
       <rect>
        <x>100</x>
-       <y>210</y>
+       <y>230</y>
        <width>293</width>
        <height>251</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_3">
       <item row="4" column="0">
-       <widget class="QPushButton" name="pushButton_85">
+       <widget class="QPushButton" name="button_0">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -70,7 +70,7 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QPushButton" name="pushButton_92">
+       <widget class="QPushButton" name="button_8">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -83,7 +83,7 @@
        </widget>
       </item>
       <item row="4" column="1">
-       <widget class="QPushButton" name="pushButton_89">
+       <widget class="QPushButton" name="button_underscore">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -91,12 +91,12 @@
          </font>
         </property>
         <property name="text">
-         <string>-</string>
+         <string>_</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QPushButton" name="pushButton_93">
+       <widget class="QPushButton" name="button_parens_open">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -109,7 +109,7 @@
        </widget>
       </item>
       <item row="2" column="2">
-       <widget class="QPushButton" name="pushButton_96">
+       <widget class="QPushButton" name="button_6">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -122,7 +122,7 @@
        </widget>
       </item>
       <item row="3" column="1">
-       <widget class="QPushButton" name="pushButton_90">
+       <widget class="QPushButton" name="button_2">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -135,7 +135,7 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QPushButton" name="pushButton_91">
+       <widget class="QPushButton" name="button_5">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -148,7 +148,7 @@
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QPushButton" name="pushButton_87">
+       <widget class="QPushButton" name="button_7">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -161,7 +161,7 @@
        </widget>
       </item>
       <item row="0" column="2">
-       <widget class="QPushButton" name="pushButton_98">
+       <widget class="QPushButton" name="button_parens_close">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -174,7 +174,7 @@
        </widget>
       </item>
       <item row="3" column="0">
-       <widget class="QPushButton" name="pushButton_84">
+       <widget class="QPushButton" name="button_1">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -187,7 +187,7 @@
        </widget>
       </item>
       <item row="2" column="0">
-       <widget class="QPushButton" name="pushButton_86">
+       <widget class="QPushButton" name="button_4">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -200,7 +200,7 @@
        </widget>
       </item>
       <item row="0" column="0">
-       <widget class="QPushButton" name="pushButton_88">
+       <widget class="QPushButton" name="button_coma">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -213,7 +213,7 @@
        </widget>
       </item>
       <item row="1" column="2">
-       <widget class="QPushButton" name="pushButton_97">
+       <widget class="QPushButton" name="button_9">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -226,7 +226,7 @@
        </widget>
       </item>
       <item row="3" column="2">
-       <widget class="QPushButton" name="pushButton_95">
+       <widget class="QPushButton" name="button_3">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -239,7 +239,7 @@
        </widget>
       </item>
       <item row="4" column="2">
-       <widget class="QPushButton" name="pushButton_94">
+       <widget class="QPushButton" name="button_dash">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -279,200 +279,6 @@
       <enum>Qt::Vertical</enum>
      </property>
     </widget>
-    <widget class="QWidget" name="gridLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>540</x>
-       <y>210</y>
-       <width>161</width>
-       <height>236</height>
-      </rect>
-     </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="2" column="0">
-       <widget class="QPushButton" name="pushButton_99">
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Mile</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QPushButton" name="pushButton_102">
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Meter</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QPushButton" name="pushButton_100">
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Kilometer</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QPushButton" name="pushButton_103">
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Feet</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QTextBrowser" name="textBrowser">
-     <property name="geometry">
-      <rect>
-       <x>540</x>
-       <y>90</y>
-       <width>171</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QWidget" name="gridLayoutWidget_3">
-     <property name="geometry">
-      <rect>
-       <x>770</x>
-       <y>210</y>
-       <width>161</width>
-       <height>236</height>
-      </rect>
-     </property>
-     <layout class="QGridLayout" name="gridLayout_4">
-      <item row="2" column="0">
-       <widget class="QPushButton" name="pushButton_101">
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Mile</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QPushButton" name="pushButton_104">
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Meter</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QPushButton" name="pushButton_105">
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Kilometer</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QPushButton" name="pushButton_106">
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Feet</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>580</x>
-       <y>40</y>
-       <width>71</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>16</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Input</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>790</x>
-       <y>40</y>
-       <width>91</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>16</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Output</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>720</x>
-       <y>300</y>
-       <width>21</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>16</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>&gt;</string>
-     </property>
-    </widget>
     <widget class="QWidget" name="verticalLayoutWidget">
      <property name="geometry">
       <rect>
@@ -484,7 +290,7 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="button_upper">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -497,7 +303,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_5">
+       <widget class="QPushButton" name="button_period">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -505,12 +311,12 @@
          </font>
         </property>
         <property name="text">
-         <string>X^-1</string>
+         <string>.</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_6">
+       <widget class="QPushButton" name="button_xpower">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -523,7 +329,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_4">
+       <widget class="QPushButton" name="button_log">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -536,7 +342,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="QPushButton" name="button_mod">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -549,7 +355,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="button_clear">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -574,7 +380,7 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QPushButton" name="pushButton_7">
+       <widget class="QPushButton" name="button_back">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -587,7 +393,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_8">
+       <widget class="QPushButton" name="button_divide">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -600,7 +406,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_9">
+       <widget class="QPushButton" name="button_multiply">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -613,7 +419,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_10">
+       <widget class="QPushButton" name="button_minus">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -626,7 +432,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_11">
+       <widget class="QPushButton" name="button_add">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -639,7 +445,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_12">
+       <widget class="QPushButton" name="button_enter">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -653,7 +459,7 @@
       </item>
      </layout>
     </widget>
-    <widget class="QLabel" name="label_4">
+    <widget class="QLabel" name="label_output">
      <property name="geometry">
       <rect>
        <x>40</x>
@@ -669,21 +475,40 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="label_5">
+    <widget class="QComboBox" name="comboBox">
      <property name="geometry">
       <rect>
-       <x>750</x>
-       <y>90</y>
-       <width>171</width>
-       <height>51</height>
+       <x>100</x>
+       <y>180</y>
+       <width>291</width>
+       <height>31</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
      </property>
-     <property name="text">
-      <string/>
-     </property>
+     <item>
+      <property name="text">
+       <string>Metric Conversion</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Temperature Conversion</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Prime Numbers</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Perfect Numbers</string>
+      </property>
+     </item>
     </widget>
    </widget>
   </widget>
@@ -691,5 +516,22 @@
  <resources>
   <include location="../The-Algolater-Calculator/Graphics/Testing.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>button_clear</sender>
+   <signal>clicked()</signal>
+   <receiver>label_output</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>56</x>
+     <y>441</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>235</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
