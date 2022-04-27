@@ -29,6 +29,18 @@
    <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>1200</width>
+     <height>600</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1200</width>
+     <height>600</height>
+    </size>
+   </property>
    <property name="styleSheet">
     <string notr="true"/>
    </property>
@@ -56,7 +68,7 @@
      </property>
      <layout class="QGridLayout" name="gridLayout_3">
       <item row="4" column="0">
-       <widget class="QPushButton" name="button_0">
+       <widget class="QPushButton" name="btn_0">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -71,7 +83,7 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QPushButton" name="button_8">
+       <widget class="QPushButton" name="btn_8">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -86,7 +98,7 @@
        </widget>
       </item>
       <item row="4" column="1">
-       <widget class="QPushButton" name="button_underscore">
+       <widget class="QPushButton" name="btn_underscore">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -101,7 +113,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QPushButton" name="button_parens_open">
+       <widget class="QPushButton" name="btn_parens_open">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -119,7 +131,7 @@
        </widget>
       </item>
       <item row="2" column="2">
-       <widget class="QPushButton" name="button_6">
+       <widget class="QPushButton" name="btn_6">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -134,7 +146,7 @@
        </widget>
       </item>
       <item row="3" column="1">
-       <widget class="QPushButton" name="button_2">
+       <widget class="QPushButton" name="btn_2">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -149,7 +161,7 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QPushButton" name="button_5">
+       <widget class="QPushButton" name="btn_5">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -164,7 +176,7 @@
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QPushButton" name="button_7">
+       <widget class="QPushButton" name="btn_7">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -179,7 +191,7 @@
        </widget>
       </item>
       <item row="0" column="2">
-       <widget class="QPushButton" name="button_parens_close">
+       <widget class="QPushButton" name="btn_parens_close">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -194,7 +206,7 @@
        </widget>
       </item>
       <item row="3" column="0">
-       <widget class="QPushButton" name="button_1">
+       <widget class="QPushButton" name="btn_1">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -209,7 +221,7 @@
        </widget>
       </item>
       <item row="2" column="0">
-       <widget class="QPushButton" name="button_4">
+       <widget class="QPushButton" name="btn_4">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -224,7 +236,7 @@
        </widget>
       </item>
       <item row="0" column="0">
-       <widget class="QPushButton" name="button_coma">
+       <widget class="QPushButton" name="btn_coma">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -239,7 +251,7 @@
        </widget>
       </item>
       <item row="1" column="2">
-       <widget class="QPushButton" name="button_9">
+       <widget class="QPushButton" name="btn_9">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -254,7 +266,7 @@
        </widget>
       </item>
       <item row="3" column="2">
-       <widget class="QPushButton" name="button_3">
+       <widget class="QPushButton" name="btn_3">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -269,7 +281,7 @@
        </widget>
       </item>
       <item row="4" column="2">
-       <widget class="QPushButton" name="button_dash">
+       <widget class="QPushButton" name="btn_dash">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -285,7 +297,7 @@
       </item>
      </layout>
     </widget>
-    <widget class="Line" name="line">
+    <widget class="Line" name="line_Vertical">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -298,7 +310,7 @@
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
-    <widget class="Line" name="line_2">
+    <widget class="Line" name="line_Horizontal">
      <property name="geometry">
       <rect>
        <x>490</x>
@@ -317,7 +329,7 @@
        <x>10</x>
        <y>170</y>
        <width>77</width>
-       <height>301</height>
+       <height>321</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -325,7 +337,7 @@
        <enum>QLayout::SetFixedSize</enum>
       </property>
       <item>
-       <widget class="QPushButton" name="button_back">
+       <widget class="QPushButton" name="btn_back">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -340,7 +352,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="button_period">
+       <widget class="QPushButton" name="btn_period">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -355,7 +367,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="button_xpower">
+       <widget class="QPushButton" name="btn_xpower">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -370,7 +382,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="button_log">
+       <widget class="QPushButton" name="btn_log">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -385,7 +397,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="button_mod">
+       <widget class="QPushButton" name="btn_mod">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -400,7 +412,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="button_clear">
+       <widget class="QPushButton" name="btn_clear">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -422,7 +434,7 @@
        <x>410</x>
        <y>170</y>
        <width>77</width>
-       <height>291</height>
+       <height>321</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -430,7 +442,7 @@
        <enum>QLayout::SetFixedSize</enum>
       </property>
       <item>
-       <widget class="QPushButton" name="button_upper">
+       <widget class="QPushButton" name="btn_powerUp">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -445,7 +457,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="button_divide">
+       <widget class="QPushButton" name="btn_divide">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -460,7 +472,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="button_multiply">
+       <widget class="QPushButton" name="btn_multiply">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -475,7 +487,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="button_minus">
+       <widget class="QPushButton" name="btn_minus">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -490,7 +502,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="button_add">
+       <widget class="QPushButton" name="btn_add">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -503,7 +515,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="button_enter">
+       <widget class="QPushButton" name="btn_enter">
         <property name="font">
          <font>
           <family>Comic Sans MS</family>
@@ -519,7 +531,7 @@
       </item>
      </layout>
     </widget>
-    <widget class="QLabel" name="label_output">
+    <widget class="QLabel" name="output_Cal">
      <property name="geometry">
       <rect>
        <x>40</x>
@@ -569,7 +581,7 @@
      </item>
      <item>
       <property name="text">
-       <string>Generate Math Numbers</string>
+       <string>Generate Numbers</string>
       </property>
      </item>
     </widget>
@@ -584,15 +596,15 @@
      </property>
      <property name="styleSheet">
       <string notr="true">QWidget#page_blank{
-	border-image: url(:/Background/Ben10.png);
+
 }</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="page_blank"/>
      <widget class="QWidget" name="page_ASCII">
-      <widget class="QLabel" name="label_output_9">
+      <widget class="QLabel" name="conv_outputLabel">
        <property name="geometry">
         <rect>
          <x>260</x>
@@ -608,7 +620,7 @@
         <string/>
        </property>
       </widget>
-      <widget class="QLabel" name="label_output_10">
+      <widget class="QLabel" name="conv_inputLabel">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -635,7 +647,7 @@
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_5">
         <item>
-         <widget class="QRadioButton" name="radioButton_9">
+         <widget class="QRadioButton" name="radio_inDeci">
           <property name="font">
            <font>
             <family>Comic Sans MS</family>
@@ -650,7 +662,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="radioButton_10">
+         <widget class="QRadioButton" name="radio_inHex">
           <property name="font">
            <font>
             <family>Comic Sans MS</family>
@@ -665,7 +677,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="radioButton_11">
+         <widget class="QRadioButton" name="radio_inChar">
           <property name="font">
            <font>
             <family>Comic Sans MS</family>
@@ -692,7 +704,7 @@
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_6">
         <item>
-         <widget class="QRadioButton" name="radioButton_12">
+         <widget class="QRadioButton" name="radio_outDeci">
           <property name="font">
            <font>
             <family>Comic Sans MS</family>
@@ -707,7 +719,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="radioButton_13">
+         <widget class="QRadioButton" name="radio_outHex">
           <property name="font">
            <font>
             <family>Comic Sans MS</family>
@@ -722,7 +734,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="radioButton_14">
+         <widget class="QRadioButton" name="radio_outChar">
           <property name="font">
            <font>
             <family>Comic Sans MS</family>
@@ -738,7 +750,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QLabel" name="input_label">
+      <widget class="QLabel" name="input_labelText">
        <property name="geometry">
         <rect>
          <x>80</x>
@@ -759,7 +771,7 @@
         <string>Input</string>
        </property>
       </widget>
-      <widget class="QLabel" name="output_label">
+      <widget class="QLabel" name="output_labelText">
        <property name="geometry">
         <rect>
          <x>310</x>
@@ -848,7 +860,7 @@
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
-         <widget class="QRadioButton" name="radioButton">
+         <widget class="QRadioButton" name="radio_inFeet">
           <property name="font">
            <font>
             <family>Comic Sans MS</family>
@@ -863,7 +875,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="radioButton_3">
+         <widget class="QRadioButton" name="radio_inMeter">
           <property name="font">
            <font>
             <family>Comic Sans MS</family>
@@ -878,7 +890,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="radioButton_4">
+         <widget class="QRadioButton" name="radio_InMiles">
           <property name="font">
            <font>
             <family>Comic Sans MS</family>
@@ -893,7 +905,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="radioButton_2">
+         <widget class="QRadioButton" name="radio_inKilo">
           <property name="font">
            <font>
             <family>Comic Sans MS</family>
@@ -920,7 +932,7 @@
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
-         <widget class="QRadioButton" name="radioButton_5">
+         <widget class="QRadioButton" name="radio_outFeet">
           <property name="font">
            <font>
             <family>Comic Sans MS</family>
@@ -935,7 +947,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="radioButton_6">
+         <widget class="QRadioButton" name="radio_outMeter">
           <property name="font">
            <font>
             <family>Comic Sans MS</family>
@@ -950,7 +962,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="radioButton_7">
+         <widget class="QRadioButton" name="radio_outMiles">
           <property name="font">
            <font>
             <family>Comic Sans MS</family>
@@ -965,7 +977,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="radioButton_8">
+         <widget class="QRadioButton" name="radio_outKilo">
           <property name="font">
            <font>
             <family>Comic Sans MS</family>
@@ -1006,7 +1018,7 @@
       </widget>
      </widget>
      <widget class="QWidget" name="page_temper">
-      <widget class="QLabel" name="label_output_5">
+      <widget class="QLabel" name="conv_labelIn">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -1022,7 +1034,7 @@
         <string/>
        </property>
       </widget>
-      <widget class="QLabel" name="label_output_6">
+      <widget class="QLabel" name="conv_labelOut">
        <property name="geometry">
         <rect>
          <x>260</x>
@@ -1095,7 +1107,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QPushButton" name="enter_11">
+      <widget class="QPushButton" name="conv_enter">
        <property name="geometry">
         <rect>
          <x>200</x>
@@ -1177,12 +1189,12 @@
       </widget>
      </widget>
      <widget class="QWidget" name="page_generate">
-      <widget class="QLabel" name="label_output_7">
+      <widget class="QLabel" name="label_outscreen">
        <property name="geometry">
         <rect>
          <x>40</x>
          <y>20</y>
-         <width>371</width>
+         <width>381</width>
          <height>91</height>
         </rect>
        </property>
@@ -1204,7 +1216,7 @@
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_9">
         <item>
-         <widget class="QPushButton" name="pushButton_21">
+         <widget class="QPushButton" name="btn_primeNum">
           <property name="font">
            <font>
             <family>Comic Sans MS</family>
@@ -1219,7 +1231,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_22">
+         <widget class="QPushButton" name="btn_perfectNum">
           <property name="font">
            <font>
             <family>Comic Sans MS</family>
@@ -1233,9 +1245,24 @@
           </property>
          </widget>
         </item>
+        <item>
+         <widget class="QPushButton" name="btn_randomNum">
+          <property name="font">
+           <font>
+            <family>Comic Sans MS</family>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Random Numbers</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
-      <widget class="QLabel" name="label_input7">
+      <widget class="QLabel" name="label_start">
        <property name="geometry">
         <rect>
          <x>30</x>
@@ -1257,7 +1284,7 @@
         <string/>
        </property>
       </widget>
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="label_From">
        <property name="geometry">
         <rect>
          <x>60</x>
@@ -1278,7 +1305,7 @@
         <string>FROM</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_input8">
+      <widget class="QLabel" name="label_end">
        <property name="geometry">
         <rect>
          <x>260</x>
@@ -1300,7 +1327,7 @@
         <string/>
        </property>
       </widget>
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="label_To">
        <property name="geometry">
         <rect>
          <x>300</x>
@@ -1324,24 +1351,22 @@
      </widget>
     </widget>
     <zorder>gridLayoutWidget_2</zorder>
-    <zorder>line_2</zorder>
+    <zorder>line_Horizontal</zorder>
     <zorder>verticalLayoutWidget</zorder>
     <zorder>verticalLayoutWidget_2</zorder>
-    <zorder>label_output</zorder>
+    <zorder>output_Cal</zorder>
     <zorder>comboBox</zorder>
     <zorder>stackedWidget</zorder>
-    <zorder>line</zorder>
+    <zorder>line_Vertical</zorder>
    </widget>
   </widget>
  </widget>
- <resources>
-  <include location="graphics/Testing.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
-   <sender>button_clear</sender>
+   <sender>btn_clear</sender>
    <signal>clicked()</signal>
-   <receiver>label_output</receiver>
+   <receiver>output_Cal</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1355,9 +1380,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>button_enter</sender>
+   <sender>btn_enter</sender>
    <signal>clicked()</signal>
-   <receiver>label_output</receiver>
+   <receiver>output_Cal</receiver>
    <slot>update()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1373,7 +1398,7 @@
   <connection>
    <sender>btn_go</sender>
    <signal>clicked()</signal>
-   <receiver>label_output_9</receiver>
+   <receiver>conv_outputLabel</receiver>
    <slot>update()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1403,9 +1428,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>enter_11</sender>
+   <sender>conv_enter</sender>
    <signal>clicked()</signal>
-   <receiver>label_output_6</receiver>
+   <receiver>conv_labelOut</receiver>
    <slot>update()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1419,9 +1444,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_21</sender>
+   <sender>btn_primeNum</sender>
    <signal>clicked()</signal>
-   <receiver>label_output_7</receiver>
+   <receiver>label_outscreen</receiver>
    <slot>update()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1435,9 +1460,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_22</sender>
+   <sender>btn_perfectNum</sender>
    <signal>clicked()</signal>
-   <receiver>label_output_7</receiver>
+   <receiver>label_outscreen</receiver>
    <slot>update()</slot>
    <hints>
     <hint type="sourcelabel">
