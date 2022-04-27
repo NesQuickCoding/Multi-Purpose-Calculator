@@ -316,7 +316,7 @@
       <rect>
        <x>10</x>
        <y>170</y>
-       <width>71</width>
+       <width>77</width>
        <height>301</height>
       </rect>
      </property>
@@ -421,7 +421,7 @@
       <rect>
        <x>410</x>
        <y>170</y>
-       <width>71</width>
+       <width>77</width>
        <height>291</height>
       </rect>
      </property>
@@ -1351,6 +1351,102 @@ image: url(:/Background/Graphical-App/graphics/Ben10.png);
     <hint type="destinationlabel">
      <x>235</x>
      <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>button_enter</sender>
+   <signal>clicked()</signal>
+   <receiver>label_output</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>457</x>
+     <y>434</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>86</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_go</sender>
+   <signal>clicked()</signal>
+   <receiver>label_output_9</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>766</x>
+     <y>439</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>870</x>
+     <y>100</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>enter_10</sender>
+   <signal>clicked()</signal>
+   <receiver>label_output_4</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>770</x>
+     <y>443</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>857</x>
+     <y>80</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>enter_11</sender>
+   <signal>clicked()</signal>
+   <receiver>label_output_6</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>769</x>
+     <y>447</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>867</x>
+     <y>89</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_21</sender>
+   <signal>clicked()</signal>
+   <receiver>label_output_7</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>829</x>
+     <y>365</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>913</x>
+     <y>99</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_22</sender>
+   <signal>clicked()</signal>
+   <receiver>label_output_7</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>810</x>
+     <y>419</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>895</x>
+     <y>116</y>
     </hint>
    </hints>
   </connection>
