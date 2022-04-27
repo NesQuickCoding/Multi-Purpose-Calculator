@@ -584,11 +584,11 @@
      </property>
      <property name="styleSheet">
       <string notr="true">QWidget#page_blank{
-image: url(:/Background/Graphical-App/graphics/Ben10.png);
+	border-image: url(:/Background/Ben10.png);
 }</string>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="page_blank"/>
      <widget class="QWidget" name="page_ASCII">
@@ -797,7 +797,7 @@ image: url(:/Background/Graphical-App/graphics/Ben10.png);
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">image: url(:/Background/Graphical-App/graphics/Ben10.png);</string>
+        <string notr="true">image: url(:/Background/Ben10.png);</string>
        </property>
        <property name="text">
         <string/>
@@ -998,7 +998,7 @@ image: url(:/Background/Graphical-App/graphics/Ben10.png);
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">image: url(:/Background/Graphical-App/graphics/Ben10.png);</string>
+        <string notr="true">image: url(:/Background/Ben10.png);</string>
        </property>
        <property name="text">
         <string/>
@@ -1112,7 +1112,7 @@ image: url(:/Background/Graphical-App/graphics/Ben10.png);
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">image: url(:/Background/Graphical-App/graphics/Ben10.png);</string>
+        <string notr="true">image: url(:/Background/Ben10.png);</string>
        </property>
        <property name="text">
         <string/>
@@ -1335,7 +1335,7 @@ image: url(:/Background/Graphical-App/graphics/Ben10.png);
   </widget>
  </widget>
  <resources>
-  <include location="../The-Algolater-Calculator/Graphics/Testing.qrc"/>
+  <include location="graphics/Testing.qrc"/>
  </resources>
  <connections>
   <connection>

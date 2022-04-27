@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="Background">
+    <file>Ben10.png</file>
+  </qresource>
+</RCC>
