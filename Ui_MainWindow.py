@@ -14,368 +14,832 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1100, 500)
-        MainWindow.setMinimumSize(QtCore.QSize(1100, 500))
-        MainWindow.setMaximumSize(QtCore.QSize(1200, 500))
+        MainWindow.resize(1200, 600)
+        MainWindow.setMinimumSize(QtCore.QSize(1200, 600))
+        MainWindow.setMaximumSize(QtCore.QSize(1200, 600))
         MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setMinimumSize(QtCore.QSize(1200, 500))
-        self.centralwidget.setMaximumSize(QtCore.QSize(1200, 500))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Ignored, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
+        self.centralwidget.setSizePolicy(sizePolicy)
+        self.centralwidget.setMinimumSize(QtCore.QSize(1200, 600))
+        self.centralwidget.setMaximumSize(QtCore.QSize(1200, 600))
         self.centralwidget.setStyleSheet("")
         self.centralwidget.setObjectName("centralwidget")
         self.back = QtWidgets.QWidget(self.centralwidget)
-        self.back.setGeometry(QtCore.QRect(0, 0, 1100, 500))
-        self.back.setMinimumSize(QtCore.QSize(1100, 500))
-        self.back.setMaximumSize(QtCore.QSize(1100, 500))
-        self.back.setStyleSheet("QWidget#back{\n"
-"background-color: qlineargradient(spread:pad, x1:0.447, y1:0.602, x2:1, y2:1, stop:0.184211 rgba(42, 138, 8, 255), stop:1 rgba(255, 255, 255, 255));\n"
-"}")
+        self.back.setGeometry(QtCore.QRect(0, 0, 1200, 600))
+        self.back.setMinimumSize(QtCore.QSize(1200, 600))
+        self.back.setMaximumSize(QtCore.QSize(1200, 600))
+        self.back.setStyleSheet("background-color: rgb(0, 0, 0);")
         self.back.setObjectName("back")
         self.gridLayoutWidget_2 = QtWidgets.QWidget(self.back)
-        self.gridLayoutWidget_2.setGeometry(QtCore.QRect(130, 230, 293, 251))
+        self.gridLayoutWidget_2.setGeometry(QtCore.QRect(130, 240, 293, 331))
         self.gridLayoutWidget_2.setObjectName("gridLayoutWidget_2")
         self.gridLayout_3 = QtWidgets.QGridLayout(self.gridLayoutWidget_2)
+        self.gridLayout_3.setSizeConstraint(QtWidgets.QLayout.SetMinimumSize)
         self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_3.setVerticalSpacing(3)
         self.gridLayout_3.setObjectName("gridLayout_3")
-        self.btn_0 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.btn_0.setFont(font)
-        self.btn_0.setObjectName("btn_0")
-        self.gridLayout_3.addWidget(self.btn_0, 4, 0, 1, 1)
-        self.btn_8 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.btn_8.setFont(font)
-        self.btn_8.setObjectName("btn_8")
-        self.gridLayout_3.addWidget(self.btn_8, 1, 1, 1, 1)
-        self.btn_underscore = QtWidgets.QPushButton(self.gridLayoutWidget_2)
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.btn_underscore.setFont(font)
-        self.btn_underscore.setObjectName("btn_underscore")
-        self.gridLayout_3.addWidget(self.btn_underscore, 4, 1, 1, 1)
-        self.btn_parens_open = QtWidgets.QPushButton(self.gridLayoutWidget_2)
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.btn_parens_open.setFont(font)
-        self.btn_parens_open.setStyleSheet("")
-        self.btn_parens_open.setObjectName("btn_parens_open")
-        self.gridLayout_3.addWidget(self.btn_parens_open, 0, 1, 1, 1)
-        self.btn_6 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.btn_6.setFont(font)
-        self.btn_6.setObjectName("btn_6")
-        self.gridLayout_3.addWidget(self.btn_6, 2, 2, 1, 1)
         self.btn_2 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.btn_2.setFont(font)
+        self.btn_2.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
         self.btn_2.setObjectName("btn_2")
         self.gridLayout_3.addWidget(self.btn_2, 3, 1, 1, 1)
-        self.btn_5 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.btn_5.setFont(font)
-        self.btn_5.setObjectName("btn_5")
-        self.gridLayout_3.addWidget(self.btn_5, 2, 1, 1, 1)
-        self.btn_7 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.btn_7.setFont(font)
-        self.btn_7.setObjectName("btn_7")
-        self.gridLayout_3.addWidget(self.btn_7, 1, 0, 1, 1)
         self.btn_parens_close = QtWidgets.QPushButton(self.gridLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.btn_parens_close.setFont(font)
+        self.btn_parens_close.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
         self.btn_parens_close.setObjectName("btn_parens_close")
         self.gridLayout_3.addWidget(self.btn_parens_close, 0, 2, 1, 1)
-        self.btn_1 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.btn_1.setFont(font)
-        self.btn_1.setObjectName("btn_1")
-        self.gridLayout_3.addWidget(self.btn_1, 3, 0, 1, 1)
-        self.btn_4 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.btn_4.setFont(font)
-        self.btn_4.setObjectName("btn_4")
-        self.gridLayout_3.addWidget(self.btn_4, 2, 0, 1, 1)
-        self.btn_coma = QtWidgets.QPushButton(self.gridLayoutWidget_2)
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.btn_coma.setFont(font)
-        self.btn_coma.setObjectName("btn_coma")
-        self.gridLayout_3.addWidget(self.btn_coma, 0, 0, 1, 1)
-        self.btn_9 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.btn_9.setFont(font)
-        self.btn_9.setObjectName("btn_9")
-        self.gridLayout_3.addWidget(self.btn_9, 1, 2, 1, 1)
         self.btn_3 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.btn_3.setFont(font)
+        self.btn_3.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
         self.btn_3.setObjectName("btn_3")
         self.gridLayout_3.addWidget(self.btn_3, 3, 2, 1, 1)
+        self.btn_coma = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_coma.setFont(font)
+        self.btn_coma.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
+        self.btn_coma.setObjectName("btn_coma")
+        self.gridLayout_3.addWidget(self.btn_coma, 0, 0, 1, 1)
+        self.btn_6 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_6.setFont(font)
+        self.btn_6.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
+        self.btn_6.setObjectName("btn_6")
+        self.gridLayout_3.addWidget(self.btn_6, 2, 2, 1, 1)
+        self.btn_8 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_8.setFont(font)
+        self.btn_8.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
+        self.btn_8.setObjectName("btn_8")
+        self.gridLayout_3.addWidget(self.btn_8, 1, 1, 1, 1)
+        self.btn_1 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_1.setFont(font)
+        self.btn_1.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
+        self.btn_1.setObjectName("btn_1")
+        self.gridLayout_3.addWidget(self.btn_1, 3, 0, 1, 1)
         self.btn_dash = QtWidgets.QPushButton(self.gridLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.btn_dash.setFont(font)
+        self.btn_dash.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
         self.btn_dash.setObjectName("btn_dash")
         self.gridLayout_3.addWidget(self.btn_dash, 4, 2, 1, 1)
+        self.btn_7 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_7.setFont(font)
+        self.btn_7.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
+        self.btn_7.setObjectName("btn_7")
+        self.gridLayout_3.addWidget(self.btn_7, 1, 0, 1, 1)
+        self.btn_9 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_9.setFont(font)
+        self.btn_9.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
+        self.btn_9.setObjectName("btn_9")
+        self.gridLayout_3.addWidget(self.btn_9, 1, 2, 1, 1)
+        self.btn_underscore = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_underscore.setFont(font)
+        self.btn_underscore.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
+        self.btn_underscore.setObjectName("btn_underscore")
+        self.gridLayout_3.addWidget(self.btn_underscore, 4, 1, 1, 1)
+        self.btn_0 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        self.btn_0.setMinimumSize(QtCore.QSize(69, 0))
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_0.setFont(font)
+        self.btn_0.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
+        self.btn_0.setObjectName("btn_0")
+        self.gridLayout_3.addWidget(self.btn_0, 4, 0, 1, 1)
+        self.btn_5 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_5.setFont(font)
+        self.btn_5.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
+        self.btn_5.setObjectName("btn_5")
+        self.gridLayout_3.addWidget(self.btn_5, 2, 1, 1, 1)
+        self.btn_parens_open = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_parens_open.setFont(font)
+        self.btn_parens_open.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
+        self.btn_parens_open.setObjectName("btn_parens_open")
+        self.gridLayout_3.addWidget(self.btn_parens_open, 0, 1, 1, 1)
+        self.btn_4 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_4.setFont(font)
+        self.btn_4.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
+        self.btn_4.setObjectName("btn_4")
+        self.gridLayout_3.addWidget(self.btn_4, 2, 0, 1, 1)
         self.line_Vertical = QtWidgets.QFrame(self.back)
-        self.line_Vertical.setGeometry(QtCore.QRect(0, 150, 1101, 21))
+        self.line_Vertical.setGeometry(QtCore.QRect(0, 160, 1221, 5))
+        self.line_Vertical.setStyleSheet("background-color: rgb(20, 255, 8);")
         self.line_Vertical.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_Vertical.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_Vertical.setObjectName("line_Vertical")
         self.line_Horizontal = QtWidgets.QFrame(self.back)
-        self.line_Horizontal.setGeometry(QtCore.QRect(556, 0, 20, 501))
+        self.line_Horizontal.setGeometry(QtCore.QRect(600, 0, 5, 601))
+        self.line_Horizontal.setStyleSheet("background-color: rgb(20, 255, 8);")
         self.line_Horizontal.setFrameShape(QtWidgets.QFrame.VLine)
         self.line_Horizontal.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_Horizontal.setObjectName("line_Horizontal")
         self.verticalLayoutWidget = QtWidgets.QWidget(self.back)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(20, 170, 77, 321))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(20, 240, 95, 331))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout.setSizeConstraint(QtWidgets.QLayout.SetFixedSize)
+        self.verticalLayout.setSizeConstraint(QtWidgets.QLayout.SetMinimumSize)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
         self.btn_back = QtWidgets.QPushButton(self.verticalLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.btn_back.setFont(font)
+        self.btn_back.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
         self.btn_back.setObjectName("btn_back")
         self.verticalLayout.addWidget(self.btn_back)
         self.btn_period = QtWidgets.QPushButton(self.verticalLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.btn_period.setFont(font)
+        self.btn_period.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
         self.btn_period.setObjectName("btn_period")
         self.verticalLayout.addWidget(self.btn_period)
         self.btn_xpower = QtWidgets.QPushButton(self.verticalLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.btn_xpower.setFont(font)
+        self.btn_xpower.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
         self.btn_xpower.setObjectName("btn_xpower")
         self.verticalLayout.addWidget(self.btn_xpower)
         self.btn_log = QtWidgets.QPushButton(self.verticalLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.btn_log.setFont(font)
+        self.btn_log.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
         self.btn_log.setObjectName("btn_log")
         self.verticalLayout.addWidget(self.btn_log)
         self.btn_mod = QtWidgets.QPushButton(self.verticalLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.btn_mod.setFont(font)
+        self.btn_mod.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
         self.btn_mod.setObjectName("btn_mod")
         self.verticalLayout.addWidget(self.btn_mod)
         self.btn_clear = QtWidgets.QPushButton(self.verticalLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.btn_clear.setFont(font)
+        self.btn_clear.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
         self.btn_clear.setObjectName("btn_clear")
         self.verticalLayout.addWidget(self.btn_clear)
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.back)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(440, 170, 77, 321))
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(450, 240, 95, 331))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
-        self.verticalLayout_2.setSizeConstraint(QtWidgets.QLayout.SetFixedSize)
+        self.verticalLayout_2.setSizeConstraint(QtWidgets.QLayout.SetMinimumSize)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.btn_powerUp = QtWidgets.QPushButton(self.verticalLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.btn_powerUp.setFont(font)
+        self.btn_powerUp.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
         self.btn_powerUp.setObjectName("btn_powerUp")
         self.verticalLayout_2.addWidget(self.btn_powerUp)
         self.btn_divide = QtWidgets.QPushButton(self.verticalLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.btn_divide.setFont(font)
+        self.btn_divide.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
         self.btn_divide.setObjectName("btn_divide")
         self.verticalLayout_2.addWidget(self.btn_divide)
         self.btn_multiply = QtWidgets.QPushButton(self.verticalLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.btn_multiply.setFont(font)
+        self.btn_multiply.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
         self.btn_multiply.setObjectName("btn_multiply")
         self.verticalLayout_2.addWidget(self.btn_multiply)
         self.btn_minus = QtWidgets.QPushButton(self.verticalLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.btn_minus.setFont(font)
+        self.btn_minus.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
         self.btn_minus.setObjectName("btn_minus")
         self.verticalLayout_2.addWidget(self.btn_minus)
         self.btn_add = QtWidgets.QPushButton(self.verticalLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
-        font.setPointSize(12)
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.btn_add.setFont(font)
+        self.btn_add.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
         self.btn_add.setObjectName("btn_add")
         self.verticalLayout_2.addWidget(self.btn_add)
         self.btn_enter = QtWidgets.QPushButton(self.verticalLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.btn_enter.setFont(font)
+        self.btn_enter.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
         self.btn_enter.setObjectName("btn_enter")
         self.verticalLayout_2.addWidget(self.btn_enter)
         self.output_Cal = QtWidgets.QLabel(self.back)
-        self.output_Cal.setGeometry(QtCore.QRect(70, 50, 401, 61))
-        self.output_Cal.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.output_Cal.setGeometry(QtCore.QRect(60, 50, 441, 61))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.output_Cal.setFont(font)
+        self.output_Cal.setStyleSheet("background-color: rgb(48, 48, 48);\n"
+"color: rgb(55, 255, 0);")
         self.output_Cal.setText("")
         self.output_Cal.setObjectName("output_Cal")
         self.comboBox = QtWidgets.QComboBox(self.back)
-        self.comboBox.setGeometry(QtCore.QRect(130, 180, 291, 31))
+        self.comboBox.setGeometry(QtCore.QRect(130, 190, 291, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.comboBox.setFont(font)
-        self.comboBox.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.comboBox.setStyleSheet("\n"
+"color: rgb(55, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);")
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
-        self.stackedWidget = QtWidgets.QStackedWidget(self.back)
-        self.stackedWidget.setGeometry(QtCore.QRect(580, 20, 501, 471))
-        self.stackedWidget.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0.447, y1:0.602, x2:1, y2:1, stop:0.184211 rgba(42, 138, 8, 255), stop:1 rgba(255, 255, 255, 255));")
+        self.frame = QtWidgets.QFrame(self.back)
+        self.frame.setGeometry(QtCore.QRect(640, 210, 541, 501))
+        self.frame.setStyleSheet("")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.stackedWidget = QtWidgets.QStackedWidget(self.frame)
+        self.stackedWidget.setGeometry(QtCore.QRect(30, 0, 461, 311))
+        self.stackedWidget.setStyleSheet("")
         self.stackedWidget.setObjectName("stackedWidget")
         self.page_blank = QtWidgets.QWidget()
         self.page_blank.setObjectName("page_blank")
         self.stackedWidget.addWidget(self.page_blank)
         self.page_ASCII = QtWidgets.QWidget()
         self.page_ASCII.setObjectName("page_ASCII")
-        self.conv_outputLabel = QtWidgets.QLabel(self.page_ASCII)
-        self.conv_outputLabel.setGeometry(QtCore.QRect(260, 30, 181, 61))
-        self.conv_outputLabel.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.conv_outputLabel.setText("")
-        self.conv_outputLabel.setObjectName("conv_outputLabel")
-        self.conv_inputLabel = QtWidgets.QLabel(self.page_ASCII)
-        self.conv_inputLabel.setGeometry(QtCore.QRect(40, 30, 181, 61))
-        self.conv_inputLabel.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.conv_inputLabel.setText("")
-        self.conv_inputLabel.setObjectName("conv_inputLabel")
-        self.verticalLayoutWidget_5 = QtWidgets.QWidget(self.page_ASCII)
-        self.verticalLayoutWidget_5.setGeometry(QtCore.QRect(50, 200, 181, 181))
-        self.verticalLayoutWidget_5.setObjectName("verticalLayoutWidget_5")
-        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_5)
-        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_5.setObjectName("verticalLayout_5")
-        self.radio_inDeci = QtWidgets.QRadioButton(self.verticalLayoutWidget_5)
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.radio_inDeci.setFont(font)
-        self.radio_inDeci.setStyleSheet("QRadioButton {background-color: transparent};")
-        self.radio_inDeci.setObjectName("radio_inDeci")
-        self.verticalLayout_5.addWidget(self.radio_inDeci)
-        self.radio_inHex = QtWidgets.QRadioButton(self.verticalLayoutWidget_5)
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.radio_inHex.setFont(font)
-        self.radio_inHex.setStyleSheet("QRadioButton {background-color: transparent};")
-        self.radio_inHex.setObjectName("radio_inHex")
-        self.verticalLayout_5.addWidget(self.radio_inHex)
-        self.radio_inChar = QtWidgets.QRadioButton(self.verticalLayoutWidget_5)
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.radio_inChar.setFont(font)
-        self.radio_inChar.setStyleSheet("QRadioButton {background-color: transparent};")
-        self.radio_inChar.setObjectName("radio_inChar")
-        self.verticalLayout_5.addWidget(self.radio_inChar)
         self.verticalLayoutWidget_6 = QtWidgets.QWidget(self.page_ASCII)
-        self.verticalLayoutWidget_6.setGeometry(QtCore.QRect(250, 200, 201, 181))
+        self.verticalLayoutWidget_6.setGeometry(QtCore.QRect(280, 40, 211, 171))
         self.verticalLayoutWidget_6.setObjectName("verticalLayoutWidget_6")
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_6)
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
@@ -387,7 +851,8 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.radio_outDeci.setFont(font)
-        self.radio_outDeci.setStyleSheet("QRadioButton {background-color: transparent};")
+        self.radio_outDeci.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
         self.radio_outDeci.setObjectName("radio_outDeci")
         self.verticalLayout_6.addWidget(self.radio_outDeci)
         self.radio_outHex = QtWidgets.QRadioButton(self.verticalLayoutWidget_6)
@@ -397,7 +862,8 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.radio_outHex.setFont(font)
-        self.radio_outHex.setStyleSheet("QRadioButton {background-color: transparent};")
+        self.radio_outHex.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
         self.radio_outHex.setObjectName("radio_outHex")
         self.verticalLayout_6.addWidget(self.radio_outHex)
         self.radio_outChar = QtWidgets.QRadioButton(self.verticalLayoutWidget_6)
@@ -407,29 +873,12 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.radio_outChar.setFont(font)
-        self.radio_outChar.setStyleSheet("QRadioButton {background-color: transparent};")
+        self.radio_outChar.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
         self.radio_outChar.setObjectName("radio_outChar")
         self.verticalLayout_6.addWidget(self.radio_outChar)
-        self.input_labelText = QtWidgets.QLabel(self.page_ASCII)
-        self.input_labelText.setGeometry(QtCore.QRect(80, 100, 101, 41))
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
-        self.input_labelText.setFont(font)
-        self.input_labelText.setObjectName("input_labelText")
-        self.output_labelText = QtWidgets.QLabel(self.page_ASCII)
-        self.output_labelText.setGeometry(QtCore.QRect(310, 100, 101, 41))
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
-        self.output_labelText.setFont(font)
-        self.output_labelText.setObjectName("output_labelText")
         self.btn_go = QtWidgets.QPushButton(self.page_ASCII)
-        self.btn_go.setGeometry(QtCore.QRect(200, 410, 81, 51))
+        self.btn_go.setGeometry(QtCore.QRect(200, 410, 69, 48))
         font = QtGui.QFont()
         font.setPointSize(14)
         font.setBold(True)
@@ -438,336 +887,391 @@ class Ui_MainWindow(object):
         self.btn_go.setStyleSheet("image: url(:/Background/Ben10.png);")
         self.btn_go.setText("")
         self.btn_go.setObjectName("btn_go")
+        self.verticalLayoutWidget_7 = QtWidgets.QWidget(self.page_ASCII)
+        self.verticalLayoutWidget_7.setGeometry(QtCore.QRect(40, 40, 211, 171))
+        self.verticalLayoutWidget_7.setObjectName("verticalLayoutWidget_7")
+        self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_7)
+        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_12.setObjectName("verticalLayout_12")
+        self.radio_inDeci = QtWidgets.QRadioButton(self.verticalLayoutWidget_7)
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.radio_inDeci.setFont(font)
+        self.radio_inDeci.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
+        self.radio_inDeci.setObjectName("radio_inDeci")
+        self.verticalLayout_12.addWidget(self.radio_inDeci)
+        self.radio_inHex = QtWidgets.QRadioButton(self.verticalLayoutWidget_7)
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.radio_inHex.setFont(font)
+        self.radio_inHex.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
+        self.radio_inHex.setObjectName("radio_inHex")
+        self.verticalLayout_12.addWidget(self.radio_inHex)
+        self.radio_inChar = QtWidgets.QRadioButton(self.verticalLayoutWidget_7)
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.radio_inChar.setFont(font)
+        self.radio_inChar.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
+        self.radio_inChar.setObjectName("radio_inChar")
+        self.verticalLayout_12.addWidget(self.radio_inChar)
+        self.enter_14 = QtWidgets.QPushButton(self.page_ASCII)
+        self.enter_14.setGeometry(QtCore.QRect(180, 250, 69, 48))
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.enter_14.setFont(font)
+        self.enter_14.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
+        self.enter_14.setObjectName("enter_14")
         self.stackedWidget.addWidget(self.page_ASCII)
         self.page_metric = QtWidgets.QWidget()
         self.page_metric.setObjectName("page_metric")
-        self.label_output_3 = QtWidgets.QLabel(self.page_metric)
-        self.label_output_3.setGeometry(QtCore.QRect(40, 30, 181, 61))
-        self.label_output_3.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.label_output_3.setText("")
-        self.label_output_3.setObjectName("label_output_3")
-        self.label_output_4 = QtWidgets.QLabel(self.page_metric)
-        self.label_output_4.setGeometry(QtCore.QRect(260, 30, 181, 61))
-        self.label_output_4.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.label_output_4.setText("")
-        self.label_output_4.setObjectName("label_output_4")
-        self.verticalLayoutWidget_3 = QtWidgets.QWidget(self.page_metric)
-        self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(50, 180, 161, 221))
-        self.verticalLayoutWidget_3.setObjectName("verticalLayoutWidget_3")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_3)
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.radio_inFeet = QtWidgets.QRadioButton(self.verticalLayoutWidget_3)
+        self.verticalLayoutWidget_19 = QtWidgets.QWidget(self.page_metric)
+        self.verticalLayoutWidget_19.setGeometry(QtCore.QRect(50, 30, 161, 221))
+        self.verticalLayoutWidget_19.setObjectName("verticalLayoutWidget_19")
+        self.verticalLayout_19 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_19)
+        self.verticalLayout_19.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_19.setObjectName("verticalLayout_19")
+        self.radio_inFeet_4 = QtWidgets.QRadioButton(self.verticalLayoutWidget_19)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
         font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
-        self.radio_inFeet.setFont(font)
-        self.radio_inFeet.setStyleSheet("QRadioButton {background-color: transparent};")
-        self.radio_inFeet.setObjectName("radio_inFeet")
-        self.verticalLayout_3.addWidget(self.radio_inFeet)
-        self.radio_inMeter = QtWidgets.QRadioButton(self.verticalLayoutWidget_3)
+        self.radio_inFeet_4.setFont(font)
+        self.radio_inFeet_4.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
+        self.radio_inFeet_4.setObjectName("radio_inFeet_4")
+        self.verticalLayout_19.addWidget(self.radio_inFeet_4)
+        self.radio_inMeter_4 = QtWidgets.QRadioButton(self.verticalLayoutWidget_19)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
         font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
-        self.radio_inMeter.setFont(font)
-        self.radio_inMeter.setStyleSheet("QRadioButton {background-color: transparent};")
-        self.radio_inMeter.setObjectName("radio_inMeter")
-        self.verticalLayout_3.addWidget(self.radio_inMeter)
-        self.radio_InMiles = QtWidgets.QRadioButton(self.verticalLayoutWidget_3)
+        self.radio_inMeter_4.setFont(font)
+        self.radio_inMeter_4.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
+        self.radio_inMeter_4.setObjectName("radio_inMeter_4")
+        self.verticalLayout_19.addWidget(self.radio_inMeter_4)
+        self.radio_InMiles_4 = QtWidgets.QRadioButton(self.verticalLayoutWidget_19)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
         font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
-        self.radio_InMiles.setFont(font)
-        self.radio_InMiles.setStyleSheet("QRadioButton {background-color: transparent};")
-        self.radio_InMiles.setObjectName("radio_InMiles")
-        self.verticalLayout_3.addWidget(self.radio_InMiles)
-        self.radio_inKilo = QtWidgets.QRadioButton(self.verticalLayoutWidget_3)
+        self.radio_InMiles_4.setFont(font)
+        self.radio_InMiles_4.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
+        self.radio_InMiles_4.setObjectName("radio_InMiles_4")
+        self.verticalLayout_19.addWidget(self.radio_InMiles_4)
+        self.radio_inKilo_4 = QtWidgets.QRadioButton(self.verticalLayoutWidget_19)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
         font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
-        self.radio_inKilo.setFont(font)
-        self.radio_inKilo.setStyleSheet("QRadioButton {background-color: transparent};")
-        self.radio_inKilo.setObjectName("radio_inKilo")
-        self.verticalLayout_3.addWidget(self.radio_inKilo)
-        self.verticalLayoutWidget_4 = QtWidgets.QWidget(self.page_metric)
-        self.verticalLayoutWidget_4.setGeometry(QtCore.QRect(270, 180, 161, 221))
-        self.verticalLayoutWidget_4.setObjectName("verticalLayoutWidget_4")
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_4)
-        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.radio_outFeet = QtWidgets.QRadioButton(self.verticalLayoutWidget_4)
+        self.radio_inKilo_4.setFont(font)
+        self.radio_inKilo_4.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
+        self.radio_inKilo_4.setObjectName("radio_inKilo_4")
+        self.verticalLayout_19.addWidget(self.radio_inKilo_4)
+        self.verticalLayoutWidget_20 = QtWidgets.QWidget(self.page_metric)
+        self.verticalLayoutWidget_20.setGeometry(QtCore.QRect(270, 30, 161, 221))
+        self.verticalLayoutWidget_20.setObjectName("verticalLayoutWidget_20")
+        self.verticalLayout_20 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_20)
+        self.verticalLayout_20.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_20.setObjectName("verticalLayout_20")
+        self.radio_outFeet_4 = QtWidgets.QRadioButton(self.verticalLayoutWidget_20)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
         font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
-        self.radio_outFeet.setFont(font)
-        self.radio_outFeet.setStyleSheet("QRadioButton {background-color: transparent};")
-        self.radio_outFeet.setObjectName("radio_outFeet")
-        self.verticalLayout_4.addWidget(self.radio_outFeet)
-        self.radio_outMeter = QtWidgets.QRadioButton(self.verticalLayoutWidget_4)
+        self.radio_outFeet_4.setFont(font)
+        self.radio_outFeet_4.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
+        self.radio_outFeet_4.setObjectName("radio_outFeet_4")
+        self.verticalLayout_20.addWidget(self.radio_outFeet_4)
+        self.radio_outMeter_4 = QtWidgets.QRadioButton(self.verticalLayoutWidget_20)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
         font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
-        self.radio_outMeter.setFont(font)
-        self.radio_outMeter.setStyleSheet("QRadioButton {background-color: transparent};")
-        self.radio_outMeter.setObjectName("radio_outMeter")
-        self.verticalLayout_4.addWidget(self.radio_outMeter)
-        self.radio_outMiles = QtWidgets.QRadioButton(self.verticalLayoutWidget_4)
+        self.radio_outMeter_4.setFont(font)
+        self.radio_outMeter_4.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
+        self.radio_outMeter_4.setObjectName("radio_outMeter_4")
+        self.verticalLayout_20.addWidget(self.radio_outMeter_4)
+        self.radio_outMiles_4 = QtWidgets.QRadioButton(self.verticalLayoutWidget_20)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
         font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
-        self.radio_outMiles.setFont(font)
-        self.radio_outMiles.setStyleSheet("QRadioButton {background-color: transparent};")
-        self.radio_outMiles.setObjectName("radio_outMiles")
-        self.verticalLayout_4.addWidget(self.radio_outMiles)
-        self.radio_outKilo = QtWidgets.QRadioButton(self.verticalLayoutWidget_4)
+        self.radio_outMiles_4.setFont(font)
+        self.radio_outMiles_4.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
+        self.radio_outMiles_4.setObjectName("radio_outMiles_4")
+        self.verticalLayout_20.addWidget(self.radio_outMiles_4)
+        self.radio_outKilo_4 = QtWidgets.QRadioButton(self.verticalLayoutWidget_20)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
         font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
-        self.radio_outKilo.setFont(font)
-        self.radio_outKilo.setStyleSheet("QRadioButton {background-color: transparent};")
-        self.radio_outKilo.setObjectName("radio_outKilo")
-        self.verticalLayout_4.addWidget(self.radio_outKilo)
-        self.enter_10 = QtWidgets.QPushButton(self.page_metric)
-        self.enter_10.setGeometry(QtCore.QRect(200, 410, 81, 51))
+        self.radio_outKilo_4.setFont(font)
+        self.radio_outKilo_4.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
+        self.radio_outKilo_4.setObjectName("radio_outKilo_4")
+        self.verticalLayout_20.addWidget(self.radio_outKilo_4)
+        self.enter_16 = QtWidgets.QPushButton(self.page_metric)
+        self.enter_16.setGeometry(QtCore.QRect(180, 250, 69, 48))
         font = QtGui.QFont()
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.enter_10.setFont(font)
-        self.enter_10.setStyleSheet("image: url(:/Background/Ben10.png);")
-        self.enter_10.setText("")
-        self.enter_10.setObjectName("enter_10")
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.enter_16.setFont(font)
+        self.enter_16.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
+        self.enter_16.setObjectName("enter_16")
         self.stackedWidget.addWidget(self.page_metric)
         self.page_temper = QtWidgets.QWidget()
         self.page_temper.setObjectName("page_temper")
-        self.conv_labelIn = QtWidgets.QLabel(self.page_temper)
-        self.conv_labelIn.setGeometry(QtCore.QRect(40, 30, 181, 61))
-        self.conv_labelIn.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.conv_labelIn.setText("")
-        self.conv_labelIn.setObjectName("conv_labelIn")
-        self.conv_labelOut = QtWidgets.QLabel(self.page_temper)
-        self.conv_labelOut.setGeometry(QtCore.QRect(260, 30, 181, 61))
-        self.conv_labelOut.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.conv_labelOut.setText("")
-        self.conv_labelOut.setObjectName("conv_labelOut")
-        self.verticalLayoutWidget_7 = QtWidgets.QWidget(self.page_temper)
-        self.verticalLayoutWidget_7.setGeometry(QtCore.QRect(50, 170, 171, 221))
-        self.verticalLayoutWidget_7.setObjectName("verticalLayoutWidget_7")
-        self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_7)
-        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_7.setObjectName("verticalLayout_7")
-        self.radio_fahr1 = QtWidgets.QRadioButton(self.verticalLayoutWidget_7)
+        self.verticalLayoutWidget_10 = QtWidgets.QWidget(self.page_temper)
+        self.verticalLayoutWidget_10.setGeometry(QtCore.QRect(260, 10, 171, 221))
+        self.verticalLayoutWidget_10.setObjectName("verticalLayoutWidget_10")
+        self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_10)
+        self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_10.setObjectName("verticalLayout_10")
+        self.radio_fahr2_2 = QtWidgets.QRadioButton(self.verticalLayoutWidget_10)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
         font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
-        self.radio_fahr1.setFont(font)
-        self.radio_fahr1.setStyleSheet("QRadioButton {background-color: transparent};")
-        self.radio_fahr1.setObjectName("radio_fahr1")
-        self.verticalLayout_7.addWidget(self.radio_fahr1)
-        self.radio_cel1 = QtWidgets.QRadioButton(self.verticalLayoutWidget_7)
+        self.radio_fahr2_2.setFont(font)
+        self.radio_fahr2_2.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
+        self.radio_fahr2_2.setObjectName("radio_fahr2_2")
+        self.verticalLayout_10.addWidget(self.radio_fahr2_2)
+        self.radio_cel2_2 = QtWidgets.QRadioButton(self.verticalLayoutWidget_10)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
         font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
-        self.radio_cel1.setFont(font)
-        self.radio_cel1.setStyleSheet("QRadioButton {background-color: transparent};")
-        self.radio_cel1.setObjectName("radio_cel1")
-        self.verticalLayout_7.addWidget(self.radio_cel1)
-        self.radio_kel1 = QtWidgets.QRadioButton(self.verticalLayoutWidget_7)
+        self.radio_cel2_2.setFont(font)
+        self.radio_cel2_2.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
+        self.radio_cel2_2.setObjectName("radio_cel2_2")
+        self.verticalLayout_10.addWidget(self.radio_cel2_2)
+        self.radio_kel2_2 = QtWidgets.QRadioButton(self.verticalLayoutWidget_10)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
         font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
-        self.radio_kel1.setFont(font)
-        self.radio_kel1.setStyleSheet("QRadioButton {background-color: transparent};")
-        self.radio_kel1.setObjectName("radio_kel1")
-        self.verticalLayout_7.addWidget(self.radio_kel1)
-        self.conv_enter = QtWidgets.QPushButton(self.page_temper)
-        self.conv_enter.setGeometry(QtCore.QRect(200, 410, 81, 51))
-        font = QtGui.QFont()
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.conv_enter.setFont(font)
-        self.conv_enter.setStyleSheet("image: url(:/Background/Ben10.png);")
-        self.conv_enter.setText("")
-        self.conv_enter.setObjectName("conv_enter")
-        self.verticalLayoutWidget_8 = QtWidgets.QWidget(self.page_temper)
-        self.verticalLayoutWidget_8.setGeometry(QtCore.QRect(270, 170, 171, 221))
-        self.verticalLayoutWidget_8.setObjectName("verticalLayoutWidget_8")
-        self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_8)
-        self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_8.setObjectName("verticalLayout_8")
-        self.radio_fahr2 = QtWidgets.QRadioButton(self.verticalLayoutWidget_8)
+        self.radio_kel2_2.setFont(font)
+        self.radio_kel2_2.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
+        self.radio_kel2_2.setObjectName("radio_kel2_2")
+        self.verticalLayout_10.addWidget(self.radio_kel2_2)
+        self.verticalLayoutWidget_11 = QtWidgets.QWidget(self.page_temper)
+        self.verticalLayoutWidget_11.setGeometry(QtCore.QRect(40, 10, 171, 221))
+        self.verticalLayoutWidget_11.setObjectName("verticalLayoutWidget_11")
+        self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_11)
+        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_11.setObjectName("verticalLayout_11")
+        self.radio_fahr1_2 = QtWidgets.QRadioButton(self.verticalLayoutWidget_11)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
         font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
-        self.radio_fahr2.setFont(font)
-        self.radio_fahr2.setStyleSheet("QRadioButton {background-color: transparent};")
-        self.radio_fahr2.setObjectName("radio_fahr2")
-        self.verticalLayout_8.addWidget(self.radio_fahr2)
-        self.radio_cel2 = QtWidgets.QRadioButton(self.verticalLayoutWidget_8)
+        self.radio_fahr1_2.setFont(font)
+        self.radio_fahr1_2.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
+        self.radio_fahr1_2.setObjectName("radio_fahr1_2")
+        self.verticalLayout_11.addWidget(self.radio_fahr1_2)
+        self.radio_cel1_2 = QtWidgets.QRadioButton(self.verticalLayoutWidget_11)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
         font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
-        self.radio_cel2.setFont(font)
-        self.radio_cel2.setStyleSheet("QRadioButton {background-color: transparent};")
-        self.radio_cel2.setObjectName("radio_cel2")
-        self.verticalLayout_8.addWidget(self.radio_cel2)
-        self.radio_kel2 = QtWidgets.QRadioButton(self.verticalLayoutWidget_8)
+        self.radio_cel1_2.setFont(font)
+        self.radio_cel1_2.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
+        self.radio_cel1_2.setObjectName("radio_cel1_2")
+        self.verticalLayout_11.addWidget(self.radio_cel1_2)
+        self.radio_kel1_2 = QtWidgets.QRadioButton(self.verticalLayoutWidget_11)
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
         font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
-        self.radio_kel2.setFont(font)
-        self.radio_kel2.setStyleSheet("QRadioButton {background-color: transparent};")
-        self.radio_kel2.setObjectName("radio_kel2")
-        self.verticalLayout_8.addWidget(self.radio_kel2)
+        self.radio_kel1_2.setFont(font)
+        self.radio_kel1_2.setStyleSheet("QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};\n"
+"")
+        self.radio_kel1_2.setObjectName("radio_kel1_2")
+        self.verticalLayout_11.addWidget(self.radio_kel1_2)
+        self.enter_15 = QtWidgets.QPushButton(self.page_temper)
+        self.enter_15.setGeometry(QtCore.QRect(180, 250, 69, 48))
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.enter_15.setFont(font)
+        self.enter_15.setStyleSheet("QPushButton{\n"
+"    background-color: black;\n"
+"    color: rgb(110, 255, 0);\n"
+"    border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 4px;\n"
+"    border-color: rgb(98, 255, 0);\n"
+"    font: 11pt Comic Sans MS, bold 14px;\n"
+"    min-width: 3em;\n"
+"    max-width: 3em;\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"   background-color : green;\n"
+"}\n"
+"")
+        self.enter_15.setObjectName("enter_15")
         self.stackedWidget.addWidget(self.page_temper)
         self.page_generate = QtWidgets.QWidget()
         self.page_generate.setObjectName("page_generate")
-        self.label_outscreen = QtWidgets.QLabel(self.page_generate)
-        self.label_outscreen.setGeometry(QtCore.QRect(60, 20, 381, 91))
-        self.label_outscreen.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.label_outscreen.setText("")
-        self.label_outscreen.setObjectName("label_outscreen")
-        self.verticalLayoutWidget_9 = QtWidgets.QWidget(self.page_generate)
-        self.verticalLayoutWidget_9.setGeometry(QtCore.QRect(90, 290, 321, 171))
-        self.verticalLayoutWidget_9.setObjectName("verticalLayoutWidget_9")
-        self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_9)
-        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_9.setObjectName("verticalLayout_9")
-        self.btn_primeNum = QtWidgets.QPushButton(self.verticalLayoutWidget_9)
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.btn_primeNum.setFont(font)
-        self.btn_primeNum.setStyleSheet("")
-        self.btn_primeNum.setObjectName("btn_primeNum")
-        self.verticalLayout_9.addWidget(self.btn_primeNum)
-        self.btn_perfectNum = QtWidgets.QPushButton(self.verticalLayoutWidget_9)
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.btn_perfectNum.setFont(font)
-        self.btn_perfectNum.setObjectName("btn_perfectNum")
-        self.verticalLayout_9.addWidget(self.btn_perfectNum)
-        self.btn_randomNum = QtWidgets.QPushButton(self.verticalLayoutWidget_9)
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.btn_randomNum.setFont(font)
-        self.btn_randomNum.setObjectName("btn_randomNum")
-        self.verticalLayout_9.addWidget(self.btn_randomNum)
-        self.label_From = QtWidgets.QLabel(self.page_generate)
-        self.label_From.setGeometry(QtCore.QRect(60, 260, 71, 20))
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_From.setFont(font)
-        self.label_From.setStyleSheet("QLabel {background-color: transparent };")
-        self.label_From.setObjectName("label_From")
-        self.label_To = QtWidgets.QLabel(self.page_generate)
-        self.label_To.setGeometry(QtCore.QRect(300, 259, 71, 21))
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_To.setFont(font)
-        self.label_To.setStyleSheet("QLabel {background-color: transparent };")
-        self.label_To.setObjectName("label_To")
-        self.label_end_2 = QtWidgets.QLabel(self.page_generate)
-        self.label_end_2.setGeometry(QtCore.QRect(290, 190, 161, 51))
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        self.label_end_2.setFont(font)
-        self.label_end_2.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.label_end_2.setText("")
-        self.label_end_2.setObjectName("label_end_2")
-        self.label_start_2 = QtWidgets.QLabel(self.page_generate)
-        self.label_start_2.setGeometry(QtCore.QRect(60, 190, 161, 51))
-        font = QtGui.QFont()
-        font.setFamily("Comic Sans MS")
-        font.setPointSize(14)
-        self.label_start_2.setFont(font)
-        self.label_start_2.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.label_start_2.setText("")
-        self.label_start_2.setObjectName("label_start_2")
         self.stackedWidget.addWidget(self.page_generate)
+        self.frame_2 = QtWidgets.QFrame(self.back)
+        self.frame_2.setGeometry(QtCore.QRect(670, 30, 491, 141))
+        self.frame_2.setStyleSheet("")
+        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_2.setObjectName("frame_2")
+        self.output_Cal_2 = QtWidgets.QLabel(self.frame_2)
+        self.output_Cal_2.setGeometry(QtCore.QRect(0, 20, 211, 61))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.output_Cal_2.setFont(font)
+        self.output_Cal_2.setStyleSheet("background-color: rgb(48, 48, 48);\n"
+"color: rgb(55, 255, 0);")
+        self.output_Cal_2.setText("")
+        self.output_Cal_2.setObjectName("output_Cal_2")
+        self.output_Cal_3 = QtWidgets.QLabel(self.frame_2)
+        self.output_Cal_3.setGeometry(QtCore.QRect(260, 20, 211, 61))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.output_Cal_3.setFont(font)
+        self.output_Cal_3.setStyleSheet("background-color: rgb(48, 48, 48);\n"
+"color: rgb(55, 255, 0);")
+        self.output_Cal_3.setText("")
+        self.output_Cal_3.setObjectName("output_Cal_3")
+        self.label = QtWidgets.QLabel(self.frame_2)
+        self.label.setGeometry(QtCore.QRect(70, 90, 121, 41))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setStyleSheet("color: rgb(34, 255, 0);")
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(self.frame_2)
+        self.label_2.setGeometry(QtCore.QRect(320, 90, 121, 41))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet("color: rgb(34, 255, 0);")
+        self.label_2.setObjectName("label_2")
+        self.frame_2.raise_()
         self.gridLayoutWidget_2.raise_()
         self.verticalLayoutWidget.raise_()
         self.verticalLayoutWidget_2.raise_()
         self.output_Cal.raise_()
         self.comboBox.raise_()
-        self.stackedWidget.raise_()
-        self.line_Vertical.raise_()
         self.line_Horizontal.raise_()
+        self.frame.raise_()
+        self.line_Vertical.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(4)
-        self.btn_clear.clicked.connect(self.output_Cal.clear)
+        self.stackedWidget.setCurrentIndex(1)
         self.btn_enter.clicked.connect(self.output_Cal.update)
-        self.btn_go.clicked.connect(self.conv_outputLabel.update)
-        self.enter_10.clicked.connect(self.label_output_4.update)
-        self.conv_enter.clicked.connect(self.conv_labelOut.update)
-        self.btn_primeNum.clicked.connect(self.label_outscreen.update)
-        self.btn_perfectNum.clicked.connect(self.label_outscreen.update)
+        self.btn_clear.clicked.connect(self.output_Cal.clear)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.btn_0.setText(_translate("MainWindow", "0"))
-        self.btn_8.setText(_translate("MainWindow", "8"))
-        self.btn_underscore.setText(_translate("MainWindow", "_"))
-        self.btn_parens_open.setText(_translate("MainWindow", "("))
-        self.btn_6.setText(_translate("MainWindow", "6"))
         self.btn_2.setText(_translate("MainWindow", "2"))
-        self.btn_5.setText(_translate("MainWindow", "5"))
-        self.btn_7.setText(_translate("MainWindow", "7"))
         self.btn_parens_close.setText(_translate("MainWindow", ")"))
-        self.btn_1.setText(_translate("MainWindow", "1"))
-        self.btn_4.setText(_translate("MainWindow", "4"))
-        self.btn_coma.setText(_translate("MainWindow", ","))
-        self.btn_9.setText(_translate("MainWindow", "9"))
         self.btn_3.setText(_translate("MainWindow", "3"))
+        self.btn_coma.setText(_translate("MainWindow", ","))
+        self.btn_6.setText(_translate("MainWindow", "6"))
+        self.btn_8.setText(_translate("MainWindow", "8"))
+        self.btn_1.setText(_translate("MainWindow", "1"))
         self.btn_dash.setText(_translate("MainWindow", "(-)"))
+        self.btn_7.setText(_translate("MainWindow", "7"))
+        self.btn_9.setText(_translate("MainWindow", "9"))
+        self.btn_underscore.setText(_translate("MainWindow", "_"))
+        self.btn_0.setText(_translate("MainWindow", "0"))
+        self.btn_5.setText(_translate("MainWindow", "5"))
+        self.btn_parens_open.setText(_translate("MainWindow", "("))
+        self.btn_4.setText(_translate("MainWindow", "4"))
         self.btn_back.setText(_translate("MainWindow", "Back"))
         self.btn_period.setText(_translate("MainWindow", "."))
         self.btn_xpower.setText(_translate("MainWindow", "x^2"))
@@ -784,30 +1288,38 @@ class Ui_MainWindow(object):
         self.comboBox.setItemText(1, _translate("MainWindow", "Metric Conversion"))
         self.comboBox.setItemText(2, _translate("MainWindow", "Temperature Conversion"))
         self.comboBox.setItemText(3, _translate("MainWindow", "Generate Numbers"))
-        self.radio_inDeci.setText(_translate("MainWindow", "Decimal"))
-        self.radio_inHex.setText(_translate("MainWindow", "Hex"))
-        self.radio_inChar.setText(_translate("MainWindow", "Char"))
         self.radio_outDeci.setText(_translate("MainWindow", "Decimal"))
         self.radio_outHex.setText(_translate("MainWindow", "Hex"))
         self.radio_outChar.setText(_translate("MainWindow", "Char"))
-        self.input_labelText.setText(_translate("MainWindow", "Input"))
-        self.output_labelText.setText(_translate("MainWindow", "Output"))
-        self.radio_inFeet.setText(_translate("MainWindow", "Feet"))
-        self.radio_inMeter.setText(_translate("MainWindow", "Meter"))
-        self.radio_InMiles.setText(_translate("MainWindow", "Miles"))
-        self.radio_inKilo.setText(_translate("MainWindow", "Kilometer"))
-        self.radio_outFeet.setText(_translate("MainWindow", "Feet"))
-        self.radio_outMeter.setText(_translate("MainWindow", "Meter"))
-        self.radio_outMiles.setText(_translate("MainWindow", "Miles"))
-        self.radio_outKilo.setText(_translate("MainWindow", "Kilometer"))
-        self.radio_fahr1.setText(_translate("MainWindow", "Fahrenheit"))
-        self.radio_cel1.setText(_translate("MainWindow", "Celcius"))
-        self.radio_kel1.setText(_translate("MainWindow", "Kelvin"))
-        self.radio_fahr2.setText(_translate("MainWindow", "Fahrenheit"))
-        self.radio_cel2.setText(_translate("MainWindow", "Celcius"))
-        self.radio_kel2.setText(_translate("MainWindow", "Kelvin"))
-        self.btn_primeNum.setText(_translate("MainWindow", "Prime Numbers"))
-        self.btn_perfectNum.setText(_translate("MainWindow", "Perfect Numbers"))
-        self.btn_randomNum.setText(_translate("MainWindow", "Random Numbers"))
-        self.label_From.setText(_translate("MainWindow", "FROM"))
-        self.label_To.setText(_translate("MainWindow", "To"))
+        self.radio_inDeci.setText(_translate("MainWindow", "Decimal"))
+        self.radio_inHex.setText(_translate("MainWindow", "Hex"))
+        self.radio_inChar.setText(_translate("MainWindow", "Char"))
+        self.enter_14.setText(_translate("MainWindow", "Go"))
+        self.radio_inFeet_4.setText(_translate("MainWindow", "Feet"))
+        self.radio_inMeter_4.setText(_translate("MainWindow", "Meter"))
+        self.radio_InMiles_4.setText(_translate("MainWindow", "Miles"))
+        self.radio_inKilo_4.setText(_translate("MainWindow", "Kilometer"))
+        self.radio_outFeet_4.setText(_translate("MainWindow", "Feet"))
+        self.radio_outMeter_4.setText(_translate("MainWindow", "Meter"))
+        self.radio_outMiles_4.setText(_translate("MainWindow", "Miles"))
+        self.radio_outKilo_4.setText(_translate("MainWindow", "Kilometer"))
+        self.enter_16.setText(_translate("MainWindow", "Go"))
+        self.radio_fahr2_2.setText(_translate("MainWindow", "Fahrenheit"))
+        self.radio_cel2_2.setText(_translate("MainWindow", "Celcius"))
+        self.radio_kel2_2.setText(_translate("MainWindow", "Kelvin"))
+        self.radio_fahr1_2.setText(_translate("MainWindow", "Fahrenheit"))
+        self.radio_cel1_2.setText(_translate("MainWindow", "Celcius"))
+        self.radio_kel1_2.setText(_translate("MainWindow", "Kelvin"))
+        self.enter_15.setText(_translate("MainWindow", "Go"))
+        self.label.setText(_translate("MainWindow", "Input"))
+        self.label_2.setText(_translate("MainWindow", "Output"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())

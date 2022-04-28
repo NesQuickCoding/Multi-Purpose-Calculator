@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1100</width>
-    <height>500</height>
+    <width>1200</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1100</width>
-    <height>500</height>
+    <width>1200</width>
+    <height>600</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>1200</width>
-    <height>500</height>
+    <height>600</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -29,16 +29,22 @@
    <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <property name="minimumSize">
     <size>
      <width>1200</width>
-     <height>500</height>
+     <height>600</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
      <width>1200</width>
-     <height>500</height>
+     <height>600</height>
     </size>
    </property>
    <property name="styleSheet">
@@ -49,20 +55,20 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1100</width>
-      <height>500</height>
+      <width>1200</width>
+      <height>600</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>1100</width>
-      <height>500</height>
+      <width>1200</width>
+      <height>600</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>1100</width>
-      <height>500</height>
+      <width>1200</width>
+      <height>600</height>
      </size>
     </property>
     <property name="styleSheet">
@@ -72,157 +78,18 @@
      <property name="geometry">
       <rect>
        <x>130</x>
-       <y>230</y>
+       <y>240</y>
        <width>293</width>
-       <height>251</height>
+       <height>331</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_3">
-      <item row="4" column="0">
-       <widget class="QPushButton" name="btn_0">
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>11</pointsize>
-          <weight>50</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-    background-color: black;
-	color: rgb(110, 255, 0);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: rgb(98, 255, 0);
-    font: 11pt Comic Sans MS, bold 14px;
-    min-width: 3em;
-    padding: 2px;
-}</string>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QPushButton" name="btn_8">
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>11</pointsize>
-          <weight>50</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-    background-color: black;
-	color: rgb(110, 255, 0);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: rgb(98, 255, 0);
-    font: 11pt Comic Sans MS, bold 14px;
-    min-width: 3em;
-    padding: 2px;
-}</string>
-        </property>
-        <property name="text">
-         <string>8</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="QPushButton" name="btn_underscore">
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>11</pointsize>
-          <weight>50</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-    background-color: black;
-	color: rgb(110, 255, 0);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: rgb(98, 255, 0);
-    font: 11pt Comic Sans MS, bold 14px;
-    min-width: 3em;
-    padding: 2px;
-}</string>
-        </property>
-        <property name="text">
-         <string>_</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QPushButton" name="btn_parens_open">
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>11</pointsize>
-          <weight>50</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-    background-color: black;
-	color: rgb(110, 255, 0);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: rgb(98, 255, 0);
-    font: 11pt Comic Sans MS, bold 14px;
-    min-width: 3em;
-    padding: 2px;
-}</string>
-        </property>
-        <property name="text">
-         <string>(</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="2">
-       <widget class="QPushButton" name="btn_6">
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>11</pointsize>
-          <weight>50</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-    background-color: black;
-	color: rgb(110, 255, 0);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: rgb(98, 255, 0);
-    font: 11pt Comic Sans MS, bold 14px;
-    min-width: 3em;
-    padding: 2px;
-}</string>
-        </property>
-        <property name="text">
-         <string>6</string>
-        </property>
-       </widget>
-      </item>
+      <property name="sizeConstraint">
+       <enum>QLayout::SetMinimumSize</enum>
+      </property>
+      <property name="verticalSpacing">
+       <number>3</number>
+      </property>
       <item row="3" column="1">
        <widget class="QPushButton" name="btn_2">
         <property name="font">
@@ -244,69 +111,17 @@
     border-color: rgb(98, 255, 0);
     font: 11pt Comic Sans MS, bold 14px;
     min-width: 3em;
+    max-width: 3em;
     padding: 2px;
-}</string>
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
         </property>
         <property name="text">
          <string>2</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QPushButton" name="btn_5">
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>11</pointsize>
-          <weight>50</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-    background-color: black;
-	color: rgb(110, 255, 0);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: rgb(98, 255, 0);
-    font: 11pt Comic Sans MS, bold 14px;
-    min-width: 3em;
-    padding: 2px;
-}</string>
-        </property>
-        <property name="text">
-         <string>5</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QPushButton" name="btn_7">
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>11</pointsize>
-          <weight>50</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-    background-color: black;
-	color: rgb(110, 255, 0);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: rgb(98, 255, 0);
-    font: 11pt Comic Sans MS, bold 14px;
-    min-width: 3em;
-    padding: 2px;
-}</string>
-        </property>
-        <property name="text">
-         <string>7</string>
         </property>
        </widget>
       </item>
@@ -331,127 +146,17 @@
     border-color: rgb(98, 255, 0);
     font: 11pt Comic Sans MS, bold 14px;
     min-width: 3em;
+    max-width: 3em;
     padding: 2px;
-}</string>
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
         </property>
         <property name="text">
          <string>)</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QPushButton" name="btn_1">
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>11</pointsize>
-          <weight>50</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-    background-color: black;
-	color: rgb(110, 255, 0);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: rgb(98, 255, 0);
-    font: 11pt Comic Sans MS, bold 14px;
-    min-width: 3em;
-    padding: 2px;
-}</string>
-        </property>
-        <property name="text">
-         <string>1</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QPushButton" name="btn_4">
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>11</pointsize>
-          <weight>50</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-    background-color: black;
-	color: rgb(110, 255, 0);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: rgb(98, 255, 0);
-    font: 11pt Comic Sans MS, bold 14px;
-    min-width: 3em;
-    padding: 2px;
-}</string>
-        </property>
-        <property name="text">
-         <string>4</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QPushButton" name="btn_coma">
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>11</pointsize>
-          <weight>50</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-    background-color: black;
-	color: rgb(110, 255, 0);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: rgb(98, 255, 0);
-    font: 11pt Comic Sans MS, bold 14px;
-    min-width: 3em;
-    padding: 2px;
-}</string>
-        </property>
-        <property name="text">
-         <string>,</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QPushButton" name="btn_9">
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>11</pointsize>
-          <weight>50</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-    background-color: black;
-	color: rgb(110, 255, 0);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: rgb(98, 255, 0);
-    font: 11pt Comic Sans MS, bold 14px;
-    min-width: 3em;
-    padding: 2px;
-}</string>
-        </property>
-        <property name="text">
-         <string>9</string>
         </property>
        </widget>
       </item>
@@ -476,11 +181,157 @@
     border-color: rgb(98, 255, 0);
     font: 11pt Comic Sans MS, bold 14px;
     min-width: 3em;
+    max-width: 3em;
     padding: 2px;
-}</string>
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
         </property>
         <property name="text">
          <string>3</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QPushButton" name="btn_coma">
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>11</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+    background-color: black;
+	color: rgb(110, 255, 0);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(98, 255, 0);
+    font: 11pt Comic Sans MS, bold 14px;
+    min-width: 3em;
+    max-width: 3em;
+    padding: 2px;
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>,</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPushButton" name="btn_6">
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>11</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+    background-color: black;
+	color: rgb(110, 255, 0);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(98, 255, 0);
+    font: 11pt Comic Sans MS, bold 14px;
+    min-width: 3em;
+    max-width: 3em;
+    padding: 2px;
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>6</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="btn_8">
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>11</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+    background-color: black;
+	color: rgb(110, 255, 0);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(98, 255, 0);
+    font: 11pt Comic Sans MS, bold 14px;
+    min-width: 3em;
+    max-width: 3em;
+    padding: 2px;
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>8</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="btn_1">
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>11</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+    background-color: black;
+	color: rgb(110, 255, 0);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(98, 255, 0);
+    font: 11pt Comic Sans MS, bold 14px;
+    min-width: 3em;
+    max-width: 3em;
+    padding: 2px;
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>1</string>
         </property>
        </widget>
       </item>
@@ -505,11 +356,268 @@
     border-color: rgb(98, 255, 0);
     font: 11pt Comic Sans MS, bold 14px;
     min-width: 3em;
+    max-width: 3em;
     padding: 2px;
-}</string>
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
         </property>
         <property name="text">
          <string>(-)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="btn_7">
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>11</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+    background-color: black;
+	color: rgb(110, 255, 0);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(98, 255, 0);
+    font: 11pt Comic Sans MS, bold 14px;
+    min-width: 3em;
+    max-width: 3em;
+    padding: 2px;
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>7</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="btn_9">
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>11</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+    background-color: black;
+	color: rgb(110, 255, 0);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(98, 255, 0);
+    font: 11pt Comic Sans MS, bold 14px;
+    min-width: 3em;
+    max-width: 3em;
+    padding: 2px;
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>9</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QPushButton" name="btn_underscore">
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>11</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+    background-color: black;
+	color: rgb(110, 255, 0);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(98, 255, 0);
+    font: 11pt Comic Sans MS, bold 14px;
+    min-width: 3em;
+    max-width: 3em;
+    padding: 2px;
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>_</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QPushButton" name="btn_0">
+        <property name="minimumSize">
+         <size>
+          <width>69</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>11</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+    background-color: black;
+	color: rgb(110, 255, 0);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(98, 255, 0);
+    font: 11pt Comic Sans MS, bold 14px;
+    min-width: 3em;
+    max-width: 3em;
+    padding: 2px;
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QPushButton" name="btn_5">
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>11</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+    background-color: black;
+	color: rgb(110, 255, 0);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(98, 255, 0);
+    font: 11pt Comic Sans MS, bold 14px;
+    min-width: 3em;
+    max-width: 3em;
+    padding: 2px;
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>5</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="btn_parens_open">
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>11</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+    background-color: black;
+	color: rgb(110, 255, 0);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(98, 255, 0);
+    font: 11pt Comic Sans MS, bold 14px;
+    min-width: 3em;
+    max-width: 3em;
+    padding: 2px;
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>(</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="btn_4">
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>11</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+    background-color: black;
+	color: rgb(110, 255, 0);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(98, 255, 0);
+    font: 11pt Comic Sans MS, bold 14px;
+    min-width: 3em;
+    max-width: 3em;
+    padding: 2px;
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>4</string>
         </property>
        </widget>
       </item>
@@ -519,9 +627,9 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>146</y>
-       <width>1101</width>
-       <height>4</height>
+       <y>160</y>
+       <width>1221</width>
+       <height>5</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -534,10 +642,10 @@
     <widget class="Line" name="line_Horizontal">
      <property name="geometry">
       <rect>
-       <x>556</x>
+       <x>600</x>
        <y>0</y>
-       <width>8</width>
-       <height>501</height>
+       <width>5</width>
+       <height>601</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -551,14 +659,14 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>170</y>
-       <width>77</width>
-       <height>291</height>
+       <y>240</y>
+       <width>95</width>
+       <height>331</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <property name="sizeConstraint">
-       <enum>QLayout::SetFixedSize</enum>
+       <enum>QLayout::SetMinimumSize</enum>
       </property>
       <item>
        <widget class="QPushButton" name="btn_back">
@@ -581,8 +689,14 @@
     border-color: rgb(98, 255, 0);
     font: 11pt Comic Sans MS, bold 14px;
     min-width: 3em;
+    max-width: 3em;
     padding: 2px;
-}</string>
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
         </property>
         <property name="text">
          <string>Back</string>
@@ -610,8 +724,14 @@
     border-color: rgb(98, 255, 0);
     font: 11pt Comic Sans MS, bold 14px;
     min-width: 3em;
+    max-width: 3em;
     padding: 2px;
-}</string>
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
         </property>
         <property name="text">
          <string>.</string>
@@ -639,8 +759,14 @@
     border-color: rgb(98, 255, 0);
     font: 11pt Comic Sans MS, bold 14px;
     min-width: 3em;
+    max-width: 3em;
     padding: 2px;
-}</string>
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
         </property>
         <property name="text">
          <string>x^2</string>
@@ -668,8 +794,14 @@
     border-color: rgb(98, 255, 0);
     font: 11pt Comic Sans MS, bold 14px;
     min-width: 3em;
+    max-width: 3em;
     padding: 2px;
-}</string>
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
         </property>
         <property name="text">
          <string>log</string>
@@ -697,8 +829,14 @@
     border-color: rgb(98, 255, 0);
     font: 11pt Comic Sans MS, bold 14px;
     min-width: 3em;
+    max-width: 3em;
     padding: 2px;
-}</string>
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
         </property>
         <property name="text">
          <string>mod</string>
@@ -726,8 +864,14 @@
     border-color: rgb(98, 255, 0);
     font: 11pt Comic Sans MS, bold 14px;
     min-width: 3em;
+    max-width: 3em;
     padding: 2px;
-}</string>
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
         </property>
         <property name="text">
          <string>Clear</string>
@@ -740,14 +884,14 @@
      <property name="geometry">
       <rect>
        <x>450</x>
-       <y>170</y>
-       <width>81</width>
-       <height>321</height>
+       <y>240</y>
+       <width>95</width>
+       <height>331</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <property name="sizeConstraint">
-       <enum>QLayout::SetFixedSize</enum>
+       <enum>QLayout::SetMinimumSize</enum>
       </property>
       <item>
        <widget class="QPushButton" name="btn_powerUp">
@@ -770,8 +914,14 @@
     border-color: rgb(98, 255, 0);
     font: 11pt Comic Sans MS, bold 14px;
     min-width: 3em;
+    max-width: 3em;
     padding: 2px;
-}</string>
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
         </property>
         <property name="text">
          <string>^</string>
@@ -799,8 +949,14 @@
     border-color: rgb(98, 255, 0);
     font: 11pt Comic Sans MS, bold 14px;
     min-width: 3em;
+    max-width: 3em;
     padding: 2px;
-}</string>
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
         </property>
         <property name="text">
          <string>/</string>
@@ -828,8 +984,14 @@
     border-color: rgb(98, 255, 0);
     font: 11pt Comic Sans MS, bold 14px;
     min-width: 3em;
+    max-width: 3em;
     padding: 2px;
-}</string>
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
         </property>
         <property name="text">
          <string>x</string>
@@ -857,8 +1019,14 @@
     border-color: rgb(98, 255, 0);
     font: 11pt Comic Sans MS, bold 14px;
     min-width: 3em;
+    max-width: 3em;
     padding: 2px;
-}</string>
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
         </property>
         <property name="text">
          <string>-</string>
@@ -886,8 +1054,14 @@
     border-color: rgb(98, 255, 0);
     font: 11pt Comic Sans MS, bold 14px;
     min-width: 3em;
+    max-width: 3em;
     padding: 2px;
-}</string>
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
         </property>
         <property name="text">
          <string>+</string>
@@ -915,8 +1089,14 @@
     border-color: rgb(98, 255, 0);
     font: 11pt Comic Sans MS, bold 14px;
     min-width: 3em;
+    max-width: 3em;
     padding: 2px;
-}</string>
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
         </property>
         <property name="text">
          <string>Enter</string>
@@ -951,7 +1131,7 @@ color: rgb(55, 255, 0);</string>
      <property name="geometry">
       <rect>
        <x>130</x>
-       <y>180</y>
+       <y>190</y>
        <width>291</width>
        <height>31</height>
       </rect>
@@ -962,7 +1142,7 @@ color: rgb(55, 255, 0);</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 0, 0);
+      <string notr="true">
 color: rgb(55, 255, 0);
     border-style: outset;
     border-width: 1px;
@@ -990,706 +1170,17 @@ color: rgb(55, 255, 0);
       </property>
      </item>
     </widget>
-    <widget class="QStackedWidget" name="stackedWidget">
-     <property name="geometry">
-      <rect>
-       <x>570</x>
-       <y>170</y>
-       <width>521</width>
-       <height>331</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-</string>
-     </property>
-     <property name="currentIndex">
-      <number>1</number>
-     </property>
-     <widget class="QWidget" name="page_blank"/>
-     <widget class="QWidget" name="page_ASCII">
-      <widget class="QWidget" name="verticalLayoutWidget_6">
-       <property name="geometry">
-        <rect>
-         <x>280</x>
-         <y>40</y>
-         <width>211</width>
-         <height>171</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_6">
-        <item>
-         <widget class="QRadioButton" name="radio_outDeci">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Decimal</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="radio_outHex">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Hex</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="radio_outChar">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Char</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QPushButton" name="btn_go">
-       <property name="geometry">
-        <rect>
-         <x>200</x>
-         <y>410</y>
-         <width>81</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">image: url(:/Background/Ben10.png);</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-      <widget class="QWidget" name="verticalLayoutWidget_7">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>40</y>
-         <width>211</width>
-         <height>171</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_12">
-        <item>
-         <widget class="QRadioButton" name="radio_inDeci">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Decimal</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="radio_inHex">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Hex</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="radio_inChar">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Char</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QPushButton" name="enter_14">
-       <property name="geometry">
-        <rect>
-         <x>200</x>
-         <y>250</y>
-         <width>81</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Comic Sans MS</family>
-         <pointsize>11</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
-    background-color: black;
-	color: rgb(110, 255, 0);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: rgb(98, 255, 0);
-    font: 11pt Comic Sans MS, bold 14px;
-    min-width: 3em;
-    padding: 2px;
-}</string>
-       </property>
-       <property name="text">
-        <string>Go</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="page_metric">
-      <widget class="QWidget" name="verticalLayoutWidget_19">
-       <property name="geometry">
-        <rect>
-         <x>50</x>
-         <y>30</y>
-         <width>161</width>
-         <height>221</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_19">
-        <item>
-         <widget class="QRadioButton" name="radio_inFeet_4">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Feet</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="radio_inMeter_4">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Meter</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="radio_InMiles_4">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Miles</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="radio_inKilo_4">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Kilometer</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="verticalLayoutWidget_20">
-       <property name="geometry">
-        <rect>
-         <x>270</x>
-         <y>30</y>
-         <width>161</width>
-         <height>221</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_20">
-        <item>
-         <widget class="QRadioButton" name="radio_outFeet_4">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Feet</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="radio_outMeter_4">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Meter</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="radio_outMiles_4">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Miles</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="radio_outKilo_4">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Kilometer</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QPushButton" name="enter_16">
-       <property name="geometry">
-        <rect>
-         <x>200</x>
-         <y>250</y>
-         <width>81</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Comic Sans MS</family>
-         <pointsize>11</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
-    background-color: black;
-	color: rgb(110, 255, 0);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: rgb(98, 255, 0);
-    font: 11pt Comic Sans MS, bold 14px;
-    min-width: 3em;
-    padding: 2px;
-}</string>
-       </property>
-       <property name="text">
-        <string>Go</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="page_temper">
-      <widget class="QWidget" name="verticalLayoutWidget_10">
-       <property name="geometry">
-        <rect>
-         <x>260</x>
-         <y>10</y>
-         <width>171</width>
-         <height>221</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_10">
-        <item>
-         <widget class="QRadioButton" name="radio_fahr2_2">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Fahrenheit</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="radio_cel2_2">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Celcius</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="radio_kel2_2">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Kelvin</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="verticalLayoutWidget_11">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>10</y>
-         <width>171</width>
-         <height>221</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_11">
-        <item>
-         <widget class="QRadioButton" name="radio_fahr1_2">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Fahrenheit</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="radio_cel1_2">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Celcius</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="radio_kel1_2">
-          <property name="font">
-           <font>
-            <family>Comic Sans MS</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-          </property>
-          <property name="text">
-           <string>Kelvin</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QPushButton" name="enter_15">
-       <property name="geometry">
-        <rect>
-         <x>200</x>
-         <y>250</y>
-         <width>81</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Comic Sans MS</family>
-         <pointsize>11</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
-    background-color: black;
-	color: rgb(110, 255, 0);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: rgb(98, 255, 0);
-    font: 11pt Comic Sans MS, bold 14px;
-    min-width: 3em;
-    padding: 2px;
-}</string>
-       </property>
-       <property name="text">
-        <string>Go</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="page_generate"/>
-    </widget>
-    <widget class="QLabel" name="input_labelText_3">
-     <property name="geometry">
-      <rect>
-       <x>610</x>
-       <y>100</y>
-       <width>101</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Comic Sans MS</family>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QLabel {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-     </property>
-     <property name="text">
-      <string>Input</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="output_labelText_3">
-     <property name="geometry">
-      <rect>
-       <x>830</x>
-       <y>100</y>
-       <width>101</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Comic Sans MS</family>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QLabel {background-color: transparent; color: rgb(55, 255, 0)};
-</string>
-     </property>
-     <property name="text">
-      <string>Output</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="conv_labelIn">
-     <property name="geometry">
-      <rect>
-       <x>610</x>
-       <y>40</y>
-       <width>181</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="conv_labelOut">
-     <property name="geometry">
-      <rect>
-       <x>830</x>
-       <y>40</y>
-       <width>181</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QFrame" name="frame">
      <property name="geometry">
       <rect>
-       <x>560</x>
-       <y>0</y>
+       <x>640</x>
+       <y>210</y>
        <width>541</width>
        <height>501</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QFrame#frame{
-border-image: url(:/Background/vtec-calculator.png);
-}</string>
+      <string notr="true"/>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -1697,136 +1188,768 @@ border-image: url(:/Background/vtec-calculator.png);
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QFrame" name="frame_2">
+     <widget class="QStackedWidget" name="stackedWidget">
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>30</y>
-        <width>491</width>
-        <height>141</height>
+        <y>0</y>
+        <width>461</width>
+        <height>311</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
+      <property name="currentIndex">
+       <number>1</number>
       </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QLabel" name="output_Cal_2">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>20</y>
-         <width>211</width>
-         <height>61</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(48, 48, 48);
-color: rgb(55, 255, 0);</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
+      <widget class="QWidget" name="page_blank"/>
+      <widget class="QWidget" name="page_ASCII">
+       <widget class="QWidget" name="verticalLayoutWidget_6">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>40</y>
+          <width>211</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="QRadioButton" name="radio_outDeci">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Decimal</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_outHex">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Hex</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_outChar">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Char</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QPushButton" name="btn_go">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>410</y>
+          <width>69</width>
+          <height>48</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/Background/Ben10.png);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_7">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>40</y>
+          <width>211</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_12">
+         <item>
+          <widget class="QRadioButton" name="radio_inDeci">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Decimal</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_inHex">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Hex</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_inChar">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Char</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QPushButton" name="enter_14">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>250</y>
+          <width>69</width>
+          <height>48</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>11</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+    background-color: black;
+	color: rgb(110, 255, 0);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(98, 255, 0);
+    font: 11pt Comic Sans MS, bold 14px;
+    min-width: 3em;
+    max-width: 3em;
+    padding: 2px;
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Go</string>
+        </property>
+       </widget>
       </widget>
-      <widget class="QLabel" name="output_Cal_3">
-       <property name="geometry">
-        <rect>
-         <x>260</x>
-         <y>20</y>
-         <width>211</width>
-         <height>61</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(48, 48, 48);
-color: rgb(55, 255, 0);</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
+      <widget class="QWidget" name="page_metric">
+       <widget class="QWidget" name="verticalLayoutWidget_19">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>30</y>
+          <width>161</width>
+          <height>221</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_19">
+         <item>
+          <widget class="QRadioButton" name="radio_inFeet_4">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Feet</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_inMeter_4">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Meter</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_InMiles_4">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Miles</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_inKilo_4">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Kilometer</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_20">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>30</y>
+          <width>161</width>
+          <height>221</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_20">
+         <item>
+          <widget class="QRadioButton" name="radio_outFeet_4">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Feet</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_outMeter_4">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Meter</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_outMiles_4">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Miles</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_outKilo_4">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Kilometer</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QPushButton" name="enter_16">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>250</y>
+          <width>69</width>
+          <height>48</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>11</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+    background-color: black;
+	color: rgb(110, 255, 0);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(98, 255, 0);
+    font: 11pt Comic Sans MS, bold 14px;
+    min-width: 3em;
+    max-width: 3em;
+    padding: 2px;
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Go</string>
+        </property>
+       </widget>
       </widget>
-      <widget class="QLabel" name="label">
-       <property name="geometry">
-        <rect>
-         <x>70</x>
-         <y>90</y>
-         <width>121</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(34, 255, 0);</string>
-       </property>
-       <property name="text">
-        <string>Input</string>
-       </property>
+      <widget class="QWidget" name="page_temper">
+       <widget class="QWidget" name="verticalLayoutWidget_10">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>10</y>
+          <width>171</width>
+          <height>221</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_10">
+         <item>
+          <widget class="QRadioButton" name="radio_fahr2_2">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Fahrenheit</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_cel2_2">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Celcius</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_kel2_2">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Kelvin</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_11">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>10</y>
+          <width>171</width>
+          <height>221</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_11">
+         <item>
+          <widget class="QRadioButton" name="radio_fahr1_2">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Fahrenheit</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_cel1_2">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Celcius</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_kel1_2">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QRadioButton {background-color: transparent; color: rgb(55, 255, 0)};
+</string>
+           </property>
+           <property name="text">
+            <string>Kelvin</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QPushButton" name="enter_15">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>250</y>
+          <width>69</width>
+          <height>48</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>11</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+    background-color: black;
+	color: rgb(110, 255, 0);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(98, 255, 0);
+    font: 11pt Comic Sans MS, bold 14px;
+    min-width: 3em;
+    max-width: 3em;
+    padding: 2px;
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Go</string>
+        </property>
+       </widget>
       </widget>
-      <widget class="QLabel" name="label_2">
-       <property name="geometry">
-        <rect>
-         <x>320</x>
-         <y>90</y>
-         <width>121</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(34, 255, 0);</string>
-       </property>
-       <property name="text">
-        <string>Output</string>
-       </property>
-      </widget>
+      <widget class="QWidget" name="page_generate"/>
      </widget>
     </widget>
+    <widget class="QFrame" name="frame_2">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>30</y>
+       <width>491</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="output_Cal_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>20</y>
+        <width>211</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(48, 48, 48);
+color: rgb(55, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="output_Cal_3">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>20</y>
+        <width>211</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(48, 48, 48);
+color: rgb(55, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>90</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(34, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string>Input</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>90</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(34, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string>Output</string>
+      </property>
+     </widget>
+    </widget>
+    <zorder>frame_2</zorder>
     <zorder>gridLayoutWidget_2</zorder>
     <zorder>verticalLayoutWidget</zorder>
     <zorder>verticalLayoutWidget_2</zorder>
     <zorder>output_Cal</zorder>
     <zorder>comboBox</zorder>
-    <zorder>line_Vertical</zorder>
     <zorder>line_Horizontal</zorder>
-    <zorder>input_labelText_3</zorder>
-    <zorder>output_labelText_3</zorder>
-    <zorder>conv_labelIn</zorder>
-    <zorder>conv_labelOut</zorder>
     <zorder>frame</zorder>
-    <zorder>stackedWidget</zorder>
+    <zorder>line_Vertical</zorder>
    </widget>
   </widget>
  </widget>
- <resources>
-  <include location="graphics/TestBack.qrc"/>
- </resources>
+ <resources/>
  <connections>
+  <connection>
+   <sender>btn_enter</sender>
+   <signal>clicked()</signal>
+   <receiver>output_Cal</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>458</x>
+     <y>488</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>86</y>
+    </hint>
+   </hints>
+  </connection>
   <connection>
    <sender>btn_clear</sender>
    <signal>clicked()</signal>
@@ -1840,22 +1963,6 @@ color: rgb(55, 255, 0);</string>
     <hint type="destinationlabel">
      <x>235</x>
      <y>75</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_enter</sender>
-   <signal>clicked()</signal>
-   <receiver>output_Cal</receiver>
-   <slot>update()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>457</x>
-     <y>434</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>336</x>
-     <y>86</y>
     </hint>
    </hints>
   </connection>

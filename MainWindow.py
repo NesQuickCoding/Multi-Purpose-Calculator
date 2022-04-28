@@ -10,6 +10,8 @@ class MainWindow:
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self.main_win)
 
+
+
         # Signal
 
 
