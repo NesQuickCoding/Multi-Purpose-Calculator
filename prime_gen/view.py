@@ -79,7 +79,7 @@ class PrimeGenUi(QMainWindow):
         self.rangeGenButton.setFixedSize(80, 26)
         buttonLayout.addWidget(self.rangeGenButton, alignment=Qt.AlignCenter)
 
-        self.rangeGenCopy = QPushButton("Copy")
+        self.rangeGenCopy = QPushButton("Copy All")
         self.rangeGenCopy.setFixedSize(70, 26)
         buttonLayout.addWidget(self.rangeGenCopy, alignment=Qt.AlignCenter)
 

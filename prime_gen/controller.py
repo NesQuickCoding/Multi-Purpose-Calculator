@@ -7,7 +7,7 @@ class PrimeGenControl:
         self._connectRangeSignals()
  
     def _generateRange(self):
-        if int(self._view.rangeInput.text()):
+        if self._view.rangeInput.text():
             self._view.setRangeOutput("Calculating....")
             self._view.setRangeOutput(str(self._rangeGen(int(self._view.rangeInput.text())))[1:-1])
         else:
