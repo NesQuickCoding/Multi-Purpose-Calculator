@@ -1,3 +1,4 @@
+import random
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtWidgets import QScrollArea
@@ -40,17 +41,24 @@ class PrimeGenUi(QMainWindow):
         self.setCentralWidget(self._centralWidget)
         self._centralWidget.setLayout((self.generalLayout))
 
-        self._CreateHeader()
+        self._CreateRangeHeader()
         self._CreateRangeInput()
         self._CreateRangeButtons()
         self.primeRangeOutput = ScrollLabel()
         self.generalLayout.addWidget(self.primeRangeOutput)
-    
-    def _CreateHeader(self):
-        self.header = QLabel("Enter a number from 1 to 1000000")
-        self.header.setAlignment(Qt.AlignCenter)
-        self.header.setFont(QFont('Arial', 14))
-        self.generalLayout.addWidget(self.header)
+
+        self._CreateRandomHeader()
+        self._CreateRandomInput()
+        self._CreateRandomButtons()
+        self.randomNumOutput = ScrollLabel()
+        self.generalLayout.addWidget(self.randomNumOutput)
+
+# ------------- Range ---------------------------   
+    def _CreateRangeHeader(self):
+        self.rangeHeader = QLabel("Enter a number from 1 to 1000000")
+        self.rangeHeader.setAlignment(Qt.AlignCenter)
+        self.rangeHeader.setFont(QFont('Arial', 14))
+        self.generalLayout.addWidget(self.rangeHeader)
 
     def _CreateRangeInput(self):
         self.rangeInput = QLineEdit()
@@ -90,3 +98,63 @@ class PrimeGenUi(QMainWindow):
 
     def clearRangeOutput(self):
         self.setRangeOutput("")
+# ------------------------------------------------------
+
+# ------------- Random Nums ---------------------------   
+    def _CreateRandomHeader(self):
+        self.randomHeader = QLabel("Random Text")
+        self.randomHeader.setAlignment(Qt.AlignCenter)
+        self.randomHeader.setFont(QFont('Arial', 14))
+        self.generalLayout.addWidget(self.randomHeader)
+
+    def _CreateRandomInput(self):
+        randomLayout = QHBoxLayout()
+        
+        self.randomDigitLabel = QLabel("How Many Digits")
+        self.randomDigitInput = QLineEdit()
+        self.randomAmountLabel = QLabel("How Many Numbers")
+        self.randomAmountInput = QLineEdit()
+
+        randomLayout.addWidget(self.randomDigitLabel)
+        randomLayout.addWidget(self.randomDigitInput)
+        randomLayout.addWidget(self.randomAmountLabel)
+        randomLayout.addWidget(self.randomAmountInput)
+
+        # self.randomInput.setFont(QFont('Arial', 14))
+        # self.randomInput.setValidator(QIntValidator(1, 1000000))
+        # self.randomInput.setFixedHeight(26)
+        # self.randomInput.setAlignment(Qt.AlignLeft)
+        # self.randomInput.setReadOnly(False)
+        # self.randomInput.setClearButtonEnabled(True)
+        # self.randomInput.setMaxLength(7)
+
+        self.generalLayout.addLayout(randomLayout)
+
+    def _CreateRandomButtons(self):
+        buttonLayout = QHBoxLayout()
+        buttonLayout.setAlignment(Qt.AlignCenter)
+
+        self.randomGenButton = QPushButton("Generate")
+        self.randomGenButton.setFixedSize(80, 26)
+        buttonLayout.addWidget(self.randomGenButton, alignment=Qt.AlignCenter)
+
+        self.randomGenCopy = QPushButton("Copy")
+        self.randomGenCopy.setFixedSize(70, 26)
+        buttonLayout.addWidget(self.randomGenCopy, alignment=Qt.AlignCenter)
+
+        self.randomGenClear = QPushButton("Clear")
+        self.randomGenClear.setFixedSize(70, 26)
+        buttonLayout.addWidget(self.randomGenClear, alignment=Qt.AlignCenter)
+    
+        self.generalLayout.addLayout(buttonLayout)
+
+    def setRandomOutput(self, text):
+        self.randomNumOutput.setText(text)
+        self.randomNumOutput.setFocus()
+
+    def getRandomOutput(self):
+        return self.randomNumOutput.text()
+
+    def clearRandomOutput(self):
+        self.setRandomOutput("")
+# ------------------------------------------------------
