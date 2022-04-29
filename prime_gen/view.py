@@ -1,4 +1,3 @@
-import random
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtWidgets import QScrollArea

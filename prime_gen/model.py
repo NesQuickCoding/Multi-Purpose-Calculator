@@ -49,28 +49,22 @@ def range_1_n(limit : int):
         # Comparing the square of y prevents useless loops that would fail
         while y * y <= limit:       
             # Condition 1:
-            # for all solutions where the remainder of n = 4x^2 + y^2 modulo 60 is 
-            # 1, 13, 17, 29, 37, 41, 49, and 53
+            # remainder of n = 4x^2 + y^2 modulo 60 is 1, 13, 17, 29, 37, 41, 49, and 53
             # and where x is all numbers and y is odd
-            # label that number as potentionally prime
             n = (4 * x * x) + (y * y)
             if n <= limit and y % 2 == 1 and n % 60 in [1, 13, 17, 29, 37, 41, 49, 53]:
                 potentials[n - 1][1] = True
             
             # Condition 2:
-            # for all solutions where the remainder of n = 3x^2 + y^2 modulo 60 is 
-            # 7, 19, 31, 43
+            # remainder of n = 3x^2 + y^2 modulo 60 is 7, 19, 31, 43
             # and where x is odd and y is even
-            # label that number as potentionally prime
             n = (3 * x * x) + (y * y)
             if n <= limit and x % 2 == 1 and y % 2 == 0 and n % 60 in [7, 19, 31, 43]:
                 potentials[n - 1][1] = True
             
             # Condition 3:
-            # for all solutions where the remainder of n = 3x^2 - y^2 modulo 60 is 
-            # 11, 23, 47, 59
+            # remainder of n = 3x^2 - y^2 modulo 60 is 11, 23, 47, 59
             # and where x and y is an even/odd or odd/even combo
-            # label that number as potentionally prime
             n = (3 * x * x) - (y * y)
             if x > y and n <= limit and y % 2 == (x - 1) % 2 and n % 60 in [11, 23, 47, 59]:
                 potentials[n - 1][1] = True
@@ -112,11 +106,7 @@ def is_prime(n : int):
     
     # Loop through integer i, starting at 2 and up until the square
     # of i is greater than the value of n
-    # If n is divisable by i, that means n is a perfect square
-    # and is not a prime number.
-    # Otherwise, the number is prime
-    # Note: while when n = 2 or n = 3 technically never enter the loop
-    # they are prime numbers and will return true
+    # If n is divisable by i, n is not a prime number.
     i = 2
     while i * i <= n:
         if n % i == 0:
