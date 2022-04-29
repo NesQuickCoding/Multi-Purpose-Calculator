@@ -16,8 +16,8 @@ class PrimeGenControl:
         else:
             self._view.setRangeOutput("Please enter a value")
     
-    def _copyRange(self):
-        QApplication.clipboard().setText(self._view.getRangeOutput())
+    def _copyAll(self, getFunction):
+        QApplication.clipboard().setText(getFunction())
     
     def _checkInputBounds(self, inputLabel, minValue, maxValue):
         if inputLabel.text():
@@ -36,9 +36,11 @@ class PrimeGenControl:
     def _connectRangeSignals(self):
         self._view.rangeInput.textChanged.connect(partial(self._checkInputBounds, self._view.rangeInput, 0, 1000000))
         self._view.rangeGenButton.clicked.connect(self._generateRange)
-        self._view.rangeGenCopy.clicked.connect(self._copyRange)
+        self._view.rangeGenCopy.clicked.connect(partial(self._copyAll, self._view.getRangeOutput))
         self._view.rangeGenClear.clicked.connect(self._view.clearRangeOutput)
         # ----
         self._view.randomDigitInput.textChanged.connect(partial(self._checkInputBounds, self._view.randomDigitInput, 0, 12))
         self._view.randomAmountInput.textChanged.connect(partial(self._checkInputBounds, self._view.randomAmountInput, 0, 50))
         self._view.randomGenButton.clicked.connect(self._generateRandom)
+        self._view.randomGenCopy.clicked.connect(partial(self._copyAll, self._view.getRandomOutput))
+        self._view.randomGenClear.clicked.connect(self._view.clearRandomOutput)

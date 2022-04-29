@@ -101,7 +101,7 @@ class PrimeGenUi(QMainWindow):
 
 # ------------- Random Nums ---------------------------   
     def _CreateRandomHeader(self):
-        self.randomHeader = QLabel("Random Text")
+        self.randomHeader = QLabel("Random Prime Numbers with Digit Length")
         self.randomHeader.setAlignment(Qt.AlignCenter)
         self.randomHeader.setFont(QFont('Arial', 14))
         self.generalLayout.addWidget(self.randomHeader)
@@ -109,23 +109,25 @@ class PrimeGenUi(QMainWindow):
     def _CreateRandomInput(self):
         randomLayout = QHBoxLayout()
         
-        self.randomDigitLabel = QLabel("How Many Digits")
+        self.randomDigitLabel = QLabel("Amount of Digits (1-12)")
         self.randomDigitInput = QLineEdit()
-        self.randomAmountLabel = QLabel("How Many Numbers")
+        self.randomAmountLabel = QLabel("Amount of Numbers (1-50)")
         self.randomAmountInput = QLineEdit()
+
+        self.randomDigitInput.setValidator(QIntValidator(1, 12))
+        self.randomDigitInput.setFixedWidth(50)
+        self.randomDigitInput.setClearButtonEnabled(True)
+        self.randomDigitInput.setMaxLength(2)
+
+        self.randomAmountInput.setValidator(QIntValidator(1, 12))
+        self.randomAmountInput.setFixedWidth(50)
+        self.randomAmountInput.setClearButtonEnabled(True)
+        self.randomAmountInput.setMaxLength(2)
 
         randomLayout.addWidget(self.randomDigitLabel)
         randomLayout.addWidget(self.randomDigitInput)
         randomLayout.addWidget(self.randomAmountLabel)
         randomLayout.addWidget(self.randomAmountInput)
-
-        # self.randomInput.setFont(QFont('Arial', 14))
-        # self.randomInput.setValidator(QIntValidator(1, 1000000))
-        # self.randomInput.setFixedHeight(26)
-        # self.randomInput.setAlignment(Qt.AlignLeft)
-        # self.randomInput.setReadOnly(False)
-        # self.randomInput.setClearButtonEnabled(True)
-        # self.randomInput.setMaxLength(7)
 
         self.generalLayout.addLayout(randomLayout)
 
@@ -137,7 +139,7 @@ class PrimeGenUi(QMainWindow):
         self.randomGenButton.setFixedSize(80, 26)
         buttonLayout.addWidget(self.randomGenButton, alignment=Qt.AlignCenter)
 
-        self.randomGenCopy = QPushButton("Copy")
+        self.randomGenCopy = QPushButton("Copy All")
         self.randomGenCopy.setFixedSize(70, 26)
         buttonLayout.addWidget(self.randomGenCopy, alignment=Qt.AlignCenter)
 
