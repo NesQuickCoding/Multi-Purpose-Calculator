@@ -1,0 +1,66 @@
+/* External Stylesheet*/
+
+
+/************************* For the Widget  **************************/ 
+
+QWidget {
+    background-color: rgb(0, 0, 0);
+}
+
+
+
+/************************* For the Labels  **************************/ 
+
+QLabel {
+    color: lime;
+}
+
+
+/************************* For the Push Buttons  **************************/ 
+
+QPushButton{
+    background-color: black;
+	color: lime;
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: lime;
+    font: 11pt Comic Sans MS, bold 14px;
+    min-width: 3em;
+    max-width: 3em;
+	min-height: 2em;
+	max-height: 2em;
+    padding: 2px;
+}
+
+QPushButton:pressed{
+   background-color : green;
+}
+
+/************************* For the Push Buttons  **************************/ 
+
+QComboBox{
+
+    color: rgb(55, 255, 0);
+        border-style: outset;
+        border-width: 1px;
+        border-radius: 4px;
+        border-color: rgb(98, 255, 0);
+    }
+    
+QComboBox:hover {
+    background: green;
+    font: lime;
+}
+
+/************************* For the Radio Buttons  **************************/ 
+QRadioButton {background-color: transparent; color: lime};
+
+
+
+
+
+
+
+
+
