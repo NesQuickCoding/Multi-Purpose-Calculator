@@ -3,9 +3,13 @@ from PyQt5.QtWidgets import QWidget
 from PyQt5.QtWidgets import QScrollArea
 from PyQt5.QtWidgets import QLabel
 from PyQt5.QtGui import QFont
-from PyQt5.QtGui import QIntValidator
+from PyQt5.QtGui import QIntValidator, QRegExpValidator
+
+from PyQt5.QtSvg import QSvgWidget, QSvgRenderer
 
 from PyQt5.QtCore import Qt
+from PyQt5.QtCore import QRegExp
+
 from PyQt5.QtWidgets import QLineEdit
 from PyQt5.QtWidgets import QPushButton
 from PyQt5.QtWidgets import QVBoxLayout
@@ -51,6 +55,12 @@ class PrimeGenUi(QMainWindow):
         self._CreateRandomButtons()
         self.randomNumOutput = ScrollLabel()
         self.generalLayout.addWidget(self.randomNumOutput)
+
+        self._CreateIsPrimeHeader()
+        isPrimeLayout = QHBoxLayout()
+        isPrimeLayout.addLayout(self._CreateIsPrimeInput())
+        isPrimeLayout.addLayout(self._CreateIsPrimeOutput())
+        self.generalLayout.addLayout(isPrimeLayout)
 
 # ------------- Range ---------------------------   
     def _CreateRangeHeader(self):
@@ -159,3 +169,33 @@ class PrimeGenUi(QMainWindow):
     def clearRandomOutput(self):
         self.setRandomOutput("")
 # ------------------------------------------------------
+# ----------------- Is Prime ---------------------------  
+
+    def _CreateIsPrimeHeader(self):
+        self.isPrimeHeader = QLabel("Prime Number Validator")
+        self.isPrimeHeader.setAlignment(Qt.AlignCenter)
+        self.isPrimeHeader.setFont(QFont('Arial', 14))
+        self.generalLayout.addWidget(self.isPrimeHeader)
+    
+    def _CreateIsPrimeInput(self):
+        layout = QVBoxLayout()
+        self.isPrimeLabel = QLabel("Enter a number")
+        self.isPrimeInput = QLineEdit()
+        self.isPrimeInput.setFont(QFont('Arial', 14))
+        self.isPrimeInput.setFixedHeight(26)
+        self.isPrimeInput.setAlignment(Qt.AlignLeft)
+        self.isPrimeInput.setClearButtonEnabled(True)
+        self.isPrimeInput.setValidator(QRegExpValidator(QRegExp("[0-9]{16}")))
+        self.isPrimeButton = QPushButton("Check")
+        layout.addWidget(self.isPrimeLabel)
+        layout.addWidget(self.isPrimeInput)
+        layout.addWidget(self.isPrimeButton)
+        return layout
+    
+    def _CreateIsPrimeOutput(self):
+        layout = QHBoxLayout()
+        self.isPrimeIcon = QSvgWidget()
+        self.isPrimeText = QLabel()
+        layout.addWidget(self.isPrimeIcon)
+        layout.addWidget(self.isPrimeText)
+        return layout
