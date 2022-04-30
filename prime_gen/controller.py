@@ -43,7 +43,11 @@ class PrimeGenControl:
                 self._view.isPrimeIcon.renderer().load("assets/cancel.svg")
                 self._view.isPrimeText.setText("Is Not Prime!")
         else:
-            self._view.isPrimeText.setText("Please enter a value")
+            self._view.isPrimeText.setText("Enter A\nNumber")
+    
+    def _clearIcon(self):
+        self._view.isPrimeIcon.renderer().load('')
+        self._view.isPrimeText.setText('')
 
 #------
     def _connectRangeSignals(self):
@@ -59,4 +63,5 @@ class PrimeGenControl:
         self._view.randomGenClear.clicked.connect(self._view.clearRandomOutput)
         # ----
         self._view.isPrimeInput.textChanged.connect(partial(self._checkInputBounds, self._view.isPrimeInput, 0, 9999999999999999))
+        self._view.isPrimeInput.textChanged.connect(self._clearIcon)
         self._view.isPrimeButton.clicked.connect(self._IsPrimeCheck)

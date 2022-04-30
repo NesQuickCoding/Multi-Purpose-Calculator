@@ -198,8 +198,11 @@ class PrimeGenUi(QMainWindow):
         layout = QVBoxLayout()
         self.isPrimeIcon = QSvgWidget()
         self.isPrimeIcon.setFixedSize(60, 60)
+        self.isPrimeIcon.setStyleSheet("text-align: center;")
         self.isPrimeText = QLabel()
         self.isPrimeText.setFont(QFont('Arial', 14))
-        layout.addWidget(self.isPrimeIcon)
-        layout.addWidget(self.isPrimeText)
+        self.isPrimeText.setFixedWidth(120)
+        self.isPrimeText.setAlignment(Qt.AlignCenter)
+        layout.addWidget(self.isPrimeIcon, 0, Qt.AlignCenter)
+        layout.addWidget(self.isPrimeText, 0, Qt.AlignCenter)
         return layout
