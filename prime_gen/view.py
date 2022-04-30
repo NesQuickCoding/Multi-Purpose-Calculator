@@ -187,15 +187,19 @@ class PrimeGenUi(QMainWindow):
         self.isPrimeInput.setClearButtonEnabled(True)
         self.isPrimeInput.setValidator(QRegExpValidator(QRegExp("[0-9]{16}")))
         self.isPrimeButton = QPushButton("Check")
+        self.isPrimeButton.setFont(QFont('Arial', 14))
+        self.isPrimeButton.setFixedHeight(26)
         layout.addWidget(self.isPrimeLabel)
         layout.addWidget(self.isPrimeInput)
         layout.addWidget(self.isPrimeButton)
         return layout
     
     def _CreateIsPrimeOutput(self):
-        layout = QHBoxLayout()
+        layout = QVBoxLayout()
         self.isPrimeIcon = QSvgWidget()
+        self.isPrimeIcon.setFixedSize(60, 60)
         self.isPrimeText = QLabel()
+        self.isPrimeText.setFont(QFont('Arial', 14))
         layout.addWidget(self.isPrimeIcon)
         layout.addWidget(self.isPrimeText)
         return layout
