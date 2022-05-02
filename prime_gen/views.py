@@ -1,20 +1,7 @@
-from PyQt5.QtWidgets import QMainWindow
-from PyQt5.QtWidgets import QWidget
-from PyQt5.QtWidgets import QScrollArea
-from PyQt5.QtWidgets import QLabel
-from PyQt5.QtWidgets import QTabWidget
-from PyQt5.QtGui import QFont
-from PyQt5.QtGui import QIntValidator, QRegExpValidator
-
+from PyQt5.QtWidgets import QMainWindow, QWidget, QScrollArea, QLabel, QTabWidget, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout
+from PyQt5.QtGui import QFont, QIntValidator, QRegExpValidator
 from PyQt5.QtSvg import QSvgWidget
-
-from PyQt5.QtCore import Qt
-from PyQt5.QtCore import QRegExp
-
-from PyQt5.QtWidgets import QLineEdit
-from PyQt5.QtWidgets import QPushButton
-from PyQt5.QtWidgets import QVBoxLayout
-from PyQt5.QtWidgets import QHBoxLayout
+from PyQt5.QtCore import Qt, QRegExp
 
 # Helper Label
 class ScrollLabel(QScrollArea):
@@ -227,18 +214,23 @@ class IsPrime(QWidget):
         layout.addWidget(self.isPrimeText, 0, Qt.AlignCenter)
         return layout
 
-# class PrimeGenTabs(QWidget):
-#     def __init__(self):
-#         super().__init__()
-#         self.tabs = QTabWidget()
-#         self.tabPrimeRangeGen = PrimeRangeGen()
-#         self.tabPrimeRandomGen = PrimeRandomGen()
-#         self.tabIsPrime = IsPrime()
+class PrimeGenTabs(QWidget):
+    def __init__(self):
+        super().__init__()
 
-#         self.tabs.addTab(self.tabPrimeRangeGen, "Prime Range Gen")
-#         self.tabs.addTab(self.tabPrimeRandomGen, "Prime Random Gen")
-#         self.tabs.addTab(self.tabIsPrime, "Prime Number Validator")
+        layout = QVBoxLayout()
 
+        self.tabs = QTabWidget()
+        self.primeRangeGen = PrimeRangeGen()
+        self.primeRandomGen = PrimeRandomGen()
+        self.isPrime = IsPrime()
+
+        self.tabs.addTab(self.primeRangeGen, "Prime Range Gen")
+        self.tabs.addTab(self.primeRandomGen, "Prime Random Gen")
+        self.tabs.addTab(self.isPrime, "Prime Number Validator")
+
+        layout.addWidget(self.tabs)
+        self.setLayout(layout)
 
 class PrimeGenUi(QMainWindow):
     def __init__(self):
@@ -248,15 +240,6 @@ class PrimeGenUi(QMainWindow):
         self._centralWidget = QWidget(self)
         self.setCentralWidget(self._centralWidget)
         self._centralWidget.setLayout((self.generalLayout))
-        
-        self.primeRangeGen = PrimeRangeGen()
-        self.generalLayout.addWidget(self.primeRangeGen)
 
-        self.primeRandomGen = PrimeRandomGen()
-        self.generalLayout.addWidget(self.primeRandomGen)
-        
-        self.isPrime = IsPrime()
-        self.generalLayout.addWidget(self.isPrime)
-        
-        # primeGenTabs = PrimeGenTabs()
-        # self.generalLayout.addWidget(primeGenTabs)
+        self.primeGenTabs = PrimeGenTabs()
+        self.generalLayout.addWidget(self.primeGenTabs)
