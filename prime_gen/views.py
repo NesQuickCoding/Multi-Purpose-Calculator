@@ -35,39 +35,20 @@ class ScrollLabel(QScrollArea):
     def text(self):
         return self.label.text()
 
-class PrimeGenUi(QMainWindow):
+class PrimeRangeGen(QVBoxLayout):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle('Prime Number Generator')
-        self.generalLayout = QVBoxLayout()
-        self._centralWidget = QWidget(self)
-        self.setCentralWidget(self._centralWidget)
-        self._centralWidget.setLayout((self.generalLayout))
-
         self._CreateRangeHeader()
         self._CreateRangeInput()
         self._CreateRangeButtons()
         self.primeRangeOutput = ScrollLabel()
-        self.generalLayout.addWidget(self.primeRangeOutput)
+        self.addWidget(self.primeRangeOutput)
 
-        self._CreateRandomHeader()
-        self._CreateRandomInput()
-        self._CreateRandomButtons()
-        self.randomNumOutput = ScrollLabel()
-        self.generalLayout.addWidget(self.randomNumOutput)
-
-        self._CreateIsPrimeHeader()
-        isPrimeLayout = QHBoxLayout()
-        isPrimeLayout.addLayout(self._CreateIsPrimeInput())
-        isPrimeLayout.addLayout(self._CreateIsPrimeOutput())
-        self.generalLayout.addLayout(isPrimeLayout)
-
-# ------------- Range ---------------------------   
     def _CreateRangeHeader(self):
         self.rangeHeader = QLabel("Enter a number from 1 to 1000000")
         self.rangeHeader.setAlignment(Qt.AlignCenter)
         self.rangeHeader.setFont(QFont('Arial', 14))
-        self.generalLayout.addWidget(self.rangeHeader)
+        self.addWidget(self.rangeHeader)
 
     def _CreateRangeInput(self):
         self.rangeInput = QLineEdit()
@@ -78,7 +59,7 @@ class PrimeGenUi(QMainWindow):
         self.rangeInput.setReadOnly(False)
         self.rangeInput.setClearButtonEnabled(True)
         self.rangeInput.setMaxLength(7)
-        self.generalLayout.addWidget(self.rangeInput)
+        self.addWidget(self.rangeInput)
 
     def _CreateRangeButtons(self):
         buttonLayout = QHBoxLayout()
@@ -96,7 +77,7 @@ class PrimeGenUi(QMainWindow):
         self.rangeGenClear.setFixedSize(70, 26)
         buttonLayout.addWidget(self.rangeGenClear, alignment=Qt.AlignCenter)
     
-        self.generalLayout.addLayout(buttonLayout)
+        self.addLayout(buttonLayout)
 
     def setRangeOutput(self, text):
         self.primeRangeOutput.setText(text)
@@ -107,6 +88,37 @@ class PrimeGenUi(QMainWindow):
 
     def clearRangeOutput(self):
         self.setRangeOutput("")
+
+class PrimeGenUi(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle('Prime Number Generator')
+        self.generalLayout = QVBoxLayout()
+        self._centralWidget = QWidget(self)
+        self.setCentralWidget(self._centralWidget)
+        self._centralWidget.setLayout((self.generalLayout))
+
+        self.primeRangeGen = PrimeRangeGen()
+        self.generalLayout.addLayout(self.primeRangeGen)
+        # self._CreateRangeHeader()
+        # self._CreateRangeInput()
+        # self._CreateRangeButtons()
+        # self.primeRangeOutput = ScrollLabel()
+        # self.generalLayout.addWidget(self.primeRangeOutput)
+
+        self._CreateRandomHeader()
+        self._CreateRandomInput()
+        self._CreateRandomButtons()
+        self.randomNumOutput = ScrollLabel()
+        self.generalLayout.addWidget(self.randomNumOutput)
+
+        self._CreateIsPrimeHeader()
+        isPrimeLayout = QHBoxLayout()
+        isPrimeLayout.addLayout(self._CreateIsPrimeInput())
+        isPrimeLayout.addLayout(self._CreateIsPrimeOutput())
+        self.generalLayout.addLayout(isPrimeLayout)
+
+# ------------- Range ---------------------------   
 # ------------------------------------------------------
 
 # ------------- Random Nums ---------------------------   
@@ -117,12 +129,17 @@ class PrimeGenUi(QMainWindow):
         self.generalLayout.addWidget(self.randomHeader)
 
     def _CreateRandomInput(self):
-        randomLayout = QHBoxLayout()
+        digitLayout = QHBoxLayout()
+        numberLayout = QHBoxLayout()
         
         self.randomDigitLabel = QLabel("Amount of Digits (1-12)")
         self.randomDigitInput = QLineEdit()
+        self.randomDigitLabel.setAlignment(Qt.AlignLeft)
+        self.randomDigitInput.setAlignment(Qt.AlignLeft)
         self.randomAmountLabel = QLabel("Amount of Numbers (1-50)")
         self.randomAmountInput = QLineEdit()
+        self.randomAmountLabel.setAlignment(Qt.AlignRight)
+        self.randomAmountInput.setAlignment(Qt.AlignCenter)
 
         self.randomDigitInput.setValidator(QIntValidator(1, 12))
         self.randomDigitInput.setFixedWidth(50)
@@ -134,10 +151,14 @@ class PrimeGenUi(QMainWindow):
         self.randomAmountInput.setClearButtonEnabled(True)
         self.randomAmountInput.setMaxLength(2)
 
-        randomLayout.addWidget(self.randomDigitLabel)
-        randomLayout.addWidget(self.randomDigitInput)
-        randomLayout.addWidget(self.randomAmountLabel)
-        randomLayout.addWidget(self.randomAmountInput)
+        digitLayout.addWidget(self.randomDigitLabel)
+        digitLayout.addWidget(self.randomDigitInput)
+        numberLayout.addWidget(self.randomAmountLabel)
+        numberLayout.addWidget(self.randomAmountInput)
+
+        randomLayout = QHBoxLayout()
+        randomLayout.addLayout(digitLayout)
+        randomLayout.addLayout(numberLayout)
 
         self.generalLayout.addLayout(randomLayout)
 
