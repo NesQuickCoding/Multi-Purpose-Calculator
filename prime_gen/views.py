@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QLabel
 from PyQt5.QtGui import QFont
 from PyQt5.QtGui import QIntValidator, QRegExpValidator
 
-from PyQt5.QtSvg import QSvgWidget, QSvgRenderer
+from PyQt5.QtSvg import QSvgWidget
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtCore import QRegExp
@@ -89,44 +89,20 @@ class PrimeRangeGen(QVBoxLayout):
     def clearRangeOutput(self):
         self.setRangeOutput("")
 
-class PrimeGenUi(QMainWindow):
+class PrimeRandomGen(QVBoxLayout):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle('Prime Number Generator')
-        self.generalLayout = QVBoxLayout()
-        self._centralWidget = QWidget(self)
-        self.setCentralWidget(self._centralWidget)
-        self._centralWidget.setLayout((self.generalLayout))
-
-        self.primeRangeGen = PrimeRangeGen()
-        self.generalLayout.addLayout(self.primeRangeGen)
-        # self._CreateRangeHeader()
-        # self._CreateRangeInput()
-        # self._CreateRangeButtons()
-        # self.primeRangeOutput = ScrollLabel()
-        # self.generalLayout.addWidget(self.primeRangeOutput)
-
         self._CreateRandomHeader()
         self._CreateRandomInput()
         self._CreateRandomButtons()
         self.randomNumOutput = ScrollLabel()
-        self.generalLayout.addWidget(self.randomNumOutput)
+        self.addWidget(self.randomNumOutput)
 
-        self._CreateIsPrimeHeader()
-        isPrimeLayout = QHBoxLayout()
-        isPrimeLayout.addLayout(self._CreateIsPrimeInput())
-        isPrimeLayout.addLayout(self._CreateIsPrimeOutput())
-        self.generalLayout.addLayout(isPrimeLayout)
-
-# ------------- Range ---------------------------   
-# ------------------------------------------------------
-
-# ------------- Random Nums ---------------------------   
     def _CreateRandomHeader(self):
         self.randomHeader = QLabel("Random Prime Numbers with Digit Length")
         self.randomHeader.setAlignment(Qt.AlignCenter)
         self.randomHeader.setFont(QFont('Arial', 14))
-        self.generalLayout.addWidget(self.randomHeader)
+        self.addWidget(self.randomHeader)
 
     def _CreateRandomInput(self):
         digitLayout = QHBoxLayout()
@@ -160,7 +136,7 @@ class PrimeGenUi(QMainWindow):
         randomLayout.addLayout(digitLayout)
         randomLayout.addLayout(numberLayout)
 
-        self.generalLayout.addLayout(randomLayout)
+        self.addLayout(randomLayout)
 
     def _CreateRandomButtons(self):
         buttonLayout = QHBoxLayout()
@@ -178,7 +154,7 @@ class PrimeGenUi(QMainWindow):
         self.randomGenClear.setFixedSize(70, 26)
         buttonLayout.addWidget(self.randomGenClear, alignment=Qt.AlignCenter)
     
-        self.generalLayout.addLayout(buttonLayout)
+        self.addLayout(buttonLayout)
 
     def setRandomOutput(self, text):
         self.randomNumOutput.setText(text)
@@ -189,14 +165,21 @@ class PrimeGenUi(QMainWindow):
 
     def clearRandomOutput(self):
         self.setRandomOutput("")
-# ------------------------------------------------------
-# ----------------- Is Prime ---------------------------  
+
+class IsPrime(QVBoxLayout):
+    def __init__(self):
+        super().__init__()
+        self._CreateIsPrimeHeader()
+        isPrimeLayout = QHBoxLayout()
+        isPrimeLayout.addLayout(self._CreateIsPrimeInput())
+        isPrimeLayout.addLayout(self._CreateIsPrimeOutput())
+        self.addLayout(isPrimeLayout)
 
     def _CreateIsPrimeHeader(self):
         self.isPrimeHeader = QLabel("Prime Number Validator")
         self.isPrimeHeader.setAlignment(Qt.AlignCenter)
         self.isPrimeHeader.setFont(QFont('Arial', 14))
-        self.generalLayout.addWidget(self.isPrimeHeader)
+        self.addWidget(self.isPrimeHeader)
     
     def _CreateIsPrimeInput(self):
         layout = QVBoxLayout()
@@ -227,3 +210,21 @@ class PrimeGenUi(QMainWindow):
         layout.addWidget(self.isPrimeIcon, 0, Qt.AlignCenter)
         layout.addWidget(self.isPrimeText, 0, Qt.AlignCenter)
         return layout
+
+class PrimeGenUi(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle('Prime Number Generator')
+        self.generalLayout = QVBoxLayout()
+        self._centralWidget = QWidget(self)
+        self.setCentralWidget(self._centralWidget)
+        self._centralWidget.setLayout((self.generalLayout))
+
+        self.primeRangeGen = PrimeRangeGen()
+        self.generalLayout.addLayout(self.primeRangeGen)
+
+        self.primeRandomGen = PrimeRandomGen()
+        self.generalLayout.addLayout(self.primeRandomGen)
+
+        self.isPrime = IsPrime()
+        self.generalLayout.addLayout(self.isPrime)
