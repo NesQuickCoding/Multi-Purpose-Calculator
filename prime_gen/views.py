@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtWidgets import QScrollArea
 from PyQt5.QtWidgets import QLabel
+from PyQt5.QtWidgets import QTabWidget
 from PyQt5.QtGui import QFont
 from PyQt5.QtGui import QIntValidator, QRegExpValidator
 
@@ -35,31 +36,36 @@ class ScrollLabel(QScrollArea):
     def text(self):
         return self.label.text()
 
-class PrimeRangeGen(QVBoxLayout):
+class PrimeRangeGen(QWidget):
     def __init__(self):
         super().__init__()
-        self._CreateRangeHeader()
-        self._CreateRangeInput()
-        self._CreateRangeButtons()
+        layout = QVBoxLayout()
+        self.rangeHeader = self._CreateRangeHeader()
+        layout.addWidget(self.rangeHeader)
+        self.rangeInput = self._CreateRangeInput()
+        layout.addWidget(self.rangeInput)
+        rangeButtons = self._CreateRangeButtons()
+        layout.addLayout(rangeButtons)
         self.primeRangeOutput = ScrollLabel()
-        self.addWidget(self.primeRangeOutput)
+        layout.addWidget(self.primeRangeOutput)
+        self.setLayout(layout)
 
     def _CreateRangeHeader(self):
-        self.rangeHeader = QLabel("Enter a number from 1 to 1000000")
-        self.rangeHeader.setAlignment(Qt.AlignCenter)
-        self.rangeHeader.setFont(QFont('Arial', 14))
-        self.addWidget(self.rangeHeader)
+        header = QLabel("Enter a number from 1 to 1000000")
+        header.setAlignment(Qt.AlignCenter)
+        header.setFont(QFont('Arial', 14))
+        return header
 
     def _CreateRangeInput(self):
-        self.rangeInput = QLineEdit()
-        self.rangeInput.setFont(QFont('Arial', 14))
-        self.rangeInput.setValidator(QIntValidator(1, 1000000))
-        self.rangeInput.setFixedHeight(26)
-        self.rangeInput.setAlignment(Qt.AlignLeft)
-        self.rangeInput.setReadOnly(False)
-        self.rangeInput.setClearButtonEnabled(True)
-        self.rangeInput.setMaxLength(7)
-        self.addWidget(self.rangeInput)
+        inputWidget = QLineEdit()
+        inputWidget.setFont(QFont('Arial', 14))
+        inputWidget.setValidator(QIntValidator(1, 1000000))
+        inputWidget.setFixedHeight(26)
+        inputWidget.setAlignment(Qt.AlignLeft)
+        inputWidget.setReadOnly(False)
+        inputWidget.setClearButtonEnabled(True)
+        inputWidget.setMaxLength(7)
+        return inputWidget
 
     def _CreateRangeButtons(self):
         buttonLayout = QHBoxLayout()
@@ -77,7 +83,7 @@ class PrimeRangeGen(QVBoxLayout):
         self.rangeGenClear.setFixedSize(70, 26)
         buttonLayout.addWidget(self.rangeGenClear, alignment=Qt.AlignCenter)
     
-        self.addLayout(buttonLayout)
+        return buttonLayout
 
     def setRangeOutput(self, text):
         self.primeRangeOutput.setText(text)
@@ -89,20 +95,25 @@ class PrimeRangeGen(QVBoxLayout):
     def clearRangeOutput(self):
         self.setRangeOutput("")
 
-class PrimeRandomGen(QVBoxLayout):
+class PrimeRandomGen(QWidget):
     def __init__(self):
         super().__init__()
-        self._CreateRandomHeader()
-        self._CreateRandomInput()
-        self._CreateRandomButtons()
+        layout = QVBoxLayout()
+        self.randomHeader = self._CreateRandomHeader()
+        layout.addWidget(self.randomHeader)
+        randomInput = self._CreateRandomInput()
+        layout.addLayout(randomInput)
+        randomButtons = self._CreateRandomButtons()
+        layout.addLayout(randomButtons)
         self.randomNumOutput = ScrollLabel()
-        self.addWidget(self.randomNumOutput)
+        layout.addWidget(self.randomNumOutput)
+        self.setLayout(layout)
 
     def _CreateRandomHeader(self):
-        self.randomHeader = QLabel("Random Prime Numbers with Digit Length")
-        self.randomHeader.setAlignment(Qt.AlignCenter)
-        self.randomHeader.setFont(QFont('Arial', 14))
-        self.addWidget(self.randomHeader)
+        header = QLabel("Random Prime Numbers with Digit Length")
+        header.setAlignment(Qt.AlignCenter)
+        header.setFont(QFont('Arial', 14))
+        return header
 
     def _CreateRandomInput(self):
         digitLayout = QHBoxLayout()
@@ -136,7 +147,7 @@ class PrimeRandomGen(QVBoxLayout):
         randomLayout.addLayout(digitLayout)
         randomLayout.addLayout(numberLayout)
 
-        self.addLayout(randomLayout)
+        return randomLayout
 
     def _CreateRandomButtons(self):
         buttonLayout = QHBoxLayout()
@@ -154,7 +165,7 @@ class PrimeRandomGen(QVBoxLayout):
         self.randomGenClear.setFixedSize(70, 26)
         buttonLayout.addWidget(self.randomGenClear, alignment=Qt.AlignCenter)
     
-        self.addLayout(buttonLayout)
+        return buttonLayout
 
     def setRandomOutput(self, text):
         self.randomNumOutput.setText(text)
@@ -166,20 +177,25 @@ class PrimeRandomGen(QVBoxLayout):
     def clearRandomOutput(self):
         self.setRandomOutput("")
 
-class IsPrime(QVBoxLayout):
+class IsPrime(QWidget):
     def __init__(self):
         super().__init__()
-        self._CreateIsPrimeHeader()
-        isPrimeLayout = QHBoxLayout()
-        isPrimeLayout.addLayout(self._CreateIsPrimeInput())
-        isPrimeLayout.addLayout(self._CreateIsPrimeOutput())
-        self.addLayout(isPrimeLayout)
+        layout = QVBoxLayout()
+        self.isPrimeHeader = self._CreateIsPrimeHeader()
+        layout.addWidget(self.isPrimeHeader)
+        hLayout = QHBoxLayout()
+        isPrimeInput = self._CreateIsPrimeInput()
+        hLayout.addLayout(isPrimeInput)
+        isPrimeOutput = self._CreateIsPrimeOutput()
+        hLayout.addLayout(isPrimeOutput)
+        layout.addLayout(hLayout)
+        self.setLayout(layout)
 
     def _CreateIsPrimeHeader(self):
-        self.isPrimeHeader = QLabel("Prime Number Validator")
-        self.isPrimeHeader.setAlignment(Qt.AlignCenter)
-        self.isPrimeHeader.setFont(QFont('Arial', 14))
-        self.addWidget(self.isPrimeHeader)
+        header = QLabel("Prime Number Validator")
+        header.setAlignment(Qt.AlignCenter)
+        header.setFont(QFont('Arial', 14))
+        return header
     
     def _CreateIsPrimeInput(self):
         layout = QVBoxLayout()
@@ -211,6 +227,19 @@ class IsPrime(QVBoxLayout):
         layout.addWidget(self.isPrimeText, 0, Qt.AlignCenter)
         return layout
 
+# class PrimeGenTabs(QWidget):
+#     def __init__(self):
+#         super().__init__()
+#         self.tabs = QTabWidget()
+#         self.tabPrimeRangeGen = PrimeRangeGen()
+#         self.tabPrimeRandomGen = PrimeRandomGen()
+#         self.tabIsPrime = IsPrime()
+
+#         self.tabs.addTab(self.tabPrimeRangeGen, "Prime Range Gen")
+#         self.tabs.addTab(self.tabPrimeRandomGen, "Prime Random Gen")
+#         self.tabs.addTab(self.tabIsPrime, "Prime Number Validator")
+
+
 class PrimeGenUi(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -219,12 +248,15 @@ class PrimeGenUi(QMainWindow):
         self._centralWidget = QWidget(self)
         self.setCentralWidget(self._centralWidget)
         self._centralWidget.setLayout((self.generalLayout))
-
+        
         self.primeRangeGen = PrimeRangeGen()
-        self.generalLayout.addLayout(self.primeRangeGen)
+        self.generalLayout.addWidget(self.primeRangeGen)
 
         self.primeRandomGen = PrimeRandomGen()
-        self.generalLayout.addLayout(self.primeRandomGen)
-
+        self.generalLayout.addWidget(self.primeRandomGen)
+        
         self.isPrime = IsPrime()
-        self.generalLayout.addLayout(self.isPrime)
+        self.generalLayout.addWidget(self.isPrime)
+        
+        # primeGenTabs = PrimeGenTabs()
+        # self.generalLayout.addWidget(primeGenTabs)

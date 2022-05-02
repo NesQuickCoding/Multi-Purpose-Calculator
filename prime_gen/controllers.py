@@ -52,7 +52,7 @@ class PrimeGenControl:
         self._view.isPrime.isPrimeIcon.renderer().load('')
         self._view.isPrime.isPrimeText.setText('')
 
-    # --- Signal Connection ---
+    # # --- Signal Connection ---
     def _connectRangeSignals(self):
         # --- primeRangeGen Signals ---
         self._view.primeRangeGen.rangeInput.textChanged.connect(partial(self._checkInputBounds, self._view.primeRangeGen.rangeInput, 0, 1000000))
