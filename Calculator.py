@@ -23,10 +23,18 @@ __version__ = "0.1"
 __author__ = "Python Calcuator"
 
 ERROR_MSG = "ERROR"
+DROPBOX_MENU = [
+    "ASCII Conversion",
+    "Prime Number Generator/Validator",
+    "Metric Conversion",
+    "Temperature Conversion",
+    "Generate Numbers"
+]
 
 class CalcMain(QWidget):
     def __init__(self):
         super().__init__()
+        self.setFixedSize(400, 400)
         layout = QVBoxLayout()
         self.calcOutput = self._createCalcOutput()
         layout.addWidget(self.calcOutput)
@@ -47,11 +55,7 @@ class CalcMain(QWidget):
         comboBox = QComboBox()
         comboBox.setObjectName("CalcDropBox")
         comboBox.setGeometry(QtCore.QRect(130, 190, 291, 31))
-        comboBox.addItem("ASCII Conversion")
-        comboBox.addItem("Prime Number Generator/Validator")
-        comboBox.addItem("Metric Conversion")
-        comboBox.addItem("Temperature Conversion")
-        comboBox.addItem("Generate Numbers")
+        comboBox.addItems(DROPBOX_MENU)
         return comboBox
 
     def _createButtons(self):
@@ -102,6 +106,18 @@ class CalcMain(QWidget):
         """Clear the display."""
         self.setDisplayText("")
 
+class CalcSide(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setFixedSize(400, 400)
+        layout = QVBoxLayout()
+        self.placeHolder = QLabel("Nothing yet")
+        self.primeGenTabs = PrimeGenTabs()
+        self.primeGenTabs.hide()
+        layout.addWidget(self.placeHolder)
+        layout.addWidget(self.primeGenTabs)
+        self.setLayout(layout)
+
 # Create a subclass of QMainWindow to setup the calculator's GUI
 class PyCalcUi(QMainWindow):
     def __init__(self):
@@ -116,11 +132,9 @@ class PyCalcUi(QMainWindow):
         self._centralWidget.setLayout(self.generalLayout)
 
         self.calcMain = CalcMain()
-        self.placeHolder = QLabel("Nothing yet")
-        self.primeGenTabs = PrimeGenTabs()
+        self.calcSide = CalcSide()
         self.generalLayout.addWidget(self.calcMain)
-        self.generalLayout.addWidget(self.primeGenTabs)
-        self.generalLayout.addWidget(self.placeHolder)
+        self.generalLayout.addWidget(self.calcSide)
 
 
 # Create a Model to handle the calculator's operation
@@ -159,8 +173,13 @@ class PyCalcCtrl:
         self._view.calcMain.setDisplayText(expression)
 
     def _changeSide(self):
-        print("it changed")
-
+        if self._view.calcMain.calcDropBox.currentIndex() == 1:
+            self._view.calcSide.primeGenTabs.show()
+            self._view.calcSide.placeHolder.hide()
+        else:
+            self._view.calcSide.primeGenTabs.hide()
+            self._view.calcSide.placeHolder.show()
+    
     def _connectSignals(self):
         """Connect signals and slots."""
         for btnText, btn in self._view.calcMain.buttons.items():
