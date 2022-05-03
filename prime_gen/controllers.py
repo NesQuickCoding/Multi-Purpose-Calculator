@@ -39,10 +39,10 @@ class PrimeGenControl:
     def _IsPrimeCheck(self):
         if self._view.primeGenTabs.isPrime.isPrimeInput.text():
             if self._isPrime(int(self._view.primeGenTabs.isPrime.isPrimeInput.text())):
-                self._view.primeGenTabs.isPrime.isPrimeIcon.renderer().load("assets/check.svg")
+                self._view.primeGenTabs.isPrime.isPrimeIcon.renderer().load('./assets/check.svg')
                 self._view.primeGenTabs.isPrime.isPrimeText.setText("Is Prime!")
             else:
-                self._view.primeGenTabs.isPrime.isPrimeIcon.renderer().load("assets/cancel.svg")
+                self._view.primeGenTabs.isPrime.isPrimeIcon.renderer().load("./assets/cancel.svg")
                 self._view.primeGenTabs.isPrime.isPrimeText.setText("Is Not Prime!")
         else:
             self._view.primeGenTabs.isPrime.isPrimeText.setText("Enter A\nNumber")
