@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QMainWindow, QWidget, QScrollArea, QLabel, QTabWidget, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout
+from PyQt5.QtWidgets import QWidget, QScrollArea, QLabel, QTabWidget, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout
 from PyQt5.QtGui import QFont, QIntValidator, QRegExpValidator
 from PyQt5.QtSvg import QSvgWidget
 from PyQt5.QtCore import Qt, QRegExp
@@ -214,7 +214,7 @@ class IsPrime(QWidget):
         layout.addWidget(self.isPrimeText, 0, Qt.AlignCenter)
         return layout
 
-class PrimeGenTabs(QWidget):
+class PrimeGenUI(QWidget):
     def __init__(self):
         super().__init__()
 
@@ -231,15 +231,3 @@ class PrimeGenTabs(QWidget):
 
         layout.addWidget(self.tabs)
         self.setLayout(layout)
-
-class PrimeGenUi(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle('Prime Number Generator')
-        self.generalLayout = QVBoxLayout()
-        self._centralWidget = QWidget(self)
-        self.setCentralWidget(self._centralWidget)
-        self._centralWidget.setLayout((self.generalLayout))
-
-        self.primeGenTabs = PrimeGenTabs()
-        self.generalLayout.addWidget(self.primeGenTabs)

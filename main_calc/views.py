@@ -1,6 +1,3 @@
-from prime_gen.views import PrimeGenTabs
-
-# Import QApplication and the required widgets from PyQt5.QtWidgets
 from PyQt5.QtCore import Qt
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import QGridLayout
@@ -21,7 +18,7 @@ DROPBOX_MENU = [
     "Generate Numbers"
 ]
 
-class CalcMain(QWidget):
+class MainCalcUI(QWidget):
     def __init__(self):
         super().__init__()
         self.setFixedSize(400, 400)
@@ -96,32 +93,11 @@ class CalcMain(QWidget):
         """Clear the display."""
         self.setDisplayText("")
 
-class CalcSide(QWidget):
-    def __init__(self):
-        super().__init__()
-        self.setFixedSize(400, 400)
-        layout = QVBoxLayout()
-        self.placeHolder = QLabel("Nothing yet")
-        self.primeGenTabs = PrimeGenTabs()
-        self.primeGenTabs.hide()
-        layout.addWidget(self.placeHolder)
-        layout.addWidget(self.primeGenTabs)
-        self.setLayout(layout)
-
 # Create a subclass of QMainWindow to setup the calculator's GUI
-class MultiCalcUi(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        # Set some main window's properties
-        self.setWindowTitle("Multi-Purpose Calculator")
-        self.setFixedSize(800, 400)
-        # Set the central widget and the general layout
-        self.generalLayout = QHBoxLayout()
-        self._centralWidget = QWidget(self)
-        self.setCentralWidget(self._centralWidget)
-        self._centralWidget.setLayout(self.generalLayout)
-
-        self.calcMain = CalcMain()
-        self.calcSide = CalcSide()
-        self.generalLayout.addWidget(self.calcMain)
-        self.generalLayout.addWidget(self.calcSide)
+# class MainCalcUi(QWidget):
+#     def __init__(self):
+#         super().__init__()
+#         self.calcMain = MainCalc()
+#         self.calcSide = CalcSide()
+#         self.generalLayout.addWidget(self.calcMain)
+#         self.generalLayout.addWidget(self.calcSide)
