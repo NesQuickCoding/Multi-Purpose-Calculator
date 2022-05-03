@@ -2,7 +2,8 @@
 """PyCalc is a simple calculator built using Python and PyQt5."""
 
 import sys
-
+sys.path.insert(0, "./prime_gen/")
+from views import PrimeGenTabs
 from functools import partial
 
 # Import QApplication and the required widgets from PyQt5.QtWidgets
@@ -11,10 +12,11 @@ from PyQt5 import QtCore
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QGridLayout
 from PyQt5.QtWidgets import QLineEdit
+from PyQt5.QtWidgets import QLabel
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import QPushButton
 from PyQt5.QtWidgets import QComboBox
-from PyQt5.QtWidgets import QVBoxLayout
+from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout
 from PyQt5.QtWidgets import QWidget
 
 __version__ = "0.1"
@@ -22,47 +24,37 @@ __author__ = "Python Calcuator"
 
 ERROR_MSG = "ERROR"
 
-
-# Create a subclass of QMainWindow to setup the calculator's GUI
-class PyCalcUi(QMainWindow):
-    """PyCalc's View (GUI)."""
-
+class CalcMain(QWidget):
     def __init__(self):
-        """View initializer."""
         super().__init__()
-        # Set some main window's properties
-        self.setWindowTitle("PyCalc")
-        self.setFixedSize(400, 400)
-        # Set the central widget and the general layout
-        self.generalLayout = QVBoxLayout()
-        self._centralWidget = QWidget(self)
-        self.setCentralWidget(self._centralWidget)
-        self._centralWidget.setLayout(self.generalLayout)
-        # Create the display and the buttons
-        self._createDisplay()
-        self._createButtons()
+        layout = QVBoxLayout()
+        self.calcOutput = self._createCalcOutput()
+        layout.addWidget(self.calcOutput)
+        self.calcDropBox = self._createDropBox()
+        layout.addWidget(self.calcDropBox)
+        buttonLayout = self._createButtons()
+        layout.addLayout(buttonLayout)
+        self.setLayout(layout)
 
-    def _createDisplay(self):
-        """Create the display."""
-        # Create the display widget
-        self.display = QLineEdit()
-        # Set some display's properties
-        self.display.setFixedHeight(50)
-        self.display.setAlignment(Qt.AlignRight)
-        self.display.setReadOnly(True)
-        # Add the display to the general layout
-        self.generalLayout.addWidget(self.display)
-        self.comboBox = QComboBox()
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox.setGeometry(QtCore.QRect(130, 190, 291, 31))
-        self.comboBox.addItem("ASCII Conversion")
-        self.comboBox.addItem("Metric Conversion")
-        self.comboBox.addItem("Temperature Conversion")
-        self.comboBox.addItem("Generate Numbers")
-        self.generalLayout.addWidget(self.comboBox)
+    def _createCalcOutput(self):
+        output = QLineEdit()
+        output.setFixedHeight(50)
+        output.setAlignment(Qt.AlignRight)
+        output.setReadOnly(True)
+        return output       
+
+    def _createDropBox(self):
+        comboBox = QComboBox()
+        comboBox.setObjectName("CalcDropBox")
+        comboBox.setGeometry(QtCore.QRect(130, 190, 291, 31))
+        comboBox.addItem("ASCII Conversion")
+        comboBox.addItem("Prime Number Generator/Validator")
+        comboBox.addItem("Metric Conversion")
+        comboBox.addItem("Temperature Conversion")
+        comboBox.addItem("Generate Numbers")
+        return comboBox
 
     def _createButtons(self):
-        """Create the buttons."""
         self.buttons = {}
         buttonsLayout = QGridLayout()
         # Button text | position on the QGridLayout
@@ -94,21 +86,41 @@ class PyCalcUi(QMainWindow):
             self.buttons[btnText] = QPushButton(btnText)
             self.buttons[btnText].setFixedSize(55, 55)
             buttonsLayout.addWidget(self.buttons[btnText], pos[0], pos[1])
-        # Add buttonsLayout to the general layout
-        self.generalLayout.addLayout(buttonsLayout)
+
+        return buttonsLayout
 
     def setDisplayText(self, text):
         """Set display's text."""
-        self.display.setText(text)
-        self.display.setFocus()
+        self.calcOutput.setText(text)
+        self.calcOutput.setFocus()
 
     def displayText(self):
         """Get display's text."""
-        return self.display.text()
+        return self.calcOutput.text()
 
     def clearDisplay(self):
         """Clear the display."""
         self.setDisplayText("")
+
+# Create a subclass of QMainWindow to setup the calculator's GUI
+class PyCalcUi(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        # Set some main window's properties
+        self.setWindowTitle("Multi-Purpose Calculator")
+        self.setFixedSize(800, 400)
+        # Set the central widget and the general layout
+        self.generalLayout = QHBoxLayout()
+        self._centralWidget = QWidget(self)
+        self.setCentralWidget(self._centralWidget)
+        self._centralWidget.setLayout(self.generalLayout)
+
+        self.calcMain = CalcMain()
+        self.placeHolder = QLabel("Nothing yet")
+        self.primeGenTabs = PrimeGenTabs()
+        self.generalLayout.addWidget(self.calcMain)
+        self.generalLayout.addWidget(self.primeGenTabs)
+        self.generalLayout.addWidget(self.placeHolder)
 
 
 # Create a Model to handle the calculator's operation
@@ -135,28 +147,31 @@ class PyCalcCtrl:
 
     def _calculateResult(self):
         """Evaluate expressions."""
-        result = self._evaluate(expression=self._view.displayText())
-        self._view.setDisplayText(result)
+        result = self._evaluate(expression=self._view.calcMain.displayText())
+        self._view.calcMain.setDisplayText(result)
 
     def _buildExpression(self, sub_exp):
         """Build expression."""
-        if self._view.displayText() == ERROR_MSG:
-            self._view.clearDisplay()
+        if self._view.calcMain.displayText() == ERROR_MSG:
+            self._view.calcMain.clearDisplay()
 
-        expression = self._view.displayText() + sub_exp
-        self._view.setDisplayText(expression)
+        expression = self._view.calcMain.displayText() + sub_exp
+        self._view.calcMain.setDisplayText(expression)
+
+    def _changeSide(self):
+        print("it changed")
 
     def _connectSignals(self):
         """Connect signals and slots."""
-        for btnText, btn in self._view.buttons.items():
+        for btnText, btn in self._view.calcMain.buttons.items():
             if btnText not in {"=", "C"}:
                 btn.clicked.connect(partial(self._buildExpression, btnText))
 
-        self._view.buttons["="].clicked.connect(self._calculateResult)
-        self._view.display.returnPressed.connect(self._calculateResult)
-        self._view.buttons["C"].clicked.connect(self._view.clearDisplay)
+        self._view.calcMain.buttons["="].clicked.connect(self._calculateResult)
+        self._view.calcMain.calcOutput.returnPressed.connect(self._calculateResult)
+        self._view.calcMain.buttons["C"].clicked.connect(self._view.calcMain.clearDisplay)
+        self._view.calcMain.calcDropBox.currentIndexChanged.connect(self._changeSide)
 
-# class 
 
 # Client code
 def main():
@@ -168,10 +183,9 @@ def main():
     view.show()
     # Create instances of the model and the controller
     model = evaluateExpression
-    PyCalcCtrl(model=model, view=view)
+    controller = PyCalcCtrl(model=model, view=view)
     # Execute calculator's main loop
     sys.exit(pycalc.exec_())
-
 
 if __name__ == "__main__":
     main()
