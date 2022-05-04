@@ -13,11 +13,11 @@ class temp_Ui(QtWidgets.QWidget):
         self.show()
 
     def printButtonPressed(self):
-        self.checkedOnRb = []
         radioButtons = self.findChildren(QtWidgets.QRadioButton)
         toggledButtons = [rb.text() for rb in radioButtons if rb.isChecked()]
         val = self.findChild(QtWidgets.QLineEdit, 'lineEdit')
-        answer = convert_temp(self, float(val.text()), toggledButtons[0][0], toggledButtons[1][0])
+        answer = convert_temp(self, int(val.text()), toggledButtons[0][0], toggledButtons[1][0])
+        format_answer = "{:.2f}".format(answer)
         self.input.setText(str(answer))
         
 
