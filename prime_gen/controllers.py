@@ -1,5 +1,6 @@
 from PyQt5.QtWidgets import QApplication
 from functools import partial
+import pathlib
 
 class PrimeGenCtrl:
     def __init__(self, view, model):
@@ -37,12 +38,13 @@ class PrimeGenCtrl:
     
     # --- Models for isPrime ---
     def _IsPrimeCheck(self):
+        print(pathlib.Path(__file__).parent.absolute())
         if self._view.isPrime.isPrimeInput.text():
             if self._isPrime(int(self._view.isPrime.isPrimeInput.text())):
-                self._view.isPrime.isPrimeIcon.renderer().load('prime_gen/assets/check.svg')
+                self._view.isPrime.isPrimeIcon.renderer().load(f'{pathlib.Path(__file__).parent.absolute()}/assets/check.svg')
                 self._view.isPrime.isPrimeText.setText("Is Prime!")
             else:
-                self._view.isPrime.isPrimeIcon.renderer().load("prime_gen/assets/cancel.svg")
+                self._view.isPrime.isPrimeIcon.renderer().load(f'{pathlib.Path(__file__).parent.absolute()}/assets/cancel.svg')
                 self._view.isPrime.isPrimeText.setText("Is Not Prime!")
         else:
             self._view.isPrime.isPrimeText.setText("Enter A\nNumber")

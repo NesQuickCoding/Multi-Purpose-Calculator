@@ -49,7 +49,6 @@ class MultiCalcWindow(QMainWindow):
         self.secCalc = SecCalc()
         self.generalLayout.addWidget(self.mainCalc)
         self.generalLayout.addWidget(self.secCalc)
-        
 
 def main():
     multicalc = QApplication(sys.argv)

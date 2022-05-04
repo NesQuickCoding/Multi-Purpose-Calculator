@@ -1,11 +1,5 @@
-from PyQt5.QtCore import Qt
-from PyQt5 import QtCore
-from PyQt5.QtWidgets import QGridLayout
-from PyQt5.QtWidgets import QLineEdit
-from PyQt5.QtWidgets import QPushButton
-from PyQt5.QtWidgets import QComboBox
-from PyQt5.QtWidgets import QVBoxLayout
-from PyQt5.QtWidgets import QWidget
+from PyQt5.QtWidgets import QGridLayout, QLineEdit, QPushButton, QComboBox, QVBoxLayout, QWidget
+from PyQt5.QtCore import Qt, QRect
 
 class MainCalcUI(QWidget):
     def __init__(self, dropMenu):
@@ -30,7 +24,7 @@ class MainCalcUI(QWidget):
     def _createDropBox(self, dropMenu):
         comboBox = QComboBox()
         comboBox.setObjectName("CalcDropBox")
-        comboBox.setGeometry(QtCore.QRect(130, 190, 291, 31))
+        comboBox.setGeometry(QRect(130, 190, 291, 31))
         for item in dropMenu:
             comboBox.addItem(item[0])
         return comboBox
