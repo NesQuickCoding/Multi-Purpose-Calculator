@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QApplication, QVBoxLayout, QWidget, QMainWindow
 
 from views import BaseConvUI
 import models
-# from controllers import PrimeGenCtrl
+from controllers import BaseConvCtrl
 
 class TestWindow(QMainWindow):
     def __init__(self):
@@ -18,14 +18,14 @@ class TestWindow(QMainWindow):
         self.setCentralWidget(self._centralWidget)
         self._centralWidget.setLayout(self.generalLayout)
         
-        self.primeGenUI = BaseConvUI()
-        self.generalLayout.addWidget(self.primeGenUI)
+        self.baseConvUI = BaseConvUI()
+        self.generalLayout.addWidget(self.baseConvUI)
 
 def main():
     baseconv = QApplication(sys.argv)
     view = TestWindow()
     view.show()
-    # PrimeGenCtrl(view=view.primeGenUI, model=models)
+    BaseConvCtrl(view=view.baseConvUI)
     sys.exit(baseconv.exec())
 
 if __name__ == '__main__':
