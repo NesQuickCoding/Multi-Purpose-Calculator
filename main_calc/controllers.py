@@ -20,8 +20,9 @@ class MainCalcCtrl:
         if self._view.mainCalc.getCalcOutput() == "ERROR":
             self._view.mainCalc.clearCalcOutput()
         
-        # checks to see if a number built so far has a decimal point in it already
-        if keyInput == ".":
+        # checks to see if a number built so far has a decimal
+        # but only if the last input is not an operator or is a decimal point
+        if keyInput == "." and (self._view.mainCalc.getCalcOutput()[-1] not in operators or self._view.mainCalc.getCalcOutput()[-1] == '.'):
             lastNumber = re.findall(r"\d+\.?\d*", self._view.mainCalc.getCalcOutput())[-1]
             if re.search(r"\.", lastNumber):
                 return
