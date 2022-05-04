@@ -21,7 +21,7 @@ class MainCalcUI(QWidget):
         self.setLayout(layout)
 
     def _createCalcOutput(self):
-        output = QLineEdit()
+        output = QLineEdit("0")
         output.setFixedHeight(50)
         output.setAlignment(Qt.AlignRight)
         output.setReadOnly(True)
@@ -80,7 +80,12 @@ class MainCalcUI(QWidget):
         return self.calcOutput.text()
 
     def backSpaceCalcOutput(self):
-        self.setCalcOutput(str(self.getCalcOutput())[0:-1])
+        # if back space would clear output, reset to zero
+        if len(self.getCalcOutput()[0:-1]) == 0:
+            self.clearCalcOutput()
+        # else remove last character from calcOutput string
+        else:
+            self.setCalcOutput(str(self.getCalcOutput())[0:-1])
 
     def clearCalcOutput(self):
-        self.setCalcOutput("")
+        self.setCalcOutput("0")
