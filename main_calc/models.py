@@ -9,23 +9,24 @@ operations = {
     'FloorDiv': op.floordiv,
     'Pow': op.pow,
     'Mod': op.mod,
+    'UAdd': op.abs,
     'USub': op.neg,
 }
 
-def nodeTransversal(node):
-    if isinstance(node, ast.Num):
-        return node.n
-    elif isinstance(node, ast.BinOp):
-        return operations[type(node.op).__name__](nodeTransversal(node.left), nodeTransversal(node.right))
-    elif isinstance(node, ast.UnaryOp):
-        return operations[type(node.op).__name__](nodeTransversal(node.operand))
+def astTransversal(astObj):
+    if isinstance(astObj, ast.Constant):
+        return astObj.n
+    elif isinstance(astObj, ast.BinOp):
+        return operations[type(astObj.op).__name__](astTransversal(astObj.left), astTransversal(astObj.right))
+    elif isinstance(astObj, ast.UnaryOp):
+        return operations[type(astObj.op).__name__](astTransversal(astObj.operand))
     else:
-        raise TypeError(node)
+        raise TypeError(astObj)
 
 def evaluateExpression(expression):
     try:
-        result = str(nodeTransversal(ast.parse(expression, mode='eval').body))
-    except (SyntaxError, ZeroDivisionError):
+        result = str(astTransversal(ast.parse(expression, mode='eval').body))
+    except (SyntaxError, ZeroDivisionError, TypeError):
         result = "ERROR"
 
     return result
