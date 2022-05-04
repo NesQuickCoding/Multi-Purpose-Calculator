@@ -30,8 +30,23 @@ class BaseConvCtrl:
     
     def _hexChanged(self):
         hexValidator = re.split(r"[^0-9a-fA-F]+", self._view.hex.hexTextBox.document().toPlainText())
-        validHexNumber = ''.join(hexValidator).upper()
-        print(validHexNumber)
+        validHexBuffer = ''.join(hexValidator).upper()
+        validHexNumber = ""
+        count = 0
+        if len(validHexBuffer) > 4:
+            for i in range(len(validHexBuffer) - 1, -1, -1):
+                validHexNumber = validHexBuffer[i] + validHexNumber
+                count += 1
+                if count == 4 and i != 0:
+                    validHexNumber = " " + validHexNumber
+                    count = 0
+        else:
+            validHexNumber = validHexBuffer
+
+
+        self._view.hex.hexTextBox.textChanged.disconnect()
+        self._view.hex.hexTextBox.document().setPlainText(validHexNumber)
+        self._view.hex.hexTextBox.textChanged.connect(lambda: self._hexChanged())
 
     def _connectSignals(self):
         self._view.dec.decTextBox.textChanged.connect(lambda: self._decChanged())
