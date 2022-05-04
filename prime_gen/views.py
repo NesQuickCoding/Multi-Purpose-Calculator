@@ -217,7 +217,6 @@ class IsPrime(QWidget):
 class PrimeGenUI(QWidget):
     def __init__(self):
         super().__init__()
-
         layout = QVBoxLayout()
 
         self.tabs = QTabWidget()

@@ -2,30 +2,19 @@ from PyQt5.QtCore import Qt
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import QGridLayout
 from PyQt5.QtWidgets import QLineEdit
-from PyQt5.QtWidgets import QLabel
-from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import QPushButton
 from PyQt5.QtWidgets import QComboBox
-from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout
+from PyQt5.QtWidgets import QVBoxLayout
 from PyQt5.QtWidgets import QWidget
 
-ERROR_MSG = "ERROR"
-DROPBOX_MENU = [
-    "ASCII Conversion",
-    "Prime Number Generator/Validator",
-    "Metric Conversion",
-    "Temperature Conversion",
-    "Generate Numbers"
-]
-
 class MainCalcUI(QWidget):
-    def __init__(self):
+    def __init__(self, dropMenu):
         super().__init__()
         self.setFixedSize(400, 400)
         layout = QVBoxLayout()
         self.calcOutput = self._createCalcOutput()
         layout.addWidget(self.calcOutput)
-        self.calcDropBox = self._createDropBox()
+        self.calcDropBox = self._createDropBox(dropMenu)
         layout.addWidget(self.calcDropBox)
         buttonLayout = self._createButtons()
         layout.addLayout(buttonLayout)
@@ -38,11 +27,12 @@ class MainCalcUI(QWidget):
         output.setReadOnly(True)
         return output       
 
-    def _createDropBox(self):
+    def _createDropBox(self, dropMenu):
         comboBox = QComboBox()
         comboBox.setObjectName("CalcDropBox")
         comboBox.setGeometry(QtCore.QRect(130, 190, 291, 31))
-        comboBox.addItems(DROPBOX_MENU)
+        for item in dropMenu:
+            comboBox.addItem(item[0])
         return comboBox
 
     def _createButtons(self):

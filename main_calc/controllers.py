@@ -9,26 +9,29 @@ class MainCalcCtrl:
 
     def _calculateResult(self):
         """Evaluate expressions."""
-        result = self._evaluate(expression=self._view.displayText())
-        self._view.setDisplayText(result)
+        result = self._evaluate(expression=self._view.mainCalc.displayText())
+        self._view.mainCalc.setDisplayText(result)
 
     def _buildExpression(self, sub_exp):
         """Build expression."""
-        if self._view.displayText() == "ERROR":
-            self._view.clearDisplay()
+        if self._view.mainCalc.displayText() == "ERROR":
+            self._view.mainCalc.clearDisplay()
 
-        expression = self._view.displayText() + sub_exp
-        self._view.setDisplayText(expression)
+        expression = self._view.mainCalc.displayText() + sub_exp
+        self._view.mainCalc.setDisplayText(expression)
 
-    def _changeSide(self):
-        print("working on it")
+    def _changeSecCalc(self):
+        if self._view.mainCalc.calcDropBox.currentIndex() == 1:
+            self._view.secCalc.secCalcDisplay(1)
+        else:
+            self._view.secCalc.secCalcDisplay(0)
     
     def _connectSignals(self):
-        for btnText, btn in self._view.buttons.items():
+        for btnText, btn in self._view.mainCalc.buttons.items():
             if btnText not in {"=", "C"}:
                 btn.clicked.connect(partial(self._buildExpression, btnText))
 
-        self._view.buttons["="].clicked.connect(self._calculateResult)
-        self._view.calcOutput.returnPressed.connect(self._calculateResult)
-        self._view.buttons["C"].clicked.connect(self._view.clearDisplay)
-        self._view.calcDropBox.currentIndexChanged.connect(self._changeSide)
+        self._view.mainCalc.buttons["="].clicked.connect(self._calculateResult)
+        self._view.mainCalc.calcOutput.returnPressed.connect(self._calculateResult)
+        self._view.mainCalc.buttons["C"].clicked.connect(self._view.mainCalc.clearDisplay)
+        self._view.mainCalc.calcDropBox.currentIndexChanged.connect(self._changeSecCalc)

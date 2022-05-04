@@ -1,7 +1,5 @@
-from json import load
 from PyQt5.QtWidgets import QApplication
 from functools import partial
-
 
 class PrimeGenCtrl:
     def __init__(self, view, model):
