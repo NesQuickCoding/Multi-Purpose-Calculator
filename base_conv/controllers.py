@@ -43,11 +43,31 @@ class BaseConvCtrl:
         else:
             validHexNumber = validHexBuffer
 
-
         self._view.hex.hexTextBox.textChanged.disconnect()
         self._view.hex.hexTextBox.document().setPlainText(validHexNumber)
         self._view.hex.hexTextBox.textChanged.connect(lambda: self._hexChanged())
 
+    def _binChanged(self):
+        binValidator = re.split(r"[^0-1]+", self._view.bin.binTextBox.document().toPlainText())
+        validBinBuffer = ''.join(binValidator)
+        print(validBinBuffer)
+        validBinNumber = ""
+        count = 0
+        if len(validBinBuffer) > 4:
+            for i in range(len(validBinBuffer) - 1, -1, -1):
+                validBinNumber = validBinBuffer[i] + validBinNumber
+                count += 1
+                if count == 4 and i != 0:
+                    validBinNumber = " " + validBinNumber
+                    count = 0
+        else:
+            validBinNumber = validBinBuffer
+
+        self._view.bin.binTextBox.textChanged.disconnect()
+        self._view.bin.binTextBox.document().setPlainText(validBinNumber)
+        self._view.bin.binTextBox.textChanged.connect(lambda: self._binChanged())
+
     def _connectSignals(self):
         self._view.dec.decTextBox.textChanged.connect(lambda: self._decChanged())
         self._view.hex.hexTextBox.textChanged.connect(lambda: self._hexChanged())
+        self._view.bin.binTextBox.textChanged.connect(lambda: self._binChanged())
