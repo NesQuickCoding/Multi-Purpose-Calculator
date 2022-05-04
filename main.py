@@ -7,6 +7,7 @@ from main_calc.models import evaluateExpression
 from main_calc.controllers import MainCalcCtrl
 from prime_gen.views import PrimeGenUI
 import prime_gen.models
+from temp_conversion.views import temp_Ui
 from prime_gen.controllers import PrimeGenCtrl
 
 from PyQt5.QtWidgets import QLabel
@@ -15,7 +16,7 @@ DROPBOX_MENU = [
     ("ASCII Conversion", QLabel),
     ("Prime Number Generator/Validator", PrimeGenUI),
     ("Metric Conversion", QLabel),
-    ("Temperature Conversion", QLabel),
+    ("Temperature Conversion", temp_Ui),
     ("Generate Numbers", QLabel)
 ]
 
