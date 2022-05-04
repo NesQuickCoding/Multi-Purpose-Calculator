@@ -32,7 +32,6 @@ class MainCalcCtrl:
                 return        
         except IndexError:
             return
-        
 
         # if adding number when there's only a zero
         # OR if adding a number after just hitting '='
@@ -44,7 +43,6 @@ class MainCalcCtrl:
         else:
             self._view.mainCalc.setCalcOutput(self._view.mainCalc.getCalcOutput() + keyInput)
         
-
         self._evalPressed = False
 
     def _changeSecCalc(self):

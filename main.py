@@ -1,9 +1,7 @@
 import sys
-from PyQt5.QtWidgets import QApplication
-from PyQt5.QtWidgets import QLabel, QHBoxLayout
-from PyQt5.QtWidgets import QWidget
-from PyQt5.QtWidgets import QMainWindow
-from PyQt5.QtWidgets import QStackedWidget
+
+from PyQt5.QtWidgets import QApplication, QHBoxLayout, QWidget, QMainWindow, QStackedWidget
+
 from main_calc.views import MainCalcUI
 from main_calc.models import evaluateExpression
 from main_calc.controllers import MainCalcCtrl
@@ -11,8 +9,7 @@ from prime_gen.views import PrimeGenUI
 import prime_gen.models
 from prime_gen.controllers import PrimeGenCtrl
 
-__version__ = "0.1"
-__author__ = "Python Calcuator"
+from PyQt5.QtWidgets import QLabel
 
 DROPBOX_MENU = [
     ("ASCII Conversion", QLabel),
