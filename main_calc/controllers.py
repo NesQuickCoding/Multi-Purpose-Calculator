@@ -27,15 +27,12 @@ class MainCalcCtrl:
             if re.search(r"\.", lastNumber):
                 return
 
-        try:
-            # adding a decimal after an operator will automatically add a 0 to make a legal expression
-            if keyInput == "." and self._view.mainCalc.getCalcOutput()[-1] in operators:
-                self._view.mainCalc.setCalcOutput(self._view.mainCalc.getCalcOutput() + "0")
-            # prevent adding another operator if an operator is already there
-            elif keyInput in operators and self._view.mainCalc.getCalcOutput()[-1] in operators:
-                return        
-        except IndexError:
-            return
+        # adding a decimal after an operator will automatically add a 0 to make a legal expression
+        if keyInput == "." and self._view.mainCalc.getCalcOutput()[-1] in operators:
+            self._view.mainCalc.setCalcOutput(self._view.mainCalc.getCalcOutput() + "0")
+        # prevent adding another operator if an operator is already there
+        elif keyInput in operators and self._view.mainCalc.getCalcOutput()[-1] in operators:
+            return        
 
         # if adding number when there's only a zero
         # OR if adding a number after just hitting '='
