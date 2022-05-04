@@ -1,4 +1,5 @@
 from functools import partial
+import re
 
 class MainCalcCtrl:
     def __init__(self, model, view):
@@ -12,12 +13,18 @@ class MainCalcCtrl:
         self._view.mainCalc.setCalcOutput(self._evaluate(expression=self._view.mainCalc.getCalcOutput()))
 
     def _buildExpression(self, keyInput):
-        operators = ["+", "-", "*", "/", "%", "**", "//"]
+        operators = ["+", "-", "*", "/", "%", "**", "//", "."]
         numbers = map(str, range(0, 10))
         
-        # if there was an error, resets calculator
+        # if there was a previous evaluation error, resets calculator
         if self._view.mainCalc.getCalcOutput() == "ERROR":
             self._view.mainCalc.clearCalcOutput()
+        
+        # checks to see if a number built so far has a decimal point in it already
+        if keyInput == ".":
+            lastNumber = re.findall(r"\d+\.?\d*", self._view.mainCalc.getCalcOutput())[-1]
+            if re.search(r"\.", lastNumber):
+                return
 
         # prevent adding another operator if an operator is already there
         try:
@@ -26,6 +33,7 @@ class MainCalcCtrl:
         except IndexError:
             return
         
+
         # if adding number when there's only a zero
         # OR if adding a number after just hitting '='
         # replaces it with just the keyInput number
@@ -36,6 +44,7 @@ class MainCalcCtrl:
         else:
             self._view.mainCalc.setCalcOutput(self._view.mainCalc.getCalcOutput() + keyInput)
         
+
         self._evalPressed = False
 
     def _changeSecCalc(self):
