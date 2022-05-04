@@ -44,22 +44,26 @@ class MainCalcUI(QWidget):
             "8": (0, 1),
             "9": (0, 2),
             "/": (0, 3),
-            "C": (0, 4),
+            "BS": (0, 4),
+            "C": (0, 5),
             "4": (1, 0),
             "5": (1, 1),
             "6": (1, 2),
             "*": (1, 3),
-            "(": (1, 4),
+            "//": (1, 4),
+            "(": (1, 5),
             "1": (2, 0),
             "2": (2, 1),
             "3": (2, 2),
             "-": (2, 3),
-            ")": (2, 4),
+            "**": (2, 4),
+            ")": (2, 5),
             "0": (3, 0),
             "00": (3, 1),
             ".": (3, 2),
             "+": (3, 3),
-            "=": (3, 4),
+            "%": (3, 4),
+            "=": (3, 5),
         }
 
         for buttonText, pos in buttons.items():
@@ -69,12 +73,14 @@ class MainCalcUI(QWidget):
 
         return buttonsLayout
 
-    def setDisplayText(self, text):
+    def setCalcOutput(self, text):
         self.calcOutput.setText(text)
-        self.calcOutput.setFocus()
 
-    def displayText(self):
+    def getCalcOutput(self):
         return self.calcOutput.text()
 
-    def clearDisplay(self):
-        self.setDisplayText("")
+    def backSpaceCalcOutput(self):
+        self.setCalcOutput(str(self.getCalcOutput())[0:-1])
+
+    def clearCalcOutput(self):
+        self.setCalcOutput("")
