@@ -38,7 +38,7 @@ class MainCalcUI(QWidget):
     def _createButtons(self):
         self.buttons = {}
         buttonsLayout = QGridLayout()
-        # Button text | position on the QGridLayout
+        
         buttons = {
             "7": (0, 0),
             "8": (0, 1),
@@ -62,32 +62,19 @@ class MainCalcUI(QWidget):
             "=": (3, 4),
         }
 
-        # Create the buttons and add them to the grid layout
-        for btnText, pos in buttons.items():
-            self.buttons[btnText] = QPushButton(btnText)
-            self.buttons[btnText].setFixedSize(55, 55)
-            buttonsLayout.addWidget(self.buttons[btnText], pos[0], pos[1])
+        for buttonText, pos in buttons.items():
+            self.buttons[buttonText] = QPushButton(buttonText)
+            self.buttons[buttonText].setFixedSize(55, 55)
+            buttonsLayout.addWidget(self.buttons[buttonText], pos[0], pos[1])
 
         return buttonsLayout
 
     def setDisplayText(self, text):
-        """Set display's text."""
         self.calcOutput.setText(text)
         self.calcOutput.setFocus()
 
     def displayText(self):
-        """Get display's text."""
         return self.calcOutput.text()
 
     def clearDisplay(self):
-        """Clear the display."""
         self.setDisplayText("")
-
-# Create a subclass of QMainWindow to setup the calculator's GUI
-# class MainCalcUi(QWidget):
-#     def __init__(self):
-#         super().__init__()
-#         self.calcMain = MainCalc()
-#         self.calcSide = CalcSide()
-#         self.generalLayout.addWidget(self.calcMain)
-#         self.generalLayout.addWidget(self.calcSide)
