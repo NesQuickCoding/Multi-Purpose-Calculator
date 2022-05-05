@@ -4,10 +4,12 @@ def signedIntToBase(value, bits, base):
   return base((value + (1 << bits)) % (1 << bits))
 
 def decValidator(stringNumber, limit, isSigned):
-    expression = r"[^-0-9]+" if isSigned else r"[^0-9]+"
-    inputValidation = re.split(expression, stringNumber)
+    storeMinus = True if stringNumber[0] == "-" and stringNumber[0:1] != "--" else False
+    # expression = r"[^-0-9]+" if isSigned else r"[^0-9]+"
+    inputValidation = re.split(r"[^0-9]+", stringNumber)
     validDecNumber = ''.join(inputValidation)
-    print(validDecNumber)
+    if storeMinus:
+        validDecNumber = "-" + validDecNumber
     if validDecNumber == '' or validDecNumber == '-':
         validDecNumber = "0"
     elif int(validDecNumber) > limit:
@@ -23,18 +25,21 @@ def decFormatter(stringNumber):
         return stringNumber
 
 def hexValidator(stringNumber, limit, isSigned):
-    expression = r"-?[^0-9a-fA-F]+" if isSigned else r"[^0-9a-fA-F]+"
+    expression = r"[^-0-9a-fA-F]+" if isSigned else r"[^0-9a-fA-F]+"
     inputValidation = re.split(expression, stringNumber)
     validHexNumber = ''.join(inputValidation)
-    if validHexNumber == '':
+    if validHexNumber == '' or validHexNumber == "-":
         validHexNumber = "0"
     elif int(validHexNumber, 16) > limit:
         validHexNumber = hex(limit)
     elif isSigned and int(validHexNumber, 16) < -(limit + 1):
+        print(int(validHexNumber, 16), limit)
         validHexNumber = hex(-(limit + 1))
+    print("from validator: ", validHexNumber)
     return validHexNumber
 
-def hexFormatter(stringNumber):
+def hexFormatter(stringNumber, bit):
+    stringNumber = signedIntToBase(int(stringNumber, 16), bit, hex)[2:]
     validHexNumber = ""
     try:
         count = 0

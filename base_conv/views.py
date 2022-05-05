@@ -1,8 +1,7 @@
 from PyQt5.QtWidgets import QWidget, QRadioButton, QScrollArea, QLabel, QTabWidget, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QPlainTextEdit, QComboBox
 from PyQt5.QtGui import QFont, QIntValidator, QRegExpValidator
 from PyQt5.QtSvg import QSvgWidget
-from PyQt5.QtCore import Qt, QRegExp
-
+from PyQt5.QtCore import Qt, QRegExp, pyqtSignal, QEvent
 class NumBase(QWidget):
     def __init__(self):
         super().__init__()

@@ -1,3 +1,5 @@
+from PyQt5.QtCore import Qt
+
 class BaseConvCtrl:
     def __init__(self, view, model):
         self._view = view
@@ -20,8 +22,8 @@ class BaseConvCtrl:
         binOutput = ""
         try:
             decOutput = self._model.decFormatter(validDecNumber)
-            # hexOutput = self._model.hexFormatter(f"{hex(int(validDecNumber))[2:]}" if int(validDecNumber) >= 0 else f"-{hex(int(validDecNumber))[3:]}")
-            # binOutput = self._model.binFormatter(f"{bin(int(validDecNumber))[2:]}" if int(validDecNumber) >= 0 else f"-{bin(int(validDecNumber))[3:]}")
+            hexOutput = self._model.hexFormatter(f"{hex(int(validDecNumber))[2:]}" if int(validDecNumber) >= 0 else f"-{hex(int(validDecNumber))[3:]}", 64 // (2**self._view.bitDropBox.currentIndex()))
+            binOutput = self._model.binFormatter(f"{bin(int(validDecNumber))[2:]}" if int(validDecNumber) >= 0 else f"-{bin(int(validDecNumber))[3:]}")
         except ValueError:
             pass
 
@@ -29,21 +31,23 @@ class BaseConvCtrl:
         # then setPlainText and connect signal again
         self._disconnectTextSignals()
         self._view.dec.decTextBox.document().setPlainText(decOutput)
-        # self._view.hex.hexTextBox.document().setPlainText(hexOutput)
-        # self._view.bin.binTextBox.document().setPlainText(binOutput)
+        self._view.hex.hexTextBox.document().setPlainText(hexOutput)
+        self._view.bin.binTextBox.document().setPlainText(binOutput)
         self._connectTextSignals()
     
     def _hexChanged(self):
-        validHexNumber = self._model.hexValidator(self._view.hex.hexTextBox.document().toPlainText(), self._bitLimits[self._view.bitDropBox.currentIndex()][self._signed])
+        validHexNumber = self._model.hexValidator(self._view.hex.hexTextBox.document().toPlainText(), self._bitLimits[self._view.bitDropBox.currentIndex()][self._signed], self._signed)
         decOutput = ""
         hexOutput = ""
         binOutput = ""
+        
         try:
             decOutput = self._model.decFormatter(f"{int(validHexNumber, 16)}")
-            hexOutput = self._model.hexFormatter(f"{hex(int(validHexNumber, 16))[2:]}")
-            binOutput = self._model.binFormatter(f"{bin(int(validHexNumber, 16))[2:]}")
+            hexOutput = self._model.hexFormatter(f"{hex(int(validHexNumber, 16))[2:]}" if int(validHexNumber, 16) >= 0 else f"-{hex(int(validHexNumber, 16))[3:]}", 64 // (2**self._view.bitDropBox.currentIndex()))
+            binOutput = self._model.binFormatter(f"{bin(int(validHexNumber, 16))[2:]}" if int(validHexNumber, 16) >= 0 else f"-{bin(int(validHexNumber, 16))[3:]}")
         except ValueError:
             pass
+
         self._disconnectTextSignals()
         self._view.dec.decTextBox.document().setPlainText(decOutput)
         self._view.hex.hexTextBox.document().setPlainText(hexOutput)
@@ -58,7 +62,7 @@ class BaseConvCtrl:
         
         try:
             decOutput = self._model.decFormatter(f"{int(validBinNumber, 2)}")
-            hexOutput = self._model.hexFormatter(f"{hex(int(validBinNumber, 2))[2:]}")
+            hexOutput = self._model.hexFormatter(f"{hex(int(validBinNumber, 2))[2:]}" if int(validBinNumber) >= 0 else f"-{hex(int(validBinNumber))[3:]}", 64 // (2**self._view.bitDropBox.currentIndex()))
             binOutput = self._model.binFormatter(f"{bin(int(validBinNumber, 2))[2:]}")
         except ValueError:
             pass
@@ -80,7 +84,7 @@ class BaseConvCtrl:
             self._signed = 1
             self._view.negateButton.setEnabled(True)
         self._decChanged()
-
+    
     def _setNegate(self):
         if self._view.dec.decTextBox.document().toPlainText()[0] != '-':
             self._view.dec.decTextBox.document().setPlainText("-" + self._view.dec.decTextBox.document().toPlainText())
@@ -91,8 +95,7 @@ class BaseConvCtrl:
     def _connectTextSignals(self):
         self._view.dec.decTextBox.textChanged.connect(lambda: self._decChanged())
         self._view.hex.hexTextBox.textChanged.connect(lambda: self._hexChanged())
-        self._view.bin.binTextBox.textChanged.connect(lambda: self._binChanged())
-    
+        self._view.bin.binTextBox.textChanged.connect(lambda: self._binChanged())    
     def _disconnectTextSignals(self):
         self._view.dec.decTextBox.textChanged.disconnect()
         self._view.hex.hexTextBox.textChanged.disconnect()
