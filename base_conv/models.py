@@ -8,6 +8,17 @@ def signedBaseToInt(value ,bits):
         value -= 1 << bits
     return value
 
+def rightToLeftInsertion(string, position, insertChar):
+    if len(string) > position:
+        formattedString = ""
+        for i in range(len(string) - 1, -1, -1):
+            formattedString = string[i] + formattedString
+            if i % 4 == 0 and i != 0:
+                formattedString = insertChar + formattedString
+        return formattedString
+    else:
+        return string
+
 def decValidator(stringNumber, limit, isSigned):
     storeMinus = False
     try:
@@ -49,24 +60,10 @@ def hexValidator(stringNumber, limit, isSigned):
     elif int(validHexNumber, 16) > limit:
         validHexNumber = hex(limit)
     return validHexNumber
-
+    
 def hexFormatter(stringNumber, bit):
     stringNumber = signedIntToBase(int(stringNumber, 16), bit, hex)[2:]
-    validHexNumber = ""
-    try:
-        count = 0
-        if len(stringNumber) > 4:
-            for i in range(len(stringNumber) - 1, -1, -1):
-                validHexNumber = stringNumber[i] + validHexNumber
-                count += 1
-                if count == 4 and i != 0:
-                    validHexNumber = " " + validHexNumber
-                    count = 0
-        else:
-            validHexNumber = stringNumber
-    except ValueError:
-        pass
-    return validHexNumber.upper()
+    return rightToLeftInsertion(stringNumber, 4, " ").upper()
 
 def binValidator(stringNumber, limit, isSigned):
     storeMinus = False
@@ -87,18 +84,4 @@ def binValidator(stringNumber, limit, isSigned):
     
 def binFormatter(stringNumber, bit):
     stringNumber = signedIntToBase(int(stringNumber, 2), bit, bin)[2:]
-    validBinNumber = ""
-    try:
-        count = 0
-        if len(stringNumber) > 4:
-            for i in range(len(stringNumber) - 1, -1, -1):
-                validBinNumber = stringNumber[i] + validBinNumber
-                count += 1
-                if count == 4 and i != 0:
-                    validBinNumber = " " + validBinNumber
-                    count = 0
-        else:
-            validBinNumber = stringNumber
-    except ValueError:
-        pass
-    return validBinNumber
+    return rightToLeftInsertion(stringNumber, 4, " ")
