@@ -14,14 +14,14 @@ class BaseConvCtrl:
         self._signed = 0
 
     def _decChanged(self):
-        validDecNumber = self._model.decValidator(self._view.dec.decTextBox.document().toPlainText(), self._bitLimits[self._view.bitDropBox.currentIndex()][self._signed])
+        validDecNumber = self._model.decValidator(self._view.dec.decTextBox.document().toPlainText(), self._bitLimits[self._view.bitDropBox.currentIndex()][self._signed], self._signed)
         decOutput = ""
         hexOutput = ""
         binOutput = ""
         try:
             decOutput = self._model.decFormatter(validDecNumber)
-            hexOutput = self._model.hexFormatter(f"{hex(int(validDecNumber))[2:]}")
-            binOutput = self._model.binFormatter(f"{bin(int(validDecNumber))[2:]}")
+            # hexOutput = self._model.hexFormatter(f"{hex(int(validDecNumber))[2:]}" if int(validDecNumber) >= 0 else f"-{hex(int(validDecNumber))[3:]}")
+            # binOutput = self._model.binFormatter(f"{bin(int(validDecNumber))[2:]}" if int(validDecNumber) >= 0 else f"-{bin(int(validDecNumber))[3:]}")
         except ValueError:
             pass
 
@@ -29,8 +29,8 @@ class BaseConvCtrl:
         # then setPlainText and connect signal again
         self._disconnectTextSignals()
         self._view.dec.decTextBox.document().setPlainText(decOutput)
-        self._view.hex.hexTextBox.document().setPlainText(hexOutput)
-        self._view.bin.binTextBox.document().setPlainText(binOutput)
+        # self._view.hex.hexTextBox.document().setPlainText(hexOutput)
+        # self._view.bin.binTextBox.document().setPlainText(binOutput)
         self._connectTextSignals()
     
     def _hexChanged(self):
@@ -75,9 +75,18 @@ class BaseConvCtrl:
     def _setSigned(self):
         if self._view.unSignedRadio.isChecked():
             self._signed = 0
+            self._view.negateButton.setEnabled(False)
         elif self._view.signedRadio.isChecked():
             self._signed = 1
+            self._view.negateButton.setEnabled(True)
         self._decChanged()
+
+    def _setNegate(self):
+        if self._view.dec.decTextBox.document().toPlainText()[0] != '-':
+            self._view.dec.decTextBox.document().setPlainText("-" + self._view.dec.decTextBox.document().toPlainText())
+        else:
+            self._view.dec.decTextBox.document().setPlainText(self._view.dec.decTextBox.document().toPlainText()[1:])
+        pass
 
     def _connectTextSignals(self):
         self._view.dec.decTextBox.textChanged.connect(lambda: self._decChanged())
@@ -92,3 +101,4 @@ class BaseConvCtrl:
     def _bitSignals(self):
         self._view.bitDropBox.currentIndexChanged.connect(self._setBitIndex)
         self._view.unSignedRadio.toggled.connect(self._setSigned)
+        self._view.negateButton.clicked.connect(self._setNegate)

@@ -56,9 +56,11 @@ class BaseConvUI(QWidget):
         self.unSignedRadio = self._createSignedRadios("Unsigned")
         self.unSignedRadio.setChecked(True)
         self.signedRadio = self._createSignedRadios("Signed")
+        self.negateButton = self._createNegateButton()
         self.bitDropBox = self._createBitLengthBox()
         bitLayout.addWidget(self.unSignedRadio)
         bitLayout.addWidget(self.signedRadio)
+        bitLayout.addWidget(self.negateButton)
         bitLayout.addWidget(self.bitDropBox)
         layout.addLayout(bitLayout)
         self.dec = DecBase()
@@ -72,6 +74,11 @@ class BaseConvUI(QWidget):
     def _createSignedRadios(self, text):
         radio = QRadioButton(text)
         return radio
+
+    def _createNegateButton(self):
+        button = QPushButton("Negate")
+        button.setEnabled(False)
+        return button
 
     def _createBitLengthBox(self):
         bitDropBox = QComboBox()

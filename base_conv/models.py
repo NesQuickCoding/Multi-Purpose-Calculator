@@ -1,12 +1,19 @@
 import re
 
-def decValidator(stringNumber, limit):
-    inputValidation = re.split(r"[^0-9]+", stringNumber)
+def signedIntToBase(value, bits, base):
+  return base((value + (1 << bits)) % (1 << bits))
+
+def decValidator(stringNumber, limit, isSigned):
+    expression = r"[^-0-9]+" if isSigned else r"[^0-9]+"
+    inputValidation = re.split(expression, stringNumber)
     validDecNumber = ''.join(inputValidation)
-    if validDecNumber == '':
+    print(validDecNumber)
+    if validDecNumber == '' or validDecNumber == '-':
         validDecNumber = "0"
     elif int(validDecNumber) > limit:
         validDecNumber = str(limit)
+    elif isSigned and int(validDecNumber) < -(limit + 1):
+        validDecNumber = str(-(limit + 1))
     return validDecNumber
 
 def decFormatter(stringNumber):
@@ -15,13 +22,16 @@ def decFormatter(stringNumber):
     except ValueError:
         return stringNumber
 
-def hexValidator(stringNumber, limit):
-    inputValidation = re.split(r"[^0-9a-fA-F]+", stringNumber)
+def hexValidator(stringNumber, limit, isSigned):
+    expression = r"-?[^0-9a-fA-F]+" if isSigned else r"[^0-9a-fA-F]+"
+    inputValidation = re.split(expression, stringNumber)
     validHexNumber = ''.join(inputValidation)
     if validHexNumber == '':
         validHexNumber = "0"
     elif int(validHexNumber, 16) > limit:
         validHexNumber = hex(limit)
+    elif isSigned and int(validHexNumber, 16) < -(limit + 1):
+        validHexNumber = hex(-(limit + 1))
     return validHexNumber
 
 def hexFormatter(stringNumber):
