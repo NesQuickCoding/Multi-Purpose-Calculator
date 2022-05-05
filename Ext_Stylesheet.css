@@ -55,11 +55,18 @@ QRadioButton {
 
     background-color: transparent;
     color: lime;
-    font-size: 16px};
+    font-size: 16px;
+
+}
+/************************* For the Output Qline  **************************/
+QLineEdit{
+
+    background-color: black;
+    color: lime;
+    font-size: 19px;
 
 
-
-
+}
 
 
 
