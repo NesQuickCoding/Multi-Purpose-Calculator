@@ -25,6 +25,8 @@ QPushButton{
     border-width: 1px;
     border-radius: 4px;
     border-color: lime;
+    font-size: 16px;
+
 }
 
 QPushButton:pressed{
@@ -49,7 +51,11 @@ QComboBox QAbstractItemView{
 }
 
 /************************* For the Radio Buttons  **************************/ 
-QRadioButton {background-color: transparent; color: lime};
+QRadioButton {
+
+    background-color: transparent;
+    color: lime;
+    font-size: 16px};
 
 
 
