@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QScrollArea, QLabel, QTabWidget, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QPlainTextEdit
+from PyQt5.QtWidgets import QWidget, QRadioButton, QScrollArea, QLabel, QTabWidget, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QPlainTextEdit, QComboBox
 from PyQt5.QtGui import QFont, QIntValidator, QRegExpValidator
 from PyQt5.QtSvg import QSvgWidget
 from PyQt5.QtCore import Qt, QRegExp
@@ -15,6 +15,7 @@ class NumBase(QWidget):
     def _CreateNumTextBox(self):
         textbox = QPlainTextEdit()
         textbox.setFont(QFont('Terminal', 10))
+        textbox.document().setPlainText("0")
         return textbox
 
 class DecBase(NumBase):
@@ -51,6 +52,15 @@ class BaseConvUI(QWidget):
     def __init__(self):
         super().__init__()
         layout = QVBoxLayout()
+        bitLayout = QHBoxLayout()
+        self.unSignedRadio = self._createSignedRadios("Unsigned")
+        self.unSignedRadio.setChecked(True)
+        self.signedRadio = self._createSignedRadios("Signed")
+        self.bitDropBox = self._createBitLengthBox()
+        bitLayout.addWidget(self.unSignedRadio)
+        bitLayout.addWidget(self.signedRadio)
+        bitLayout.addWidget(self.bitDropBox)
+        layout.addLayout(bitLayout)
         self.dec = DecBase()
         layout.addWidget(self.dec)
         self.hex = HexBase()
@@ -58,3 +68,13 @@ class BaseConvUI(QWidget):
         self.bin = BinBase()
         layout.addWidget(self.bin)
         self.setLayout(layout)
+    
+    def _createSignedRadios(self, text):
+        radio = QRadioButton(text)
+        return radio
+
+    def _createBitLengthBox(self):
+        bitDropBox = QComboBox()
+        bitDropBox.setObjectName("bitDropBox")
+        bitDropBox.addItems(["QWord - 64bit", "DWord - 32bit", "Word - 16bit", "Byte - 8bit"])
+        return bitDropBox

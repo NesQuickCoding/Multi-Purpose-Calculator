@@ -1,10 +1,14 @@
 import re
-import string
+
+roof = 9223372036854775807
+floor = -9223372036854775807
 
 def decValidator(stringNumber):
     inputValidation = re.split(r"[^0-9]+", stringNumber)
     validDecNumber = ''.join(inputValidation)
-    return validDecNumber
+    if validDecNumber == '':
+        validDecNumber = "0"
+    return min(int(validDecNumber), roof)
 
 def decFormatter(stringNumber):
     try:
