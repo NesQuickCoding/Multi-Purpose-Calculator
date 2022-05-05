@@ -1,5 +1,3 @@
-from PyQt5.QtCore import Qt
-
 class BaseConvCtrl:
     def __init__(self, view, model):
         self._view = view
@@ -43,7 +41,7 @@ class BaseConvCtrl:
         
         try:
             if self._signed:
-                decOutput = self._model.decFormatter(str(self._model.twosComplement(int(validHexNumber, 16), 64 // (2**self._view.bitDropBox.currentIndex()))))
+                decOutput = self._model.decFormatter(str(self._model.signedBaseToInt(int(validHexNumber, 16), 64 // (2**self._view.bitDropBox.currentIndex()))))
             else:
                 decOutput = self._model.decFormatter(f"{int(validHexNumber, 16)}")
             hexOutput = self._model.hexFormatter(f"{hex(int(validHexNumber, 16))[2:]}" if int(validHexNumber, 16) >= 0 else f"-{hex(int(validHexNumber, 16))[3:]}", 64 // (2**self._view.bitDropBox.currentIndex()))
@@ -65,7 +63,7 @@ class BaseConvCtrl:
         
         try:
             if self._signed:
-                decOutput = self._model.decFormatter(str(self._model.twosComplement(int(validBinNumber, 2), 64 // (2**self._view.bitDropBox.currentIndex()))))
+                decOutput = self._model.decFormatter(str(self._model.signedBaseToInt(int(validBinNumber, 2), 64 // (2**self._view.bitDropBox.currentIndex()))))
             else:
                 decOutput = self._model.decFormatter(f"{int(validBinNumber, 2)}")
             hexOutput = self._model.hexFormatter(f"{hex(int(validBinNumber, 2))[2:]}" if int(validBinNumber, 2) >= 0 else f"-{hex(int(validBinNumber))[3:]}", 64 // (2**self._view.bitDropBox.currentIndex()))

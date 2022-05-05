@@ -3,7 +3,7 @@ import re
 def signedIntToBase(value, bits, base):
     return base((value + (1 << bits)) % (1 << bits))
 
-def twosComplement(value ,bits):
+def signedBaseToInt(value ,bits):
     if value & (1 << (bits-1)):
         value -= 1 << bits
     return value
