@@ -2,10 +2,20 @@ import re
 
 def signedIntToBase(value, bits, base):
   return base((value + (1 << bits)) % (1 << bits))
+def twos_complement(hexstr,bits):
+    value = int(hexstr,16)
+    if value & (1 << (bits-1)):
+        value -= 1 << bits
+    return value
+
 
 def decValidator(stringNumber, limit, isSigned):
-    storeMinus = True if stringNumber[0] == "-" and stringNumber[0:1] != "--" else False
-    # expression = r"[^-0-9]+" if isSigned else r"[^0-9]+"
+    storeMinus = False
+    try:
+        if stringNumber[0] == "-" and stringNumber[0:2] != "--" and isSigned:
+            storeMinus = True
+    except IndexError:
+        pass
     inputValidation = re.split(r"[^0-9]+", stringNumber)
     validDecNumber = ''.join(inputValidation)
     if storeMinus:
@@ -25,17 +35,20 @@ def decFormatter(stringNumber):
         return stringNumber
 
 def hexValidator(stringNumber, limit, isSigned):
-    expression = r"[^-0-9a-fA-F]+" if isSigned else r"[^0-9a-fA-F]+"
-    inputValidation = re.split(expression, stringNumber)
+    storeMinus = False
+    try:
+        if stringNumber[0] == "-" and stringNumber[0:2] != "--" and isSigned:
+            storeMinus = True
+    except IndexError:
+        pass
+    inputValidation = re.split(r"[^0-9a-fA-F]+", stringNumber)
     validHexNumber = ''.join(inputValidation)
+    if storeMinus:
+        validHexNumber = "-" + validHexNumber
     if validHexNumber == '' or validHexNumber == "-":
-        validHexNumber = "0"
+        return "0"
     elif int(validHexNumber, 16) > limit:
         validHexNumber = hex(limit)
-    elif isSigned and int(validHexNumber, 16) < -(limit + 1):
-        print(int(validHexNumber, 16), limit)
-        validHexNumber = hex(-(limit + 1))
-    print("from validator: ", validHexNumber)
     return validHexNumber
 
 def hexFormatter(stringNumber, bit):

@@ -36,13 +36,16 @@ class BaseConvCtrl:
         self._connectTextSignals()
     
     def _hexChanged(self):
-        validHexNumber = self._model.hexValidator(self._view.hex.hexTextBox.document().toPlainText(), self._bitLimits[self._view.bitDropBox.currentIndex()][self._signed], self._signed)
+        validHexNumber = self._model.hexValidator(self._view.hex.hexTextBox.document().toPlainText(), self._bitLimits[self._view.bitDropBox.currentIndex()][0], self._signed)
         decOutput = ""
         hexOutput = ""
         binOutput = ""
         
         try:
-            decOutput = self._model.decFormatter(f"{int(validHexNumber, 16)}")
+            if self._signed:
+                decOutput = self._model.decFormatter(str(self._model.twos_complement(validHexNumber, 64 // (2**self._view.bitDropBox.currentIndex()))))
+            else:
+                decOutput = self._model.decFormatter(f"{int(validHexNumber, 16)}")
             hexOutput = self._model.hexFormatter(f"{hex(int(validHexNumber, 16))[2:]}" if int(validHexNumber, 16) >= 0 else f"-{hex(int(validHexNumber, 16))[3:]}", 64 // (2**self._view.bitDropBox.currentIndex()))
             binOutput = self._model.binFormatter(f"{bin(int(validHexNumber, 16))[2:]}" if int(validHexNumber, 16) >= 0 else f"-{bin(int(validHexNumber, 16))[3:]}")
         except ValueError:
