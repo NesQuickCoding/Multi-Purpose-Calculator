@@ -1,13 +1,12 @@
 import re
 
 def signedIntToBase(value, bits, base):
-  return base((value + (1 << bits)) % (1 << bits))
-def twos_complement(hexstr,bits):
-    value = int(hexstr,16)
+    return base((value + (1 << bits)) % (1 << bits))
+
+def twosComplement(value ,bits):
     if value & (1 << (bits-1)):
         value -= 1 << bits
     return value
-
 
 def decValidator(stringNumber, limit, isSigned):
     storeMinus = False
@@ -69,16 +68,25 @@ def hexFormatter(stringNumber, bit):
         pass
     return validHexNumber.upper()
 
-def binValidator(stringNumber, limit):
+def binValidator(stringNumber, limit, isSigned):
+    storeMinus = False
+    try:
+        if stringNumber[0] == "-" and stringNumber[0:2] != "--" and isSigned:
+            storeMinus = True
+    except IndexError:
+        pass
     inputValidation = re.split(r"[^0-1]+", stringNumber)
     validBinNumber = ''.join(inputValidation)
-    if validBinNumber == '':
-        validBinNumber = "0"
+    if storeMinus:
+        validBinNumber = "-" + validBinNumber
+    if validBinNumber == '' or validBinNumber == "-":
+        return "0"
     elif int(validBinNumber, 2) > limit:
         validBinNumber = bin(limit)
     return validBinNumber
     
-def binFormatter(stringNumber):
+def binFormatter(stringNumber, bit):
+    stringNumber = signedIntToBase(int(stringNumber, 2), bit, bin)[2:]
     validBinNumber = ""
     try:
         count = 0

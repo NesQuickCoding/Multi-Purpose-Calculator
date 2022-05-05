@@ -23,7 +23,7 @@ class BaseConvCtrl:
         try:
             decOutput = self._model.decFormatter(validDecNumber)
             hexOutput = self._model.hexFormatter(f"{hex(int(validDecNumber))[2:]}" if int(validDecNumber) >= 0 else f"-{hex(int(validDecNumber))[3:]}", 64 // (2**self._view.bitDropBox.currentIndex()))
-            binOutput = self._model.binFormatter(f"{bin(int(validDecNumber))[2:]}" if int(validDecNumber) >= 0 else f"-{bin(int(validDecNumber))[3:]}")
+            binOutput = self._model.binFormatter(f"{bin(int(validDecNumber))[2:]}" if int(validDecNumber) >= 0 else f"-{bin(int(validDecNumber))[3:]}", 64 // (2**self._view.bitDropBox.currentIndex()))
         except ValueError:
             pass
 
@@ -43,11 +43,11 @@ class BaseConvCtrl:
         
         try:
             if self._signed:
-                decOutput = self._model.decFormatter(str(self._model.twos_complement(validHexNumber, 64 // (2**self._view.bitDropBox.currentIndex()))))
+                decOutput = self._model.decFormatter(str(self._model.twosComplement(int(validHexNumber, 16), 64 // (2**self._view.bitDropBox.currentIndex()))))
             else:
                 decOutput = self._model.decFormatter(f"{int(validHexNumber, 16)}")
             hexOutput = self._model.hexFormatter(f"{hex(int(validHexNumber, 16))[2:]}" if int(validHexNumber, 16) >= 0 else f"-{hex(int(validHexNumber, 16))[3:]}", 64 // (2**self._view.bitDropBox.currentIndex()))
-            binOutput = self._model.binFormatter(f"{bin(int(validHexNumber, 16))[2:]}" if int(validHexNumber, 16) >= 0 else f"-{bin(int(validHexNumber, 16))[3:]}")
+            binOutput = self._model.binFormatter(f"{bin(int(validHexNumber, 16))[2:]}" if int(validHexNumber, 16) >= 0 else f"-{bin(int(validHexNumber, 16))[3:]}", 64 // (2**self._view.bitDropBox.currentIndex()))
         except ValueError:
             pass
 
@@ -58,15 +58,18 @@ class BaseConvCtrl:
         self._connectTextSignals()
 
     def _binChanged(self):
-        validBinNumber = self._model.binValidator(self._view.bin.binTextBox.document().toPlainText(), self._bitLimits[self._view.bitDropBox.currentIndex()][self._signed])
+        validBinNumber = self._model.binValidator(self._view.bin.binTextBox.document().toPlainText(), self._bitLimits[self._view.bitDropBox.currentIndex()][0], self._signed)
         decOutput = ""
         hexOutput = ""
         binOutput = ""
         
         try:
-            decOutput = self._model.decFormatter(f"{int(validBinNumber, 2)}")
-            hexOutput = self._model.hexFormatter(f"{hex(int(validBinNumber, 2))[2:]}" if int(validBinNumber) >= 0 else f"-{hex(int(validBinNumber))[3:]}", 64 // (2**self._view.bitDropBox.currentIndex()))
-            binOutput = self._model.binFormatter(f"{bin(int(validBinNumber, 2))[2:]}")
+            if self._signed:
+                decOutput = self._model.decFormatter(str(self._model.twosComplement(int(validBinNumber, 2), 64 // (2**self._view.bitDropBox.currentIndex()))))
+            else:
+                decOutput = self._model.decFormatter(f"{int(validBinNumber, 2)}")
+            hexOutput = self._model.hexFormatter(f"{hex(int(validBinNumber, 2))[2:]}" if int(validBinNumber, 2) >= 0 else f"-{hex(int(validBinNumber))[3:]}", 64 // (2**self._view.bitDropBox.currentIndex()))
+            binOutput = self._model.binFormatter(f"{bin(int(validBinNumber, 2))[2:]}" if int(validBinNumber, 2) >= 0 else f"-{bin(int(validBinNumber))[3:]}", 64 // (2**self._view.bitDropBox.currentIndex()))
         except ValueError:
             pass
 
