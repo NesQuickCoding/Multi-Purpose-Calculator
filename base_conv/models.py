@@ -1,14 +1,13 @@
 import re
 
-roof = 9223372036854775807
-floor = -9223372036854775807
-
-def decValidator(stringNumber):
+def decValidator(stringNumber, limit):
     inputValidation = re.split(r"[^0-9]+", stringNumber)
     validDecNumber = ''.join(inputValidation)
     if validDecNumber == '':
         validDecNumber = "0"
-    return min(int(validDecNumber), roof)
+    elif int(validDecNumber) > limit:
+        validDecNumber = str(limit)
+    return validDecNumber
 
 def decFormatter(stringNumber):
     try:
@@ -19,6 +18,8 @@ def decFormatter(stringNumber):
 def hexValidator(stringNumber):
     inputValidation = re.split(r"[^0-9a-fA-F]+", stringNumber)
     validHexNumber = ''.join(inputValidation)
+    if validHexNumber == '':
+        validHexNumber = "0"
     return validHexNumber
 
 def hexFormatter(stringNumber):
@@ -41,6 +42,8 @@ def hexFormatter(stringNumber):
 def binValidator(stringNumber):
     inputValidation = re.split(r"[^0-1]+", stringNumber)
     validBinNumber = ''.join(inputValidation)
+    if validBinNumber == '':
+        validBinNumber = "0"
     return validBinNumber
     
 def binFormatter(stringNumber):
