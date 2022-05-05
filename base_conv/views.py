@@ -14,6 +14,7 @@ class NumBase(QWidget):
     
     def _CreateNumTextBox(self):
         textbox = QPlainTextEdit()
+        textbox.setFont(QFont('Terminal', 10))
         return textbox
 
 class DecBase(NumBase):

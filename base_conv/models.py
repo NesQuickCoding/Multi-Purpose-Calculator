@@ -1,4 +1,5 @@
 import re
+import string
 
 def decValidator(stringNumber):
     inputValidation = re.split(r"[^0-9]+", stringNumber)

@@ -31,7 +31,7 @@ class BaseConvCtrl:
         binOutput = ""
         try:
             decOutput = self._model.decFormatter(f"{int(validHexNumber, 16)}")
-            hexOutput = self._model.hexFormatter(validHexNumber)
+            hexOutput = self._model.hexFormatter(f"{hex(int(validHexNumber, 16))[2:]}")
             binOutput = self._model.binFormatter(f"{bin(int(validHexNumber, 16))[2:]}")
         except ValueError:
             pass
@@ -50,7 +50,7 @@ class BaseConvCtrl:
         try:
             decOutput = self._model.decFormatter(f"{int(validBinNumber, 2)}")
             hexOutput = self._model.hexFormatter(f"{hex(int(validBinNumber, 2))[2:]}")
-            binOutput = self._model.binFormatter(validBinNumber)
+            binOutput = self._model.binFormatter(f"{bin(int(validBinNumber, 2))[2:]}")
         except ValueError:
             pass
 
