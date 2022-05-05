@@ -25,7 +25,7 @@ def main():
     baseconv = QApplication(sys.argv)
     view = TestWindow()
     view.show()
-    BaseConvCtrl(view=view.baseConvUI)
+    BaseConvCtrl(view=view.baseConvUI, model=models)
     sys.exit(baseconv.exec())
 
 if __name__ == '__main__':
