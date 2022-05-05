@@ -1,6 +1,8 @@
 import sys
 
 from PyQt5.QtWidgets import QApplication, QHBoxLayout, QWidget, QMainWindow, QStackedWidget
+from PyQt5 import QtCore, QtGui
+import os
 
 from main_calc.views import MainCalcUI
 from main_calc.models import evaluateExpression
@@ -26,7 +28,7 @@ DROPBOX_MENU = [
 class SecCalc(QStackedWidget):
     def __init__(self):
         super().__init__()
-        self.setFixedSize(400, 400)
+        self.setFixedSize(470, 400)
         self.option = {}
         for QWidgetObject in DROPBOX_MENU:
             self.option[QWidgetObject[1].__name__] = QWidgetObject[1]()
@@ -41,7 +43,7 @@ class MultiCalcWindow(QMainWindow):
         
         # Main Window setup properties
         self.setWindowTitle("Multi-Purpose Calculator")
-        self.setFixedSize(800, 400)
+        self.setFixedSize(940, 400)
         self.generalLayout = QHBoxLayout()
         self._centralWidget = QWidget()
         self._centralWidget = QWidget(self)
