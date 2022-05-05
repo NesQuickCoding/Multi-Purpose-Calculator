@@ -33,18 +33,19 @@ QPushButton:pressed{
 
 /************************* For the Push Buttons  **************************/ 
 
-QComboBox{
+QComboBox {
+color: rgb(55, 255, 0);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(98, 255, 0);
+    font: 11pt "Arial";
+}
 
-    color: rgb(55, 255, 0);
-        border-style: outset;
-        border-width: 1px;
-        border-radius: 4px;
-        border-color: rgb(98, 255, 0);
-    }
-    
-QComboBox:hover {
-    background: green;
-    font: lime;
+QComboBox QAbstractItemView{
+    color: lime;
+    select-color: green;
+    select-background-color: black;
 }
 
 /************************* For the Radio Buttons  **************************/ 
