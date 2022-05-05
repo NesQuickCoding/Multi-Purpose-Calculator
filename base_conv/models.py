@@ -15,11 +15,13 @@ def decFormatter(stringNumber):
     except ValueError:
         return stringNumber
 
-def hexValidator(stringNumber):
+def hexValidator(stringNumber, limit):
     inputValidation = re.split(r"[^0-9a-fA-F]+", stringNumber)
     validHexNumber = ''.join(inputValidation)
     if validHexNumber == '':
         validHexNumber = "0"
+    elif int(validHexNumber, 16) > limit:
+        validHexNumber = hex(limit)
     return validHexNumber
 
 def hexFormatter(stringNumber):
@@ -39,11 +41,13 @@ def hexFormatter(stringNumber):
         pass
     return validHexNumber.upper()
 
-def binValidator(stringNumber):
+def binValidator(stringNumber, limit):
     inputValidation = re.split(r"[^0-1]+", stringNumber)
     validBinNumber = ''.join(inputValidation)
     if validBinNumber == '':
         validBinNumber = "0"
+    elif int(validBinNumber, 2) > limit:
+        validBinNumber = bin(limit)
     return validBinNumber
     
 def binFormatter(stringNumber):

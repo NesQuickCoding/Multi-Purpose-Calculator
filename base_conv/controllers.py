@@ -34,7 +34,7 @@ class BaseConvCtrl:
         self._connectTextSignals()
     
     def _hexChanged(self):
-        validHexNumber = self._model.hexValidator(self._view.hex.hexTextBox.document().toPlainText())
+        validHexNumber = self._model.hexValidator(self._view.hex.hexTextBox.document().toPlainText(), self._bitLimits[self._view.bitDropBox.currentIndex()][self._signed])
         decOutput = ""
         hexOutput = ""
         binOutput = ""
@@ -51,7 +51,7 @@ class BaseConvCtrl:
         self._connectTextSignals()
 
     def _binChanged(self):
-        validBinNumber = self._model.binValidator(self._view.bin.binTextBox.document().toPlainText())
+        validBinNumber = self._model.binValidator(self._view.bin.binTextBox.document().toPlainText(), self._bitLimits[self._view.bitDropBox.currentIndex()][self._signed])
         decOutput = ""
         hexOutput = ""
         binOutput = ""
