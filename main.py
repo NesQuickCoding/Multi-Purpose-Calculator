@@ -10,10 +10,13 @@ import prime_gen.models
 from temp_conversion.views import temp_Ui
 from prime_gen.controllers import PrimeGenCtrl
 
+from ascii_conversion.views import ascii_Ui
+
+
 from PyQt5.QtWidgets import QLabel
 
 DROPBOX_MENU = [
-    ("ASCII Conversion", QLabel),
+    ("ASCII Conversion", ascii_Ui),
     ("Prime Number Generator/Validator", PrimeGenUI),
     ("Metric Conversion", QLabel),
     ("Temperature Conversion", temp_Ui),
