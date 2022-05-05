@@ -25,6 +25,7 @@ class MainCalcUI(QWidget):
         comboBox = QComboBox()
         comboBox.setObjectName("CalcDropBox")
         comboBox.setGeometry(QRect(130, 190, 291, 31))
+        comboBox.setStyleSheet(open("../Graphical-App/Ext_Stylesheet.css").read())
         for item in dropMenu:
             comboBox.addItem(item[0])
         return comboBox
