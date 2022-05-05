@@ -19,6 +19,7 @@ class MainCalcUI(QWidget):
         output.setFixedHeight(50)
         output.setAlignment(Qt.AlignRight)
         output.setReadOnly(True)
+        output.setStyleSheet(open("../Graphical-App/Ext_Stylesheet.css").read())
         return output       
 
     def _createDropBox(self, dropMenu):
