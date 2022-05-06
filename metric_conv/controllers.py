@@ -1,3 +1,3 @@
-class BaseConvCtrl:
+class MetricConvCtrl:
     def __init__(self, view, model):
-        pass
+        super().__init__()
