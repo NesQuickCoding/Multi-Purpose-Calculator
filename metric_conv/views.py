@@ -1,5 +1,5 @@
-from PyQt5.QtWidgets import QWidget, QRadioButton, QLabel, QPushButton, QVBoxLayout, QHBoxLayout, QPlainTextEdit, QComboBox
-from PyQt5.QtGui import QFont
+from PyQt5.QtWidgets import QWidget, QLineEdit, QRadioButton, QLabel, QPushButton, QVBoxLayout, QHBoxLayout, QPlainTextEdit, QComboBox
+from PyQt5.QtGui import QDoubleValidator, QFont
 
 class MetricConvUI(QWidget):
     def __init__(self):
@@ -9,23 +9,28 @@ class MetricConvUI(QWidget):
             "Millimeters", "Centimeters", "Meters", "Kilometers"
         ]
         
-        mainLayout = QVBoxLayout()
-        self.inputDropBox = None
-        self.outputDropBox = None
-        menuLayout = QHBoxLayout()
-        menuLayout.addLayout(self._createSelectionMenuLayout("Convert From", self.inputDropBox, unitOptions))
-        menuLayout.addLayout(self._createSelectionMenuLayout("Convert To", self.outputDropBox, unitOptions))
-        mainLayout.addLayout(menuLayout)
+        mainLayout = QHBoxLayout()
+        
+        self.leftTextEdit = QLineEdit()
+        self.leftComboBox = QComboBox()
+        mainLayout.addLayout(self._createOptionLayout(self.leftTextEdit, self.leftComboBox, unitOptions))
+        
+        equalSign = QLabel('=')
+        mainLayout.addWidget(equalSign)
+
+        self.rightTextEdit = QLineEdit()
+        self.rightComboBox = QComboBox()
+        mainLayout.addLayout(self._createOptionLayout(self.rightTextEdit, self.rightComboBox, unitOptions))
         
         self.setLayout(mainLayout)
 
-    def _createSelectionMenuLayout(self, labelString, QComboBoxObj, items):
+    def _createOptionLayout(self, QLineEditObj, QComboBoxObj, items):
         layout = QVBoxLayout()
-        label = QLabel(labelString)
-        QComboBoxObj = QComboBox()
+        validator = QDoubleValidator(decimals=4)
+        validator.setNotation(QDoubleValidator.StandardNotation)
+        QLineEditObj.setValidator(validator)
         QComboBoxObj.addItems(items)
-        
-        layout.addWidget(label)
+        layout.addWidget(QLineEditObj)
         layout.addWidget(QComboBoxObj)
-
         return layout
+        
