@@ -22,7 +22,7 @@ class temp_Ui(QtWidgets.QWidget):
         toggledButtons = [rb.text() for rb in self.radioButtons if rb.isChecked()]
         answer = self.convert_temp(float(self.input.text()), toggledButtons[0][0], toggledButtons[1][0])
         format_answer = "{:.3f}".format(answer)
-        self.input.setText(str(format_answer))
+        self.input.setText(format_answer)
         
     def convert_temp(self, val, original_unit, unit_to_convert_to):
         fahren_to_celcius = (val - 32)/1.8
