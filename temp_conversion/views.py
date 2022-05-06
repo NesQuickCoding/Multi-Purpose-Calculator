@@ -10,6 +10,10 @@ class temp_Ui(QtWidgets.QWidget):
         self.input = self.findChild(QtWidgets.QLineEdit, 'lineEdit')
         self.radioButtons = self.findChildren(QtWidgets.QRadioButton)
 
+        # Set default radio buttons to prevent IndexError; toggleButtons would return en empty list otherwise
+        self.radioButtons[0].setChecked(True)
+        self.radioButtons[3].setChecked(True)
+
         self.show()
 
     def printButtonPressed(self):
