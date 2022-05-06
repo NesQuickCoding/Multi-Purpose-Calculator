@@ -1,4 +1,3 @@
-from xml.dom.minidom import Notation
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtGui import QDoubleValidator
 
