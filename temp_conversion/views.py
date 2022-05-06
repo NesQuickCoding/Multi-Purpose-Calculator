@@ -17,7 +17,7 @@ class temp_Ui(QtWidgets.QWidget):
         val = self.findChild(QtWidgets.QLineEdit, 'lineEdit')
         answer = self.convert_temp(float(val.text()), toggledButtons[0][0], toggledButtons[1][0])
         format_answer = "{:.2f}".format(answer)
-        self.input.setText(str(answer))
+        self.input.setText(str(format_answer))
         
 
     def convert_temp(self, val, original_unit, unit_to_convert_to):
