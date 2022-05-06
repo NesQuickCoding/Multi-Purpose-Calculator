@@ -82,6 +82,13 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
+     <widget class="QLabel" name="leftHand_Input_Label">
+      <property name="text">
+       <string>Convert From</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QRadioButton" name="leftHand_Celcius">
       <property name="text">
        <string>Celcius</string>
@@ -114,6 +121,13 @@
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QLabel" name="rightHand_Output_Label">
+      <property name="text">
+       <string>Convert To</string>
+      </property>
+     </widget>
+    </item>
     <item>
      <widget class="QRadioButton" name="rightHand_Celcius">
       <property name="text">
