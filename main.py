@@ -5,15 +5,22 @@ from PyQt5.QtWidgets import QApplication, QHBoxLayout, QWidget, QMainWindow, QSt
 from main_calc.views import MainCalcUI
 from main_calc.models import evaluateExpression
 from main_calc.controllers import MainCalcCtrl
+
 from prime_gen.views import PrimeGenUI
 import prime_gen.models
-from temp_conversion.temp_conv_logic import temp_Ui
 from prime_gen.controllers import PrimeGenCtrl
+
+from temp_conversion.temp_conv_logic import temp_Ui
+
+from base_conv.views import BaseConvUI
+import base_conv.models
+from base_conv.controllers import BaseConvCtrl
 
 from PyQt5.QtWidgets import QLabel
 
 DROPBOX_MENU = [
     ("ASCII Conversion", QLabel),
+    ("Base Conversion", BaseConvUI),
     ("Prime Number Generator/Validator", PrimeGenUI),
     ("Metric Conversion", QLabel),
     ("Temperature Conversion", temp_Ui),
@@ -59,6 +66,8 @@ def main():
     MainCalcCtrl(model=evaluateExpression, view=view)
     # Prime Gen Model and Signal Connection
     PrimeGenCtrl(model = prime_gen.models, view=view.secCalc.option["PrimeGenUI"])
+    # Base Conversion Model and Signal Connection
+    BaseConvCtrl(model = base_conv.models, view=view.secCalc.option["BaseConvUI"])
     # Execute program loop
     sys.exit(multicalc.exec_())
 
