@@ -1,3 +1,4 @@
+from xml.dom.minidom import Notation
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtGui import QDoubleValidator
 
@@ -16,7 +17,9 @@ class temp_Ui(QtWidgets.QWidget):
         self.button = self.findChild(QtWidgets.QPushButton, 'enterButton') # Find the enter button 
         self.button.clicked.connect(self.enterButtonPressed)
         self.input = self.findChild(QtWidgets.QLineEdit, 'lineEdit')
-        self.input.setValidator(QDoubleValidator(decimals=3))
+        validator = QDoubleValidator(decimals=2)
+        validator.setNotation(QDoubleValidator.StandardNotation)
+        self.input.setValidator(validator)
         self.radioButtons = self.findChildren(QtWidgets.QRadioButton)
 
         # Set default radio buttons to prevent IndexError; toggleButtons would return en empty list otherwise
@@ -29,10 +32,12 @@ class temp_Ui(QtWidgets.QWidget):
         """Connect the UI to process the temperature conversion when hitting the enter button. Display the answer
         in the text box. 
         """
-        toggledButtons = [rb.text() for rb in self.radioButtons if rb.isChecked()]
-        answer = self.convert_temp(self, float(self.input.text()), toggledButtons[0][0], toggledButtons[1][0])
-        format_answer = "{:.3f}".format(answer)
-        self.input.setText(format_answer)
+        # checks to see if input is not empty to prevent ValueError
+        if self.input.text():
+            toggledButtons = [rb.text() for rb in self.radioButtons if rb.isChecked()]
+            answer = self.convert_temp(float(self.input.text()), toggledButtons[0][0], toggledButtons[1][0])
+            format_answer = "{:.2f}".format(answer)
+            self.input.setText(format_answer)
         
 
     def convert_temp(self, val, original_unit, unit_to_convert_to):
