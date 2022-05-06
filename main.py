@@ -7,7 +7,7 @@ from main_calc.models import evaluateExpression
 from main_calc.controllers import MainCalcCtrl
 from prime_gen.views import PrimeGenUI
 import prime_gen.models
-from temp_conversion.views import temp_Ui
+from temp_conversion.temp_conv_logic import temp_Ui
 from prime_gen.controllers import PrimeGenCtrl
 
 from PyQt5.QtWidgets import QLabel

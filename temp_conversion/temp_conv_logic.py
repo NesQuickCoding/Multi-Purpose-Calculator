@@ -11,7 +11,7 @@ class temp_Ui(QtWidgets.QWidget):
         """Load in the UI file from Qt creator, then find the UI components we need to connect logic to.
         """
         super(temp_Ui, self).__init__()
-        uic.loadUi('../Graphical-App/temp_conversion/basic.ui', self)
+        uic.loadUi('../Graphical-App/temp_conversion/temp_conv.ui', self)
 
         self.button = self.findChild(QtWidgets.QPushButton, 'enterButton') # Find the enter button 
         self.button.clicked.connect(self.enterButtonPressed)
