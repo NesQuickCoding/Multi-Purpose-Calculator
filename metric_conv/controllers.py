@@ -6,18 +6,12 @@ class MetricConvCtrl:
         self._connectComboBoxSignals()
         self._connectTextSignals()
     
-    def _leftTextChanged(self):
-        pass
-
-    def _rightTextChanged(self):
-        pass
-
     def _connectComboBoxSignals(self):
         pass
 
     def _connectTextSignals(self):
-        self._view.leftTextEdit.textChanged.connect(self._leftTextChanged)
-        self._view.rightTextEdit.textChanged.connect(self._rightTextChanged)
+        self._view.leftTextEdit.textChanged.connect(lambda: self._textChanged(self._view.leftTextEdit, self._view.rightTextEdit))
+        self._view.rightTextEdit.textChanged.connect(lambda: self._textChanged(self._view.rightTextEdit, self._view.leftTextEdit))
 
     def _disconnectTextSignals(self):
         self._view.leftTextEdit.textChanged.disconnect()
@@ -28,3 +22,10 @@ class MetricConvCtrl:
         self._view.leftTextEdit.setText(string)
         self._view.rightTextEdit.setText(string)
         self._connectTextSignals()
+    
+    def _textChanged(self, inputField, outputField):
+        if self._view.leftComboBox.currentIndex() != self._view.rightComboBox.currentIndex():
+            # run conversions
+            pass
+        
+        self._setTextFields(inputField.text())
