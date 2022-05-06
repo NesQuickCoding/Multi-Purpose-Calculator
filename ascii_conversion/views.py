@@ -18,13 +18,15 @@ class ascii_Ui(QtWidgets.QWidget):
         radioButtons = self.findChildren(QtWidgets.QRadioButton)
         toggledButtons = [rb.text() for rb in radioButtons if rb.isChecked()]
         val = self.findChild(QtWidgets.QLineEdit, 'lineEdit')
-        answer = convert_ascii(self, int(val.text()), toggledButtons[0][0], toggledButtons[1][0])
+        answer = convert_ascii(self, val.text(), toggledButtons[0][0], toggledButtons[1][0])
         #format_answer = "{:.2f}".format(answer)
         self.input.setText(str(answer))
 
 
 
 def convert_ascii(self,val, input_unit, output_unit):
+
+
 
     if input_unit == 'C':
         if output_unit == 'D':
