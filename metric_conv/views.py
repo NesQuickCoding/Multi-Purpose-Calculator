@@ -7,7 +7,7 @@ class MetricConvUI(QWidget):
         super().__init__()
         unitOptions = [
             "Inches", "Feet", "Yards", "Miles",
-            "Millimeters", "Centimeters", "Meters", "Kilometers"
+            "Millimeters", "Centimeters", "Decimeters", "Meters", "Kilometers"
         ]
         
         mainLayout = QHBoxLayout()
