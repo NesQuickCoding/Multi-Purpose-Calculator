@@ -13,16 +13,18 @@ from temp_conversion.views import temp_Ui
 from prime_gen.controllers import PrimeGenCtrl
 
 from ascii_conversion.views import ascii_Ui
+from birthday_conversion.views import birthday_Ui
 
 
 from PyQt5.QtWidgets import QLabel
 
 DROPBOX_MENU = [
     ("ASCII Conversion", ascii_Ui),
-    ("Prime Number Generator/Validator", PrimeGenUI),
     ("Metric Conversion", QLabel),
     ("Temperature Conversion", temp_Ui),
-    ("Perfect Number Generator/Validator", QLabel)
+    ("Birthday Conversion", birthday_Ui),
+    ("Prime Number Generator/Validator", PrimeGenUI)
+
 ]
 
 class SecCalc(QStackedWidget):
