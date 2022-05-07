@@ -33,8 +33,11 @@ class MetricConvCtrl:
     def _textChanged(self, inputField, outputField):
         inputString = inputField.text()
         outputString = inputField.text()
+        if not inputString:
+            self._setTextFields(inputField, outputField, inputString, outputString)
+            return
+        # if indexes are the same, the units are the same, nothing to compute
         if self._leftUnitIndex != self._rightUnitIndex:
-            if self._leftUnitIndex in range(4, 7) and self._rightUnitIndex in range(4,7):
-                outputString = str(self._model.metricLengthConversion(float(inputString), self._leftUnitIndex - self._rightUnitIndex))
+            outputString = str(self._model.length_conversion(float(inputString), self._view.leftComboBox.currentText(), self._view.rightComboBox.currentText()))
                 
         self._setTextFields(inputField, outputField, inputString, outputString)
