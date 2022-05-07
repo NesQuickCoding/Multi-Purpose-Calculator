@@ -1,9 +1,13 @@
 from PyQt5 import QtWidgets, uic
 import sys
-import datetime
+from datetime import date
 from PyQt5.QtCore import QDate
 
-
+"""
+References:
+https://pererapm.medium.com/find-out-how-many-seconds-old-you-are-using-python-and-explanation-of-code-ab2a48b9be3c
+https://www.geeksforgeeks.org/python-program-to-calculate-age-in-year/amp/
+"""
 
 class birthday_Ui(QtWidgets.QWidget):
     def __init__(self):
@@ -28,76 +32,19 @@ class birthday_Ui(QtWidgets.QWidget):
 
 
 
-def convert_birthday(self):
+def getYears(self, born):
+    today = date.today()
 
-    b_List = dateToList(getDate("birthday"))
-    c_List = dateToList(getDate("current"))
+    # Try Catch to check if we have a leap year
+    # Make sure current year is not leap year
+    try:
+        bday = born.replace(year = today.year)
 
-    user_age = dateDifference(convertDates(b_List,c_List))
+    except ValueError:
+            bday = born.replace(year = today.year, month = born.month + 1, day = 1)
 
-    ans = f"Approximate Age: {user_age}"
-    return ans
-
-
-def getDate(self,user_choice):
-
-    if user_choice == "current":
-        # Current date today
-        # Current month, day, year
-
-        current_date = QDate.currentDate()
-
-        u_month = current_date.month()
-        u_day = current_date.day()
-        u_year = current_date.year()
+    if bday > today:
+        return today.year - born.year - 1
     else:
-        # We assume it's birthday
-        # Users Birthday
-        birthday = self.calendar.selectedDate()
-
-        # Birth month, day, year
-        u_month = birthday.month()
-        u_day = birthday.day()
-        u_year = birthday.year()
-
-    return u_month, u_day, u_year
-
-def convertDates(b_list: list, c_list: list):
-    b_date = datetime.date(b_list[2], b_list[1], b_list[0])
-    c_date = datetime.date(c_list[2], c_list[1], c_list[0])
-
-    return b_date, c_date
-
-
-def dateDifference(b_date, c_date):
-    diff = c_date - b_date
-
-    # Get difference by days
-    diff = diff.days
-
-    # Get Differences by years
-    # 365 days is equal to 365.2422 days
-    years = diff / 365.2422
-
-    # round our years value
-    years = round(years)
-
-    ans = str(years)
-
-    # rounding our year values
-    years = round(years)
-
-
-def dateToList(a_month, a_day, a_year):
-    dateList = [a_month, a_day, a_year]
-    return dateList
-
-
-
-
-
-
-#def fixValue(c):
-#    return 1
-
+        return today.year - born.year
 
