@@ -57,7 +57,7 @@ class MetricConvUI(QWidget):
 
         weightUnitOptions = [
             "Ounces", "Pounds", "Stone", "Tons",
-            "Milligram", "Centigram", "Gram", "Kilogram"
+            "Milligram", "Gram", "Kilogram"
         ]
 
         timeUnitOptions = [

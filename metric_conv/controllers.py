@@ -1,4 +1,4 @@
-class LengthConvCtrl:
+class MetricConvCtrl:
     def __init__(self, view, model):
         super().__init__()
         self._view = view
@@ -7,12 +7,12 @@ class LengthConvCtrl:
         self._connectTextSignals()
     
     def _connectComboBoxSignals(self):
-        self._view.leftComboBox.currentIndexChanged.connect(lambda: self._textChanged(self._view.leftTextEdit, self._view.rightTextEdit, self._view.leftComboBox.currentText(), self._view.rightComboBox.currentText()))
-        self._view.rightComboBox.currentIndexChanged.connect(lambda: self._textChanged(self._view.rightTextEdit, self._view.leftTextEdit, self._view.rightComboBox.currentText(), self._view.leftComboBox.currentText()))
+        self._view.leftComboBox.currentIndexChanged.connect(lambda: self._textChanged(self._view.leftTextEdit, self._view.rightTextEdit, self._view.leftComboBox.currentIndex(), self._view.rightComboBox.currentIndex()))
+        self._view.rightComboBox.currentIndexChanged.connect(lambda: self._textChanged(self._view.rightTextEdit, self._view.leftTextEdit, self._view.rightComboBox.currentIndex(), self._view.leftComboBox.currentIndex()))
 
     def _connectTextSignals(self):
-        self._view.leftTextEdit.textChanged.connect(lambda: self._textChanged(self._view.leftTextEdit, self._view.rightTextEdit, self._view.leftComboBox.currentText(), self._view.rightComboBox.currentText()))
-        self._view.rightTextEdit.textChanged.connect(lambda: self._textChanged(self._view.rightTextEdit, self._view.leftTextEdit, self._view.rightComboBox.currentText(), self._view.leftComboBox.currentText()))
+        self._view.leftTextEdit.textChanged.connect(lambda: self._textChanged(self._view.leftTextEdit, self._view.rightTextEdit, self._view.leftComboBox.currentIndex(), self._view.rightComboBox.currentIndex()))
+        self._view.rightTextEdit.textChanged.connect(lambda: self._textChanged(self._view.rightTextEdit, self._view.leftTextEdit, self._view.rightComboBox.currentIndex(), self._view.leftComboBox.currentIndex()))
 
     def _disconnectTextSignals(self):
         self._view.leftTextEdit.textChanged.disconnect()
@@ -34,7 +34,7 @@ class LengthConvCtrl:
         
         if inputString or outputString:
             try:
-                outputString = str(self._model.length_conversion(float(inputString), inputMenu, outputMenu))
+                outputString = str(self._model(float(inputString), inputMenu, outputMenu))
                 inputField.setStyleSheet("border: 1px solid black;")
                 outputField.setStyleSheet("border: 1px solid black;")
             except ValueError:

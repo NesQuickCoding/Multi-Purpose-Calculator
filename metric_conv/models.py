@@ -1,7 +1,13 @@
-def length_conversion(input_value, input_unit, output_unit):
-    if input_unit == output_unit:
+def length_conversion(input_value, input_index, output_index):
+    if input_index == output_index:
         return input_value
-    
+    unit_key = [
+        "Inches", "Feet", "Yards", "Miles",
+        "Millimeters", "Centimeters", "Meters", "Kilometers"]
+
+    input_unit = unit_key[input_index]
+    output_unit = unit_key[output_index]
+
     # Metric
     if input_unit == "Inches":
         if output_unit == "Feet":
@@ -131,3 +137,18 @@ def length_conversion(input_value, input_unit, output_unit):
             return input_value * 1000
         elif output_unit == "Miles":
             return input_value / 1.609344
+
+def weight_conversion(input_value, input_index, output_index):
+    if input_index == output_index:
+        return input_value
+    # Rows are input, column are output
+    conversion_map = [
+        1,	            1/16,	     1/224,	     1/32000,	       28349.5249, 28.3495249, 0.0283495249,
+        16,	            1,	         1/14,	     1/2000,	       453592.4,   453.5923,   0.4535923,
+        224,	        16,	         1,	         7/1000,	       6350293,	   6350.293,   6.350293,
+        32000,	        2000,	     1/(7/1000), 1,	               907184740,  907184.7,   907.1847,
+        1/28349.5249,	1/453592.4,	 1/6350293,	 1/907184740,	   1,	       0.001,      0.000001,
+        1/28.3495249,	1/453.5923,	 1/6350.293, 1/907184.7,       1000,       1,          0.001,
+        1/0.0283495249,	1/0.4535923, 1/6.350293, 1/907.1847000022, 1000000,	   1000,       1
+    ]
+    return input_value * conversion_map[input_index][output_index]
