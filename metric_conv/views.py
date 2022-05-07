@@ -29,9 +29,7 @@ class MetricConvUI(QWidget):
     def _createOptionLayout(self, QLineEditObj, QComboBoxObj, items):
         layout = QVBoxLayout()
         
-        validator = QDoubleValidator()
-        validator.setNotation(QDoubleValidator.StandardNotation)
-        QLineEditObj.setValidator(validator)
+        QLineEditObj.setValidator(QDoubleValidator())
 
         QLineEditObj.setFont(QFont('Arial', 12))
 
