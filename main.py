@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QApplication, QHBoxLayout, QWidget, QMainWindow, QSt
 from PyQt5 import QtCore, QtGui
 import os
 
+from birthday_conversion.views import birthday_Ui
 from main_calc.views import MainCalcUI
 from main_calc.models import evaluateExpression
 from main_calc.controllers import MainCalcCtrl
@@ -22,10 +23,12 @@ from metric_conv.views import MetricConvUI
 import metric_conv.models
 from metric_conv.controllers import MetricConvCtrl
 
+from ascii_conversion.views import ascii_Ui
+
 from PyQt5.QtWidgets import QLabel
 
 DROPBOX_MENU = [
-    ("ASCII Conversion", QLabel),
+    ("ASCII Conversion", ascii_Ui),
     ("Base Conversion", BaseConvUI),
     ("Prime Number Generator/Validator", PrimeGenUI),
     ("Metric Conversion", MetricConvUI),
@@ -38,7 +41,7 @@ DROPBOX_MENU = [
 class SecCalc(QStackedWidget):
     def __init__(self):
         super().__init__()
-        self.setFixedSize(480, 400)
+        self.setFixedSize(480, 500)
         self.option = {}
         for QWidgetObject in DROPBOX_MENU:
             self.option[QWidgetObject[1].__name__] = QWidgetObject[1]()
@@ -53,7 +56,7 @@ class MultiCalcWindow(QMainWindow):
         
         # Main Window setup properties
         self.setWindowTitle("Multi-Purpose Calculator")
-        self.setFixedSize(960, 400)
+        self.setFixedSize(960, 500)
         self.generalLayout = QHBoxLayout()
         self._centralWidget = QWidget()
         self._centralWidget = QWidget(self)
