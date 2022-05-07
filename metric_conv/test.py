@@ -27,6 +27,7 @@ def main():
     view.show()
     lengthControl = MetricConvCtrl(view=view.metricConvUI.lengthView, model=models.length_conversion)
     weightControl = MetricConvCtrl(view=view.metricConvUI.weightView, model=models.weight_conversion)
+    timeControl = MetricConvCtrl(view=view.metricConvUI.timeView, model=models.time_conversion)
     sys.exit(baseconv.exec())
 
 if __name__ == '__main__':

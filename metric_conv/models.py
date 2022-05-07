@@ -152,3 +152,18 @@ def weight_conversion(input_value, input_index, output_index):
         [1/0.0283495249, 1/0.4535923, 1/6.350293, 1/907.1847000022, 1000000,	1000,       1]
     ]
     return input_value * conversion_map[input_index][output_index]
+
+def time_conversion(input_value, input_index, output_index):
+    if input_index == output_index:
+        return input_value
+
+    conversion_map = [
+        [1,           1/1000,   1/60000, 1/3600000, 1/86400000, 1/2629800000, 1/31557600000],
+        [1000,        1,        1/60,    1/3600,    1/86400,    1/2629800,    1/31557600],
+        [60000,       60,       1,       1/60,      1/1440,     1/43830,      1/525960],
+        [3600000,     3600,     60,      1,         1/24,       1/730.5,      1/8766],
+        [86400000,    86400,    1440,    24,        1,          1/30.4375,    1/365.25],
+        [2629800000,  2629800,  43830,   730.5,     30.4375,    1,            12],
+        [31557600000, 31557600, 525960,  8766,      365.25,     12,           1]
+    ]
+    return input_value * conversion_map[input_index][output_index]
