@@ -277,12 +277,28 @@ color: lime;
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>138</x>
-     <y>245</y>
+     <x>219</x>
+     <y>327</y>
     </hint>
     <hint type="destinationlabel">
-     <x>148</x>
-     <y>197</y>
+     <x>338</x>
+     <y>247</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clearButton</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_Input</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>195</x>
+     <y>320</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>210</x>
+     <y>241</y>
     </hint>
    </hints>
   </connection>
