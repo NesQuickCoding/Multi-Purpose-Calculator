@@ -32,7 +32,7 @@
    <property name="geometry">
     <rect>
      <x>90</x>
-     <y>300</y>
+     <y>320</y>
      <width>311</width>
      <height>41</height>
     </rect>
@@ -134,7 +134,7 @@ QPushButton:pressed{
    <property name="geometry">
     <rect>
      <x>90</x>
-     <y>80</y>
+     <y>70</y>
      <width>141</width>
      <height>112</height>
     </rect>
@@ -179,7 +179,7 @@ QPushButton:pressed{
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>80</y>
+     <y>70</y>
      <width>141</width>
      <height>112</height>
     </rect>
@@ -224,7 +224,7 @@ QPushButton:pressed{
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>220</y>
+     <y>250</y>
      <width>141</width>
      <height>36</height>
     </rect>
@@ -246,7 +246,7 @@ color: lime;
    <property name="geometry">
     <rect>
      <x>90</x>
-     <y>220</y>
+     <y>250</y>
      <width>141</width>
      <height>36</height>
     </rect>
@@ -271,6 +271,38 @@ color: lime;
     border-radius: 4px;
     border-color: green;
     padding: 2px;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>215</y>
+     <width>131</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {background-color: transparent; color: lime};</string>
+   </property>
+   <property name="text">
+    <string>Convert From</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>215</y>
+     <width>131</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {background-color: transparent; color: lime};</string>
+   </property>
+   <property name="text">
+    <string>Convert To</string>
    </property>
   </widget>
  </widget>
