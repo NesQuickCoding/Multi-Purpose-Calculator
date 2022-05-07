@@ -50,7 +50,7 @@ class MultiCalcWindow(QMainWindow):
         self._centralWidget.setStyleSheet(open('Ext_Stylesheet.css').read())
         self.setCentralWidget(self._centralWidget)
         self._centralWidget.setLayout(self.generalLayout)
-        
+
         # Create MainCalcUI and secCalc
         self.mainCalc = MainCalcUI(DROPBOX_MENU)
         self.secCalc = SecCalc()
@@ -60,6 +60,10 @@ class MultiCalcWindow(QMainWindow):
 def main():
     multicalc = QApplication(sys.argv)
     view = MultiCalcWindow()
+    # Setting application icon
+    app_Icon = QtGui.QIcon('graphics/mpc_logo.png')
+
+    view.setWindowIcon(app_Icon)
     view.show()
     # Main Calc Model and Signal Connection
     MainCalcCtrl(model=evaluateExpression, view=view)
