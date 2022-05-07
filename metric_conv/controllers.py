@@ -7,12 +7,8 @@ class MetricConvCtrl:
         self._connectTextSignals()
     
     def _connectComboBoxSignals(self):
-        self._view.leftComboBox.currentIndexChanged.connect(lambda: self._setComboSignals())
-        self._view.rightComboBox.currentIndexChanged.connect(lambda: self._setComboSignals())
-
-    def _setComboSignals(self):
-        self._leftUnitIndex = (self._view.leftComboBox.currentIndex())
-        self._rightUnitIndex = (self._view.rightComboBox.currentIndex())
+        self._view.leftComboBox.currentIndexChanged.connect(lambda: self._textChanged(self._view.leftTextEdit, self._view.rightTextEdit))
+        self._view.rightComboBox.currentIndexChanged.connect(lambda: self._textChanged(self._view.rightTextEdit, self._view.rightTextEdit))
 
     def _connectTextSignals(self):
         self._view.leftTextEdit.textChanged.connect(lambda: self._textChanged(self._view.leftTextEdit, self._view.rightTextEdit))
