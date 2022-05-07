@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QApplication, QVBoxLayout, QWidget, QMainWindow
 
 from views import MetricConvUI
 import models
-from controllers import MetricConvCtrl
+from controllers import LengthConvCtrl
 
 class TestWindow(QMainWindow):
     def __init__(self):
@@ -25,7 +25,7 @@ def main():
     baseconv = QApplication(sys.argv)
     view = TestWindow()
     view.show()
-    MetricConvCtrl(view=view.metricConvUI, model=models)
+    LengthConvCtrl(view=view.metricConvUI.lengthView, model=models)
     sys.exit(baseconv.exec())
 
 if __name__ == '__main__':

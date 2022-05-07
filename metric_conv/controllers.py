@@ -1,4 +1,4 @@
-class MetricConvCtrl:
+class LengthConvCtrl:
     def __init__(self, view, model):
         super().__init__()
         self._view = view
