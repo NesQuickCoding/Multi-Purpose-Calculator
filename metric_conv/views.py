@@ -56,7 +56,7 @@ class MetricConvUI(QWidget):
         ]
 
         weightUnitOptions = [
-            "Ounces", "Pounds", "Stone", "Tons",
+            "Ounces", "Pounds", "Stone", "Tons (Short)",
             "Milligram", "Gram", "Kilogram"
         ]
 
@@ -66,7 +66,8 @@ class MetricConvUI(QWidget):
         ]
 
         digitalStorageOptions = [
-            "just a test"
+            "Bit", "Byte", "Kilobyte", "Megabyte", "Gigabyte",
+            "Terabyte", "Petabyte", "Exabyte", "Zettabyte", "Yottabyte"
         ]
 
         layout = QVBoxLayout()

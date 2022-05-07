@@ -1,6 +1,7 @@
 def length_conversion(input_value, input_index, output_index):
     if input_index == output_index:
         return input_value
+        
     unit_key = [
         "Inches", "Feet", "Yards", "Miles",
         "Millimeters", "Centimeters", "Meters", "Kilometers"]
@@ -143,13 +144,14 @@ def weight_conversion(input_value, input_index, output_index):
         return input_value
     # Rows are input, column are output
     conversion_map = [
-        [1,	             1/16,	      1/224,	  1/32000,	        28349.5249, 28.3495249, 0.0283495249],
-        [16,	         1,	          1/14,	      1/2000,	        453592.4,   453.5923,   0.4535923],
-        [224,	         16,	      1,	      7/1000,	        6350293,	6350.293,   6.350293],
-        [32000,	         2000,	      1/(7/1000), 1,	            907184740,  907184.7,   907.1847],
-        [1/28349.5249,	 1/453592.4,  1/6350293,  1/907184740,	    1,	        0.001,      0.000001],
-        [1/28.3495249,	 1/453.5923,  1/6350.293, 1/907184.7,       1000,       1,          0.001],
-        [1/0.0283495249, 1/0.4535923, 1/6.350293, 1/907.1847000022, 1000000,	1000,       1]
+        # Ounces         Pounds       Stone       Tons (Short)      Milligram   Gram        Kilogram
+        [1,	             1/16,	      1/224,	  1/32000,	        28349.5249, 28.3495249, 0.0283495249], # Ounces
+        [16,	         1,	          1/14,	      1/2000,	        453592.4,   453.5923,   0.4535923],    # Pounds
+        [224,	         16,	      1,	      7/1000,	        6350293,	6350.293,   6.350293],     # Stone
+        [32000,	         2000,	      1/(7/1000), 1,	            907184740,  907184.7,   907.1847],     # Tons (Short)
+        [1/28349.5249,	 1/453592.4,  1/6350293,  1/907184740,	    1,	        0.001,      0.000001],     # Milligram
+        [1/28.3495249,	 1/453.5923,  1/6350.293, 1/907184.7,       1000,       1,          0.001],        # Gram
+        [1/0.0283495249, 1/0.4535923, 1/6.350293, 1/907.1847000022, 1000000,	1000,       1]             # Kilogram
     ]
     return input_value * conversion_map[input_index][output_index]
 
@@ -158,12 +160,26 @@ def time_conversion(input_value, input_index, output_index):
         return input_value
 
     conversion_map = [
-        [1,           1/1000,   1/60000, 1/3600000, 1/86400000, 1/2629800000, 1/31557600000],
-        [1000,        1,        1/60,    1/3600,    1/86400,    1/2629800,    1/31557600],
-        [60000,       60,       1,       1/60,      1/1440,     1/43830,      1/525960],
-        [3600000,     3600,     60,      1,         1/24,       1/730.5,      1/8766],
-        [86400000,    86400,    1440,    24,        1,          1/30.4375,    1/365.25],
-        [2629800000,  2629800,  43830,   730.5,     30.4375,    1,            12],
-        [31557600000, 31557600, 525960,  8766,      365.25,     12,           1]
+        # MillisecondsSeconds  Minutes   Hours      Days        Months        Years
+        [1,           1/1000,   1/60000, 1/3600000, 1/86400000, 1/2629800000, 1/31557600000], # Milliseconds
+        [1000,        1,        1/60,    1/3600,    1/86400,    1/2629800,    1/31557600],    # Seconds
+        [60000,       60,       1,       1/60,      1/1440,     1/43830,      1/525960],      # Minutes
+        [3600000,     3600,     60,      1,         1/24,       1/730.5,      1/8766],        # Hours
+        [86400000,    86400,    1440,    24,        1,          1/30.4375,    1/365.25],      # Days
+        [2629800000,  2629800,  43830,   730.5,     30.4375,    1,            12],            # Months
+        [31557600000, 31557600, 525960,  8766,      365.25,     12,           1]              # Years
     ]
     return input_value * conversion_map[input_index][output_index]
+
+def digital_space_conversion(input_value, input_index, output_index):
+    if input_index == output_index:
+        return input_value
+
+    if input_index > 0 and output_index > 0:
+        return input_value * 1000**(input_index - output_index)
+    
+    if input_index == 0:
+        return input_value * 1000**(input_index - output_index + 1) / 8
+
+    if output_index == 0:
+        return input_value * 1000**(input_index - output_index - 1) * 8
