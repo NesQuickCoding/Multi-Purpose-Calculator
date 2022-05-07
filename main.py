@@ -7,20 +7,28 @@ import os
 from main_calc.views import MainCalcUI
 from main_calc.models import evaluateExpression
 from main_calc.controllers import MainCalcCtrl
+
 from prime_gen.views import PrimeGenUI
 import prime_gen.models
-from temp_conversion.views import temp_Ui
 from prime_gen.controllers import PrimeGenCtrl
 
-from ascii_conversion.views import ascii_Ui
-from birthday_conversion.views import birthday_Ui
+from temp_conversion.temp_conv_logic import temp_Ui
 
+from base_conv.views import BaseConvUI
+import base_conv.models
+from base_conv.controllers import BaseConvCtrl
+
+from metric_conv.views import MetricConvUI
+import metric_conv.models
+from metric_conv.controllers import MetricConvCtrl
 
 from PyQt5.QtWidgets import QLabel
 
 DROPBOX_MENU = [
-    ("ASCII Conversion", ascii_Ui),
-    ("Metric Conversion", QLabel),
+    ("ASCII Conversion", QLabel),
+    ("Base Conversion", BaseConvUI),
+    ("Prime Number Generator/Validator", PrimeGenUI),
+    ("Metric Conversion", MetricConvUI),
     ("Temperature Conversion", temp_Ui),
     ("Birthday Conversion", birthday_Ui),
     ("Prime Number Generator/Validator", PrimeGenUI)
@@ -71,6 +79,13 @@ def main():
     MainCalcCtrl(model=evaluateExpression, view=view)
     # Prime Gen Model and Signal Connection
     PrimeGenCtrl(model = prime_gen.models, view=view.secCalc.option["PrimeGenUI"])
+    # Base Conversion Model and Signal Connection
+    BaseConvCtrl(model = base_conv.models, view=view.secCalc.option["BaseConvUI"])
+    # Metric Conversion Models and Signal Connections
+    MetricConvCtrl(view=view.secCalc.option["MetricConvUI"].lengthView, model=metric_conv.models.length_conversion)
+    MetricConvCtrl(view=view.secCalc.option["MetricConvUI"].weightView, model=metric_conv.models.weight_conversion)
+    MetricConvCtrl(view=view.secCalc.option["MetricConvUI"].timeView, model=metric_conv.models.time_conversion)
+    MetricConvCtrl(view=view.secCalc.option["MetricConvUI"].digitalStorageView, model=metric_conv.models.digital_space_conversion)
     # Execute program loop
     sys.exit(multicalc.exec_())
 
