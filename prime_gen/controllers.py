@@ -8,7 +8,7 @@ class PrimeGenCtrl:
         self._rangeGen = model.range_1_n
         self._randomGen = model.digit_size
         self._isPrime = model.is_prime
-        self._connectRangeSignals()
+        self._connectSignals()
         
     def _copyAll(self, getFunction):
         QApplication.clipboard().setText(getFunction())
@@ -54,7 +54,7 @@ class PrimeGenCtrl:
         self._view.isPrime.isPrimeText.setText('')
 
     # # --- Signal Connection ---
-    def _connectRangeSignals(self):
+    def _connectSignals(self):
         # --- primeRangeGen Signals ---
         self._view.primeRangeGen.rangeInput.textChanged.connect(partial(self._checkInputBounds, self._view.primeRangeGen.rangeInput, 0, 1000000))
         self._view.primeRangeGen.rangeGenButton.clicked.connect(self._generateRange)

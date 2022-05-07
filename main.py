@@ -16,13 +16,17 @@ from base_conv.views import BaseConvUI
 import base_conv.models
 from base_conv.controllers import BaseConvCtrl
 
+from metric_conv.views import MetricConvUI
+import metric_conv.models
+from metric_conv.controllers import MetricConvCtrl
+
 from PyQt5.QtWidgets import QLabel
 
 DROPBOX_MENU = [
     ("ASCII Conversion", QLabel),
     ("Base Conversion", BaseConvUI),
     ("Prime Number Generator/Validator", PrimeGenUI),
-    ("Metric Conversion", QLabel),
+    ("Metric Conversion", MetricConvUI),
     ("Temperature Conversion", temp_Ui),
     ("Generate Numbers", QLabel)
 ]
@@ -68,6 +72,11 @@ def main():
     PrimeGenCtrl(model = prime_gen.models, view=view.secCalc.option["PrimeGenUI"])
     # Base Conversion Model and Signal Connection
     BaseConvCtrl(model = base_conv.models, view=view.secCalc.option["BaseConvUI"])
+    # Metric Conversion Models and Signal Connections
+    MetricConvCtrl(view=view.secCalc.option["MetricConvUI"].lengthView, model=metric_conv.models.length_conversion)
+    MetricConvCtrl(view=view.secCalc.option["MetricConvUI"].weightView, model=metric_conv.models.weight_conversion)
+    MetricConvCtrl(view=view.secCalc.option["MetricConvUI"].timeView, model=metric_conv.models.time_conversion)
+    MetricConvCtrl(view=view.secCalc.option["MetricConvUI"].digitalStorageView, model=metric_conv.models.digital_space_conversion)
     # Execute program loop
     sys.exit(multicalc.exec_())
 
