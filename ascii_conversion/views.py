@@ -24,9 +24,8 @@ class ascii_Ui(QtWidgets.QWidget):
 
 
 def convert_ascii(self,val, input_unit, output_unit):
-
     try:
-        if input_unit == 'C' and len(val) == 1:
+        if input_unit == 'C':
             if output_unit == 'D':
                 return ord(val)
             elif output_unit == 'H':
@@ -35,12 +34,9 @@ def convert_ascii(self,val, input_unit, output_unit):
                 return val
 
         elif input_unit == 'D':
-
             try:
 
                 if output_unit == 'C':
-                    # Problem with conversion Decimal
-                    # Try catch is only working once
                     val = int(val)
                     return chr(val)
 
@@ -53,7 +49,6 @@ def convert_ascii(self,val, input_unit, output_unit):
                 return "Invalid Input"
         elif input_unit == 'H':
             if output_unit == 'D':
-
                 return int(val,16)
             elif output_unit == 'C':
                 val_str = val[2:]
@@ -68,9 +63,6 @@ def convert_ascii(self,val, input_unit, output_unit):
     except ValueError:
         return "Invalid Input"
 
-
-def fixValue(c):
-    return 1
 
 
 
