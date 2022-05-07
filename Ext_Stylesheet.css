@@ -62,9 +62,13 @@ QRadioButton {
 QLineEdit{
 
     background-color: black;
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 4px;
+    border-color: green;
+    padding: 2px;
     color: lime;
     font-size: 19px;
-
 
 }
 
