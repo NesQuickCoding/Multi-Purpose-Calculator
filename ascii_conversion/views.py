@@ -10,17 +10,18 @@ class ascii_Ui(QtWidgets.QWidget):
         self.button = self.findChild(QtWidgets.QPushButton, 'enterButton')
         self.button.clicked.connect(
             self.printButtonPressed)
-        self.input = self.findChild(QtWidgets.QLineEdit, 'lineEdit')
+        self.input = self.findChild(QtWidgets.QLineEdit, 'lineEdit_Output')
 
         self.show()
 
     def printButtonPressed(self):
         radioButtons = self.findChildren(QtWidgets.QRadioButton)
         toggledButtons = [rb.text() for rb in radioButtons if rb.isChecked()]
-        val = self.findChild(QtWidgets.QLineEdit, 'lineEdit')
+        val = self.findChild(QtWidgets.QLineEdit, 'lineEdit_Input')
         answer = convert_ascii(self, val.text(), toggledButtons[0][0], toggledButtons[1][0])
         #format_answer = "{:.2f}".format(answer)
         self.input.setText(str(answer))
+
 
 
 
@@ -28,6 +29,9 @@ def convert_ascii(self,val, input_unit, output_unit):
 
 
     if input_unit == 'C':
+
+        # Add try catch, incase the input is invalid like "AA"
+        # Use if else with the length of the val
         if output_unit == 'D':
             return ord(val)
         elif output_unit == 'H':
