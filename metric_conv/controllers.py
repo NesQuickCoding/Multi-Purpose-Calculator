@@ -5,8 +5,6 @@ class MetricConvCtrl:
         self._model = model
         self._connectComboBoxSignals()
         self._connectTextSignals()
-        self._leftUnitIndex = 0
-        self._rightUnitIndex = 0
     
     def _connectComboBoxSignals(self):
         self._view.leftComboBox.currentIndexChanged.connect(lambda: self._setComboSignals())
@@ -30,15 +28,25 @@ class MetricConvCtrl:
         outputField.setText(outputString)
         self._connectTextSignals()
     
+    def _toggleInputError(self):
+        self._view.leftTextEdit.setStyleSheet("border: 1px solid red;")
+        self._view.rightTextEdit.setStyleSheet("border: 1px solid red;")
+
     def _textChanged(self, inputField, outputField):
         inputString = inputField.text()
         outputString = inputField.text()
         
-        try:
-            # if indexes are the same, the units are the same, nothing to compute
-            if self._leftUnitIndex != self._rightUnitIndex:
+        if inputString or outputString:
+            try:
                 outputString = str(self._model.length_conversion(float(inputString), self._view.leftComboBox.currentText(), self._view.rightComboBox.currentText()))
-        except ValueError:
-            pass        
+                inputField.setStyleSheet("border: 1px solid black;")
+                outputField.setStyleSheet("border: 1px solid black;")
+            except ValueError:
+                inputField.setStyleSheet("border: 1px solid red;")
+                outputField.setStyleSheet("border: 1px solid red;")
+                pass
+        else:
+            inputField.setStyleSheet("border: 1px solid black;")
+            outputField.setStyleSheet("border: 1px solid black;")        
         
         self._setTextFields(inputField, outputField, inputString, outputString)
