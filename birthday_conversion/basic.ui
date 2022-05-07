@@ -133,7 +133,7 @@ QPushButton:pressed{
   <widget class="QLineEdit" name="lineEdit_Output">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>260</x>
      <y>300</y>
      <width>131</width>
      <height>36</height>
@@ -158,7 +158,7 @@ color: lime;
      <x>40</x>
      <y>20</y>
      <width>411</width>
-     <height>271</height>
+     <height>261</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -217,9 +217,70 @@ QCalendarWidget QAbstractItemView:disabled
 color: rgb(100, 100, 100); 
 }</string>
    </property>
+   <property name="firstDayOfWeek">
+    <enum>Qt::Sunday</enum>
+   </property>
+   <property name="gridVisible">
+    <bool>false</bool>
+   </property>
+   <property name="horizontalHeaderFormat">
+    <enum>QCalendarWidget::ShortDayNames</enum>
+   </property>
    <property name="verticalHeaderFormat">
     <enum>QCalendarWidget::NoVerticalHeader</enum>
    </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>300</y>
+     <width>141</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QComboBox {
+	background-color: rgb(0, 0, 0);
+color: rgb(55, 255, 0);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(98, 255, 0);
+    font: 11pt &quot;Arial&quot;;
+}
+
+QComboBox QAbstractItemView{
+    color: lime;
+    select-color: green;
+    select-background-color: black;
+}</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>Years</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Months</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Days</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Hours</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Seconds</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>
