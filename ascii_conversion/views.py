@@ -27,50 +27,48 @@ class ascii_Ui(QtWidgets.QWidget):
 
 def convert_ascii(self,val, input_unit, output_unit):
 
-
-    if input_unit == 'C':
-
-        # Add try catch, incase the input is invalid like "AA"
-        # Use if else with the length of the val
-        if output_unit == 'D':
-            return ord(val)
-        elif output_unit == 'H':
-            return hex(ord(val))
-        else:
-            return val
-
-    elif input_unit == 'D':
-
-        try:
-
-            if output_unit == 'C':
-                # Problem with conversion Decimal
-                # Try catch is only working once
-                val = int(val)
-                return chr(val)
-
-            # Problem with this conversion H
+    try:
+        if input_unit == 'C' and len(val) == 1:
+            if output_unit == 'D':
+                return ord(val)
             elif output_unit == 'H':
-                return hex(int(val))
+                return hex(ord(val))
             else:
                 return val
-        except ValueError:
-            return "Not Valid, please try Again"
 
+        elif input_unit == 'D':
 
+            try:
 
-    elif input_unit == 'H':
-        if output_unit == 'D':
+                if output_unit == 'C':
+                    # Problem with conversion Decimal
+                    # Try catch is only working once
+                    val = int(val)
+                    return chr(val)
 
-            return int(val,16)
-        elif output_unit == 'C':
-            val_str = val[2:]
-            bytes_obj = bytes.fromhex(val_str)
-            ascii_str = bytes_obj.decode("ASCII")
-            return ascii_str
+                # Problem with this conversion H
+                elif output_unit == 'H':
+                    return hex(int(val))
+                else:
+                    return val
+            except ValueError:
+                return "Invalid Input"
+        elif input_unit == 'H':
+            if output_unit == 'D':
+
+                return int(val,16)
+            elif output_unit == 'C':
+                val_str = val[2:]
+                bytes_obj = bytes.fromhex(val_str)
+                ascii_str = bytes_obj.decode("ASCII")
+                return ascii_str
+            else:
+                return val
         else:
-            return val
+            return "Invalid Input"
 
+    except ValueError:
+        return "Invalid Input"
 
 
 def fixValue(c):
