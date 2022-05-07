@@ -7,12 +7,12 @@ class MetricConvCtrl:
         self._connectTextSignals()
     
     def _connectComboBoxSignals(self):
-        self._view.leftComboBox.currentIndexChanged.connect(lambda: self._textChanged(self._view.leftTextEdit, self._view.rightTextEdit))
-        self._view.rightComboBox.currentIndexChanged.connect(lambda: self._textChanged(self._view.rightTextEdit, self._view.rightTextEdit))
+        self._view.leftComboBox.currentIndexChanged.connect(lambda: self._textChanged(self._view.leftTextEdit, self._view.rightTextEdit, self._view.leftComboBox.currentText(), self._view.rightComboBox.currentText()))
+        self._view.rightComboBox.currentIndexChanged.connect(lambda: self._textChanged(self._view.rightTextEdit, self._view.leftTextEdit, self._view.rightComboBox.currentText(), self._view.leftComboBox.currentText()))
 
     def _connectTextSignals(self):
-        self._view.leftTextEdit.textChanged.connect(lambda: self._textChanged(self._view.leftTextEdit, self._view.rightTextEdit))
-        self._view.rightTextEdit.textChanged.connect(lambda: self._textChanged(self._view.rightTextEdit, self._view.leftTextEdit))
+        self._view.leftTextEdit.textChanged.connect(lambda: self._textChanged(self._view.leftTextEdit, self._view.rightTextEdit, self._view.leftComboBox.currentText(), self._view.rightComboBox.currentText()))
+        self._view.rightTextEdit.textChanged.connect(lambda: self._textChanged(self._view.rightTextEdit, self._view.leftTextEdit, self._view.rightComboBox.currentText(), self._view.leftComboBox.currentText()))
 
     def _disconnectTextSignals(self):
         self._view.leftTextEdit.textChanged.disconnect()
@@ -28,13 +28,13 @@ class MetricConvCtrl:
         self._view.leftTextEdit.setStyleSheet("border: 1px solid red;")
         self._view.rightTextEdit.setStyleSheet("border: 1px solid red;")
 
-    def _textChanged(self, inputField, outputField):
+    def _textChanged(self, inputField, outputField, inputMenu, outputMenu):
         inputString = inputField.text()
         outputString = inputField.text()
         
         if inputString or outputString:
             try:
-                outputString = str(self._model.length_conversion(float(inputString), self._view.leftComboBox.currentText(), self._view.rightComboBox.currentText()))
+                outputString = str(self._model.length_conversion(float(inputString), inputMenu, outputMenu))
                 inputField.setStyleSheet("border: 1px solid black;")
                 outputField.setStyleSheet("border: 1px solid black;")
             except ValueError:
