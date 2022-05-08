@@ -141,15 +141,18 @@ class PrimeRandomGen(QWidget):
         buttonLayout.setAlignment(Qt.AlignCenter)
 
         self.randomGenButton = QPushButton("Generate")
-        self.randomGenButton.setFixedSize(80, 26)
+        self.randomGenButton.setStyleSheet(open("Ext_Stylesheet.css").read())
+        #self.randomGenButton.setFixedSize(80, 26)
         buttonLayout.addWidget(self.randomGenButton, alignment=Qt.AlignCenter)
 
         self.randomGenCopy = QPushButton("Copy All")
-        self.randomGenCopy.setFixedSize(70, 26)
+        #self.randomGenCopy = QPushButton(open("Ext_Stylesheet.css").read())
+        #self.randomGenCopy.setFixedSize(70, 26)
         buttonLayout.addWidget(self.randomGenCopy, alignment=Qt.AlignCenter)
 
         self.randomGenClear = QPushButton("Clear")
-        self.randomGenClear.setFixedSize(70, 26)
+        self.randomGenClear.setStyleSheet(open("Ext_Stylesheet.css").read())
+        #self.randomGenClear.setFixedSize(70, 26)
         buttonLayout.addWidget(self.randomGenClear, alignment=Qt.AlignCenter)
     
         return buttonLayout

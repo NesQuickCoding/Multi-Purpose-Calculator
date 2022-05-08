@@ -1,7 +1,10 @@
 import sys
 
 from PyQt5.QtWidgets import QApplication, QHBoxLayout, QWidget, QMainWindow, QStackedWidget
+from PyQt5 import QtCore, QtGui
+import os
 
+from birthday_conversion.views import birthday_Ui
 from main_calc.views import MainCalcUI
 from main_calc.models import evaluateExpression
 from main_calc.controllers import MainCalcCtrl
@@ -20,21 +23,25 @@ from metric_conv.views import MetricConvUI
 import metric_conv.models
 from metric_conv.controllers import MetricConvCtrl
 
+from ascii_conversion.views import ascii_Ui
+
 from PyQt5.QtWidgets import QLabel
 
 DROPBOX_MENU = [
-    ("ASCII Conversion", QLabel),
+    ("ASCII Conversion", ascii_Ui),
     ("Base Conversion", BaseConvUI),
     ("Prime Number Generator/Validator", PrimeGenUI),
     ("Metric Conversion", MetricConvUI),
     ("Temperature Conversion", temp_Ui),
-    ("Generate Numbers", QLabel)
+    ("Birthday Conversion", birthday_Ui),
+    ("Prime Number Generator/Validator", PrimeGenUI)
+
 ]
 
 class SecCalc(QStackedWidget):
     def __init__(self):
         super().__init__()
-        self.setFixedSize(400, 400)
+        self.setFixedSize(480, 500)
         self.option = {}
         for QWidgetObject in DROPBOX_MENU:
             self.option[QWidgetObject[1].__name__] = QWidgetObject[1]()
@@ -49,13 +56,14 @@ class MultiCalcWindow(QMainWindow):
         
         # Main Window setup properties
         self.setWindowTitle("Multi-Purpose Calculator")
-        self.setFixedSize(800, 400)
+        self.setFixedSize(960, 500)
         self.generalLayout = QHBoxLayout()
         self._centralWidget = QWidget()
         self._centralWidget = QWidget(self)
+        self._centralWidget.setStyleSheet(open('Ext_Stylesheet.css').read())
         self.setCentralWidget(self._centralWidget)
         self._centralWidget.setLayout(self.generalLayout)
-        
+
         # Create MainCalcUI and secCalc
         self.mainCalc = MainCalcUI(DROPBOX_MENU)
         self.secCalc = SecCalc()
@@ -65,6 +73,10 @@ class MultiCalcWindow(QMainWindow):
 def main():
     multicalc = QApplication(sys.argv)
     view = MultiCalcWindow()
+    # Setting application icon
+    app_Icon = QtGui.QIcon('graphics/mpc_logo.png')
+
+    view.setWindowIcon(app_Icon)
     view.show()
     # Main Calc Model and Signal Connection
     MainCalcCtrl(model=evaluateExpression, view=view)

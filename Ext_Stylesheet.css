@@ -13,6 +13,7 @@ QWidget {
 
 QLabel {
     color: lime;
+    font-size: 16px;
 }
 
 
@@ -25,12 +26,8 @@ QPushButton{
     border-width: 1px;
     border-radius: 4px;
     border-color: lime;
-    font: 11pt Comic Sans MS, bold 14px;
-    min-width: 3em;
-    max-width: 3em;
-	min-height: 2em;
-	max-height: 2em;
-    padding: 2px;
+    font-size: 16px;
+
 }
 
 QPushButton:pressed{
@@ -39,26 +36,42 @@ QPushButton:pressed{
 
 /************************* For the Push Buttons  **************************/ 
 
-QComboBox{
+QComboBox {
+color: rgb(55, 255, 0);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(98, 255, 0);
+    font: 11pt "Arial";
+}
 
-    color: rgb(55, 255, 0);
-        border-style: outset;
-        border-width: 1px;
-        border-radius: 4px;
-        border-color: rgb(98, 255, 0);
-    }
-    
-QComboBox:hover {
-    background: green;
-    font: lime;
+QComboBox QAbstractItemView{
+    color: lime;
+    select-color: green;
+    select-background-color: black;
 }
 
 /************************* For the Radio Buttons  **************************/ 
-QRadioButton {background-color: transparent; color: lime};
+QRadioButton {
 
+    background-color: transparent;
+    color: lime;
+    font-size: 16px;
 
+}
+/************************* For the Output Qline  **************************/
+QLineEdit{
 
+    background-color: black;
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 4px;
+    border-color: green;
+    padding: 2px;
+    color: lime;
+    font-size: 19px;
 
+}
 
 
 
