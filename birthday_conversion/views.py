@@ -7,6 +7,7 @@ from PyQt5.QtCore import QDate
 References:
 https://pererapm.medium.com/find-out-how-many-seconds-old-you-are-using-python-and-explanation-of-code-ab2a48b9be3c
 https://www.geeksforgeeks.org/python-program-to-calculate-age-in-year/amp/
+https://stackoverflow.com/questions/68997443/calculate-age-in-day-month-and-year-from-birth-date-and-a-specific-day-using-py
 """
 
 class birthday_Ui(QtWidgets.QWidget):
@@ -38,13 +39,18 @@ def getYears(self, born):
     # Try Catch to check if we have a leap year
     # Make sure current year is not leap year
     try:
-        bday = born.replace(year = today.year)
-
+        b_day = born.replace(year = today.year)
     except ValueError:
-            bday = born.replace(year = today.year, month = born.month + 1, day = 1)
-
-    if bday > today:
+            b_day = born.replace(year = today.year, month = born.month + 1, day = 1)
+    if b_day > today:
         return today.year - born.year - 1
     else:
         return today.year - born.year
+
+
+def getDays(self, born):
+    today = date.today()
+    time_diff = today - born
+    c_days = time_diff.days
+    return c_days
 
