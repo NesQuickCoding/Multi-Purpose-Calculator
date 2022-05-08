@@ -44,6 +44,7 @@ class birthday_Ui(QtWidgets.QWidget):
 
         # Our QComboBox
         self.comboBox = self.findChild(QtWidgets.QComboBox, 'comboBox')
+    
 
         self.show()
 
