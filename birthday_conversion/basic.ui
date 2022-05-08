@@ -271,16 +271,6 @@ QComboBox QAbstractItemView{
      <string>Days</string>
     </property>
    </item>
-   <item>
-    <property name="text">
-     <string>Hours</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Seconds</string>
-    </property>
-   </item>
   </widget>
  </widget>
  <resources/>
