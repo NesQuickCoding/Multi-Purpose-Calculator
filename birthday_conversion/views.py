@@ -30,9 +30,6 @@ class birthday_Ui(QtWidgets.QWidget):
         #format_answer = "{:.2f}".format(answer)
         self.input.setText(str(answer))
 
-
-
-
 def getYears(self, born):
     today = date.today()
 
@@ -54,3 +51,7 @@ def getDays(self, born):
     c_days = time_diff.days
     return c_days
 
+
+def getMonths(self,born):
+    c_days = getDays(born)
+    c_months = int((c_days/365) * 12)
