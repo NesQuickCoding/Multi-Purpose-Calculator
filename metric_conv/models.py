@@ -35,7 +35,7 @@ def length_conversion(input_value : float, input_index : int, output_index : int
     ]
     return input_value * conversion_map[input_index][output_index]
 
-def weight_conversion(input_value, input_index, output_index):
+def weight_conversion(input_value : float, input_index : int, output_index : int) -> float:
     """
     Calculates the conversion rate for different weights based on the input_index and 
     output_index from from the MetricConvWidget.
@@ -71,7 +71,7 @@ def weight_conversion(input_value, input_index, output_index):
     ]
     return input_value * conversion_map[input_index][output_index]
 
-def time_conversion(input_value, input_index, output_index):
+def time_conversion(input_value : float, input_index : int, output_index : int) -> float:
     """
     Calculates the conversion rate for different time units based on the input_index and 
     output_index from from the MetricConvWidget.
@@ -106,7 +106,7 @@ def time_conversion(input_value, input_index, output_index):
     ]
     return input_value * conversion_map[input_index][output_index]
 
-def digital_space_conversion(input_value, input_index, output_index):
+def digital_space_conversion(input_value : float, input_index : int, output_index : int) -> float:
     """
     Calculates the conversion rate for different digital space units based on the input_index
     and output_index from from the MetricConvWidget.
