@@ -44,19 +44,8 @@
     </item>
     <item>
      <widget class="QPushButton" name="clearButton">
-       <property name="styleSheet">
-       <string notr="true">QPushButton{
-    background-color: black;
-	color: lime;
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: lime;
-}
-
-QPushButton:pressed{
-   background-color : green;
-}</string>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Clear</string>

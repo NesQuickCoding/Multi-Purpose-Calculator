@@ -2,7 +2,18 @@ from PyQt5.QtWidgets import QGridLayout, QLineEdit, QPushButton, QComboBox, QVBo
 from PyQt5.QtCore import Qt, QRect
 
 class MainCalcUI(QWidget):
+    """Initialize main calculator window.
+
+    Args:
+        QWidget (module): base class for user UI objects to build off of.
+    """
     def __init__(self, dropMenu):
+        """Initialize the calculator, set widgets for basic arithmetic, then connect
+        the other views to the main window through a dropdown menu.
+
+        Args:
+            dropMenu (comboBox): drop down menu for switching windows on the right-hand side.
+        """
         super().__init__()
         self.setFixedSize(400, 400)
         layout = QVBoxLayout()
@@ -15,23 +26,39 @@ class MainCalcUI(QWidget):
         self.setLayout(layout)
 
     def _createCalcOutput(self):
+        """Create the output box for expression and answer to use.
+
+        Returns:
+            LineEdit: widget for writing and recieving text.
+        """
         output = QLineEdit("0")
         output.setFixedHeight(50)
         output.setAlignment(Qt.AlignRight)
         output.setReadOnly(True)
-        output.setStyleSheet(open("../Graphical-App/Ext_Stylesheet.css").read())
         return output       
 
     def _createDropBox(self, dropMenu):
+        """Add items from drop down menu to main calc window
+
+        Args:
+            dropMenu (list): List of menu items and widgets to connect for secondary calc.
+
+        Returns:
+            ComboBox: Drop down menu
+        """
         comboBox = QComboBox()
         comboBox.setObjectName("CalcDropBox")
         comboBox.setGeometry(QRect(130, 190, 291, 31))
-        comboBox.setStyleSheet(open("../Graphical-App/Ext_Stylesheet.css").read())
         for item in dropMenu:
             comboBox.addItem(item[0])
         return comboBox
 
     def _createButtons(self):
+        """Create views for buttons of main calculator
+
+        Returns:
+            button_layout: grid containing all of the buttons necessary for the main calc.
+        """
         self.buttons = {}
         buttonsLayout = QGridLayout()
         
@@ -50,12 +77,24 @@ class MainCalcUI(QWidget):
         return buttonsLayout
 
     def setCalcOutput(self, text):
+        """Set the textBox with the given answer from evaluating.
+
+        Args:
+            text (str): answer to calculation
+        """
         self.calcOutput.setText(text)
 
     def getCalcOutput(self):
+        """Return the given text inside of the textbox
+
+        Returns:
+            Str: answer to evaluated expression 
+        """
         return self.calcOutput.text()
 
     def backSpaceCalcOutput(self):
+        """Reset to zero when output is clear, or else remove the last character from the str.
+        """
         # if back space would clear output, reset to zero
         if len(self.getCalcOutput()[0:-1]) == 0:
             self.clearCalcOutput()
@@ -64,4 +103,6 @@ class MainCalcUI(QWidget):
             self.setCalcOutput(str(self.getCalcOutput())[0:-1])
 
     def clearCalcOutput(self):
+        """Clear calculator output box
+        """
         self.setCalcOutput("0")

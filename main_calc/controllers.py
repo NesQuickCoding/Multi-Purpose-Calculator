@@ -2,17 +2,32 @@ from functools import partial
 import re
 
 class MainCalcCtrl:
+    """Main arithmetic calculator
+    """
     def __init__(self, model, view):
+        """Connect logic from the model to the view for the main calc. 
+
+        Args:
+            model : backend logic for the UI
+            view : UI for the calculator
+        """
         self._evaluate = model
         self._view = view
         self._connectSignals()
         self._evalPressed = False
 
     def _calculateResult(self):
+        """Calculate basic arithmetic  
+        """
         self._evalPressed = True
         self._view.mainCalc.setCalcOutput(self._evaluate(expression=self._view.mainCalc.getCalcOutput()))
 
     def _buildExpression(self, keyInput):
+        """Build the expression we plan on evaluating with the calculator
+
+        Args:
+            keyInput (key): current key you are pressing to build expressions with
+        """
         operators = ["+", "-", "*", "/", "%", "**", "//", "."]
         numbers = map(str, range(0, 10))
         
@@ -47,9 +62,13 @@ class MainCalcCtrl:
         self._evalPressed = False
 
     def _changeSecCalc(self):
+        """Change the display of which view is showing for the second (right-side) calculator.
+        """
         self._view.secCalc.secCalcDisplay(self._view.mainCalc.calcDropBox.currentIndex())
 
     def _connectSignals(self):
+        """Connect all of the functionality from the model to the view.
+        """
         for buttonText, button in self._view.mainCalc.buttons.items():
             if buttonText not in ["=", "C", "BS"]:
                 button.clicked.connect(partial(self._buildExpression, buttonText))
