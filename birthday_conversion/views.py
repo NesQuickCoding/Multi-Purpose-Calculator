@@ -38,60 +38,61 @@ class birthday_Ui(QtWidgets.QWidget):
         reg_exp = QRegExp("^[19|20][0-9]{3}$")
         year_validator = QRegExpValidator(reg_exp)
         self.inputYear.setValidator(year_validator)
-
-        # Our Output Line
-        self.input = self.findChild(QtWidgets.QLineEdit, 'lineEdit_Output')
-
-        # Our QComboBox
-        self.comboBox = self.findChild(QtWidgets.QComboBox, 'comboBox')
-    
-
         self.show()
 
 
 
     def enterButtonPressed(self):
+        self.lineEdit_Output.clear()
+        current_choice = self.comboBox.currentText()
+        month = int(self.inputMonth.text())
+        day = int(self.inputDay.text())
+        year = int(self.inputYear.text())
+        dob_list = [month,day,year]
+        answer = self.get_birthday(current_choice,dob_list)
+        self.lineEdit_Output.setText(answer)
 
-        #toggledCombo = [cb.text() for cb in self.comboChoice]
-        self.calendar_input = [int(self.inputYear.text()), int(self.inputMonth.text()), int(self.inputDay.text())]
-        answer = self.getBirthday(self.comboChoice, self.calendar_input)
-        #format_answer = "{:.2f}".format(answer)
 
-        self.input.setText(answer)
-
-
-    def getBirthday(self, combo_input, calendar_input):
-
+    def get_birthday(self, combo_input, calendar_input):
         if combo_input == "Years":
-            return getYears(self, calendar_input)
+            return str(get_years(calendar_input))
         elif combo_input == "Months":
-            return getMonths(self, calendar_input)
+            return str(get_months(calendar_input))
         elif combo_input == 'Days':
-            return getDays(self, calendar_input)
+            return str(get_days(calendar_input))
 
 
-def getYears(self, born):
+
+def get_years(born):
     c_month = born[0]
     c_day = born[1]
     c_year = born[2]
-
     today = date.today()
-    dob = date(c_year, c_day, c_month)
+    dob = date(c_year, c_month, c_day)
     time_diff = today - dob
     a_days = time_diff.days
     a_year = int(a_days/365)
-
     return a_year
 
 
-def getDays(self, born):
+def get_days(born):
+    c_month = born[0]
+    c_day = born[1]
+    c_year = born[2]
+    dob = date(c_year, c_month, c_day)
     today = date.today()
-    time_diff = today - born
+    time_diff = today - dob
     c_days = time_diff.days
     return c_days
 
 
-def getMonths(self,born):
-    c_days = getDays(born)
+def get_months(born):
+    c_month = born[0]
+    c_day = born[1]
+    c_year = born[2]
+    dob = date(c_year, c_month, c_day)
+    today = date.today()
+    time_diff = today - dob
+    c_days = time_diff.days
     c_months = int((c_days/365) * 12)
-        
+    return c_months

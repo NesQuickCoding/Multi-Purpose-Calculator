@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>temp_conv_ui</class>
- <widget class="QWidget" name="temp_conv_ui">
+ <class>birthday_conv_ui</class>
+ <widget class="QWidget" name="birthday_conv_ui">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -318,6 +318,54 @@ color: lime;</string>
     <hint type="destinationlabel">
      <x>258</x>
      <y>327</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clearButton</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_Month</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>197</x>
+     <y>368</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>280</x>
+     <y>95</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clearButton</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_Day</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>201</x>
+     <y>367</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>265</x>
+     <y>148</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clearButton</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_Year</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>217</x>
+     <y>366</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>273</x>
+     <y>206</y>
     </hint>
    </hints>
   </connection>
