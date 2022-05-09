@@ -1,9 +1,7 @@
 from PyQt5 import QtWidgets, uic
-import sys
 from datetime import date
-from PyQt5.QtCore import QDate, QRegExp
+from PyQt5.QtCore import QRegExp
 from PyQt5.QtGui import QIntValidator, QRegExpValidator
-from PyQt5.QtWidgets import QCalendarWidget, QApplication, QDialog, QLabel
 
 """
 References:
@@ -17,7 +15,6 @@ class birthday_Ui(QtWidgets.QWidget):
     def __init__(self):
         super(birthday_Ui, self).__init__()
         uic.loadUi('../Graphical-App/birthday_conversion/basic.ui', self)
-
 
         # Our Enter Button
         self.button = self.findChild(QtWidgets.QPushButton, 'enterButton')
@@ -61,46 +58,38 @@ class birthday_Ui(QtWidgets.QWidget):
             date(c_year, c_month, c_day)
 
             if combo_input == "Years":
-                return str(get_years(calendar_input))
+                return str(get_years(c_month, c_day, c_year))
             elif combo_input == "Months":
-                return str(get_months(calendar_input))
+                return str(get_months(c_month, c_day, c_year))
             elif combo_input == 'Days':
-                return str(get_days(calendar_input))
+                return str(get_days(c_month, c_day, c_year))
+
         except ValueError:
             return "Invalid"
 
 
 
-def get_years(born):
-    c_month = born[0]
-    c_day = born[1]
-    c_year = born[2]
+def get_years(month,day,year):
     today = date.today()
-    dob = date(c_year, c_month, c_day)
+    dob = date(year, month, day)
     time_diff = today - dob
     a_days = time_diff.days
-    a_year = int(a_days/365)
-    return a_year
+    a_years = int(a_days/365)
+    return a_years
 
 
-def get_days(born):
-    c_month = born[0]
-    c_day = born[1]
-    c_year = born[2]
-    dob = date(c_year, c_month, c_day)
+def get_days(month,day,year):
+    dob = date(year, month, day)
+    today = date.today()
+    time_diff = today - dob
+    a_days = time_diff.days
+    return a_days
+
+
+def get_months(month,day,year):
+    dob = date(year, month, day)
     today = date.today()
     time_diff = today - dob
     c_days = time_diff.days
-    return c_days
-
-
-def get_months(born):
-    c_month = born[0]
-    c_day = born[1]
-    c_year = born[2]
-    dob = date(c_year, c_month, c_day)
-    today = date.today()
-    time_diff = today - dob
-    c_days = time_diff.days
-    c_months = int((c_days/365) * 12)
-    return c_months
+    a_months = int((c_days/365) * 12)
+    return a_months
