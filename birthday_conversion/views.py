@@ -54,12 +54,20 @@ class birthday_Ui(QtWidgets.QWidget):
 
 
     def get_birthday(self, combo_input, calendar_input):
-        if combo_input == "Years":
-            return str(get_years(calendar_input))
-        elif combo_input == "Months":
-            return str(get_months(calendar_input))
-        elif combo_input == 'Days':
-            return str(get_days(calendar_input))
+        try:
+            c_month = calendar_input[0]
+            c_day = calendar_input[1]
+            c_year = calendar_input[2]
+            date(c_year, c_month, c_day)
+
+            if combo_input == "Years":
+                return str(get_years(calendar_input))
+            elif combo_input == "Months":
+                return str(get_months(calendar_input))
+            elif combo_input == 'Days':
+                return str(get_days(calendar_input))
+        except ValueError:
+            return "Invalid"
 
 
 
