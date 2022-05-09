@@ -47,8 +47,6 @@ color: rgb(55, 255, 0);
 
 QComboBox QAbstractItemView{
     color: lime;
-    select-color: green;
-    select-background-color: black;
 }
 
 /************************* For the Radio Buttons  **************************/ 
