@@ -39,7 +39,16 @@ DROPBOX_MENU = [
 ]
 
 class SecCalc(QStackedWidget):
+    """Initialize the secondary calculator and use a layout manager.
+     Set the secondary calc windows(right-side calc) and choose window with a dropdown menu.
+
+    Args:
+        QStackedWidget (Widget): layout manager for secondary calc window
+    """
     def __init__(self):
+        """Initialize all of extra views from the drop down menu.
+         These are the extra views shown on the right hand side.
+        """
         super().__init__()
         self.setFixedSize(480, 500)
         self.option = {}
@@ -48,10 +57,35 @@ class SecCalc(QStackedWidget):
             self.addWidget(self.option[QWidgetObject[1].__name__])
     
     def secCalcDisplay(self, i):
+        """Set currently displayed view on the right from the drop down menu.
+
+        Args:
+            i (int): Index in the dropdown for which view should show on the right.
+        """
         self.setCurrentIndex(i)
 
 class MultiCalcWindow(QMainWindow):
+    """Create alleither <property name="styleSheet">
+       <string notr="true">QPushButton{
+    background-color: black;
+	color: lime;
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: lime;
+}
+
+QPushButton:pressed{
+   background-color : green;
+}</string>
+      </property>
+
+    Args:
+        QMainWindow (_type_): _description_
+    """
     def __init__(self):
+        """Set up properties for the main PyQt5 window.
+        """
         super().__init__()
         
         # Main Window setup properties
