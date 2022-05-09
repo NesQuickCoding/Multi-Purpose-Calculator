@@ -22,142 +22,18 @@ def length_conversion(input_value : float, input_index : int, output_index : int
     if input_index == output_index:
         return input_value
         
-    unit_key = [
-        "Inches", "Feet", "Yards", "Miles",
-        "Millimeters", "Centimeters", "Meters", "Kilometers"]
-
-    input_unit = unit_key[input_index]
-    output_unit = unit_key[output_index]
-
-    # Metric
-    if input_unit == "Inches":
-        if output_unit == "Feet":
-            return input_value / 12
-        elif output_unit =="Yards":
-            return input_value / 36
-        elif output_unit == "Miles":
-            return input_value / 63360
-        elif output_unit == "Millimeters":
-            return input_value * 25.4
-        elif output_unit == "Centimeters":
-            return input_value * 2.54
-        elif output_unit == "Meters":
-            return input_value / 39.370
-        elif output_unit == "Kilometers":
-            return input_value / 39370.0787
-
-    if input_unit == "Feet":
-        if output_unit == "Inches":
-            return input_value * 12
-        elif output_unit =="Yards":
-            return input_value / 3
-        elif output_unit == "Miles":
-            return input_value / 5280
-        elif output_unit == "Millimeters":
-            return input_value * 304.8
-        elif output_unit == "Centimeters":
-            return input_value * 30.48
-        elif output_unit == "Meters":
-            return input_value * 0.3048
-        elif output_unit == "Kilometers":
-            return input_value / 3280.84
-
-    if input_unit == "Yards":
-        if output_unit == "Feet":
-            return input_value * 3
-        elif output_unit =="Inches":
-            return input_value * 36
-        elif output_unit == "Miles":
-            return input_value / 1760
-        elif output_unit == "Millimeters":
-            return input_value * 914.4
-        elif output_unit == "Centimeters":
-            return input_value * 91.44
-        elif output_unit == "Meters":
-            return input_value * 0.9144
-        elif output_unit == "Kilometers":
-            return input_value * 0.0009144
-
-    if input_unit == "Miles":
-        if output_unit == "Feet":
-            return input_value * 5280
-        elif output_unit =="Yards":
-            return input_value * 1760
-        elif output_unit == "Inches":
-            return input_value * 63360
-        elif output_unit == "Millimeters":
-            return input_value * 1609344
-        elif output_unit == "Centimeters":
-            return input_value * 160934.4
-        elif output_unit == "Meters":
-            return input_value * 1609.344
-        elif output_unit == "Kilometers":
-            return input_value * 1.609344
-
-    # Imperial   
-    if input_unit == "Millimeters":
-        if output_unit == "Feet":
-            return input_value / 304.8
-        elif output_unit =="Yards":
-            return input_value / 914.4
-        elif output_unit == "Miles":
-            return input_value / 1609344
-        elif output_unit == "Inches":
-            return input_value / 25.4
-        elif output_unit == "Centimeters":
-            return input_value / 10
-        elif output_unit == "Meters":
-            return input_value / 1000
-        elif output_unit == "Kilometers":
-            return input_value / 1000000
-
-    if input_unit == "Centimeters":
-        if output_unit == "Inches":
-            return input_value / 2.54
-        elif output_unit =="Yards":
-            return input_value / 91.44
-        elif output_unit == "Miles":
-            return input_value / 160934.4
-        elif output_unit == "Millimeters":
-            return input_value * 10
-        elif output_unit == "Feet":
-            return input_value / 30.48
-        elif output_unit == "Meters":
-            return input_value / 100
-        elif output_unit == "Kilometers":
-            return input_value / 100000
-
-    if input_unit == "Meters":
-        if output_unit == "Feet":
-            return input_value / 0.3048
-        elif output_unit =="Inches":
-            return input_value * 39.370
-        elif output_unit == "Miles":
-            return input_value / 1609.344
-        elif output_unit == "Millimeters":
-            return input_value * 1000
-        elif output_unit == "Centimeters":
-            return input_value * 100
-        elif output_unit == "Yards":
-            return input_value / 0.9144
-        elif output_unit == "Kilometers":
-            return input_value / 1000
-
-    if input_unit == "Kilometers":
-        if output_unit == "Feet":
-            return input_value * 3280.84
-        elif output_unit == "Yards":
-            return input_value * 1093.6132983
-        elif output_unit == "Inches":
-            return input_value * 39370.0787
-        elif output_unit == "Millimeters":
-            return input_value * 1000000
-        elif output_unit == "Centimeters":
-            return input_value * 100000
-        elif output_unit == "Meters":
-            return input_value * 1000
-        elif output_unit == "Miles":
-            return input_value / 1.609344
+    conversion_map = [
+        # Inches   Feet     Yards     Miles      MillimetersCentimeters  Meters       Kilometers
+        [1,        1/12,    1/36,     1/63360,   25.4,      2.54,        1/39.37008, 1/39370.08], # Inches
+        [12,       1,       1/3,      1/5280,    304.8,     30.48,       1/3.28084,  1/3280.84],  # Feet
+        [36,       3,       1,        1/1760,    1/914.4,   1/91.44,     1/1.09361,  1/1093.613], # Yards
+        [63360,    5280,    1760,     1,         1/1609344, 1/160934.40, 1/1609.344, 1/1.609344], # Miles
+        [1/25.4,   1/304.8, 914.4,    1609344,   1,         1/10,        1/1000,     1/1000000],  # Millimeters
+        [1/2.54,   1/30.48, 91.44,    160934.40, 10,        1,           1/100,      1/100000],   # Centimeters
+        [39.37008, 3.28084, 1.09361,  1609.344,  1000,      100,         1,          1/1000],     # Meters
+        [39370.08, 3280.84, 1093.613, 1.609344,  1000000,   100000,      1000,       1]           # Kilometers
+    ]
+    return input_value * conversion_map[input_index][output_index]
 
 def weight_conversion(input_value, input_index, output_index):
     """
@@ -253,12 +129,17 @@ def digital_space_conversion(input_value, input_index, output_index):
     """
     if input_index == output_index:
         return input_value
-
+    
+    # Since all the conversions outside of bits are different exponents of 1000,
+    # and the storage options are put in ascending order, the difference of the indexes
+    # will return the proper exponent for the conversion
     if input_index > 0 and output_index > 0:
         return input_value * 1000**(input_index - output_index)
     
+    # If converting from bits, calculate the difference then divide by 8
     if input_index == 0:
         return input_value * 1000**(input_index - output_index + 1) / 8
 
+    # If converting to bits, calculate the difference then multiply by 8
     if output_index == 0:
         return input_value * 1000**(input_index - output_index - 1) * 8
