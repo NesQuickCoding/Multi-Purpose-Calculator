@@ -1,16 +1,16 @@
 
-# Have no fear, the Python Calculator is here.
+# Made for the Sole Survivor
+<img src="https://github.com/NesQuickCoding/Graphical-App/blob/main/graphics/Banner.png?raw=true" width=475><br>
 ### This is a stylish calculator application with some added features (besides basic arithmetic):
 * ASCII conversions 
 * Base conversions
 * Prime number generator/validator
 * Metric conversion
 * Temperature conversion
-* Birthday calculator 
+* Birthday conversion
 
 
-
-## Graphical-App - Designing a graphical user interface (GUI) using PyQT5.
+## Designed graphical user interface (GUI) using PyQT5.
 
 Submitted by:
 
