@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QApplication, QHBoxLayout, QWidget, QMainWindow, QSt
 from PyQt5 import QtCore, QtGui
 import os
 
-#from birthday_conversion.views import birthday_Ui
+from birthday_conversion.views import birthday_Ui
 from main_calc.views import MainCalcUI
 from main_calc.models import evaluateExpression
 from main_calc.controllers import MainCalcCtrl
@@ -33,7 +33,7 @@ DROPBOX_MENU = [
     ("Prime Number Generator/Validator", PrimeGenUI),
     ("Metric Conversion", MetricConvUI),
     ("Temperature Conversion", temp_Ui),
-    ("Birthday Conversion", QLabel),
+    ("Birthday Conversion", birthday_Ui),
     ("Prime Number Generator/Validator", PrimeGenUI)
 
 ]
