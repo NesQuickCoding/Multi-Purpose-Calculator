@@ -1,8 +1,6 @@
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtGui import QIntValidator, QRegExpValidator
-from PyQt5.QtCore import Qt, QRegExp
-
-from base_conv.models import hexValidator
+from PyQt5.QtCore import QRegExp
 
 class ascii_Ui(QtWidgets.QWidget):
     def __init__(self):
@@ -11,17 +9,23 @@ class ascii_Ui(QtWidgets.QWidget):
 
         self.button = self.findChild(QtWidgets.QPushButton, 'enterButton')
         self.button.clicked.connect(self.printButtonPressed)
+
         self.input = self.findChild(QtWidgets.QLineEdit, 'lineEdit_Input')
-        self.input.textChanged.connect(self._decValidator)
+        
+        self.input.textChanged.connect(self._rangeValidator)
+        
         self.validators = self._createValidators()
         # initial input is chr input
         self.input.setValidator(self.validators[0])
+        
         self.output = self.findChild(QtWidgets.QLineEdit, 'lineEdit_Output')
+        
         self.radioButtons = self.findChildren(QtWidgets.QRadioButton)
         # Set toggled connectors for only the first three radiobuttons
         # as those dictate input
         for i in range(0, 3):
             self.radioButtons[i].toggled.connect(self._setValidators)
+        
         self.show()
 
     def _createValidators(self):
@@ -35,17 +39,23 @@ class ascii_Ui(QtWidgets.QWidget):
 
         return [chrValidator, intValidator, hexValidator]
 
-    def _decValidator(self):
-        if [rb.text() for rb in self.radioButtons if rb.isChecked()][0][0] == 'D' and self.input.text() != '':
-            # Prevents trailing zeros
-            if int(self.input.text()) == 0:
-                self.input.setText('0')
-            
-            # Automatically sets the max limit for chr
-            elif int(self.input.text()) > 1114111:
-                self.input.setText('1114111')
+    def _rangeValidator(self):
+        try:
+            if [rb.text() for rb in self.radioButtons if rb.isChecked()][0][0] == 'D':
+                if int(self.input.text()) == 0:
+                    self.input.setText('0')
+                # Automatically sets the max limit for chr
+                elif int(self.input.text()) > 1114111:
+                    self.input.setText('1114111')
+            elif [rb.text() for rb in self.radioButtons if rb.isChecked()][0][0] == 'H':
+                if int(self.input.text(), 16) > 1114111:
+                    self.input.setText('0x10ffff')
+        except ValueError:
+            pass
 
     def _setValidators(self):
+        # Clears input field when text changes for a clean state
+        self.input.setText('')
         isChecked = [rb.text() for rb in self.radioButtons if rb.isChecked()][0][0]
         if isChecked == "C":
             self.input.setValidator(self.validators[0])
@@ -56,10 +66,8 @@ class ascii_Ui(QtWidgets.QWidget):
 
     def printButtonPressed(self):
         toggledButtons = [rb.text() for rb in self.radioButtons if rb.isChecked()]
-        print([rb.text() for rb in self.radioButtons])
         answer = self.convert_ascii(self.input.text(), toggledButtons[0][0], toggledButtons[1][0])
         self.output.setText(str(answer))
-
 
     def convert_ascii(self, val, input_unit, output_unit):
         try:
@@ -76,29 +84,21 @@ class ascii_Ui(QtWidgets.QWidget):
                     val = int(val)
                     return chr(val)
 
-                # Problem with this conversion H
                 elif output_unit == 'H':
                     return hex(int(val))
                 else:
                     return val
+
             elif input_unit == 'H':
                 if output_unit == 'D':
                     return int(val,16)
                 elif output_unit == 'C':
-                    #val_str = val[2:]
-                    bytes_obj = bytes.fromhex(val)
-                    ascii_str = bytes_obj.decode("ASCII")
-                    return ascii_str
+                    return chr(int(val, 16))
                 else:
                     return val
-            else:
-                return "Invalid Input"
 
         except ValueError:
             return "Invalid Input"
-
-
-
 
 # Char Test
 
