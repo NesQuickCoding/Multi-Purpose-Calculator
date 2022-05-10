@@ -7,6 +7,20 @@ import models
 from controllers import MetricConvCtrl
 
 class TestWindow(QMainWindow):
+    """
+    Constructs a QMainWindow to create and append to it's window a MetricConvUI
+    for testing purposes
+
+    Inherits all methods and attributes from QMainWindow
+
+    Attributes
+    ----------
+    None
+
+    Methods
+    -------
+    None
+    """
     def __init__(self):
         super().__init__()
         
@@ -22,6 +36,19 @@ class TestWindow(QMainWindow):
         self.generalLayout.addWidget(self.metricConvUI)
 
 def main():
+    """
+    Main drivers that initializes PyQt5 application, creates a MetricConvUI widget,
+    and 4 MetricConvCtrl objects to connect to four different MetricConvWidgets within
+    MetricConvUI, as well as the appropriate conversion functions from models.
+
+    Parameters
+    ----------
+    None
+
+    Returns
+    -------
+    None
+    """
     baseconv = QApplication(sys.argv)
     view = TestWindow()
     view.show()
