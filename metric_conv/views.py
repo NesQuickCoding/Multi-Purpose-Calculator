@@ -29,7 +29,8 @@ class MetricConvWidget(QWidget):
     """
     def __init__(self, stringLabel, unitOptions):
         """
-        Constructs the MetricConvWidget, including it's layout and attributes
+        Constructs a MetricConvWidget, including it's layout and attributes
+        Used perform unit conversion between two units
 
         Parameters
         ----------
@@ -179,6 +180,4 @@ class MetricConvUI(QWidget):
         layout.addWidget(self.digitalStorageView)
 
         self.setLayout(layout)
-
-
         
