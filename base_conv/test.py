@@ -7,7 +7,38 @@ import models
 from controllers import BaseConvCtrl
 
 class TestWindow(QMainWindow):
+    """
+    Constructs a QMainWindow to create and append to it's window a BaseConvUI
+    widget for testing purposes
+
+    Inherits all methods and attributes from QMainWindow
+
+    Attributes
+    ----------
+    generalLayout : QVBoxLayout
+        stores the layout of the main
+    _centralWidget
+        Contains central widget
+    metricConvUI : BaseConvGenUI
+        initializes and stores BaseConvGenUI
+
+    Methods
+    -------
+    None
+    """
     def __init__(self):
+        """
+        Initilizer for TestWindow
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        TestWindow
+            the central widget for main application
+        """
         super().__init__()
         
         self.setWindowTitle("Base Conversion")
@@ -21,6 +52,18 @@ class TestWindow(QMainWindow):
         self.generalLayout.addWidget(self.baseConvUI)
 
 def main():
+    """
+    Main drivers that initializes PyQt5 application, creates a TestWindow widget,
+    and BaseConvCtrl object to connect to signals.
+
+    Parameters
+    ----------
+    None
+
+    Returns
+    -------
+    None
+    """
     baseconv = QApplication(sys.argv)
     view = TestWindow()
     view.show()
