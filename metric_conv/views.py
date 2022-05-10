@@ -11,7 +11,6 @@ class MetricConvWidget(QWidget):
 
     Attributes
     ----------
-
     leftTextEdit : QLineEdit
         Left input/output field for conversion
     leftComboBox : QComboBox

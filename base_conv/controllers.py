@@ -1,5 +1,59 @@
 class BaseConvCtrl:
+    """
+    Handles the logic and singal connectios for BaseConvUI
+
+    Attributes
+    ----------
+    _view : BaseConvUI
+        Stores the reference to the QWidget
+    _model : module
+        Stores the reference base_conv/models.py with validator, formating, and calculating
+        functions
+    _bitLimits : [(int, int)]
+        Stores tuples of the roof/limit for each of the 4 bit widths, with the first tiple
+        being the limit for unsigned, and the second for signed
+    _signed : int
+        0 for unsigned, 1 for signed, used for accessing the appropriate tuple index
+
+    Methods
+    -------
+    _decChanged():
+        Handler for when the decimal textbox is changed
+    _hexChanged():
+        Handler for when the hexadecimal textbox is changed
+    _binChanged():
+        Handler for when the binary textbox is changed
+    _setSigned():
+        Handler for when the signed/unsigned radio buttons change
+    _setNegate():
+        Toggles negation of a number and changed every textbox
+    _connectTextSignals
+        Connects textbox textHasChanged signals
+    _disconnectTextSignals
+        Disconnects textbox textHasChanged signals
+    _setAllTextBoxes(decOutput, hexOutput, binOutput)
+        Handlers the signals and setting the text for the textbox input/outputs
+    _connectBitSignals()
+        Connects the dropbox and radio buttons to handle changes in their state
+    """
     def __init__(self, view, model):
+        """
+        Constructs the BaseConvCtrl, building signals for BaseConvUI and connecting
+        them to the correct model/function for conversion calculations
+
+        Parameters
+        ----------
+        view : BaseConvUI
+            Used to reference and connect BaseConvUI's attributes
+        model : module
+            Reference to base_conv/models.py with validator, formating, and calculating
+            functions
+
+        Returns
+        -------
+        BaseConvUI
+            Connects BaseConvUI to the appropriate signals
+        """
         self._view = view
         self._connectTextSignals()
         self._connectBitSignals()
@@ -14,6 +68,27 @@ class BaseConvCtrl:
         self._signed = 0
 
     def _decChanged(self):
+        """
+        Handles the input of the Decimal field
+        1. Validates the number
+        2. Formats to decimal
+        3. Formats the value to hexadecimal
+        4. Formats the value to binary
+        4. Sets the input for all three fields with their respective formatted value
+
+        Parameters
+        ----------
+        None
+
+        Raises
+        ------
+        ValueError
+            If occurs when formatting the three numbers
+
+        Returns
+        -------
+        None
+        """
         # Validate input for decimal text field
         # shorthand - validBaseNumber = baseValidator(baseTextBox's text, bit-width and signage numerical limit, signed/unsigned mode)
         validDecNumber = self._model.decValidator(self._view.dec.decTextBox.document().toPlainText(), self._bitLimits[self._view.bitDropBox.currentIndex()][self._signed], self._signed)
@@ -37,6 +112,27 @@ class BaseConvCtrl:
         self._setAllTextBoxes(decOutput, hexOutput, binOutput)
 
     def _hexChanged(self):
+        """
+        Handles the input of the Hexadecimal field
+        1. Validates the number
+        2. Formats the hexadecimal value
+        3. Formats the value to decimal
+        4. Formats the value to binary
+        4. Sets the input for all three fields with their respective formatted value
+
+        Parameters
+        ----------
+        None
+
+        Raises
+        ------
+        ValueError
+            If occurs when formatting the three numbers
+
+        Returns
+        -------
+        None
+        """
         validHexNumber = self._model.hexValidator(self._view.hex.hexTextBox.document().toPlainText(), self._bitLimits[self._view.bitDropBox.currentIndex()][0], self._signed)
         decOutput = ""
         hexOutput = ""
@@ -55,6 +151,27 @@ class BaseConvCtrl:
         self._setAllTextBoxes(decOutput, hexOutput, binOutput)
 
     def _binChanged(self):
+        """
+        Handles the input of the Binary field
+        1. Validates the number
+        2. Formats the binary value
+        3. Formats the value to decimal
+        4. Formats the value to hexadecimal
+        4. Sets the input for all three fields with their respective formatted value
+
+        Parameters
+        ----------
+        None
+
+        Raises
+        ------
+        ValueError
+            If occurs when formatting the three numbers
+
+        Returns
+        -------
+        None
+        """
         validBinNumber = self._model.binValidator(self._view.bin.binTextBox.document().toPlainText(), self._bitLimits[self._view.bitDropBox.currentIndex()][0], self._signed)
         decOutput = ""
         hexOutput = ""
@@ -72,10 +189,19 @@ class BaseConvCtrl:
 
         self._setAllTextBoxes(decOutput, hexOutput, binOutput)
 
-    def _setBitIndex(self):
-        self._decChanged()
-
     def _setSigned(self):
+        """
+        Sets _signed based on signage selection from the QRadioButtons. Will also disable the
+        negate button if _signed is 1/True
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        None
+        """
         if self._view.unSignedRadio.isChecked():
             self._signed = 0
             self._view.negateButton.setEnabled(False)
@@ -85,23 +211,72 @@ class BaseConvCtrl:
         self._decChanged()
     
     def _setNegate(self):
+        """
+        Adds a '-' to decTextBox then sets the textbox, causing conversion to happen automatically
+        If a '-' is already there, it is trimmed and the conversion is triggered again
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        None
+        """
         if self._view.dec.decTextBox.document().toPlainText()[0] != '-':
             self._view.dec.decTextBox.document().setPlainText("-" + self._view.dec.decTextBox.document().toPlainText())
         else:
             self._view.dec.decTextBox.document().setPlainText(self._view.dec.decTextBox.document().toPlainText()[1:])
-        pass
-
+        
     def _connectTextSignals(self):
+        """
+        Connects decTextBox, hexTextBox, and binTextBox textChanged signals
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        None
+        """
         self._view.dec.decTextBox.textChanged.connect(lambda: self._decChanged())
         self._view.hex.hexTextBox.textChanged.connect(lambda: self._hexChanged())
         self._view.bin.binTextBox.textChanged.connect(lambda: self._binChanged())
 
     def _disconnectTextSignals(self):
+        """
+        Connects decTextBox, hexTextBox, and binTextBox textChanged signals
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        None
+        """
         self._view.dec.decTextBox.textChanged.disconnect()
         self._view.hex.hexTextBox.textChanged.disconnect()
         self._view.bin.binTextBox.textChanged.disconnect()
     
     def _setAllTextBoxes(self, decOutput, hexOutput, binOutput):
+        """
+        Sets decTextBox, hexTextBox, and binTextBox to their respective output
+
+        Parameters
+        ----------
+        decOutput : str
+            decTextBox's new text value
+        hexOutput : str
+            hexTextBox's new text value
+        binOutput : str
+            binTextBox's new text value
+
+        Returns
+        -------
+        None
+        """
         self._disconnectTextSignals()
         self._view.dec.decTextBox.document().setPlainText(decOutput)
         self._view.hex.hexTextBox.document().setPlainText(hexOutput)
@@ -109,6 +284,17 @@ class BaseConvCtrl:
         self._connectTextSignals()
 
     def _connectBitSignals(self):
-        self._view.bitDropBox.currentIndexChanged.connect(self._setBitIndex)
+        """
+        Connects bitDropBox, unSignedRadio and negateButton to their respective signals
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        None
+        """
+        self._view.bitDropBox.currentIndexChanged.connect(self._decChanged)
         self._view.unSignedRadio.toggled.connect(self._setSigned)
         self._view.negateButton.clicked.connect(self._setNegate)
