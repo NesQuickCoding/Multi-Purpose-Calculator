@@ -1,8 +1,7 @@
 import sys
 
 from PyQt5.QtWidgets import QApplication, QHBoxLayout, QWidget, QMainWindow, QStackedWidget
-from PyQt5 import QtCore, QtGui
-import os
+from PyQt5 import QtGui
 
 from birthday_conversion.views import birthday_Ui
 from main_calc.views import MainCalcUI
@@ -25,8 +24,6 @@ from metric_conv.controllers import MetricConvCtrl
 
 from ascii_conversion.views import ascii_Ui
 
-from PyQt5.QtWidgets import QLabel
-
 DROPBOX_MENU = [
     ("ASCII Conversion", ascii_Ui),
     ("Base Conversion", BaseConvUI),
@@ -35,7 +32,6 @@ DROPBOX_MENU = [
     ("Temperature Conversion", temp_Ui),
     ("Birthday Conversion", birthday_Ui),
     ("Prime Number Generator/Validator", PrimeGenUI)
-
 ]
 
 class SecCalc(QStackedWidget):
@@ -92,7 +88,6 @@ QPushButton:pressed{
         self.setWindowTitle("Multi-Purpose Calculator")
         self.setFixedSize(960, 500)
         self.generalLayout = QHBoxLayout()
-        self._centralWidget = QWidget()
         self._centralWidget = QWidget(self)
         self._centralWidget.setStyleSheet(open('Ext_Stylesheet.css').read())
         self.setCentralWidget(self._centralWidget)
@@ -112,17 +107,22 @@ def main():
 
     view.setWindowIcon(app_Icon)
     view.show()
+
     # Main Calc Model and Signal Connection
     MainCalcCtrl(model=evaluateExpression, view=view)
+
     # Prime Gen Model and Signal Connection
     PrimeGenCtrl(model = prime_gen.models, view=view.secCalc.option["PrimeGenUI"])
+
     # Base Conversion Model and Signal Connection
     BaseConvCtrl(model = base_conv.models, view=view.secCalc.option["BaseConvUI"])
+
     # Metric Conversion Models and Signal Connections
     MetricConvCtrl(view=view.secCalc.option["MetricConvUI"].lengthView, model=metric_conv.models.length_conversion)
     MetricConvCtrl(view=view.secCalc.option["MetricConvUI"].weightView, model=metric_conv.models.weight_conversion)
     MetricConvCtrl(view=view.secCalc.option["MetricConvUI"].timeView, model=metric_conv.models.time_conversion)
     MetricConvCtrl(view=view.secCalc.option["MetricConvUI"].digitalStorageView, model=metric_conv.models.digital_space_conversion)
+    
     # Execute program loop
     sys.exit(multicalc.exec_())
 

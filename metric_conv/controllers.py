@@ -5,9 +5,9 @@ class MetricConvCtrl:
     Attributes
     ----------
     _view : MetricConvWidget
-        Store the reference to the QWidget
+        Stores the reference to the QWidget
     _model : function
-        Store the reference to the specific function for calculations
+        Stores the reference to the specific function for calculations
 
     Methods
     -------

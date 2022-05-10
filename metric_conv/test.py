@@ -9,25 +9,32 @@ from controllers import MetricConvCtrl
 class TestWindow(QMainWindow):
     """
     Constructs a QMainWindow to create and append to it's window a MetricConvUI
-    for testing purposes
+    widget for testing purposes
 
     Inherits all methods and attributes from QMainWindow
 
     Attributes
     ----------
-    None
+    generalLayout : QVBoxLayout
+        stores the layout of the main
+    _centralWidget
+        Contains central widget
+    metricConvUI : MetricConvGenUI
+        initializes and stores MetricConvGenUI
 
     Methods
     -------
     None
     """
     def __init__(self):
+        """
+        
+        """
         super().__init__()
         
         self.setWindowTitle("Metric Conversion")
         self.setFixedSize(400, 400)
         self.generalLayout = QVBoxLayout()
-        self._centralWidget = QWidget()
         self._centralWidget = QWidget(self)
         self.setCentralWidget(self._centralWidget)
         self._centralWidget.setLayout(self.generalLayout)
@@ -37,7 +44,7 @@ class TestWindow(QMainWindow):
 
 def main():
     """
-    Main drivers that initializes PyQt5 application, creates a MetricConvUI widget,
+    Main drivers that initializes PyQt5 application, creates a TestWindow widget,
     and 4 MetricConvCtrl objects to connect to four different MetricConvWidgets within
     MetricConvUI, as well as the appropriate conversion functions from models.
 
