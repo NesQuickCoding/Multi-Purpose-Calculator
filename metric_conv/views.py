@@ -23,7 +23,7 @@ class MetricConvWidget(QWidget):
 
     Methods
     -------
-    _createOptionLayout(self, QLineEditObj, QComboBoxObj, items):
+    _createOptionLayout(QLineEditObj, QComboBoxObj, items):
         Internal method for initialization, used to create the layout and
         QComboBox
     """
@@ -31,8 +31,6 @@ class MetricConvWidget(QWidget):
         """
         Constructs a MetricConvWidget, including it's layout and attributes
         Used perform unit conversion between two units
-
-        Inherits all methods and attributes from QWidget
 
         Parameters
         ----------

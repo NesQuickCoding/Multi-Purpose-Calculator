@@ -13,7 +13,6 @@ class TestWindow(QMainWindow):
         self.setWindowTitle("Base Conversion")
         self.setFixedSize(400, 400)
         self.generalLayout = QVBoxLayout()
-        self._centralWidget = QWidget()
         self._centralWidget = QWidget(self)
         self.setCentralWidget(self._centralWidget)
         self._centralWidget.setLayout(self.generalLayout)

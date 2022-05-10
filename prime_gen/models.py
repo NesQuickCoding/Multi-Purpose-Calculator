@@ -2,15 +2,20 @@ import random
 
 def range_1_n(limit : int):
     """
-    --- Prime number generator by range ---
     Finds all the prime numbers from 1 to <limit> (inclusive)
     Generates numbers based off of the Sieve of Atkin algorithm 
     ref: https://en.wikipedia.org/wiki/Sieve_of_Atkin
-        Parameters:
-            limit (int)
-            Precondition: limit must be a positive, non-zero integer
-        Returns:
-            None (results of prime numebrs are printed with print())
+
+    Parameters
+    ----------
+    limit : int
+        Precondition: limit must be a positive, non-zero integer
+        Limit of the range
+
+    Returns
+    -------
+    [int]
+        Final list of integers that are prime numbers
     """
     # Check for positive integer
     if limit <= 0:
@@ -89,12 +94,18 @@ def range_1_n(limit : int):
 
 def is_prime(n : int):
     """
-    --- Helper function to determine if n is prime ---
-        Parameters:
-            n (int)
-            Precondition: n must be a positive integer
-        Returns:
-            Boolean: True if n is prime, False if not
+    Determines if a number is prime or not
+    
+    Parameters:
+    -----------
+    n : int
+        Precondition: n must be a positive integer
+        Number to test if prime
+    
+    Returns
+    -------
+    Boolean
+        True if n is prime, False if not
     """
     # Check for positive integer
     if n <= 0:
@@ -116,17 +127,25 @@ def is_prime(n : int):
 
 def digit_size(digits : int, total : int):
     """
-    --- Generate a set of random prime numbers by a digit size ---
+    Generate a set of random prime numbers by a digit size
     Will generate a number number that has <digits> amount of digits
     Then check if the number is prime
     This prime number generator will continue finding random prime numbers
     Until a <total> amount is found
-        Parameters:
-            digits (int): number of digit places for each random number
-            total (int): how many random prime numbers to generate
-            Precondition: <digits> and <total> must be positive, non-zero integers
-        Returns:
-            None (results of prime numbers are printed with print())
+
+    Parameters
+    ----------
+    digits : int
+        number of digit places for each random number
+        Precondition: must be positive, non-zero integer
+    total : int
+        how many random prime numbers to generate
+        Precondition: must be positive, non-zero integer
+    
+    Returns
+    -------
+    [int]
+        Results of randomly generated prime numbers
     """
     # Check for positive integer
     if digits <= 0 or total <= 0:
