@@ -12,30 +12,54 @@ class ascii_Ui(QtWidgets.QWidget):
         self.button = self.findChild(QtWidgets.QPushButton, 'enterButton')
         self.button.clicked.connect(self.printButtonPressed)
         self.input = self.findChild(QtWidgets.QLineEdit, 'lineEdit_Input')
+        self.input.textChanged.connect(self._decValidator)
         self.validators = self._createValidators()
-        self.input.setValidator(self.validators[2])
+        # initial input is chr input
+        self.input.setValidator(self.validators[0])
         self.output = self.findChild(QtWidgets.QLineEdit, 'lineEdit_Output')
         self.radioButtons = self.findChildren(QtWidgets.QRadioButton)
-
+        # Set toggled connectors for only the first three radiobuttons
+        # as those dictate input
+        for i in range(0, 3):
+            self.radioButtons[i].toggled.connect(self._setValidators)
         self.show()
 
     def _createValidators(self):
         # Allow any character, but only 1 at most
         chrValidator = QRegExpValidator(QRegExp(".{1}"))
         # Valid range for chr() is 0 to 1,114,111
+        # This doesn't entirely prevent values above 1114111 alone
         intValidator = QIntValidator(0, 1114111)
-        # Hex validator can accept 0x or not as input
+        # Hex validator can accept 0x as initial input or not, followed by 0-9a-fA-F
         hexValidator = QRegExpValidator(QRegExp("(0x)?[\da-fA-F]+"))
 
         return [chrValidator, intValidator, hexValidator]
 
+    def _decValidator(self):
+        if [rb.text() for rb in self.radioButtons if rb.isChecked()][0][0] == 'D' and self.input.text() != '':
+            # Prevents trailing zeros
+            if int(self.input.text()) == 0:
+                self.input.setText('0')
+            
+            # Automatically sets the max limit for chr
+            elif int(self.input.text()) > 1114111:
+                self.input.setText('1114111')
+
+    def _setValidators(self):
+        isChecked = [rb.text() for rb in self.radioButtons if rb.isChecked()][0][0]
+        if isChecked == "C":
+            self.input.setValidator(self.validators[0])
+        elif isChecked == "D":
+            self.input.setValidator(self.validators[1])
+        else:
+            self.input.setValidator(self.validators[2])
 
     def printButtonPressed(self):
         toggledButtons = [rb.text() for rb in self.radioButtons if rb.isChecked()]
+        print([rb.text() for rb in self.radioButtons])
         answer = self.convert_ascii(self.input.text(), toggledButtons[0][0], toggledButtons[1][0])
         self.output.setText(str(answer))
 
-    
 
     def convert_ascii(self, val, input_unit, output_unit):
         try:
