@@ -3,7 +3,58 @@ from PyQt5.QtGui import QIntValidator, QRegExpValidator
 from PyQt5.QtCore import QRegExp
 
 class ascii_Ui(QtWidgets.QWidget):
+    """
+    Creates a QWidget that converts between a decimal, hexidecimal, and ASCII value
+    Also creates signals, and conversion calculations
+
+    Inhereits all methods and attributes from QWidget
+
+    Attributes
+    ----------
+    button : QPushButton
+        Submit button to initiate conversion
+    input : QLineEdit
+        Input text field
+    validators : [QValidators]
+        Used to determine which validations to apply to the input based on
+        radioButtons selection
+    output : QLineEdit
+        Output text field
+    radioButtons = [QRadioButtons]
+        A list of all the radiobuttons use.
+        0 - Char (Input)
+        1 - Decimal (Input)
+        2 - Hexadecimal (Input)
+        3 - Char (Output)
+        4 - Decimal (Output)
+        5 - Hexadecimal (Output)
+    
+    Methods
+    -------
+    _createValidators():
+        Creates a list of three validators for chr, int, and hex input
+    _rangeValidator():
+        Sets roof range input for dec and hex.
+    _setValidators():
+        Signal handler to change validation method when radiobuttons input changes
+    printButtonPressed():
+        Sends input to convert_ascii then sets the text of output to the results
+    convert_ascii(val, input_unit, output_unit):
+        Take the string of val and converts from input_unit to output_unit
+    """
     def __init__(self):
+        """
+        Initializes the ascii_Ui, including it's layout from basic.ui and attributes
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        ascii_Ui
+            Newly constructed widget
+        """
         super(ascii_Ui, self).__init__()
         uic.loadUi('../Graphical-App/ascii_conversion/basic.ui', self)
 
@@ -29,6 +80,18 @@ class ascii_Ui(QtWidgets.QWidget):
         self.show()
 
     def _createValidators(self):
+        """
+        Creates a list of three validators for chr, int, and hex input
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        [QRegExpValidator, QIntValidator, QRegValidator]
+            Three different validators for chr, int, and hex input
+        """
         # Allow any character, but only 1 at most
         chrValidator = QRegExpValidator(QRegExp(".{1}"))
         # Valid range for chr() is 0 to 1,114,111
@@ -40,6 +103,24 @@ class ascii_Ui(QtWidgets.QWidget):
         return [chrValidator, intValidator, hexValidator]
 
     def _rangeValidator(self):
+        """
+        Sets roof range input for dec and hex. Changes to the input text if input value
+        exceeds the range for chr() (1,114,111)
+
+        Parameters
+        ----------
+        None
+
+        Raises
+        ------
+        ValueError
+            If during type conversion to Int the value (usually an empty string) raises
+            a ValueError
+
+        Returns
+        -------
+        None
+        """
         try:
             if [rb.text() for rb in self.radioButtons if rb.isChecked()][0][0] == 'D':
                 if int(self.input.text()) == 0:
@@ -54,6 +135,17 @@ class ascii_Ui(QtWidgets.QWidget):
             pass
 
     def _setValidators(self):
+        """
+        Signal handler to change validation method when radiobuttons input changes
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        None
+        """
         # Clears input field when text changes for a clean state
         self.input.setText('')
         isChecked = [rb.text() for rb in self.radioButtons if rb.isChecked()][0][0]
@@ -65,11 +157,44 @@ class ascii_Ui(QtWidgets.QWidget):
             self.input.setValidator(self.validators[2])
 
     def printButtonPressed(self):
+        """
+        Sends input to convert_ascii then sets the text of output to the results
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        None
+        """
         toggledButtons = [rb.text() for rb in self.radioButtons if rb.isChecked()]
         answer = self.convert_ascii(self.input.text(), toggledButtons[0][0], toggledButtons[1][0])
         self.output.setText(str(answer))
 
     def convert_ascii(self, val, input_unit, output_unit):
+        """
+        Take the string of val and converts from input_unit to output_unit
+
+        Parameters
+        ----------
+        val : int, str
+            Input value to convert
+        input_unit : str
+            The input value input
+        output_unit : str
+            The desired converted output
+        
+        Raises
+        ------
+        ValueError
+            If at any point during the type conversions fail
+
+        Returns
+        -------
+        int, str
+            Depends if converting to decimal or hexadecimal/char
+        """
         try:
             if input_unit == 'C':
                 if output_unit == 'D':
