@@ -28,7 +28,16 @@ class TestWindow(QMainWindow):
     """
     def __init__(self):
         """
-        
+        Initilizer for TestWindow
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        TestWindow
+            the central widget for main application
         """
         super().__init__()
         
