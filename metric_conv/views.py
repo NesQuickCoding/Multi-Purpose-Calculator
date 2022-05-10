@@ -32,6 +32,8 @@ class MetricConvWidget(QWidget):
         Constructs a MetricConvWidget, including it's layout and attributes
         Used perform unit conversion between two units
 
+        Inherits all methods and attributes from QWidget
+
         Parameters
         ----------
         stringLabel : str
