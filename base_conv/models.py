@@ -64,10 +64,14 @@ def rightToLeftInsertion(string, position, insertChar):
     """
     if len(string) > position:
         formattedString = ""
+        count = 0
         for i in range(len(string) - 1, -1, -1):
             formattedString = string[i] + formattedString
-            if i % position == 0 and i != 0:
+            count += 1
+            if count == position and i != 0:
                 formattedString = insertChar + formattedString
+                count = 0
+            print(formattedString)
         return formattedString
     else:
         return string
