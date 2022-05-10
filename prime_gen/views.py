@@ -89,6 +89,12 @@ class PrimeRangeGen(QWidget):
         Text header
     rangeInput : QLineEdit
         Text input field
+    rangeGenButton : QPushButton
+        Submit button to generate input
+    rangeGenCopy : QPushButton
+        Copys results to clipboard
+    rangeGenClear : QPushButton
+        Clears output text
     primeRangeOutput : ScrollLabel
         Scroll label for output
     
@@ -102,9 +108,9 @@ class PrimeRangeGen(QWidget):
         Creates a layout of QPushButtons for input
     setRangeOutput(text):
         Changes the output text of primeRangeOutput
-    getRangeOutput(self):
+    getRangeOutput():
         Returns the output text of primeRangeOutput
-    clearRangeOutput(self):
+    clearRangeOutput():
         Clears the output text of primeRangeOutput
     """
     def __init__(self):
@@ -267,6 +273,12 @@ class PrimeRandomGen(QWidget):
         text input for number of digits
     randomAmountInput : QLineEdit
         text input for how many random numbers
+    randomGenButton : QPushButton
+        Submit button
+    randomGenCopy : QPushButton
+        Copies output to clipboard
+    randomGenClear : QPushButton
+        Clears output text
     randomNumOutput : ScrollLabel
         Scroll label for output
     
@@ -276,13 +288,13 @@ class PrimeRandomGen(QWidget):
         Creates a QLabel object for the randomHeader
     _CreateRandpomInput():
         Creates a various QLineEdit object with validators and other settings
-    _CreateRandomButtons(self):
+    _CreateRandomButtons():
         Creates a layout of QPushButtons for input
     setRandomOutput(text):
         Changes the output text of randomNumOutput
-    getRandomOutput(self):
+    getRandomOutput():
         Returns the output text of randomNumOutput
-    clearRandomOutput(self):
+    clearRandomOutput():
         Clears the output text of randomNumOutput
     """
     def __init__(self):
@@ -447,7 +459,50 @@ class PrimeRandomGen(QWidget):
         self.setRandomOutput("")
 
 class IsPrime(QWidget):
+    """
+    Creates a QWidget that determines if a number is prime or now
+
+    Inherits all methods and attributes from QWidget
+
+    Attributes
+    ----------
+    isPrimeHeader : QLabel
+        Text header
+    isPrimeLabel : QLabel
+        Instructional text for isPrime widget
+    isPrimeInput : QLineEdit
+        input box for isPrime
+    isPrimeButton : QPushButton
+        Text input field
+    isPrimeIcon : QSvgWidget
+        SVG Image to show if a number is prime or not
+    isPrimeText : QLabel
+        Text confirming if a number is prime or not
+    primeRangeOutput : ScrollLabel
+        Scroll label for output
+    
+    Methods
+    -------
+    _CreateIsPrimeHeader():
+        Creates a QLabel object for the isPrimeHeader
+    _CreateIsPrimeInput():
+        Creates a a layout and isPrimeLabel, isPrimeInput, and isPrimeButton
+    _CreateIsPrimeOutput()):
+        Creates a layout of QPushButtons for input
+    """
     def __init__(self):
+        """
+        Initilizer for isPrime
+
+        Parameters
+        ----------
+        None
+        
+        Returns
+        -------
+        isPrime
+            Newly constructed widget
+        """
         super().__init__()
         layout = QVBoxLayout()
         self.isPrimeHeader = self._CreateIsPrimeHeader()
@@ -461,12 +516,36 @@ class IsPrime(QWidget):
         self.setLayout(layout)
 
     def _CreateIsPrimeHeader(self):
+        """
+        Creates a QLabel text header
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        QLabel
+            Header text
+        """
         header = QLabel("Prime Number Validator")
         header.setAlignment(Qt.AlignCenter)
         header.setFont(QFont('Arial', 14))
         return header
     
     def _CreateIsPrimeInput(self):
+        """
+        Creates a layout with QLabel, QLineEdit, and QPushButton for isPrime
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        QVBoxLayout
+            Layout of input and submit widgets
+        """
         layout = QVBoxLayout()
         self.isPrimeLabel = QLabel("Enter a number")
         self.isPrimeInput = QLineEdit()
@@ -484,6 +563,18 @@ class IsPrime(QWidget):
         return layout
     
     def _CreateIsPrimeOutput(self):
+        """
+        Creates a QVBoxLayout with widgets for output results
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        QVBoxLayout
+            Layout with Icon and Text
+        """
         layout = QVBoxLayout()
         self.isPrimeIcon = QSvgWidget()
         self.isPrimeIcon.setFixedSize(60, 60)
@@ -497,7 +588,40 @@ class IsPrime(QWidget):
         return layout
 
 class PrimeGenUI(QWidget):
+    """
+    Creates the core Prime Gen UI. Creates a tabs window, with each item being a
+    PrimeRangeGen widget, PrimeRandomGen widget, and IsPrime widget.
+
+    Inherits all methods and attributes from QWidget
+
+    Attributes
+    ----------
+    tabs : QTabWidget
+        Tabs containing all the widgets
+    primeRangeGen : PrimeRangeGen
+        Creates PrimeRangeGen View
+    primeRandomGen : PrimeRandomGen
+        Creates PrimeRandomGen view
+    isPrime : IsPrime
+        Creates IsPrime view
+    
+    Methods
+    -------
+    None
+    """
     def __init__(self):
+        """
+        Initilizer for PrimeGenUI. Creates Tab window with all three prime gen widgets
+
+        Parameters
+        ----------
+        None
+        
+        Returns
+        -------
+        IsPrime
+            Newly constructed widget
+        """
         super().__init__()
         layout = QVBoxLayout()
 
