@@ -7,16 +7,16 @@ class ascii_Ui(QtWidgets.QWidget):
 
         self.button = self.findChild(QtWidgets.QPushButton, 'enterButton')
         self.button.clicked.connect(self.printButtonPressed)
-        self.input = self.findChild(QtWidgets.QLineEdit, 'lineEdit_Output')
+        self.input = self.findChild(QtWidgets.QLineEdit, 'lineEdit_Input')
+        self.output = self.findChild(QtWidgets.QLineEdit, 'lineEdit_Output')
         self.radioButtons = self.findChildren(QtWidgets.QRadioButton)
 
         self.show()
 
     def printButtonPressed(self):
         toggledButtons = [rb.text() for rb in self.radioButtons if rb.isChecked()]
-        val = self.findChild(QtWidgets.QLineEdit, 'lineEdit_Input')
-        answer = self.convert_ascii(self, val.text(), toggledButtons[0][0], toggledButtons[1][0])
-        self.input.setText(str(answer))
+        answer = self.convert_ascii(self.input.text(), toggledButtons[0][0], toggledButtons[1][0])
+        self.output.setText(str(answer))
 
     def convert_ascii(self, val, input_unit, output_unit):
         try:
