@@ -14,6 +14,7 @@ def length_conversion(input_value : float, input_index : int, output_index : int
         The index of the length unit of the input value.
     output_index: int
         The index of the length unit that the input value will be converted to
+
     Returns
     -------
     float
@@ -21,7 +22,8 @@ def length_conversion(input_value : float, input_index : int, output_index : int
     """
     if input_index == output_index:
         return input_value
-        
+
+    # Rows are input, column are output
     conversion_map = [
         # Inches   Feet     Yards     Miles        Millime. Centimet.  Meters       Kilometers
         [1,        1/12,    1/36,     1/63360,     25.4,    2.54,      1/39.37008, 1/39370.08], # Inches
@@ -33,6 +35,7 @@ def length_conversion(input_value : float, input_index : int, output_index : int
         [39.37008, 3.28084, 1.09361,  1/1609.344,  1000,    100,       1,          1/1000],     # Meters
         [39370.08, 3280.84, 1093.613, 1/1.609344,  1000000, 100000,    1000,       1]           # Kilometers
     ]
+
     return input_value * conversion_map[input_index][output_index]
 
 def weight_conversion(input_value : float, input_index : int, output_index : int) -> float:
@@ -51,6 +54,7 @@ def weight_conversion(input_value : float, input_index : int, output_index : int
         The index of the weight unit of the input value.
     output_index: int
         The index of the weight unit that the input value will be converted to
+
     Returns
     -------
     float
@@ -58,6 +62,7 @@ def weight_conversion(input_value : float, input_index : int, output_index : int
     """
     if input_index == output_index:
         return input_value
+
     # Rows are input, column are output
     conversion_map = [
         # Ounces         Pounds       Stone       Tons (Short)      Milligrams  Grams       Kilograms
@@ -69,6 +74,7 @@ def weight_conversion(input_value : float, input_index : int, output_index : int
         [1/28.3495249,	 1/453.5923,  1/6350.293, 1/907184.7,       1000,       1,          0.001],        # Gram
         [1/0.0283495249, 1/0.4535923, 1/6.350293, 1/907.1847000022, 1000000,	1000,       1]             # Kilogram
     ]
+
     return input_value * conversion_map[input_index][output_index]
 
 def time_conversion(input_value : float, input_index : int, output_index : int) -> float:
@@ -86,6 +92,7 @@ def time_conversion(input_value : float, input_index : int, output_index : int) 
         The index of the time unit of the input value.
     output_index: int
         The index of the time unit that the input value will be converted to
+
     Returns
     -------
     float
@@ -94,6 +101,7 @@ def time_conversion(input_value : float, input_index : int, output_index : int) 
     if input_index == output_index:
         return input_value
 
+    # Rows are input, column are output
     conversion_map = [
         # MillisecondsSeconds   Minutes  Hours      Days        Months        Years
         [1,           1/1000,   1/60000, 1/3600000, 1/86400000, 1/2629800000, 1/31557600000], # Milliseconds
@@ -104,6 +112,7 @@ def time_conversion(input_value : float, input_index : int, output_index : int) 
         [2629800000,  2629800,  43830,   730.5,     30.4375,    1,            1/12],            # Months
         [31557600000, 31557600, 525960,  8766,      365.25,     12,           1]              # Years
     ]
+    
     return input_value * conversion_map[input_index][output_index]
 
 def digital_space_conversion(input_value : float, input_index : int, output_index : int) -> float:
@@ -122,6 +131,7 @@ def digital_space_conversion(input_value : float, input_index : int, output_inde
         The index of the space unit of the input value.
     output_index: int
         The index of the space unit that the input value will be converted to
+
     Returns
     -------
     float
