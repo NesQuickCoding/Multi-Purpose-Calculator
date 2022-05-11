@@ -9,6 +9,30 @@ QWidget {
     selection-background-color: lime;
 }
 
+/************************* QMenu  **************************/ 
+
+QMenu::item::enabled {
+    color: lime;
+}
+
+QMenu::item::enabled::selected {
+    color: black;
+}
+
+QMenu::item::disabled {
+    color: darkgreen;
+}
+
+QMenu::item::disabled::selected {
+    color: limegreen;
+}
+
+QMenu::separator {
+    height: 1px;
+    background-color: green;
+    margin: 5px 10px 5px 10px;
+}
+
 /************************* QLabel **************************/ 
 
 QLabel {
