@@ -72,6 +72,7 @@ class MainCalcUI(QWidget):
         for buttonText, pos in buttons.items():
             self.buttons[buttonText] = QPushButton(buttonText)
             self.buttons[buttonText].setFixedSize(55, 55)
+            self.buttons[buttonText].setObjectName("calcButton")
             buttonsLayout.addWidget(self.buttons[buttonText], pos[0], pos[1])
 
         return buttonsLayout

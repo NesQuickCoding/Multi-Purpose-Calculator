@@ -31,7 +31,6 @@ DROPBOX_MENU = [
     ("Metric Conversion", MetricConvUI),
     ("Temperature Conversion", temp_Ui),
     ("Birthday Conversion", birthday_Ui),
-    ("Prime Number Generator/Validator", PrimeGenUI)
 ]
 
 class SecCalc(QStackedWidget):
