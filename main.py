@@ -46,7 +46,7 @@ class SecCalc(QStackedWidget):
          These are the extra views shown on the right hand side.
         """
         super().__init__()
-        self.setFixedSize(400, 400)
+        self.setFixedSize(425, 400)
         self.option = {}
         for QWidgetObject in DROPBOX_MENU:
             self.option[QWidgetObject[1].__name__] = QWidgetObject[1]()
@@ -86,7 +86,7 @@ QPushButton:pressed{
         
         # Main Window setup properties
         self.setWindowTitle("Multi-Purpose Calculator")
-        self.setFixedSize(800, 400)
+        self.setFixedSize(850, 400)
         self.generalLayout = QHBoxLayout()
         self._centralWidget = QWidget(self)
         self._centralWidget.setStyleSheet(open('Ext_Stylesheet.css').read())

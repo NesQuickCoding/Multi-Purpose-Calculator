@@ -6,6 +6,8 @@
 QWidget {
     background-color: rgb(0, 0, 0);
     font-family: "Cascadia Code";
+    selection-color: black;
+    selection-background-color: lime;
 }
 
 
@@ -20,34 +22,65 @@ QLabel {
     font-size: 16px;
 }
 
+/************************* For the Labels  **************************/ 
+
+
 
 /************************* For the Push Buttons  **************************/ 
 
 QPushButton{
-    background-color: black;
 	color: lime;
     border-style: outset;
     border-width: 1px;
     border-radius: 4px;
     border-color: lime;
-    font-size: 16px;
-
 }
 
 QPushButton:pressed{
    background-color : green;
 }
 
-/************************* For the Push Buttons  **************************/ 
+QPushButton:disabled{
+	color: red;
+}
+
+/************************* QComboBox**************************/ 
 
 QComboBox {
-color: rgb(55, 255, 0);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: rgb(98, 255, 0);
-    font: 11pt "Arial";
+    color: lime;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 3px;
+    border-color: darkgreen;
+    font-family: "Cascadia Code";
 }
+
+QComboBox:hover {
+    border-color: green;
+}
+
+QComboBox:on {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom: 0px;
+    border-color: lime;
+}
+
+QComboBox:active {
+    color: lime;
+}
+
+QComboBox QAbstractItemView {
+    outline: none;
+    color: lime;
+    border: 2px solid lime;
+    border-top: 0px;
+}
+
+QComboBox::drop-arrow:on {
+    color: lime;
+}
+
 
 /************************* QPlainTextEdit  **************************/ 
 
@@ -55,16 +88,14 @@ color: rgb(55, 255, 0);
     color: lime;
     font: 14pt "Cascadia Code";
     border: 2px solid darkgreen;
-    selection-color: black;
-    selection-background-color: lime;
+}
+
+#baseEditBox:hover {
+    border: 2px solid green;
 }
 
 #baseEditBox:focus{
     border: 2px solid limegreen;
-}
-
-QComboBox QAbstractItemView{
-    color: lime;
 }
 
 /************************* For the Radio Buttons  **************************/ 
