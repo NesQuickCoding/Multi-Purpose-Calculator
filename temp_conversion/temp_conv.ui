@@ -6,13 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>480</width>
+    <width>425</width>
     <height>400</height>
    </rect>
   </property>
   <property name="maximumSize">
    <size>
-    <width>480</width>
+    <width>425</width>
     <height>400</height>
    </size>
   </property>
@@ -22,8 +22,8 @@
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>330</y>
+     <x>-15</x>
+     <y>300</y>
      <width>461</width>
      <height>41</height>
     </rect>
@@ -44,9 +44,6 @@
     </item>
     <item>
      <widget class="QPushButton" name="clearButton">
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
       <property name="text">
        <string>Clear</string>
       </property>
@@ -157,8 +154,8 @@
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>250</y>
+     <x>73</x>
+     <y>225</y>
      <width>271</width>
      <height>36</height>
     </rect>

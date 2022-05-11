@@ -52,7 +52,7 @@ QLabel {
     margin: 5px 0 5px 0;
 }
 
-ascii_Ui QLabel {
+ascii_Ui QLabel, temp_Ui QLabel{
     font-size: 16px;
 }
 
@@ -89,7 +89,7 @@ QLineEdit:hover {
     padding: 0px;
 }
 
-ascii_Ui QLineEdit {
+ascii_Ui QLineEdit, temp_Ui QLineEdit {
     font-size: 20px;
 }
 
@@ -157,6 +157,12 @@ QPushButton:disabled{
 ascii_Ui QPushButton {
     font-size: 20px;
     padding: 10px 15px 10px 15px;
+}
+
+temp_Ui QPushButton {
+    font-size: 20px;
+    padding: 10px 15px 10px 15px;
+    margin-right: 20px;
 }
 
 birthday_Ui QPushButton {
@@ -263,7 +269,7 @@ QRadioButton::indicator:checked:pressed {
     font-size: 14px;
 }
 
-ascii_Ui QRadioButton {
+ascii_Ui QRadioButton, temp_Ui QRadioButton {
     font-size: 16px;
 }
 
