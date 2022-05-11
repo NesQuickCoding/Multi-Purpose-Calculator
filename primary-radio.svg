@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:ns1="http://sozi.baierouge.fr"
+    xmlns:cc="http://web.resource.org/cc/"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    id="svg1"
+    viewBox="0 0 60 60"
+    sodipodi:version="0.32"
+    _SVGFile__filename="oldscale/actions/checkedbox.svg"
+    version="1.0"
+    inkscape:version="0.41"
+    y="0"
+    x="0"
+    sodipodi:docname="radio.svg"
+    sodipodi:docbase="/home/danny/work/icons/primary/scalable/actions"
+  >
+  <sodipodi:namedview
+      id="base"
+      bordercolor="#666666"
+      inkscape:window-x="0"
+      inkscape:window-y="0"
+      inkscape:zoom="3.6908546"
+      inkscape:pageshadow="2"
+      borderopacity="1.0"
+      inkscape:current-layer="svg1"
+      inkscape:cx="97.465049"
+      inkscape:cy="-6.8254496"
+      inkscape:window-width="1020"
+      inkscape:pageopacity="0.0000000"
+      inkscape:window-height="691"
+  />
+
+  <path
+      id="path1098"
+      d="m54.375 30c0 13.455-10.92 24.375-24.375 24.375s-24.375-10.92-24.375-24.375c0.0003-13.455 10.92-24.375 24.375-24.375 13.455 0.0003 24.375 10.92 24.375 24.375z"
+      style="stroke-linejoin:round;color:#000000;display:block;stroke:#00ff00;stroke-linecap:round;stroke-width:8.8629;fill:#ffffff"
+      transform="matrix(.56415 0 0 .56415 13.076 13.076)"
+  />
+  <path
+      id="path1721"
+      style="display:block;fill:#00ff00"
+      d="m38.75 30c0 4.83-3.92 8.75-8.75 8.75s-8.75-3.92-8.75-8.75 3.92-8.75 8.75-8.75 8.75 3.92 8.75 8.75z"
+  />
+  <metadata
+    >
+    <rdf:RDF
+      >
+      <cc:Work
+        >
+        <dc:format
+          >image/svg+xml</dc:format
+        >
+        <dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+        />
+        <cc:license
+            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
+        />
+        <dc:publisher
+          >
+          <cc:Agent
+              rdf:about="http://openclipart.org/"
+            >
+            <dc:title
+              >Openclipart</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:publisher
+        >
+      </cc:Work
+      >
+      <cc:License
+          rdf:about="http://creativecommons.org/licenses/publicdomain/"
+        >
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Reproduction"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Distribution"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+        />
+      </cc:License
+      >
+    </rdf:RDF
+    >
+  </metadata
+  >
+</svg
+>

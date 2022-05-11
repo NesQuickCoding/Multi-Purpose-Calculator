@@ -22,11 +22,8 @@ QLabel {
     font-size: 16px;
 }
 
-/************************* For the Labels  **************************/ 
 
-
-
-/************************* For the Push Buttons  **************************/ 
+/************************* QPushButtons **************************/ 
 
 QPushButton{
 	color: lime;
@@ -81,6 +78,9 @@ QComboBox::drop-arrow:on {
     color: lime;
 }
 
+#bitDropBox {
+    font-size: 14px;
+}
 
 /************************* QPlainTextEdit  **************************/ 
 
@@ -98,13 +98,34 @@ QComboBox::drop-arrow:on {
     border: 2px solid limegreen;
 }
 
-/************************* For the Radio Buttons  **************************/ 
+/************************* QRadioButton  **************************/ 
 QRadioButton {
-
     background-color: transparent;
     color: lime;
-    font-size: 16px;
+}
 
+QRadioButton::indicator::unchecked {
+   image: url(assets/radio-unchecked.png);
+}
+
+QRadioButton::indicator:unchecked:hover {
+    image: url(assets/radio-unchecked-hover.png);
+}
+
+QRadioButton::indicator:unchecked:pressed {
+    image: url(assets/radio-unchecked-pressed.png);
+}
+
+QRadioButton::indicator::checked {
+    image: url(assets/radio-checked.png);
+}
+
+QRadioButton::indicator:checked:hover {
+    image: url(assets/radio-checked-hover.png);
+}
+
+QRadioButton::indicator:checked:pressed {
+    image: url(assets/radio-checked-pressed.png);
 }
 /************************* For the Output Qline  **************************/
 QLineEdit{
