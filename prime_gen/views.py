@@ -336,7 +336,7 @@ class PrimeRandomGen(QWidget):
         QLabel
             Header text
         """
-        header = QLabel("Random Prime Numbers with Digit Length")
+        header = QLabel("Generate random prime numbers with set number of digits")
         header.setWordWrap(True)
         header.setObjectName("primeHeader")
         header.setAlignment(Qt.AlignCenter)
@@ -355,25 +355,26 @@ class PrimeRandomGen(QWidget):
         QHBoxLayout
             Layout of text input fields
         """
-        digitLayout = QHBoxLayout()
-        numberLayout = QHBoxLayout()
+        digitLayout = QVBoxLayout()
+        numberLayout = QVBoxLayout()
         
         self.randomDigitLabel = QLabel("Amount of Digits (1-12)")
-        self.randomDigitInput = QLineEdit()
-        self.randomDigitLabel.setAlignment(Qt.AlignLeft)
-        self.randomDigitInput.setAlignment(Qt.AlignLeft)
-        self.randomAmountLabel = QLabel("Amount of Numbers (1-50)")
-        self.randomAmountInput = QLineEdit()
-        self.randomAmountLabel.setAlignment(Qt.AlignRight)
-        self.randomAmountInput.setAlignment(Qt.AlignCenter)
+        self.randomDigitLabel.setObjectName("randomGenText")
 
+        self.randomAmountLabel = QLabel("Amount of Primes (1-50)")
+        self.randomAmountLabel.setObjectName("randomGenText")
+
+        self.randomDigitInput = QLineEdit()
         self.randomDigitInput.setValidator(QIntValidator(1, 12))
         self.randomDigitInput.setClearButtonEnabled(True)
         self.randomDigitInput.setMaxLength(2)
+        self.randomDigitInput.setObjectName("randomGenInput")
 
+        self.randomAmountInput = QLineEdit()
         self.randomAmountInput.setValidator(QIntValidator(1, 12))
         self.randomAmountInput.setClearButtonEnabled(True)
         self.randomAmountInput.setMaxLength(2)
+        self.randomAmountInput.setObjectName("randomGenInput")
 
         digitLayout.addWidget(self.randomDigitLabel)
         digitLayout.addWidget(self.randomDigitInput)
@@ -381,6 +382,7 @@ class PrimeRandomGen(QWidget):
         numberLayout.addWidget(self.randomAmountInput)
 
         randomLayout = QHBoxLayout()
+        randomLayout.setAlignment(Qt.AlignCenter | Qt.AlignHCenter)
         randomLayout.addLayout(digitLayout)
         randomLayout.addLayout(numberLayout)
 

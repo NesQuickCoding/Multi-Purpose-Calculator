@@ -23,6 +23,11 @@ QLabel {
     font-size: 18px;
 }
 
+#randomGenText {
+    font-size: 14px;
+    margin: 5px 0 5px 0;
+}
+
 /************************* QPushButtons **************************/ 
 
 QPushButton{
@@ -165,6 +170,12 @@ QLineEdit:hover {
 
 #rangeInput {
     font-size: 20px;
+    padding: 5px 10px 5px 10px;
+    margin: 5px 40px 5px 40px;
+}
+
+#randomGenInput {
+    font-size: 14px;
     padding: 5px 10px 5px 10px;
     margin: 5px 40px 5px 40px;
 }
