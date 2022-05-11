@@ -52,12 +52,8 @@ QLabel {
     margin: 5px 0 5px 0;
 }
 
-ascii_Ui QLabel, temp_Ui QLabel{
-    font-size: 16px;
-}
-
-MetricConvWidget QLabel {
-    font-size: 16px;
+ascii_Ui QLabel, temp_Ui QLabel, MetricConvWidget QLabel, birthday_Ui QLabel {
+    font-size: 18px;
 }
 
 /************************* QlineEdit  **************************/
@@ -89,7 +85,7 @@ QLineEdit:hover {
     padding: 0px;
 }
 
-ascii_Ui QLineEdit, temp_Ui QLineEdit {
+ascii_Ui QLineEdit, temp_Ui QLineEdit, birthday_Ui QLineEdit {
     font-size: 20px;
 }
 
@@ -154,7 +150,7 @@ QPushButton:disabled{
     border-width: 2px;
 }
 
-ascii_Ui QPushButton {
+ascii_Ui QPushButton, birthday_Ui QPushButton {
     font-size: 20px;
     padding: 10px 15px 10px 15px;
 }
@@ -163,10 +159,6 @@ temp_Ui QPushButton {
     font-size: 20px;
     padding: 10px 15px 10px 15px;
     margin-right: 20px;
-}
-
-birthday_Ui QPushButton {
-    font-size: 16px;
 }
 
 /************************* QComboBox**************************/ 
@@ -217,6 +209,10 @@ QComboBox::drop-arrow:on {
 
 MetricConvWidget QComboBox {
     font-size: 16px;
+}
+
+birthday_Ui QComboBox {
+    font-size: 18px;
 }
 
 /************************* QPlainTextEdit  **************************/ 
@@ -270,7 +266,7 @@ QRadioButton::indicator:checked:pressed {
 }
 
 ascii_Ui QRadioButton, temp_Ui QRadioButton {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 
