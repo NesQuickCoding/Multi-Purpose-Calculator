@@ -152,7 +152,9 @@ class PrimeRangeGen(QWidget):
         QLabel
             Header/instructional text
         """
-        header = QLabel("Enter a number from 1 to 1000000")
+        header = QLabel("Generate prime numbers from 1 to n (limit 1000000)")
+        header.setObjectName("primeHeader")
+        header.setWordWrap(True)
         header.setAlignment(Qt.AlignCenter)
         return header
 
@@ -194,12 +196,15 @@ class PrimeRangeGen(QWidget):
         buttonLayout.setAlignment(Qt.AlignCenter)
 
         self.rangeGenButton = QPushButton("Generate")
+        self.rangeGenButton.setObjectName("primeGenButton")
         buttonLayout.addWidget(self.rangeGenButton, alignment=Qt.AlignCenter)
 
         self.rangeGenCopy = QPushButton("Copy All")
+        self.rangeGenCopy.setObjectName("primeCopyButton")
         buttonLayout.addWidget(self.rangeGenCopy, alignment=Qt.AlignCenter)
 
         self.rangeGenClear = QPushButton("Clear")
+        self.rangeGenClear.setObjectName("primeClearButton")
         buttonLayout.addWidget(self.rangeGenClear, alignment=Qt.AlignCenter)
     
         return buttonLayout
@@ -331,6 +336,8 @@ class PrimeRandomGen(QWidget):
             Header text
         """
         header = QLabel("Random Prime Numbers with Digit Length")
+        header.setWordWrap(True)
+        header.setObjectName("primeHeader")
         header.setAlignment(Qt.AlignCenter)
         return header
 
@@ -395,12 +402,15 @@ class PrimeRandomGen(QWidget):
         buttonLayout.setAlignment(Qt.AlignCenter)
 
         self.randomGenButton = QPushButton("Generate")
+        self.randomGenButton.setObjectName("primeGenButton")
         buttonLayout.addWidget(self.randomGenButton, alignment=Qt.AlignCenter)
 
         self.randomGenCopy = QPushButton("Copy All")
+        self.randomGenCopy.setObjectName("primeCopyButton")
         buttonLayout.addWidget(self.randomGenCopy, alignment=Qt.AlignCenter)
 
         self.randomGenClear = QPushButton("Clear")
+        self.randomGenClear.setObjectName("primeClearButton")
         buttonLayout.addWidget(self.randomGenClear, alignment=Qt.AlignCenter)
     
         return buttonLayout
