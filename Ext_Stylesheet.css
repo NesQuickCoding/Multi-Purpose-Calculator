@@ -1,7 +1,6 @@
 /* External Stylesheet*/
 
-
-/************************* For the Widget  **************************/ 
+/************************* QWidget  **************************/ 
 
 QWidget {
     background-color: rgb(0, 0, 0);
@@ -9,8 +8,6 @@ QWidget {
     selection-color: black;
     selection-background-color: lime;
 }
-
-
 
 /************************* For the Labels  **************************/ 
 
@@ -28,17 +25,29 @@ QLabel {
 QPushButton{
 	color: lime;
     border-style: outset;
-    border-width: 1px;
+    border-width: 2px;
     border-radius: 4px;
-    border-color: lime;
+    border-color: darkgreen;
+}
+
+QPushButton:hover{
+    border-color: green;
 }
 
 QPushButton:pressed{
-   background-color : green;
+   border-color : lime;
 }
 
 QPushButton:disabled{
-	color: red;
+	color: rgb(0, 59, 0);
+    border-color: rgb(0, 59, 0);
+}
+
+#negate {
+    border-radius: 8px;
+    padding: 6px 12px 6px 12px;
+    margin: 0px 7px 0px 9px;
+    font-size: 14px;
 }
 
 /************************* QComboBox**************************/ 
@@ -79,6 +88,7 @@ QComboBox::drop-arrow:on {
 }
 
 #bitDropBox {
+    padding: 5px;
     font-size: 14px;
 }
 
@@ -86,7 +96,7 @@ QComboBox::drop-arrow:on {
 
 #baseEditBox {
     color: lime;
-    font: 14pt "Cascadia Code";
+    font: 12pt "Cascadia Code";
     border: 2px solid darkgreen;
 }
 
@@ -126,6 +136,10 @@ QRadioButton::indicator:checked:hover {
 
 QRadioButton::indicator:checked:pressed {
     image: url(assets/radio-checked-pressed.png);
+}
+
+#unSignedRadio, #signedRadio {
+    font-size: 14px;
 }
 /************************* For the Output Qline  **************************/
 QLineEdit{

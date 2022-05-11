@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QWidget, QRadioButton, QLabel, QPushButton, QVBoxLayout, QHBoxLayout, QPlainTextEdit, QComboBox
-from PyQt5.QtGui import QFont
+from PyQt5.QtCore import Qt
 
 class NumBase(QWidget):
     """
@@ -229,10 +229,14 @@ class BaseConvUI(QWidget):
         super().__init__()
         layout = QVBoxLayout()
         bitLayout = QHBoxLayout()
+        bitLayout.setAlignment(Qt.AlignHCenter)
         self.unSignedRadio = QRadioButton("Unsigned")
+        self.unSignedRadio.setObjectName("unSignedRadio")
         self.unSignedRadio.setChecked(True)
         self.signedRadio = QRadioButton("Signed")
+        self.signedRadio.setObjectName("signedRadio")
         self.negateButton = QPushButton("Negate")
+        self.negateButton.setObjectName("negate")
         self.negateButton.setEnabled(False)
         self.bitDropBox = self._createBitLengthBox()
         bitLayout.addWidget(self.unSignedRadio)
