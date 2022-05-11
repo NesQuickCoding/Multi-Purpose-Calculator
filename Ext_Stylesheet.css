@@ -64,9 +64,19 @@ QPushButton:disabled{
     padding: 5px 15px 5px 15px;
 }
 
+#isPrimeButton {
+    font-size: 20px;
+    padding: 10px 15px 10px 15px; 
+    margin: 0 120px 30px 120px;
+}
+
 #calcButton {
     font-size: 22px;
     border-width: 2px;
+}
+
+birthday_Ui QPushButton {
+    font-size: 16px;
 }
 
 /************************* QComboBox**************************/ 
@@ -176,7 +186,7 @@ QLineEdit:hover {
     border-color: lime;
 }
 
-#rangeInput {
+#rangeInput, #isPrimeInput {
     font-size: 20px;
     padding: 5px 10px 5px 10px;
     margin: 5px 40px 5px 40px;

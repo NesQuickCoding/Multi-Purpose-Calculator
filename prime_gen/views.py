@@ -510,14 +510,13 @@ class IsPrime(QWidget):
         """
         super().__init__()
         layout = QVBoxLayout()
+        layout.setAlignment(Qt.AlignCenter | Qt.AlignTop)
         self.isPrimeHeader = self._CreateIsPrimeHeader()
         layout.addWidget(self.isPrimeHeader)
-        hLayout = QHBoxLayout()
         isPrimeInput = self._CreateIsPrimeInput()
-        hLayout.addLayout(isPrimeInput)
+        layout.addLayout(isPrimeInput)
         isPrimeOutput = self._CreateIsPrimeOutput()
-        hLayout.addLayout(isPrimeOutput)
-        layout.addLayout(hLayout)
+        layout.addLayout(isPrimeOutput)
         self.setLayout(layout)
 
     def _CreateIsPrimeHeader(self):
@@ -533,8 +532,10 @@ class IsPrime(QWidget):
         QLabel
             Header text
         """
-        header = QLabel("Prime Number Validator")
+        header = QLabel("Check if a positive integer is prime or not, up to 16 digits")
+        header.setWordWrap(True)
         header.setAlignment(Qt.AlignCenter)
+        header.setObjectName("primeHeader")
         return header
     
     def _CreateIsPrimeInput(self):
@@ -551,13 +552,13 @@ class IsPrime(QWidget):
             Layout of input and submit widgets
         """
         layout = QVBoxLayout()
-        self.isPrimeLabel = QLabel("Enter a number")
         self.isPrimeInput = QLineEdit()
         self.isPrimeInput.setAlignment(Qt.AlignLeft)
         self.isPrimeInput.setClearButtonEnabled(True)
+        self.isPrimeInput.setObjectName("isPrimeInput")
         self.isPrimeInput.setValidator(QRegExpValidator(QRegExp("[0-9]{16}")))
         self.isPrimeButton = QPushButton("Check")
-        layout.addWidget(self.isPrimeLabel)
+        self.isPrimeButton.setObjectName("isPrimeButton")
         layout.addWidget(self.isPrimeInput)
         layout.addWidget(self.isPrimeButton)
         return layout
@@ -575,11 +576,13 @@ class IsPrime(QWidget):
         QVBoxLayout
             Layout with Icon and Text
         """
-        layout = QVBoxLayout()
+        layout = QHBoxLayout()
+        layout.setAlignment(Qt.AlignCenter | Qt.AlignBottom)
         self.isPrimeIcon = QSvgWidget()
-        self.isPrimeIcon.setStyleSheet("text-align: center;")
+        self.isPrimeIcon.setFixedSize(100,100)
+        self.isPrimeIcon.setObjectName("primeIcon")
         self.isPrimeText = QLabel()
-        self.isPrimeText.setAlignment(Qt.AlignCenter)
+        self.isPrimeText.setObjectName("primeHeader")
         layout.addWidget(self.isPrimeIcon, 0, Qt.AlignCenter)
         layout.addWidget(self.isPrimeText, 0, Qt.AlignCenter)
         return layout

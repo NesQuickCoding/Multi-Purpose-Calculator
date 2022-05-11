@@ -154,12 +154,14 @@ class PrimeGenCtrl:
         if self._view.isPrime.isPrimeInput.text():
             if self._isPrime(int(self._view.isPrime.isPrimeInput.text())):
                 self._view.isPrime.isPrimeIcon.renderer().load(f'{pathlib.Path(__file__).parent.absolute()}/assets/check.svg')
+                self._view.isPrime.isPrimeIcon.setFixedSize(100, 100)
                 self._view.isPrime.isPrimeText.setText("Is Prime!")
             else:
                 self._view.isPrime.isPrimeIcon.renderer().load(f'{pathlib.Path(__file__).parent.absolute()}/assets/cancel.svg')
+                self._view.isPrime.isPrimeIcon.setFixedSize(100, 100)
                 self._view.isPrime.isPrimeText.setText("Is Not Prime!")
         else:
-            self._view.isPrime.isPrimeText.setText("Enter A\nNumber")
+            self._view.isPrime.isPrimeText.setText("Enter A Number")
     
     def _clearIcon(self):
         """
@@ -173,7 +175,8 @@ class PrimeGenCtrl:
         -------
         None
         """
-        self._view.isPrime.isPrimeIcon.renderer().load('')
+        self._view.isPrime.isPrimeIcon.setFixedSize(0, 0)
+        # self._view.isPrime.isPrimeIcon.renderer().load('')
         self._view.isPrime.isPrimeText.setText('')
 
     def _connectSignals(self):
