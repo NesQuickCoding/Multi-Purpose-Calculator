@@ -5,6 +5,7 @@
 
 QWidget {
     background-color: rgb(0, 0, 0);
+    font-family: "Cascadia Code";
 }
 
 
@@ -13,6 +14,9 @@ QWidget {
 
 QLabel {
     color: lime;
+}
+
+#baseConvHeader {
     font-size: 16px;
 }
 
@@ -53,7 +57,6 @@ color: rgb(55, 255, 0);
     border: 2px solid darkgreen;
     selection-color: black;
     selection-background-color: lime;
-    text-cursor-color: green;
 }
 
 #baseEditBox:focus{

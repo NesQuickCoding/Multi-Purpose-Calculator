@@ -48,7 +48,7 @@ class NumBase(QWidget):
             The QLabel header
         """
         header = QLabel(headerText)
-        header.setFont(QFont('Arial', 14))
+        header.setObjectName("baseConvHeader")
         return header
     
     def _CreateNumTextBox(self):
@@ -66,7 +66,6 @@ class NumBase(QWidget):
         """
         textbox = QPlainTextEdit()
         textbox.setObjectName("baseEditBox")
-        #textbox.setFont(QFont('Terminal', 10))
         textbox.document().setPlainText("0")
         return textbox
 
@@ -232,7 +231,7 @@ class BaseConvUI(QWidget):
         bitLayout = QHBoxLayout()
         self.unSignedRadio = QRadioButton("Unsigned")
         self.unSignedRadio.setChecked(True)
-        self.signedRadio = QRadioButton("Unsigned")
+        self.signedRadio = QRadioButton("Signed")
         self.negateButton = QPushButton("Negate")
         self.negateButton.setEnabled(False)
         self.bitDropBox = self._createBitLengthBox()
