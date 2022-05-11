@@ -54,6 +54,12 @@ QPushButton:disabled{
     font-size: 14px;
 }
 
+#primeGenButton, #primeCopyButton, #primeClearButton {
+    font-size: 14px;
+    padding: 5px 15px 5px 15px;
+}
+
+
 /************************* QComboBox**************************/ 
 
 QComboBox {
@@ -161,7 +167,6 @@ QLineEdit:hover {
     font-size: 20px;
     padding: 5px 10px 5px 10px;
     margin: 5px 40px 5px 40px;
-    text-align: center;
 }
 /************************* QTabWidget  **************************/
 
