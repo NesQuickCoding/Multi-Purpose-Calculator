@@ -157,7 +157,12 @@ QLineEdit:hover {
     border-color: lime;
 }
 
-
+#rangeInput {
+    font-size: 20px;
+    padding: 5px 10px 5px 10px;
+    margin: 5px 40px 5px 40px;
+    text-align: center;
+}
 /************************* QTabWidget  **************************/
 
 QTabWidget::pane {

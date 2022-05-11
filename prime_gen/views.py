@@ -129,6 +129,7 @@ class PrimeRangeGen(QWidget):
         """
         super().__init__()
         layout = QVBoxLayout()
+        layout.setAlignment(Qt.AlignCenter)
         self.rangeHeader = self._CreateRangeHeader()
         layout.addWidget(self.rangeHeader)
         self.rangeInput = self._CreateRangeInput()
@@ -173,10 +174,10 @@ class PrimeRangeGen(QWidget):
         """
         inputWidget = QLineEdit()
         inputWidget.setValidator(QIntValidator(1, 1000000))
-        inputWidget.setAlignment(Qt.AlignLeft)
         inputWidget.setReadOnly(False)
         inputWidget.setClearButtonEnabled(True)
         inputWidget.setMaxLength(7)
+        inputWidget.setObjectName("rangeInput")
         return inputWidget
 
     def _CreateRangeButtons(self):
