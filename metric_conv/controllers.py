@@ -123,22 +123,6 @@ class MetricConvCtrl:
         outputField.setText(outputString)
         self._connectTextSignals()
     
-    def _toggleInputError(self):
-        """
-        Changes the object names for the left/rightTextEdit objects and changes their styling
-        Activates when user inputs a value that raises a ValueError
-
-        Parameters
-        ----------
-        None
-
-        Returns
-        -------
-        None
-        """
-        self._view.leftTextEdit.setStyleSheet("border: 1px solid red;")
-        self._view.rightTextEdit.setStyleSheet("border: 1px solid red;")
-
     def _textChanged(self, inputField, outputField, inputMenu, outputMenu):
         """
         Passes the text of inputField and the indexes of inputMenu and outputMenu to be
@@ -168,14 +152,23 @@ class MetricConvCtrl:
         if inputString or outputString:
             try:
                 outputString = str(self._model(float(inputString), inputMenu, outputMenu))
-                inputField.setStyleSheet("border: 1px solid black;")
-                outputField.setStyleSheet("border: 1px solid black;")
+                self._toggleValidStyle()
             except ValueError:
-                inputField.setStyleSheet("border: 1px solid red;")
-                outputField.setStyleSheet("border: 1px solid red;")
+                self._toggleInvalidStyle()
                 pass
         else:
-            inputField.setStyleSheet("border: 1px solid black;")
-            outputField.setStyleSheet("border: 1px solid black;")        
+            self._toggleValidStyle()       
         
         self._setTextFields(inputField, outputField, inputString, outputString)
+
+    def _toggleValidStyle(self):
+        self._view.leftTextEdit.setObjectName("metricValidInput")
+        self._view.rightTextEdit.setObjectName("metricValidInput")
+        self._view.leftTextEdit.setStyleSheet(open('./Ext_Stylesheet.css').read())
+        self._view.rightTextEdit.setStyleSheet(open('./Ext_Stylesheet.css').read())
+    
+    def _toggleInvalidStyle(self):
+        self._view.leftTextEdit.setObjectName("metricInvalidInput")
+        self._view.rightTextEdit.setObjectName("metricInvalidInput")
+        self._view.leftTextEdit.setStyleSheet(open('./Ext_Stylesheet.css').read())
+        self._view.rightTextEdit.setStyleSheet(open('./Ext_Stylesheet.css').read())
