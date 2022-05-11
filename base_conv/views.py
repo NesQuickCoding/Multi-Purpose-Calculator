@@ -65,7 +65,8 @@ class NumBase(QWidget):
             The QPlanTextEdit to be used for input/output
         """
         textbox = QPlainTextEdit()
-        textbox.setFont(QFont('Terminal', 10))
+        textbox.setObjectName("baseEditBox")
+        #textbox.setFont(QFont('Terminal', 10))
         textbox.document().setPlainText("0")
         return textbox
 

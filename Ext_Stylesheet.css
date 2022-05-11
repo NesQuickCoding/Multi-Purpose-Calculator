@@ -45,6 +45,21 @@ color: rgb(55, 255, 0);
     font: 11pt "Arial";
 }
 
+/************************* QPlainTextEdit  **************************/ 
+
+#baseEditBox {
+    color: lime;
+    font: 14pt "Cascadia Code";
+    border: 2px solid darkgreen;
+    selection-color: black;
+    selection-background-color: lime;
+    text-cursor-color: green;
+}
+
+#baseEditBox:focus{
+    border: 2px solid limegreen;
+}
+
 QComboBox QAbstractItemView{
     color: lime;
 }
@@ -64,14 +79,9 @@ QLineEdit{
     border-style: outset;
     border-width: 2px;
     border-radius: 4px;
-    border-color: green;
+    border-color: lime;
     padding: 2px;
     color: lime;
     font-size: 19px;
 
 }
-
-
-
-
-
