@@ -66,6 +66,7 @@ QPushButton:disabled{
 
 #calcButton {
     font-size: 22px;
+    border-width: 3px;
 }
 
 /************************* QComboBox**************************/ 
@@ -108,6 +109,10 @@ QComboBox::drop-arrow:on {
 #bitDropBox {
     padding: 5px;
     font-size: 14px;
+}
+
+#calcDropBox {
+    font-size: 16px;
 }
 
 /************************* QPlainTextEdit  **************************/ 
@@ -182,6 +187,12 @@ QLineEdit:hover {
     padding: 5px 10px 5px 10px;
     margin: 5px 40px 5px 40px;
 }
+
+#calcOutput {
+    height: 50px;
+    font-size: 22px;
+    padding: 0px;
+}
 /************************* QTabWidget  **************************/
 
 QTabWidget::pane {
@@ -238,9 +249,11 @@ QScrollBar::handle:vertical {
     background: black;
     min-height: 20px;
 }
+
 QScrollBar::handle:vertical:hover {
     background-color: limegreen;
 }
+
 QScrollBar::handle:vertical:pressed {
     border-color: lime;
     background: lime;
