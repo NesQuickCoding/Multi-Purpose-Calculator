@@ -151,7 +151,7 @@ QPushButton:disabled{
 #isPrimeButton {
     font-size: 20px;
     padding: 10px 15px 10px 15px; 
-    margin: 0 120px 30px 120px;
+    margin: 0 120px 0px 120px;
 }
 
 #calcButton {

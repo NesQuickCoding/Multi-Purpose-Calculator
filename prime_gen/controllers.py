@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QApplication
 from functools import partial
-import pathlib
+
 
 class PrimeGenCtrl:
     """
@@ -153,12 +153,12 @@ class PrimeGenCtrl:
         """
         if self._view.isPrime.isPrimeInput.text():
             if self._isPrime(int(self._view.isPrime.isPrimeInput.text())):
-                self._view.isPrime.isPrimeIcon.renderer().load(f'{pathlib.Path(__file__).parent.absolute()}/assets/check.svg')
-                self._view.isPrime.isPrimeIcon.setFixedSize(100, 100)
+                self._view.isPrime.pixLabel.setPixmap(self._view.isPrime.isPrimeIcon)
+                self._view.isPrime.pixLabel.resize(self._view.isPrime.isPrimeIcon.width(), self._view.isPrime.isPrimeIcon.height())
                 self._view.isPrime.isPrimeText.setText("Is Prime!")
             else:
-                self._view.isPrime.isPrimeIcon.renderer().load(f'{pathlib.Path(__file__).parent.absolute()}/assets/cancel.svg')
-                self._view.isPrime.isPrimeIcon.setFixedSize(100, 100)
+                self._view.isPrime.pixLabel.setPixmap(self._view.isPrime.isNotPrimeIcon)
+                self._view.isPrime.pixLabel.resize(self._view.isPrime.isNotPrimeIcon.width(), self._view.isPrime.isNotPrimeIcon.height())
                 self._view.isPrime.isPrimeText.setText("Is Not Prime!")
         else:
             self._view.isPrime.isPrimeText.setText("Enter A Number")
@@ -175,8 +175,8 @@ class PrimeGenCtrl:
         -------
         None
         """
-        self._view.isPrime.isPrimeIcon.setFixedSize(0, 0)
-        # self._view.isPrime.isPrimeIcon.renderer().load('')
+        self._view.isPrime.pixLabel.setPixmap(self._view.isPrime.isPrimeIcon.scaled(0, 0))
+        self._view.isPrime.pixLabel.resize(0, 0)
         self._view.isPrime.isPrimeText.setText('')
 
     def _connectSignals(self):
