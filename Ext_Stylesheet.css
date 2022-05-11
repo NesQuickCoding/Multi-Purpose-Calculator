@@ -9,7 +9,7 @@ QWidget {
     selection-background-color: lime;
 }
 
-/************************* For the Labels  **************************/ 
+/************************* QLabel **************************/ 
 
 QLabel {
     color: lime;
@@ -19,6 +19,9 @@ QLabel {
     font-size: 16px;
 }
 
+#scrollLabel {
+    font-size: 16px;
+}
 
 /************************* QPushButtons **************************/ 
 
@@ -143,16 +146,16 @@ QRadioButton::indicator:checked:pressed {
     font-size: 14px;
 }
 /************************* For the Output Qline  **************************/
-QLineEdit{
-    /* border-style: outset; */
-    border-width: 2px;
+QLineEdit {
+    border: 2px solid limegreen;
     border-radius: 4px;
-    border-color: lime;
-    padding: 2px;
     color: lime;
-    font-size: 19px;
-
 }
+
+QLineEdit:hover {
+    border-color: lime;
+}
+
 
 /************************* QTabWidget  **************************/
 
@@ -178,4 +181,78 @@ QTabBar::tab:hover {
 QTabBar::tab:selected {
     color: black;
     background-color: limegreen;
+}
+
+/************************* ScrollLabel  **************************/
+
+ScrollLabel {
+    color: lime;
+    border: 2px solid green;
+}
+
+ScrollLabel:hover {
+    border-color: limegreen;
+}
+
+/************************* QScrollBar  **************************/
+
+QScrollBar:vertical {
+    border: 2px solid limegreen;
+    background: black;
+    width: 20px;
+    margin: 22px 0 22px 0;
+}
+
+QScrollBar::handle:vertical {
+    border-top: 2px;
+    border-right: 0px;
+    border-bottom: 2px;
+    border-left: 0px;
+    border-style: solid;
+    border-color: limegreen;
+    background: black;
+    min-height: 20px;
+}
+QScrollBar::handle:vertical:hover {
+    background-color: limegreen;
+}
+QScrollBar::handle:vertical:pressed {
+    border-color: lime;
+    background: lime;
+}
+
+QScrollBar::sub-line:vertical {
+    border: 2px solid limegreen;
+    background: black;
+    height: 20px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-line:vertical {
+    border: 2px solid limegreen;
+    background: black;
+    height: 20px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical:hover, QScrollBar::add-line:vertical:hover {
+    background-color: limegreen;
+}
+
+QScrollBar::sub-line:vertical:pressed, QScrollBar::add-line:vertical:pressed {
+    background-color: lime;
+    border-color: lime;
+}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    border: 0px solid black;
+    width: 0px;
+    height: 0px;
+    background: black;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
 }

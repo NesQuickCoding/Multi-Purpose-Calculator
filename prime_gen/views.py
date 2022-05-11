@@ -41,6 +41,7 @@ class ScrollLabel(QScrollArea):
         self.setWidget(content)
         layout = QVBoxLayout(content)
         self.label = QLabel(content)
+        self.label.setObjectName("scrollLabel")
         self.label.setAlignment(Qt.AlignLeft | Qt.AlignTop)
         self.label.setWordWrap(True)
         self.label.setTextInteractionFlags(Qt.TextSelectableByMouse)
@@ -153,7 +154,6 @@ class PrimeRangeGen(QWidget):
         """
         header = QLabel("Enter a number from 1 to 1000000")
         header.setAlignment(Qt.AlignCenter)
-        header.setFont(QFont('Arial', 14))
         return header
 
     def _CreateRangeInput(self):
@@ -170,9 +170,7 @@ class PrimeRangeGen(QWidget):
             primeRangeInput field
         """
         inputWidget = QLineEdit()
-        inputWidget.setFont(QFont('Arial', 14))
         inputWidget.setValidator(QIntValidator(1, 1000000))
-        inputWidget.setFixedHeight(26)
         inputWidget.setAlignment(Qt.AlignLeft)
         inputWidget.setReadOnly(False)
         inputWidget.setClearButtonEnabled(True)
@@ -196,15 +194,12 @@ class PrimeRangeGen(QWidget):
         buttonLayout.setAlignment(Qt.AlignCenter)
 
         self.rangeGenButton = QPushButton("Generate")
-        self.rangeGenButton.setFixedSize(80, 26)
         buttonLayout.addWidget(self.rangeGenButton, alignment=Qt.AlignCenter)
 
         self.rangeGenCopy = QPushButton("Copy All")
-        self.rangeGenCopy.setFixedSize(70, 26)
         buttonLayout.addWidget(self.rangeGenCopy, alignment=Qt.AlignCenter)
 
         self.rangeGenClear = QPushButton("Clear")
-        self.rangeGenClear.setFixedSize(70, 26)
         buttonLayout.addWidget(self.rangeGenClear, alignment=Qt.AlignCenter)
     
         return buttonLayout
@@ -337,7 +332,6 @@ class PrimeRandomGen(QWidget):
         """
         header = QLabel("Random Prime Numbers with Digit Length")
         header.setAlignment(Qt.AlignCenter)
-        header.setFont(QFont('Arial', 14))
         return header
 
     def _CreateRandomInput(self):
@@ -366,12 +360,10 @@ class PrimeRandomGen(QWidget):
         self.randomAmountInput.setAlignment(Qt.AlignCenter)
 
         self.randomDigitInput.setValidator(QIntValidator(1, 12))
-        self.randomDigitInput.setFixedWidth(50)
         self.randomDigitInput.setClearButtonEnabled(True)
         self.randomDigitInput.setMaxLength(2)
 
         self.randomAmountInput.setValidator(QIntValidator(1, 12))
-        self.randomAmountInput.setFixedWidth(50)
         self.randomAmountInput.setClearButtonEnabled(True)
         self.randomAmountInput.setMaxLength(2)
 
@@ -530,7 +522,6 @@ class IsPrime(QWidget):
         """
         header = QLabel("Prime Number Validator")
         header.setAlignment(Qt.AlignCenter)
-        header.setFont(QFont('Arial', 14))
         return header
     
     def _CreateIsPrimeInput(self):
@@ -549,14 +540,10 @@ class IsPrime(QWidget):
         layout = QVBoxLayout()
         self.isPrimeLabel = QLabel("Enter a number")
         self.isPrimeInput = QLineEdit()
-        self.isPrimeInput.setFont(QFont('Arial', 14))
-        self.isPrimeInput.setFixedHeight(26)
         self.isPrimeInput.setAlignment(Qt.AlignLeft)
         self.isPrimeInput.setClearButtonEnabled(True)
         self.isPrimeInput.setValidator(QRegExpValidator(QRegExp("[0-9]{16}")))
         self.isPrimeButton = QPushButton("Check")
-        self.isPrimeButton.setFont(QFont('Arial', 14))
-        self.isPrimeButton.setFixedHeight(26)
         layout.addWidget(self.isPrimeLabel)
         layout.addWidget(self.isPrimeInput)
         layout.addWidget(self.isPrimeButton)
@@ -577,11 +564,8 @@ class IsPrime(QWidget):
         """
         layout = QVBoxLayout()
         self.isPrimeIcon = QSvgWidget()
-        self.isPrimeIcon.setFixedSize(60, 60)
         self.isPrimeIcon.setStyleSheet("text-align: center;")
         self.isPrimeText = QLabel()
-        self.isPrimeText.setFont(QFont('Arial', 14))
-        self.isPrimeText.setFixedWidth(120)
         self.isPrimeText.setAlignment(Qt.AlignCenter)
         layout.addWidget(self.isPrimeIcon, 0, Qt.AlignCenter)
         layout.addWidget(self.isPrimeText, 0, Qt.AlignCenter)
