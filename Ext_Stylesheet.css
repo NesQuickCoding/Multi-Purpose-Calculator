@@ -35,7 +35,8 @@ QPushButton:hover{
 }
 
 QPushButton:pressed{
-   border-color : lime;
+    border-style: inset;
+    border-color : lime;
 }
 
 QPushButton:disabled{
@@ -143,9 +144,7 @@ QRadioButton::indicator:checked:pressed {
 }
 /************************* For the Output Qline  **************************/
 QLineEdit{
-
-    background-color: black;
-    border-style: outset;
+    /* border-style: outset; */
     border-width: 2px;
     border-radius: 4px;
     border-color: lime;
@@ -153,4 +152,30 @@ QLineEdit{
     color: lime;
     font-size: 19px;
 
+}
+
+/************************* QTabWidget  **************************/
+
+QTabWidget::pane {
+    border: 2px solid darkgreen;
+    margin-bottom: 10px;
+}
+
+QTabWidget::pane:hover {
+    border-color: green;
+}
+
+QTabBar::tab {
+    font-size: 11px;
+    background-color: black;
+    color: green;
+}
+
+QTabBar::tab:hover {
+    color: limegreen;
+}
+
+QTabBar::tab:selected {
+    color: black;
+    background-color: limegreen;
 }

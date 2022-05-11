@@ -213,7 +213,7 @@ class BaseConvUI(QWidget):
     _createBitLengthBox():
         Internal method to create QComboBox with 8-64 bit options
     """
-    def __init__(self):
+    def __init__(self): 
         """
         Initializer for BaseConvUI. Creates all QWidgets and layouts
 
@@ -228,21 +228,28 @@ class BaseConvUI(QWidget):
         """
         super().__init__()
         layout = QVBoxLayout()
+
         bitLayout = QHBoxLayout()
         bitLayout.setAlignment(Qt.AlignHCenter)
+
         self.unSignedRadio = QRadioButton("Unsigned")
         self.unSignedRadio.setObjectName("unSignedRadio")
         self.unSignedRadio.setChecked(True)
+
         self.signedRadio = QRadioButton("Signed")
         self.signedRadio.setObjectName("signedRadio")
+
         self.negateButton = QPushButton("Negate")
         self.negateButton.setObjectName("negate")
         self.negateButton.setEnabled(False)
+
         self.bitDropBox = self._createBitLengthBox()
+
         bitLayout.addWidget(self.unSignedRadio)
         bitLayout.addWidget(self.signedRadio)
         bitLayout.addWidget(self.negateButton)
         bitLayout.addWidget(self.bitDropBox)
+
         layout.addLayout(bitLayout)
         self.dec = DecBase()
         layout.addWidget(self.dec)
@@ -250,6 +257,7 @@ class BaseConvUI(QWidget):
         layout.addWidget(self.hex)
         self.bin = BinBase()
         layout.addWidget(self.bin)
+        
         self.setLayout(layout)
 
     def _createBitLengthBox(self):

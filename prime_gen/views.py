@@ -626,6 +626,7 @@ class PrimeGenUI(QWidget):
         layout = QVBoxLayout()
 
         self.tabs = QTabWidget()
+
         self.primeRangeGen = PrimeRangeGen()
         self.primeRandomGen = PrimeRandomGen()
         self.isPrime = IsPrime()
