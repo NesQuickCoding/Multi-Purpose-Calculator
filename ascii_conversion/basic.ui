@@ -6,13 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>480</width>
+    <width>425</width>
     <height>400</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>480</width>
+    <width>425</width>
     <height>400</height>
    </size>
   </property>
@@ -25,14 +25,11 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true"/>
-  </property>
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>320</y>
+     <x>65</x>
+     <y>295</y>
      <width>311</width>
      <height>41</height>
     </rect>
@@ -56,20 +53,6 @@
     </item>
     <item>
      <widget class="QPushButton" name="clearButton">
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
-    background-color: black;
-	color: lime;
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: lime;
-}
-
-QPushButton:pressed{
-   background-color : green;
-}</string>
-      </property>
       <property name="text">
        <string>Clear</string>
       </property>
@@ -93,20 +76,6 @@ QPushButton:pressed{
     </item>
     <item>
      <widget class="QPushButton" name="enterButton">
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
-    background-color: black;
-	color: lime;
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: lime;
-}
-
-QPushButton:pressed{
-   background-color : green;
-}</string>
-      </property>
       <property name="text">
        <string>Enter</string>
       </property>
@@ -133,8 +102,8 @@ QPushButton:pressed{
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>70</y>
+     <x>65</x>
+     <y>45</y>
      <width>141</width>
      <height>112</height>
     </rect>
@@ -142,9 +111,6 @@ QPushButton:pressed{
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QRadioButton" name="leftHand_Char">
-      <property name="styleSheet">
-       <string notr="true">QRadioButton {background-color: transparent; color: lime};</string>
-      </property>
       <property name="text">
        <string>Char</string>
       </property>
@@ -155,9 +121,6 @@ QPushButton:pressed{
     </item>
     <item>
      <widget class="QRadioButton" name="leftHand_Dec">
-      <property name="styleSheet">
-       <string notr="true">QRadioButton {background-color: transparent; color: lime};</string>
-      </property>
       <property name="text">
        <string>Decimal</string>
       </property>
@@ -165,9 +128,6 @@ QPushButton:pressed{
     </item>
     <item>
      <widget class="QRadioButton" name="leftHand_Hex">
-      <property name="styleSheet">
-       <string notr="true">QRadioButton {background-color: transparent; color: lime};</string>
-      </property>
       <property name="text">
        <string>Hexadecimal</string>
       </property>
@@ -178,8 +138,8 @@ QPushButton:pressed{
   <widget class="QWidget" name="verticalLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>70</y>
+     <x>235</x>
+     <y>45</y>
      <width>141</width>
      <height>112</height>
     </rect>
@@ -187,9 +147,6 @@ QPushButton:pressed{
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
      <widget class="QRadioButton" name="rightHand_Char">
-      <property name="styleSheet">
-       <string notr="true">QRadioButton {background-color: transparent; color: lime};</string>
-      </property>
       <property name="text">
        <string>Char</string>
       </property>
@@ -200,9 +157,6 @@ QPushButton:pressed{
     </item>
     <item>
      <widget class="QRadioButton" name="rightHand_Dec">
-      <property name="styleSheet">
-       <string notr="true">QRadioButton {background-color: transparent; color: lime};</string>
-      </property>
       <property name="text">
        <string>Decimal</string>
       </property>
@@ -210,9 +164,6 @@ QPushButton:pressed{
     </item>
     <item>
      <widget class="QRadioButton" name="rightHand_Kelvin">
-      <property name="styleSheet">
-       <string notr="true">QRadioButton {background-color: transparent; color: lime};</string>
-      </property>
       <property name="text">
        <string>Hexadecimal</string>
       </property>
@@ -223,20 +174,11 @@ QPushButton:pressed{
   <widget class="QLineEdit" name="lineEdit_Output">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>250</y>
+     <x>235</x>
+     <y>225</y>
      <width>141</width>
      <height>36</height>
     </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 0, 0);
-color: lime;
- border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: green;
-    padding: 2px;</string>
    </property>
    <property name="readOnly">
     <bool>true</bool>
@@ -245,8 +187,8 @@ color: lime;
   <widget class="QLineEdit" name="lineEdit_Input">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>250</y>
+     <x>65</x>
+     <y>225</y>
      <width>141</width>
      <height>36</height>
     </rect>
@@ -263,27 +205,15 @@ color: lime;
      <height>16777215</height>
     </size>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 0, 0);
-color: lime;
- border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: green;
-    padding: 2px;</string>
-   </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>215</y>
+     <x>65</x>
+     <y>190</y>
      <width>131</width>
      <height>21</height>
     </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLabel {background-color: transparent; color: lime};</string>
    </property>
    <property name="text">
     <string>Convert From</string>
@@ -292,14 +222,11 @@ color: lime;
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>215</y>
+     <x>235</x>
+     <y>190</y>
      <width>131</width>
      <height>21</height>
     </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLabel {background-color: transparent; color: lime};</string>
    </property>
    <property name="text">
     <string>Convert To</string>
@@ -315,8 +242,8 @@ color: lime;
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>219</x>
-     <y>327</y>
+     <x>194</x>
+     <y>212</y>
     </hint>
     <hint type="destinationlabel">
      <x>338</x>
@@ -331,12 +258,12 @@ color: lime;
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>195</x>
-     <y>320</y>
+     <x>170</x>
+     <y>295</y>
     </hint>
     <hint type="destinationlabel">
-     <x>210</x>
-     <y>241</y>
+     <x>185</x>
+     <y>216</y>
     </hint>
    </hints>
   </connection>
