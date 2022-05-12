@@ -37,18 +37,18 @@ class birthday_Ui(QtWidgets.QWidget):
         self.inputYear.setValidator(year_validator)
         self.show()
 
-
-
     def enterButtonPressed(self):
-        self.lineEdit_Output.clear()
-        current_choice = self.comboBox.currentText()
-        month = int(self.inputMonth.text())
-        day = int(self.inputDay.text())
-        year = int(self.inputYear.text())
-        dob_list = [month,day,year]
-        answer = self.get_birthday(current_choice,dob_list)
-        self.lineEdit_Output.setText(answer)
-
+        try:
+            self.lineEdit_Output.clear()
+            current_choice = self.comboBox.currentText()
+            month = int(self.inputMonth.text())
+            day = int(self.inputDay.text())
+            year = int(self.inputYear.text())
+            dob_list = [month,day,year]
+            answer = self.get_birthday(current_choice,dob_list)
+            self.lineEdit_Output.setText(answer)
+        except ValueError:
+            pass
 
     def get_birthday(self, combo_input, calendar_input):
         try:
@@ -66,8 +66,6 @@ class birthday_Ui(QtWidgets.QWidget):
 
         except ValueError:
             return "Invalid"
-
-
 
 def get_years(month,day,year):
     today = date.today()
