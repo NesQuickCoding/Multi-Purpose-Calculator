@@ -47,20 +47,20 @@ class MetricConvWidget(QWidget):
         mainLayout = QVBoxLayout()
         
         label = QLabel(stringLabel)
-        label.setFont(QFont('Arial', 12))
-        mainLayout.addWidget(label)
+        mainLayout.addWidget(label, 0, Qt.AlignCenter)
 
         convLayout = QHBoxLayout()
 
         self.leftTextEdit = QLineEdit()
+        self.leftTextEdit.setObjectName("metricValidInput")
         self.leftComboBox = QComboBox()
         convLayout.addLayout(self._createOptionLayout(self.leftTextEdit, self.leftComboBox, unitOptions))
         
         equalSign = QLabel('=')
-        equalSign.setFont(QFont('Arial', 12))
         convLayout.addWidget(equalSign)
 
         self.rightTextEdit = QLineEdit()
+        self.rightTextEdit.setObjectName("metricValidInput")
         self.rightComboBox = QComboBox()
         convLayout.addLayout(self._createOptionLayout(self.rightTextEdit, self.rightComboBox, unitOptions))
         
@@ -91,11 +91,7 @@ class MetricConvWidget(QWidget):
         
         QLineEditObj.setValidator(QDoubleValidator())
 
-        QLineEditObj.setFont(QFont('Arial', 12))
-
         QComboBoxObj.addItems(items)
-        QComboBoxObj.setFont(QFont('Arial', 12))
-        QComboBoxObj.setFixedHeight(20)
         
         layout.addWidget(QLineEditObj)
         layout.addWidget(QComboBoxObj)
@@ -165,18 +161,19 @@ class MetricConvUI(QWidget):
         ]
 
         layout = QVBoxLayout()
+        layout.setSpacing(0)
 
         self.lengthView = MetricConvWidget("Length", lengthUnitOptions)
-        layout.addWidget(self.lengthView)
+        layout.addWidget(self.lengthView, 0, Qt.AlignTop)
 
         self.weightView = MetricConvWidget("Weight", weightUnitOptions)
-        layout.addWidget(self.weightView)
+        layout.addWidget(self.weightView, 0, Qt.AlignTop)
 
         self.timeView = MetricConvWidget("Time", timeUnitOptions)
-        layout.addWidget(self.timeView)
+        layout.addWidget(self.timeView, 0, Qt.AlignTop)
 
         self.digitalStorageView = MetricConvWidget("Digital Storage", digitalStorageOptions)
-        layout.addWidget(self.digitalStorageView)
+        layout.addWidget(self.digitalStorageView, 0, Qt.AlignTop)
 
         self.setLayout(layout)
         

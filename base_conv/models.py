@@ -71,7 +71,6 @@ def rightToLeftInsertion(string, position, insertChar):
             if count == position and i != 0:
                 formattedString = insertChar + formattedString
                 count = 0
-            print(formattedString)
         return formattedString
     else:
         return string

@@ -41,6 +41,7 @@ class ScrollLabel(QScrollArea):
         self.setWidget(content)
         layout = QVBoxLayout(content)
         self.label = QLabel(content)
+        self.label.setObjectName("scrollLabel")
         self.label.setAlignment(Qt.AlignLeft | Qt.AlignTop)
         self.label.setWordWrap(True)
         self.label.setTextInteractionFlags(Qt.TextSelectableByMouse)
@@ -128,6 +129,7 @@ class PrimeRangeGen(QWidget):
         """
         super().__init__()
         layout = QVBoxLayout()
+        layout.setAlignment(Qt.AlignCenter)
         self.rangeHeader = self._CreateRangeHeader()
         layout.addWidget(self.rangeHeader)
         self.rangeInput = self._CreateRangeInput()
@@ -151,9 +153,10 @@ class PrimeRangeGen(QWidget):
         QLabel
             Header/instructional text
         """
-        header = QLabel("Enter a number from 1 to 1000000")
+        header = QLabel("Generate prime numbers from 1 to n (limit 1000000)")
+        header.setObjectName("primeHeader")
+        header.setWordWrap(True)
         header.setAlignment(Qt.AlignCenter)
-        header.setFont(QFont('Arial', 14))
         return header
 
     def _CreateRangeInput(self):
@@ -170,13 +173,11 @@ class PrimeRangeGen(QWidget):
             primeRangeInput field
         """
         inputWidget = QLineEdit()
-        inputWidget.setFont(QFont('Arial', 14))
         inputWidget.setValidator(QIntValidator(1, 1000000))
-        inputWidget.setFixedHeight(26)
-        inputWidget.setAlignment(Qt.AlignLeft)
         inputWidget.setReadOnly(False)
         inputWidget.setClearButtonEnabled(True)
         inputWidget.setMaxLength(7)
+        inputWidget.setObjectName("rangeInput")
         return inputWidget
 
     def _CreateRangeButtons(self):
@@ -196,15 +197,15 @@ class PrimeRangeGen(QWidget):
         buttonLayout.setAlignment(Qt.AlignCenter)
 
         self.rangeGenButton = QPushButton("Generate")
-        self.rangeGenButton.setFixedSize(80, 26)
+        self.rangeGenButton.setObjectName("primeGenButton")
         buttonLayout.addWidget(self.rangeGenButton, alignment=Qt.AlignCenter)
 
         self.rangeGenCopy = QPushButton("Copy All")
-        self.rangeGenCopy.setFixedSize(70, 26)
+        self.rangeGenCopy.setObjectName("primeCopyButton")
         buttonLayout.addWidget(self.rangeGenCopy, alignment=Qt.AlignCenter)
 
         self.rangeGenClear = QPushButton("Clear")
-        self.rangeGenClear.setFixedSize(70, 26)
+        self.rangeGenClear.setObjectName("primeClearButton")
         buttonLayout.addWidget(self.rangeGenClear, alignment=Qt.AlignCenter)
     
         return buttonLayout
@@ -335,9 +336,10 @@ class PrimeRandomGen(QWidget):
         QLabel
             Header text
         """
-        header = QLabel("Random Prime Numbers with Digit Length")
+        header = QLabel("Generate random prime numbers with set number of digits")
+        header.setWordWrap(True)
+        header.setObjectName("primeHeader")
         header.setAlignment(Qt.AlignCenter)
-        header.setFont(QFont('Arial', 14))
         return header
 
     def _CreateRandomInput(self):
@@ -353,27 +355,26 @@ class PrimeRandomGen(QWidget):
         QHBoxLayout
             Layout of text input fields
         """
-        digitLayout = QHBoxLayout()
-        numberLayout = QHBoxLayout()
+        digitLayout = QVBoxLayout()
+        numberLayout = QVBoxLayout()
         
         self.randomDigitLabel = QLabel("Amount of Digits (1-12)")
-        self.randomDigitInput = QLineEdit()
-        self.randomDigitLabel.setAlignment(Qt.AlignLeft)
-        self.randomDigitInput.setAlignment(Qt.AlignLeft)
-        self.randomAmountLabel = QLabel("Amount of Numbers (1-50)")
-        self.randomAmountInput = QLineEdit()
-        self.randomAmountLabel.setAlignment(Qt.AlignRight)
-        self.randomAmountInput.setAlignment(Qt.AlignCenter)
+        self.randomDigitLabel.setObjectName("randomGenText")
 
+        self.randomAmountLabel = QLabel("Amount of Primes (1-50)")
+        self.randomAmountLabel.setObjectName("randomGenText")
+
+        self.randomDigitInput = QLineEdit()
         self.randomDigitInput.setValidator(QIntValidator(1, 12))
-        self.randomDigitInput.setFixedWidth(50)
         self.randomDigitInput.setClearButtonEnabled(True)
         self.randomDigitInput.setMaxLength(2)
+        self.randomDigitInput.setObjectName("randomGenInput")
 
+        self.randomAmountInput = QLineEdit()
         self.randomAmountInput.setValidator(QIntValidator(1, 12))
-        self.randomAmountInput.setFixedWidth(50)
         self.randomAmountInput.setClearButtonEnabled(True)
         self.randomAmountInput.setMaxLength(2)
+        self.randomAmountInput.setObjectName("randomGenInput")
 
         digitLayout.addWidget(self.randomDigitLabel)
         digitLayout.addWidget(self.randomDigitInput)
@@ -381,6 +382,7 @@ class PrimeRandomGen(QWidget):
         numberLayout.addWidget(self.randomAmountInput)
 
         randomLayout = QHBoxLayout()
+        randomLayout.setAlignment(Qt.AlignCenter | Qt.AlignHCenter)
         randomLayout.addLayout(digitLayout)
         randomLayout.addLayout(numberLayout)
 
@@ -403,12 +405,15 @@ class PrimeRandomGen(QWidget):
         buttonLayout.setAlignment(Qt.AlignCenter)
 
         self.randomGenButton = QPushButton("Generate")
+        self.randomGenButton.setObjectName("primeGenButton")
         buttonLayout.addWidget(self.randomGenButton, alignment=Qt.AlignCenter)
 
         self.randomGenCopy = QPushButton("Copy All")
+        self.randomGenCopy.setObjectName("primeCopyButton")
         buttonLayout.addWidget(self.randomGenCopy, alignment=Qt.AlignCenter)
 
         self.randomGenClear = QPushButton("Clear")
+        self.randomGenClear.setObjectName("primeClearButton")
         buttonLayout.addWidget(self.randomGenClear, alignment=Qt.AlignCenter)
     
         return buttonLayout
@@ -505,14 +510,13 @@ class IsPrime(QWidget):
         """
         super().__init__()
         layout = QVBoxLayout()
+        layout.setAlignment(Qt.AlignCenter | Qt.AlignTop)
         self.isPrimeHeader = self._CreateIsPrimeHeader()
         layout.addWidget(self.isPrimeHeader)
-        hLayout = QHBoxLayout()
         isPrimeInput = self._CreateIsPrimeInput()
-        hLayout.addLayout(isPrimeInput)
+        layout.addLayout(isPrimeInput)
         isPrimeOutput = self._CreateIsPrimeOutput()
-        hLayout.addLayout(isPrimeOutput)
-        layout.addLayout(hLayout)
+        layout.addLayout(isPrimeOutput)
         self.setLayout(layout)
 
     def _CreateIsPrimeHeader(self):
@@ -528,9 +532,10 @@ class IsPrime(QWidget):
         QLabel
             Header text
         """
-        header = QLabel("Prime Number Validator")
+        header = QLabel("Check if a positive integer is prime or not, up to 16 digits")
+        header.setWordWrap(True)
         header.setAlignment(Qt.AlignCenter)
-        header.setFont(QFont('Arial', 14))
+        header.setObjectName("primeHeader")
         return header
     
     def _CreateIsPrimeInput(self):
@@ -547,17 +552,13 @@ class IsPrime(QWidget):
             Layout of input and submit widgets
         """
         layout = QVBoxLayout()
-        self.isPrimeLabel = QLabel("Enter a number")
         self.isPrimeInput = QLineEdit()
-        self.isPrimeInput.setFont(QFont('Arial', 14))
-        self.isPrimeInput.setFixedHeight(26)
         self.isPrimeInput.setAlignment(Qt.AlignLeft)
         self.isPrimeInput.setClearButtonEnabled(True)
+        self.isPrimeInput.setObjectName("isPrimeInput")
         self.isPrimeInput.setValidator(QRegExpValidator(QRegExp("[0-9]{16}")))
         self.isPrimeButton = QPushButton("Check")
-        self.isPrimeButton.setFont(QFont('Arial', 14))
-        self.isPrimeButton.setFixedHeight(26)
-        layout.addWidget(self.isPrimeLabel)
+        self.isPrimeButton.setObjectName("isPrimeButton")
         layout.addWidget(self.isPrimeInput)
         layout.addWidget(self.isPrimeButton)
         return layout
@@ -575,14 +576,13 @@ class IsPrime(QWidget):
         QVBoxLayout
             Layout with Icon and Text
         """
-        layout = QVBoxLayout()
+        layout = QHBoxLayout()
+        layout.setAlignment(Qt.AlignCenter | Qt.AlignBottom)
         self.isPrimeIcon = QSvgWidget()
-        self.isPrimeIcon.setFixedSize(60, 60)
-        self.isPrimeIcon.setStyleSheet("text-align: center;")
+        self.isPrimeIcon.setFixedSize(100,100)
+        self.isPrimeIcon.setObjectName("primeIcon")
         self.isPrimeText = QLabel()
-        self.isPrimeText.setFont(QFont('Arial', 14))
-        self.isPrimeText.setFixedWidth(120)
-        self.isPrimeText.setAlignment(Qt.AlignCenter)
+        self.isPrimeText.setObjectName("primeHeader")
         layout.addWidget(self.isPrimeIcon, 0, Qt.AlignCenter)
         layout.addWidget(self.isPrimeText, 0, Qt.AlignCenter)
         return layout
@@ -626,6 +626,7 @@ class PrimeGenUI(QWidget):
         layout = QVBoxLayout()
 
         self.tabs = QTabWidget()
+
         self.primeRangeGen = PrimeRangeGen()
         self.primeRandomGen = PrimeRandomGen()
         self.isPrime = IsPrime()

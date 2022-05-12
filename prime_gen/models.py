@@ -27,7 +27,7 @@ def range_1_n(limit : int):
 
     # Check to see if limit is 1 (meaning no prime numbers)
     if limit == 1:
-        return None
+        return "[None]"
     # Otherwise, add the prime numbers manually up to 5
     else:
         if limit >= 2:

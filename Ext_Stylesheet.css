@@ -1,77 +1,390 @@
 /* External Stylesheet*/
 
-
-/************************* For the Widget  **************************/ 
+/************************** QWidget ***************************/
+/* Sets global style, such as fonts and backgrounds */
 
 QWidget {
     background-color: rgb(0, 0, 0);
+    font-family: "Cascadia Code";
+    selection-color: black;
+    selection-background-color: lime;
 }
 
+/*************************** QMenu ****************************/ 
+/* For right-click context menu */
 
+QMenu::item::enabled {
+    color: lime;
+}
 
-/************************* For the Labels  **************************/ 
+QMenu::item::enabled::selected {
+    color: black;
+}
+
+QMenu::item::disabled {
+    color: darkgreen;
+}
+
+QMenu::item::disabled::selected {
+    color: limegreen;
+}
+
+QMenu::separator {
+    height: 1px;
+    background-color: green;
+    margin: 5px 10px 5px 10px;
+}
+
+/*************************** QLabel ***************************/
 
 QLabel {
     color: lime;
+}
+
+/* ------------- */
+
+#baseConvHeader, #scrollLabel {
     font-size: 16px;
 }
 
+#primeHeader {
+    font-size: 18px;
+}
 
-/************************* For the Push Buttons  **************************/ 
+#randomGenText {
+    font-size: 14px;
+    margin: 5px 0 5px 0;
+}
+
+ascii_Ui QLabel, temp_Ui QLabel, MetricConvWidget QLabel, birthday_Ui QLabel {
+    font-size: 18px;
+}
+
+/************************* QLineEdit **************************/
+
+QLineEdit {
+    border: 2px solid limegreen;
+    border-radius: 4px;
+    color: lime;
+}
+
+QLineEdit:hover {
+    border-color: lime;
+}
+
+/* ------------- */
+
+#rangeInput, #isPrimeInput {
+    font-size: 20px;
+    padding: 5px 10px 5px 10px;
+    margin: 5px 40px 5px 40px;
+}
+
+#randomGenInput {
+    font-size: 14px;
+    padding: 5px 10px 5px 10px;
+    margin: 5px 40px 5px 40px;
+}
+
+#calcOutput {
+    height: 50px;
+    font-size: 22px;
+    padding: 0px;
+}
+
+ascii_Ui QLineEdit, temp_Ui QLineEdit, birthday_Ui QLineEdit {
+    font-size: 20px;
+}
+
+#metricValidInput {
+    font-size: 16px;
+}
+
+#metricInvalidInput {
+    font-size: 16px;
+    border-color: rgb(194, 0, 0);
+}
+
+#metricInvalidInput:hover {
+    font-size: 16px;
+    border-color: red;
+}
+
+/*********************** QPushButtons *************************/ 
 
 QPushButton{
-    background-color: black;
 	color: lime;
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: lime;
-    font-size: 16px;
-
-}
-
-QPushButton:pressed{
-   background-color : green;
-}
-
-/************************* For the Push Buttons  **************************/ 
-
-QComboBox {
-color: rgb(55, 255, 0);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: rgb(98, 255, 0);
-    font: 11pt "Arial";
-}
-
-QComboBox QAbstractItemView{
-    color: lime;
-}
-
-/************************* For the Radio Buttons  **************************/ 
-QRadioButton {
-
-    background-color: transparent;
-    color: lime;
-    font-size: 16px;
-
-}
-/************************* For the Output Qline  **************************/
-QLineEdit{
-
-    background-color: black;
     border-style: outset;
     border-width: 2px;
     border-radius: 4px;
-    border-color: green;
-    padding: 2px;
-    color: lime;
-    font-size: 19px;
+    border-color: darkgreen;
+}
 
+QPushButton:hover{
+    border-color: green;
+}
+
+QPushButton:pressed{
+    border-style: inset;
+    border-color : lime;
+}
+
+QPushButton:disabled{
+	color: rgb(0, 59, 0);
+    border-color: rgb(0, 59, 0);
+}
+
+/* ------------- */
+
+#negate {
+    border-radius: 8px;
+    padding: 6px 12px 6px 12px;
+    margin: 0px 7px 0px 9px;
+    font-size: 14px;
+}
+
+#primeGenButton, #primeCopyButton, #primeClearButton {
+    font-size: 14px;
+    padding: 5px 15px 5px 15px;
+}
+
+#isPrimeButton {
+    font-size: 20px;
+    padding: 10px 15px 10px 15px; 
+    margin: 0 120px 30px 120px;
+}
+
+#calcButton {
+    font-size: 22px;
+    border-width: 2px;
+}
+
+ascii_Ui QPushButton, birthday_Ui QPushButton {
+    font-size: 20px;
+    padding: 10px 15px 10px 15px;
+}
+
+temp_Ui QPushButton {
+    font-size: 20px;
+    padding: 10px 15px 10px 15px;
+    margin-right: 20px;
+}
+
+/************************* QComboBox **************************/
+
+QComboBox {
+    color: lime;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 3px;
+    border-color: darkgreen;
+    font-family: "Cascadia Code";
+}
+
+QComboBox:hover {
+    border-color: green;
+}
+
+QComboBox:on {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom: 0px;
+    border-color: lime;
+}
+
+QComboBox:active {
+    color: lime;
+}
+
+QComboBox QAbstractItemView {
+    outline: none;
+    color: lime;
+    border: 2px solid lime;
+    border-top: 0px;
+}
+
+QComboBox::drop-arrow:on {
+    color: lime;
+}
+
+/* ------------- */
+
+#bitDropBox {
+    padding: 5px;
+    font-size: 14px;
+}
+
+#calcDropBox {
+    font-size: 16px;
+}
+
+MetricConvWidget QComboBox {
+    font-size: 16px;
+}
+
+birthday_Ui QComboBox {
+    font-size: 18px;
 }
 
 
+/*********************** QRadioButton *************************/
 
+QRadioButton {
+    background-color: transparent;
+    color: lime;
+}
 
+/* Custom indicators */
 
+QRadioButton::indicator::unchecked {
+    image: url(assets/radio-unchecked.png);
+}
+
+QRadioButton::indicator:unchecked:hover {
+    image: url(assets/radio-unchecked-hover.png);
+}
+
+QRadioButton::indicator:unchecked:pressed {
+    image: url(assets/radio-unchecked-pressed.png);
+}
+
+QRadioButton::indicator::checked {
+    image: url(assets/radio-checked.png);
+}
+
+QRadioButton::indicator:checked:hover {
+    image: url(assets/radio-checked-hover.png);
+}
+
+QRadioButton::indicator:checked:pressed {
+    image: url(assets/radio-checked-pressed.png);
+}
+
+/* ------------- */
+
+#unSignedRadio, #signedRadio {
+    font-size: 14px;
+}
+
+ascii_Ui QRadioButton, temp_Ui QRadioButton {
+    font-size: 18px;
+}
+
+/********************** QPlainTextEdit ************************/
+
+#baseEditBox {
+    color: lime;
+    font: 12pt "Cascadia Code";
+    border: 2px solid darkgreen;
+}
+
+#baseEditBox:hover {
+    border: 2px solid green;
+}
+
+#baseEditBox:focus{
+    border: 2px solid limegreen;
+}
+
+/************************ QTabWidget **************************/
+
+QTabWidget::pane {
+    border: 2px solid darkgreen;
+    margin-bottom: 10px;
+}
+
+QTabWidget::pane:hover {
+    border-color: green;
+}
+
+QTabBar::tab {
+    font-size: 11px;
+    background-color: black;
+    color: green;
+}
+
+QTabBar::tab:hover {
+    color: limegreen;
+}
+
+QTabBar::tab:selected {
+    color: black;
+    background-color: lime;
+}
+
+/************************ ScrollLabel *************************/
+
+ScrollLabel {
+    color: lime;
+    border: 2px solid green;
+}
+
+ScrollLabel:hover {
+    border-color: limegreen;
+}
+
+/************************* QScrollBar **************************/
+/* Part of ScrollLabel */
+
+QScrollBar:vertical {
+    border: 2px solid limegreen;
+    background: black;
+    width: 20px;
+    margin: 22px 0 22px 0;
+}
+
+QScrollBar::handle:vertical {
+    border-top: 2px;
+    border-right: 0px;
+    border-bottom: 2px;
+    border-left: 0px;
+    border-style: solid;
+    border-color: limegreen;
+    background: black;
+    min-height: 20px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: limegreen;
+}
+
+QScrollBar::handle:vertical:pressed {
+    border-color: lime;
+    background: lime;
+}
+
+QScrollBar::sub-line:vertical {
+    border: 2px solid limegreen;
+    background: black;
+    height: 20px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-line:vertical {
+    border: 2px solid limegreen;
+    background: black;
+    height: 20px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical:hover, QScrollBar::add-line:vertical:hover {
+    background-color: limegreen;
+}
+
+QScrollBar::sub-line:vertical:pressed, QScrollBar::add-line:vertical:pressed {
+    background-color: lime;
+    border-color: lime;
+}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    border: 0px solid black;
+    width: 0px;
+    height: 0px;
+    background: black;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}

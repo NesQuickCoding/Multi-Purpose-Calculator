@@ -32,9 +32,9 @@ class MainCalcUI(QWidget):
             LineEdit: widget for writing and recieving text.
         """
         output = QLineEdit("0")
-        output.setFixedHeight(50)
         output.setAlignment(Qt.AlignRight)
         output.setReadOnly(True)
+        output.setObjectName("calcOutput")
         return output       
 
     def _createDropBox(self, dropMenu):
@@ -47,8 +47,7 @@ class MainCalcUI(QWidget):
             ComboBox: Drop down menu
         """
         comboBox = QComboBox()
-        comboBox.setObjectName("CalcDropBox")
-        comboBox.setGeometry(QRect(130, 190, 291, 31))
+        comboBox.setObjectName("calcDropBox")
         for item in dropMenu:
             comboBox.addItem(item[0])
         return comboBox
@@ -72,6 +71,7 @@ class MainCalcUI(QWidget):
         for buttonText, pos in buttons.items():
             self.buttons[buttonText] = QPushButton(buttonText)
             self.buttons[buttonText].setFixedSize(55, 55)
+            self.buttons[buttonText].setObjectName("calcButton")
             buttonsLayout.addWidget(self.buttons[buttonText], pos[0], pos[1])
 
         return buttonsLayout

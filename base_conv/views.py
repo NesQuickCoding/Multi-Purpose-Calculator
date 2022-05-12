@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QWidget, QRadioButton, QLabel, QPushButton, QVBoxLayout, QHBoxLayout, QPlainTextEdit, QComboBox
-from PyQt5.QtGui import QFont
+from PyQt5.QtCore import Qt
 
 class NumBase(QWidget):
     """
@@ -48,7 +48,7 @@ class NumBase(QWidget):
             The QLabel header
         """
         header = QLabel(headerText)
-        header.setFont(QFont('Arial', 14))
+        header.setObjectName("baseConvHeader")
         return header
     
     def _CreateNumTextBox(self):
@@ -65,7 +65,7 @@ class NumBase(QWidget):
             The QPlanTextEdit to be used for input/output
         """
         textbox = QPlainTextEdit()
-        textbox.setFont(QFont('Terminal', 10))
+        textbox.setObjectName("baseEditBox")
         textbox.document().setPlainText("0")
         return textbox
 
@@ -213,7 +213,7 @@ class BaseConvUI(QWidget):
     _createBitLengthBox():
         Internal method to create QComboBox with 8-64 bit options
     """
-    def __init__(self):
+    def __init__(self): 
         """
         Initializer for BaseConvUI. Creates all QWidgets and layouts
 
@@ -228,17 +228,28 @@ class BaseConvUI(QWidget):
         """
         super().__init__()
         layout = QVBoxLayout()
+
         bitLayout = QHBoxLayout()
+        bitLayout.setAlignment(Qt.AlignHCenter)
+
         self.unSignedRadio = QRadioButton("Unsigned")
+        self.unSignedRadio.setObjectName("unSignedRadio")
         self.unSignedRadio.setChecked(True)
-        self.signedRadio = QRadioButton("Unsigned")
+
+        self.signedRadio = QRadioButton("Signed")
+        self.signedRadio.setObjectName("signedRadio")
+
         self.negateButton = QPushButton("Negate")
+        self.negateButton.setObjectName("negate")
         self.negateButton.setEnabled(False)
+
         self.bitDropBox = self._createBitLengthBox()
+
         bitLayout.addWidget(self.unSignedRadio)
         bitLayout.addWidget(self.signedRadio)
         bitLayout.addWidget(self.negateButton)
         bitLayout.addWidget(self.bitDropBox)
+
         layout.addLayout(bitLayout)
         self.dec = DecBase()
         layout.addWidget(self.dec)
@@ -246,6 +257,7 @@ class BaseConvUI(QWidget):
         layout.addWidget(self.hex)
         self.bin = BinBase()
         layout.addWidget(self.bin)
+        
         self.setLayout(layout)
 
     def _createBitLengthBox(self):
