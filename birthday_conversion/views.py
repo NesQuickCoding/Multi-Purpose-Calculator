@@ -42,8 +42,6 @@ class birthday_Ui(QtWidgets.QWidget):
         self.inputMonth.textChanged.connect(self._inputCheck)
         self.inputYear.textChanged.connect(self._inputCheck)
 
-        self.show()
-
     def _inputCheck(self):
         # run checks only if there's a value for month
         if self.inputMonth.text():
