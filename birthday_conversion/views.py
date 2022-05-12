@@ -97,7 +97,15 @@ class birthday_Ui(QtWidgets.QWidget):
                     if int(self.inputDay.text()) > 31:
                             self.inputDay.setText("31")
         
+        # check to see if date is past todays date
+        if self.inputDay.text() and self.inputMonth.text() and self.inputYear.text():
+            if date(int(self.inputYear.text()), int(self.inputMonth.text()), int(self.inputDay.text())) > date.today():
+                self.inputDay.setText(str(date.today().day))
+                self.inputMonth.setText(str(date.today().month))
+                self.inputYear.setText(str(date.today().year))
+        
     def enterButtonPressed(self):
+        # try/except to ignore missing input fields
         try:
             self.lineEdit_Output.clear()
             current_choice = self.comboBox.currentText()
