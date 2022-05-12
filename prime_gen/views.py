@@ -578,7 +578,6 @@ class IsPrime(QWidget):
             Layout with Icon and Text
         """
         layout = QHBoxLayout()
-        # layout.setAlignment(Qt.AlignCenter | Qt.AlignBottom)
         self.pixLabel = QLabel()
         self.isPrimeIcon = QPixmap((f'{pathlib.Path(__file__).parent.absolute()}/assets/thumb_up.png'))
         self.isNotPrimeIcon = QPixmap((f'{pathlib.Path(__file__).parent.absolute()}/assets/thumb_down.png'))

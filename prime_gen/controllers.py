@@ -160,8 +160,6 @@ class PrimeGenCtrl:
                 self._view.isPrime.pixLabel.setPixmap(self._view.isPrime.isNotPrimeIcon)
                 self._view.isPrime.pixLabel.resize(self._view.isPrime.isNotPrimeIcon.width(), self._view.isPrime.isNotPrimeIcon.height())
                 self._view.isPrime.isPrimeText.setText("Is Not Prime!")
-        else:
-            self._view.isPrime.isPrimeText.setText("Enter A Number")
     
     def _clearIcon(self):
         """
