@@ -59,7 +59,7 @@ class birthday_Ui(QtWidgets.QWidget):
             elif int(self.inputYear.text()) > self.yearLimit:
                 self.inputYear.setText(str(self.yearLimit))
         
-        # run checks only if there's a value for year
+        # run checks only if there's a value for day
         if self.inputDay.text():
             if int(self.inputDay.text()) <= 0:
                 self.inputDay.setText("")
@@ -82,8 +82,9 @@ class birthday_Ui(QtWidgets.QWidget):
                                 self.inputDay.setText("29")
                             elif int(self.inputYear.text()) % 4 != 0 and int(self.inputDay.text()) > 28:
                                 self.inputDay.setText("28")
-                        except ValueError:
-                            # assume 28 days
+
+                        except ValueError: 
+                            # no year input, assume 28 days
                             if int(self.inputDay.text()) > 28:
                                 self.inputDay.setText("28")
                     
@@ -93,11 +94,12 @@ class birthday_Ui(QtWidgets.QWidget):
                             self.inputDay.setText("30")
                 
                 except ValueError:
-                    # assume 31 days
+                    # no month input, assume 31 days
                     if int(self.inputDay.text()) > 31:
                             self.inputDay.setText("31")
         
-        # check to see if date is past todays date
+        # check to see if date is past today's date
+        # only check if all three fields have input
         if self.inputDay.text() and self.inputMonth.text() and self.inputYear.text():
             if date(int(self.inputYear.text()), int(self.inputMonth.text()), int(self.inputDay.text())) > date.today():
                 self.inputDay.setText(str(date.today().day))
@@ -131,7 +133,6 @@ class birthday_Ui(QtWidgets.QWidget):
                 return str(get_months(c_month, c_day, c_year))
             elif combo_input == 'Days':
                 return str(get_days(c_month, c_day, c_year))
-
         except ValueError:
             return "Invalid"
 
