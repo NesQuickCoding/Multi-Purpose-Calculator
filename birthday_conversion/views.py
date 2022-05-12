@@ -67,8 +67,9 @@ class birthday_Ui(QtWidgets.QWidget):
                 # using try/except value error in case month does not have input
                 try:
                     # check limit if month as 31 days
-                    if int(self.inputMonth.text()) in [1, 3, 5, 7, 8, 10, 12] and int(self.inputDay.text()) > 31:
-                        self.inputDay.setText("31")
+                    if int(self.inputMonth.text()) in [1, 3, 5, 7, 8, 10, 12]:
+                        if int(self.inputDay.text()) > 31:
+                            self.inputDay.setText("31")
                     
                     # check for limit for feburary
                     elif int(self.inputMonth.text()) == 2:
