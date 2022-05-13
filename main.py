@@ -1,5 +1,4 @@
 import sys
-
 from PyQt5.QtWidgets import QApplication, QHBoxLayout, QWidget, QMainWindow, QStackedWidget
 from PyQt5 import QtGui
 
@@ -34,15 +33,35 @@ DROPBOX_MENU = [
 ]
 
 class SecCalc(QStackedWidget):
-    """Initialize the secondary calculator and use a layout manager.
-     Set the secondary calc windows(right-side calc) and choose window with a dropdown menu.
+    """
+    Secondary calc widget display and handler. Controls which widget to render based 
+    on MainCalcUI's combobox current index value.
 
-    Args:
-        QStackedWidget (Widget): layout manager for secondary calc window
+    Inhereits all methods and attributes from QStackedWidget
+
+    Attributes
+    ----------
+    option : {"QWidget's Name", QWidget}
+        Stores QWidget options for secondary display, including their name and
+        reference to their class.
+    
+    Methods
+    -------
+    secCalcDisplay(i):
+        Sets the index for the corresponding widget to display
     """
     def __init__(self):
-        """Initialize all of extra views from the drop down menu.
-         These are the extra views shown on the right hand side.
+        """
+        Initializes the widget, and list from DROPBOX_MENU
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        SecCalc
+            Newly constructed widget
         """
         super().__init__()
         self.setFixedSize(425, 400)
@@ -52,34 +71,55 @@ class SecCalc(QStackedWidget):
             self.addWidget(self.option[QWidgetObject[1].__name__])
     
     def secCalcDisplay(self, i):
-        """Set currently displayed view on the right from the drop down menu.
+        """
+        Changes which Widget to render
 
-        Args:
-            i (int): Index in the dropdown for which view should show on the right.
+        Parameters
+        ----------
+        i : int
+            index of selected widget
+
+        Returns
+        -------
+        None
         """
         self.setCurrentIndex(i)
 
 class MultiCalcWindow(QMainWindow):
-    """Create alleither <property name="styleSheet">
-       <string notr="true">QPushButton{
-    background-color: black;
-	color: lime;
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: lime;
-}
+    """
+    Primary Widget for App. Initializes Window and Main and Sec Calc Widgets.
+    Loads stylesheet for entire app. 
 
-QPushButton:pressed{
-   background-color : green;
-}</string>
-      </property>
+    Inhereits all methods and attributes from QMainWindow
 
-    Args:
-        QMainWindow (_type_): _description_
+    Attributes
+    ----------
+    generalLayout : QHBoxWidget
+        stores the layout of the main
+    _centralWidget : QWidget
+        Contains central widget bound to self
+    mainCalc : MainCalcUI
+        Main Calc Widget
+    secCalc : SecCalc
+        Sec Calc Widget
+    
+    Methods
+    -------
+    None
     """
     def __init__(self):
-        """Set up properties for the main PyQt5 window.
+        """
+        Initilizer for App. Sets window size, title, loads style sheet,
+        and initializes Main Calc and Sec Calc widgets
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        MultiCalcWindow
+            Main application
         """
         super().__init__()
         
@@ -99,6 +139,18 @@ QPushButton:pressed{
         self.generalLayout.addWidget(self.secCalc)
 
 def main():
+    """
+    Main drivers that initializes PyQt5 application, creates a the calculator,
+    as well as controllers for specific widgets.
+
+    Parameters
+    ----------
+    None
+
+    Returns
+    -------
+    None
+    """
     multicalc = QApplication(sys.argv)
     view = MultiCalcWindow()
     # Setting application icon

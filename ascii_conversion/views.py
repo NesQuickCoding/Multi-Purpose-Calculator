@@ -4,7 +4,7 @@ from PyQt5.QtCore import QRegExp
 
 class ascii_Ui(QtWidgets.QWidget):
     """
-    Creates a QWidget that converts between a decimal, hexidecimal, and ASCII value
+    Creates a QWidget that converts between a decimal, hexidecimal, and ASCII character value
     Also creates signals, and conversion calculations
 
     Inhereits all methods and attributes from QWidget
@@ -16,12 +16,12 @@ class ascii_Ui(QtWidgets.QWidget):
     input : QLineEdit
         Input text field
     validators : [QValidators]
-        Used to determine which validations to apply to the input based on
+        Used to determine which validations to apply on input, based on the
         radioButtons selection
     output : QLineEdit
         Output text field
-    radioButtons = [QRadioButtons]
-        A list of all the radiobuttons use.
+    radioButtons : [QRadioButtons]
+        A list containing all the radiobuttons in the widget.
         0 - Char (Input)
         1 - Decimal (Input)
         2 - Hexadecimal (Input)
@@ -32,19 +32,21 @@ class ascii_Ui(QtWidgets.QWidget):
     Methods
     -------
     _createValidators():
-        Creates a list of three validators for chr, int, and hex input
+        Creates a list of three different validators for chr, int, and hex input
     _rangeValidator():
-        Sets roof range input for dec and hex.
+        Sets roof range input for dec and hex. Changes to the input text if input value
+        exceeds the range for chr() (1,114,111). Called every time input changes.
     _setValidators():
-        Signal handler to change validation method when radiobuttons input changes
+        Signal handler to change validation method when radiobuttons input selection changes
     printButtonPressed():
-        Sends input to convert_ascii then sets the text of output to the results
+        Sends input to convert_ascii then sets the results to output
     convert_ascii(val, input_unit, output_unit):
         Take the string of val and converts from input_unit to output_unit
     """
     def __init__(self):
         """
-        Initializes the ascii_Ui, including it's layout from basic.ui and attributes
+        Initializes the ascii_Ui, including it's layout from basic.ui, attributes, and
+        signal connections
 
         Parameters
         ----------
@@ -81,7 +83,7 @@ class ascii_Ui(QtWidgets.QWidget):
 
     def _createValidators(self):
         """
-        Creates a list of three validators for chr, int, and hex input
+        Creates a list of three different validators for chr, int, and hex input
 
         Parameters
         ----------
@@ -105,17 +107,14 @@ class ascii_Ui(QtWidgets.QWidget):
     def _rangeValidator(self):
         """
         Sets roof range input for dec and hex. Changes to the input text if input value
-        exceeds the range for chr() (1,114,111)
+        exceeds the range for chr() (1,114,111). Called every time input changes.
+
+        If a ValueError occurs, likely for trying to int type cast an empty string,
+        does no operation.
 
         Parameters
         ----------
         None
-
-        Raises
-        ------
-        ValueError
-            If during type conversion to Int the value (usually an empty string) raises
-            a ValueError
 
         Returns
         -------
@@ -136,7 +135,7 @@ class ascii_Ui(QtWidgets.QWidget):
 
     def _setValidators(self):
         """
-        Signal handler to change validation method when radiobuttons input changes
+        Signal handler to change validation method when radiobuttons input selection changes
 
         Parameters
         ----------
@@ -158,7 +157,7 @@ class ascii_Ui(QtWidgets.QWidget):
 
     def printButtonPressed(self):
         """
-        Sends input to convert_ascii then sets the text of output to the results
+        Sends input to convert_ascii then sets the results to output
 
         Parameters
         ----------
@@ -176,6 +175,9 @@ class ascii_Ui(QtWidgets.QWidget):
         """
         Take the string of val and converts from input_unit to output_unit
 
+        If at any point during the type conversions fail (ValueError), usually casting empty strings,
+        set output to "Invalid Input"
+
         Parameters
         ----------
         val : int, str
@@ -185,15 +187,11 @@ class ascii_Ui(QtWidgets.QWidget):
         output_unit : str
             The desired converted output
         
-        Raises
-        ------
-        ValueError
-            If at any point during the type conversions fail
-
         Returns
         -------
         int, str
-            Depends if converting to decimal or hexadecimal/char
+            Final conversion results.
+            Type depends if converting to decimal or hexadecimal/char.
         """
         try:
             if input_unit == 'C':

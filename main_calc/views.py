@@ -2,17 +2,53 @@ from PyQt5.QtWidgets import QGridLayout, QLineEdit, QPushButton, QComboBox, QVBo
 from PyQt5.QtCore import Qt, QRect
 
 class MainCalcUI(QWidget):
-    """Initialize main calculator window.
+    """
+    A QWidget that creates the interface widget of a standard calculator that performs
+    basic functions, such as add, subtract, divide, multiply, floor division, etc.
 
-    Args:
-        QWidget (module): base class for user UI objects to build off of.
+    Aside from the main calculator, also has a dropbox for a secondary calculator widget.
+
+    Inherits all methods and attributes from QWidget
+
+    Attributes
+    ----------
+    calcOutput : QLineEdit
+        Main calc display for expression building and evaluation output
+    calcDropBox : QComboBox
+        Secondary calc option menu
+    buttons : [QPushButton]
+        A list of QPushButton objects, each one a button for the calculator
+
+    Methods
+    -------
+    _createCalcOutput():
+        Creates QLineEdit object for calc output display
+    _createDropBox(dropMenu):
+        Creates QComboBox with list of dropMenu options
+    _createButtons():
+        Creates buttons in QGridLayout
+    setCalcOutput(text):
+        Changes calcOutput to text argument
+    getCalcOutput():
+        Returns calcOutput text value
+    backSpaceCalcOutput():
+        Removes last input character in expression
+    clearCalcOutput():
+        Sets calcOutput to "0"
     """
     def __init__(self, dropMenu):
-        """Initialize the calculator, set widgets for basic arithmetic, then connect
-        the other views to the main window through a dropdown menu.
+        """
+        Initializer for MainCalcUI. Creates all QWidgets and layouts.
 
-        Args:
-            dropMenu (comboBox): drop down menu for switching windows on the right-hand side.
+        Parameters
+        ----------
+        dropMenu : [str]
+            List of different widgets for the secondary calc display
+
+        Returns
+        -------
+        MainCalcUI
+            Initalized MainCalcUI
         """
         super().__init__()
         self.setFixedSize(400, 400)
@@ -26,10 +62,17 @@ class MainCalcUI(QWidget):
         self.setLayout(layout)
 
     def _createCalcOutput(self):
-        """Create the output box for expression and answer to use.
+        """
+        Creates a QLineEdit object for calcOutput
 
-        Returns:
-            LineEdit: widget for writing and recieving text.
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        QLineEdit
+            calcOutput with alignment defaults
         """
         output = QLineEdit("0")
         output.setAlignment(Qt.AlignRight)
@@ -38,13 +81,18 @@ class MainCalcUI(QWidget):
         return output       
 
     def _createDropBox(self, dropMenu):
-        """Add items from drop down menu to main calc window
+        """
+        Creates a QComboBox for calcDropBox
 
-        Args:
-            dropMenu (list): List of menu items and widgets to connect for secondary calc.
+        Parameters
+        ----------
+        dropMenu: [str]
+            List of possible secondary calc widgets to display
 
-        Returns:
-            ComboBox: Drop down menu
+        Returns
+        -------
+        QComboBox
+            Initialized and set up QComboBox for calcDropBox
         """
         comboBox = QComboBox()
         comboBox.setObjectName("calcDropBox")
@@ -53,10 +101,18 @@ class MainCalcUI(QWidget):
         return comboBox
 
     def _createButtons(self):
-        """Create views for buttons of main calculator
+        """
+        Creates a all the QPushButtons for the calculator for expression
+        building
 
-        Returns:
-            button_layout: grid containing all of the buttons necessary for the main calc.
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        QGridLayout
+            Initialized placement setup for QPushButtons
         """
         self.buttons = {}
         buttonsLayout = QGridLayout()
@@ -77,23 +133,47 @@ class MainCalcUI(QWidget):
         return buttonsLayout
 
     def setCalcOutput(self, text):
-        """Set the textBox with the given answer from evaluating.
+        """
+        Sets calcOutput text display
 
-        Args:
-            text (str): answer to calculation
+        Parameters
+        ----------
+        text : str
+            New text to change to
+
+        Returns
+        -------
+        None
         """
         self.calcOutput.setText(text)
 
     def getCalcOutput(self):
-        """Return the given text inside of the textbox
+        """
+        Returns calcOutput's text value
 
-        Returns:
-            Str: answer to evaluated expression 
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        str
+            Current calcOutput's text value
         """
         return self.calcOutput.text()
 
     def backSpaceCalcOutput(self):
-        """Reset to zero when output is clear, or else remove the last character from the str.
+        """
+        Reset calcOutput's text to "0" when output is empty.
+        Else removes the last character from the str.
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        None
         """
         # if back space would clear output, reset to zero
         if len(self.getCalcOutput()[0:-1]) == 0:
@@ -103,6 +183,16 @@ class MainCalcUI(QWidget):
             self.setCalcOutput(str(self.getCalcOutput())[0:-1])
 
     def clearCalcOutput(self):
-        """Clear calculator output box
+        """
+        Reset calcOutput's text to "0" when output is empty.
+        Else removes the last character from the str.
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        None
         """
         self.setCalcOutput("0")

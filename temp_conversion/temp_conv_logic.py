@@ -2,13 +2,47 @@ from PyQt5 import QtWidgets, uic
 from PyQt5.QtGui import QDoubleValidator
 
 class temp_Ui(QtWidgets.QWidget):
-    """ Load in the temperature conversion UI, then connect the logic for the conversion.
+    """
+    Creates a QWidget that performs temperature conversion between Fahrenheit, Celcius,
+    and Kelvin.
 
-    Args:
-        QtWidgets (module): base class for user interface objects.
+    Inhereits all methods and attributes from QWidget
+
+    Attributes
+    ----------
+    button : QPushButton
+        Submit button to initiate conversion
+    input : QLineEdit
+        Input text field
+    radioButtons : [QRadioButtons]
+        A list containing all the radiobuttons in the widget.
+        0 - Fahrenheit (Input)
+        1 - Celcius (Input)
+        2 - Kelvin (Input)
+        3 - Fahrenheir (Output)
+        4 - Celcius (Output)
+        5 - Kelvin (Output)
+    
+    Methods
+    -------
+    enterButtonPressed():
+        Send input value and input and output base to convert_temp when pressed
+    convert_temp(val, original_unit, unit_to_convert_to):
+        Converts val from original_unit to unit_to_convert_to
     """
     def __init__(self):
-        """Load in the UI file from Qt creator, then find the UI components we need to connect logic to.
+        """
+        Initializes the UI, including loading the widgets from its ui file, and connecting
+        signals.
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        temp_Ui
+            Newly constructed widget
         """
         super(temp_Ui, self).__init__()
         uic.loadUi('../Graphical-App/temp_conversion/temp_conv.ui', self)
@@ -28,8 +62,17 @@ class temp_Ui(QtWidgets.QWidget):
         self.show()
 
     def enterButtonPressed(self):
-        """Connect the UI to process the temperature conversion when hitting the enter button. Display the answer
-        in the text box. 
+        """
+        If text field is filled, sends input value and input and output base 
+        to convert_temp when pressed, then takes results and outputs them
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        None
         """
         # checks to see if input is not empty to prevent ValueError
         if self.input.text():
@@ -40,15 +83,22 @@ class temp_Ui(QtWidgets.QWidget):
         
 
     def convert_temp(self, val, original_unit, unit_to_convert_to):
-        """Convert the temperature given by the user.
+        """
+        Converts val from original_unit to unit_to_convert_to
 
-        Args:
-            val (float): the temperature value to convert
-            original_unit (str): original temperature unit
-            unit_to_convert_to (str): temperature unit to convert to
+        Parameters
+        ----------
+        val : float
+            the input temperature value
+        original_unit : str
+            input temperature unit
+        unit_to_convert_to : str
+            output temperature unit to convert to
 
-        Returns:
-            float: converted temperature value
+        Returns
+        -------
+        float
+            converted temperature value
         """
         fahren_to_celcius = (val - 32)/1.8
         celcius_to_fahren = (val * 1.8) + 32

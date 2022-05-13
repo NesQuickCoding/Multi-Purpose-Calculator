@@ -13,82 +13,53 @@ https://stackoverflow.com/questions/68997443/calculate-age-in-day-month-and-year
 
 class birthday_Ui(QtWidgets.QWidget):
     """
-        Creates a QWidget that converts a valid birthdate / date to years, days, or months
-        based on users combo box choice.
+    Creates a QWidget where the user can put in a previous date (such as a birthday), and see how
+    many years, months, or days have elapsed since then.
 
-        Inhereits all methods and attributes from QWidget
+    Inhereits all methods and attributes from QWidget
 
-        Attributes
-        ----------
-         clearButton:
-            clears input and output text fields.
-         enterButton:
-            button to initiate the converison.
-        input : QLineEdit
-            lineEdit_Day:
-                for int input representing a calendar 1 or 2 digit day
-                ranging from 1 to 31 based on months.
+    Attributes
+    ----------
+    button : QPushButton
+        Used to submit inputs
+    inputMonth : QLineEdit
+        Line input field for numerical month (1-12)
+    inputDay : QLineEdit
+        Line input field for numerical day (1-31)
+    inputYear : QLineEdit
+        Line input field for numerical year (1-yearLimit)
+    yearLimit : int
+        Retrieves and stores the current year
+    lineEdit_Year : Qline
+        for int input having 4 digits representing years.
 
-            lineEdit_Month:
-                for int input representing a 1 or 2 digit number
-                for months ranging from 1 to 12.
-
-            lineEdit_Year:
-                for int input having 4 digits representing years.
-
-            Input text field
-                QComboBox
-            User input based on listed items (Years, Months, Days)
-
-        validators : [QValidators]
-            Used to determine which validations to apply to the input based
-            on users input.
-        output : QLineEdit
-            Output text field
-        comboBox = [QComboBox]
-            A list of all the box options.
-            0 - Years (Input)
-            1 - Months (Input)
-            2 - Days (Input)
-
-        Methods
-        -------
-
-        enterButtonPressed():
-            Sends a list input that contains [month,day,year] from user input
-            to get_birthday then sets the text of output to the results
-
-        def get_birthday(self, combo_input, calendar_input):
-            Takes in  a list and a choice input from the combo box for the type of conversion the user wants
-            Years, Months, Days and returns the conversion in text.
-
-        def get_years(month,day,year):
-            Takes in a tuple of int values that represents a birthdate and converts it to
-            years based on present day.
-
-        def get_days(month,day,year):
-            Takes in a tuple of int values that represents a birthdate and converts it to
-            days based on present day.
-
-        def get_months(month,day,year):
-            Takes in a tuple of int values that represents a birthdate and converts it to
-            months based on present day.
-
-
-        """
+    Methods
+    -------
+    _inputCheck():
+        Performs a date validation check for the input fields every time the
+        user changes the input. Performs limit checks on fields based on
+        month and year.
+    enterButtonPressed():
+        Sends a list input that contains [month,day,year] from user input
+        to get_birthday then sets the text of output to the results.
+    get_birthday(combo_input, calendar_input):
+        Takes in a list of uuser's date input, creates a date object with it,
+        then looks at the combo box's type selection and sends to appropriate
+        convert function.
+    """
     def __init__(self):
         """
-          Initializes the birthday_Ui, including it's layout from basic.ui and attributes
+        Initializes the birthday_Ui, including it's layout from basic.ui and attributes
 
-          Parameters
-          ----------
-          None
+        Parameters
+        ----------
+        None
 
-          Returns
-          -------
-          birthday_Ui
-              Newly constructed widget
-          """
+        Returns
+        -------
+        birthday_Ui
+            Newly constructed widget
+        """
         super(birthday_Ui, self).__init__()
         uic.loadUi('../Graphical-App/birthday_conversion/basic.ui', self)
 
@@ -119,6 +90,22 @@ class birthday_Ui(QtWidgets.QWidget):
         self.inputYear.textChanged.connect(self._inputCheck)
 
     def _inputCheck(self):
+        """
+        Performs a date validation check for the input fields every time the
+        user changes the input. Performs limit checks on fields based on
+        month and year.
+
+        If a ValueError occurs during input checks for inputDays, likely because other
+        fields are blank, the limit falls on certain defaults like 31 or 28.
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        None
+        """
         # run checks only if there's a value for month
         if self.inputMonth.text():
             if int(self.inputMonth.text()) <= 0:
@@ -183,17 +170,20 @@ class birthday_Ui(QtWidgets.QWidget):
         
     def enterButtonPressed(self):
         """
-         Sends a list input that contains [month,day,year] from user input
-         to get_birthday then sets the text of output to the results
+        Sends a list input that contains [month,day,year] from user input
+        to get_birthday then sets the text of output to the results.
 
-         Parameters
-         ----------
-         None
+        If a ValueError occurs, likely if certain input fields are empty,
+        submission is ignored.
 
-         Returns
-         -------
-         None
-         """
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        None
+        """
         # try/except to ignore missing input fields
         try:
             self.lineEdit_Output.clear()
@@ -209,26 +199,23 @@ class birthday_Ui(QtWidgets.QWidget):
 
     def get_birthday(self, combo_input, calendar_input):
         """
-        Takes in  a list and a choice input from the combo box for the type of conversion the user wants
+        Takes in a list and a choice input from the combo box for the type of conversion the user wants
         Years, Months, Days and returns the conversion in text.
+
+        If the user entered a date that is outside of a valid date range (ValueError),
+        sets output to "Invalid".
 
         Parameters
         ----------
-
-        combo_input: list, int
-            Month, Day, and Year input value to convert
-        calender_input:
+        combo_input : str
             Input choice from the combo box depending on the conversion user picks.
-
-        Raises
-        ------
-         ValueError
-            If the user entered a date that is considered invalid.
+        calender_input : [int]
+            List of numeric date inputs from the user            
 
         Returns
         -------
-            str that represents the int converison
-
+        str 
+            Elapsed time results in desired units, as a string
         """
         try:
             c_month = calendar_input[0]
@@ -247,21 +234,21 @@ class birthday_Ui(QtWidgets.QWidget):
 
 def get_years(month,day,year):
     """
-    Takes in a tuple of int values that represents a birthdate and converts it to
-    years based on present day.
+    Takes in three int values that represents a specific day (such as a birthday)
+    and calculates elapsed years based on today.
 
     Parameters
     ----------
     month : int
-        Input value to convert
-    day:   int
-        Input value to convert
-    year: int
-        Input value to convert
-
+        Numeric month value (1-12)
+    day : int
+        Numeric day value (1-31)
+    year : int
+        Numeric year value (1-present year)
     Returns
     -------
-        int value
+    int
+        Elapsed years
     """
     today = date.today()
     dob = date(year, month, day)
@@ -272,21 +259,21 @@ def get_years(month,day,year):
 
 def get_days(month,day,year):
     """
-    Takes in a tuple of int values that represents a birthdate and converts it to
-    days based on present day.
+    Takes in three int values that represents a specific day (such as a birthday)
+    and calculates elapsed days based on today.
 
     Parameters
     ----------
     month : int
-        Input value to convert
-    day:   int
-        Input value to convert
-    year: int
-        Input value to convert
-
+        Numeric month value (1-12)
+    day : int
+        Numeric day value (1-31)
+    year : int
+        Numeric year value (1-present year)
     Returns
     -------
-        int value
+    int
+        Elapsed days
     """
     dob = date(year, month, day)
     today = date.today()
@@ -296,21 +283,21 @@ def get_days(month,day,year):
 
 def get_months(month,day,year):
     """
-    Takes in a tuple of int values that represents a birthdate and converts it to
-    months based on present day.
+    Takes in three int values that represents a specific day (such as a birthday)
+    and calculates elapsed months based on today.
 
     Parameters
     ----------
     month : int
-        Input value to convert
-    day:   int
-        Input value to convert
-    year: int
-        Input value to convert
-
+        Numeric month value (1-12)
+    day : int
+        Numeric day value (1-31)
+    year : int
+        Numeric year value (1-present year)
     Returns
     -------
-        int value
+    int
+        Elapsed months
     """
     dob = date(year, month, day)
     today = date.today()

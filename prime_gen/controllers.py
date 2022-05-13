@@ -176,7 +176,6 @@ class PrimeGenCtrl:
         None
         """
         self._view.isPrime.isPrimeIcon.setFixedSize(0, 0)
-        # self._view.isPrime.isPrimeIcon.renderer().load('')
         self._view.isPrime.isPrimeText.setText('')
 
     def _connectSignals(self):

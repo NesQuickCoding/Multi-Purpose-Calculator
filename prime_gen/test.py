@@ -17,8 +17,8 @@ class TestWindow(QMainWindow):
     ----------
     generalLayout : QVBoxLayout
         stores the layout of the main
-    _centralWidget
-        Contains central widget
+    _centralWidget : QWidget
+        Contains central widget bound to self
     primeGenUI : PrimeGenUI
         initializes and stores PrimeGenUI
 

@@ -2,14 +2,49 @@ from functools import partial
 import re
 
 class MainCalcCtrl:
-    """Main arithmetic calculator
+    """
+    Handles the logic and singal connections for MainCalcUI. Retrieves user input to
+    perform operations or send to other functions for evaluation.
+
+    Also controls the secondary calculator widget display
+
+    Attributes
+    ----------
+    _evaluate : function
+        Reference to evaluation function
+    _view : MainCalcUI
+        Reference to MainCalcUI and it's widgets
+    _evalPressed : Boolean
+        Handled submission state. Default is False.
+
+    Methods
+    -------
+    _calculateResult():
+        Sends expression built so far to evaluation function.
+    _buildExpression(keyInput):
+        Handler for any building expression via the calculator buttons.
+        Dictates certain behavior to optimize use (such as not inputing
+        consecutive operators)
+    _changeSecCalc():
+        Changes sec calc display based on combo box index
+    _connectSignals():
+        Connects buttons and output to their respective handlers
     """
     def __init__(self, model, view):
-        """Connect logic from the model to the view for the main calc. 
+        """
+        Initilizer for MainCalcCtrl. Connects signals to their handlers.
 
-        Args:
-            model : backend logic for the UI
-            view : UI for the calculator
+        Parameters
+        ----------
+        model : function
+            Used to reference function for evaluation
+        view : MainCalcUI
+            Reference to ManCalcUI and it's UI widgets.
+
+        Returns
+        -------
+        MainCalcCtrl
+            Control object for MainCalcUI
         """
         self._evaluate = model
         self._view = view
@@ -17,16 +52,34 @@ class MainCalcCtrl:
         self._evalPressed = False
 
     def _calculateResult(self):
-        """Calculate basic arithmetic  
+        """
+        Sets _evalPressed to True and sends built expression to be evaluated
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        None
         """
         self._evalPressed = True
         self._view.mainCalc.setCalcOutput(self._evaluate(expression=self._view.mainCalc.getCalcOutput()))
 
     def _buildExpression(self, keyInput):
-        """Build the expression we plan on evaluating with the calculator
+        """
+        Handler for MainCalcUI's button to build expression. Performs certain input handling:
+        - Reset expression if previous result was "ERROR"
+        - Proper decimal point input
 
-        Args:
-            keyInput (key): current key you are pressing to build expressions with
+        Parameters
+        ----------
+        keyInput : str
+            String of button pressed
+
+        Returns
+        -------
+        None
         """
         operators = ["+", "-", "*", "/", "%", "**", "//", "."]
         numbers = map(str, range(0, 10))
@@ -62,12 +115,30 @@ class MainCalcCtrl:
         self._evalPressed = False
 
     def _changeSecCalc(self):
-        """Change the display of which view is showing for the second (right-side) calculator.
+        """
+        Sets the widget to be used for the secondary display.
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        None
         """
         self._view.secCalc.secCalcDisplay(self._view.mainCalc.calcDropBox.currentIndex())
 
     def _connectSignals(self):
-        """Connect all of the functionality from the model to the view.
+        """
+        Connects the buttons and output signals to their proper handlers.
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        None
         """
         for buttonText, button in self._view.mainCalc.buttons.items():
             if buttonText not in ["=", "C", "BS"]:
