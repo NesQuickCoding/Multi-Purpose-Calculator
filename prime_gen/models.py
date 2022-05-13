@@ -97,8 +97,8 @@ def is_prime(n : int):
     """
     Determines if a number is prime or not
     
-    Parameters:
-    -----------
+    Parameters
+    ----------
     n : int
         Precondition, n must be a positive integer
         Number to test if prime
