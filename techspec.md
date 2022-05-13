@@ -3,7 +3,7 @@
 ### From main
 * [Class MultiCalcWindow](#class-multicalcwindow)
 
-	* [MultiCalcWindow.\_\_init\_\_(self)](#multicalcwindowinitself)
+	* [MultiCalcWindow.\_\_init\_\_(self)](#multicalcwindow\\init\\self)
 
 * [Class SecCalc](#class-seccalc)
 
@@ -12,41 +12,6 @@
 	* [SecCalc.secCalcDisplay(self, i)](#seccalcseccalcdisplayself-i)
 
 * [main()](#main)
-
-
-****************************************************
-# From main
-
-
-****************************************************
-## __class MultiCalcWindow__
-Primary Widget for App. Initializes Window and Main and Sec Calc Widgets.
-Loads stylesheet for entire app. 
-
-Inhereits all methods and attributes from QMainWindow
-
-Attributes
-----------
-__generalLayout : QHBoxWidget__
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stores the layout of the main
-
-___centralWidget : QWidget__
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contains central widget bound to self
-
-__mainCalc : MainCalcUI__
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Main Calc Widget
-
-__secCalc : SecCalc__
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sec Calc Widget
-
-Methods
--------
-__None__
-
 
 
 ****************************************************
