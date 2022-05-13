@@ -6,7 +6,7 @@ from views import MetricConvUI
 import models
 from controllers import MetricConvCtrl
 
-class TestWindow(QMainWindow):
+class TestWindowMetricConv(QMainWindow):
     """
     Constructs a QMainWindow to create and append to it's window a MetricConvUI
     widget for testing purposes
@@ -51,7 +51,7 @@ class TestWindow(QMainWindow):
         self.metricConvUI = MetricConvUI()
         self.generalLayout.addWidget(self.metricConvUI)
 
-def main():
+def main_test_metric_conv():
     """
     Main drivers that initializes PyQt5 application, creates a TestWindow widget,
     and 4 MetricConvCtrl objects to connect to four different MetricConvWidgets within
@@ -66,7 +66,7 @@ def main():
     None
     """
     baseconv = QApplication(sys.argv)
-    view = TestWindow()
+    view = TestWindowMetricConv()
     view.show()
     MetricConvCtrl(view=view.metricConvUI.lengthView, model=models.length_conversion)
     MetricConvCtrl(view=view.metricConvUI.weightView, model=models.weight_conversion)
@@ -75,4 +75,4 @@ def main():
     sys.exit(baseconv.exec())
 
 if __name__ == '__main__':
-    main()
+    main_test_metric_conv()
