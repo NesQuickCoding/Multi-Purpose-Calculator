@@ -32,13 +32,13 @@ class BaseConvCtrl:
     _setNegate():
         Toggles negation of a number and changed every textbox. Calls conversion and format
         functions for every base, and sends the results to their respective outputs.
-    _connectTextSignals
+    _connectTextSignals():
         Connects textbox textHasChanged signals.
-    _disconnectTextSignals
+    _disconnectTextSignals():
         Disconnects textbox textHasChanged signals.
-    _setAllTextBoxes(decOutput, hexOutput, binOutput)
+    _setAllTextBoxes(decOutput, hexOutput, binOutput):
         Disables textbox signals, sets the text, then re-enables them.
-    _connectBitSignals()
+    _connectBitSignals():
         Connects the dropbox and radio buttons to handle changes in their state.
     """
     def __init__(self, view, model):

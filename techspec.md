@@ -777,19 +777,19 @@ ___setNegate():__
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;functions for every base, and sends the results to their respective outputs.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_connectTextSignals
+___connectTextSignals():__
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Connects textbox textHasChanged signals.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_disconnectTextSignals
+___disconnectTextSignals():__
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Disconnects textbox textHasChanged signals.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_setAllTextBoxes(decOutput, hexOutput, binOutput)
+___setAllTextBoxes(decOutput, hexOutput, binOutput):__
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Disables textbox signals, sets the text, then re-enables them.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_connectBitSignals()
+___connectBitSignals():__
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Connects the dropbox and radio buttons to handle changes in their state.
 
