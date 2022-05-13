@@ -65,7 +65,7 @@ def main_test_prime_gen():
     None
     """
     primegen = QApplication(sys.argv)
-    view = TestWindow()
+    view = TestWindowPrimeGen()
     view.show()
     PrimeGenCtrl(view=view.primeGenUI, model=models)
     sys.exit(primegen.exec())
