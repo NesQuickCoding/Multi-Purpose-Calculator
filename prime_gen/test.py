@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import QApplication, QVBoxLayout, QWidget, QMainWindow
 # import models
 # from controllers import PrimeGenCtrl
 
-class TestWindow(QMainWindow):
+class TestWindowPrimeGen(QMainWindow):
     """
     Constructs a QMainWindow to create and append to it's window a PrimeGenUI widget
     for testing purposes
@@ -50,7 +50,7 @@ class TestWindow(QMainWindow):
         self.primeGenUI = PrimeGenUI()
         self.generalLayout.addWidget(self.primeGenUI)
 
-def main():
+def main_test_prime_gen():
     """
     Main drivers that initializes PyQt5 application, creates a TestWindow widget,
     and PrimeGenCtrl to connect to the primeGenUI in the main view, as well as sending
@@ -71,4 +71,4 @@ def main():
     sys.exit(primegen.exec())
 
 if __name__ == '__main__':
-    main()
+    main_test_prime_gen()
