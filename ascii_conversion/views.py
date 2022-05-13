@@ -7,7 +7,7 @@ class ascii_Ui(QtWidgets.QWidget):
     Creates a QWidget that converts between a decimal, hexidecimal, and ASCII character value
     Also creates signals, and conversion calculations
 
-    Inhereits all methods and attributes from QWidget
+    Inherits all methods and attributes from QWidget
 
     Attributes
     ----------

@@ -16,7 +16,7 @@ class birthday_Ui(QtWidgets.QWidget):
     Creates a QWidget where the user can put in a previous date (such as a birthday), and see how
     many years, months, or days have elapsed since then.
 
-    Inhereits all methods and attributes from QWidget
+    Inherits all methods and attributes from QWidget
 
     Attributes
     ----------

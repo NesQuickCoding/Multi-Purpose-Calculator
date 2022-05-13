@@ -534,7 +534,7 @@ __None__
 Creates a QWidget that converts between a decimal, hexidecimal, and ASCII character value
 Also creates signals, and conversion calculations
 
-Inhereits all methods and attributes from QWidget
+Inherits all methods and attributes from QWidget
 
 Attributes
 ----------
@@ -1604,7 +1604,7 @@ __None__
 Creates a QWidget where the user can put in a previous date (such as a birthday), and see how
 many years, months, or days have elapsed since then.
 
-Inhereits all methods and attributes from QWidget
+Inherits all methods and attributes from QWidget
 
 Attributes
 ----------
@@ -4401,7 +4401,7 @@ __None__
 Creates a QWidget that performs temperature conversion between Fahrenheit, Celcius,
 and Kelvin.
 
-Inhereits all methods and attributes from QWidget
+Inherits all methods and attributes from QWidget
 
 Attributes
 ----------
