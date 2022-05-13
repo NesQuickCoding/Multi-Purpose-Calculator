@@ -14,16 +14,26 @@ operations = {
 }
 
 def astTransversal(astObj):
-    """Abstract synthax grammar checker, checking for constants, unary, or binary operations.
+    """
+    Abstract syntax tree transversal for basic math/eval expressions.
+    Recursive function that calculates an expression based on end nodes,
+    then returns its value for higher nodes to calcuate their expressions.
 
-    Args:
-        astObj (_type_): _description_
+    Parameters
+    ----------
+    astObj : Abstract syntax tree object
+        Expected ast.Constant, ast.BinOp, and ast.UnaryOp types
 
-    Raises:
-        TypeError: raise error if not a constant, binary operator, or unary op.
+    Raises
+    ------
+    TypeError
+        If astObj is not a constant, binOp or unaryOp, thus not
+        a basic eval math expression
 
-    Returns:
-        result: the code with the correct grammar rules
+    Returns
+    -------
+    int, float
+        Final evaluated expression
     """
     if isinstance(astObj, ast.Constant):
         return astObj.n
@@ -35,13 +45,22 @@ def astTransversal(astObj):
         raise TypeError(astObj)
 
 def evaluateExpression(expression):
-    """Evaluate the expression typed into the calculator.
+    """
+    Driver for abstract syntax tree transversal for basic math/eval expressions.
+    ast.parses expression with eval mode, sending it's body to astTransversal
+    for safe math evaluation.
 
-    Args:
-        expression (str): Expression given to evaluate
+    If SyntaxErorr, ZeroDivisionError, or TypeError, sends results as "ERROR"
 
-    Returns:
-        result (str): answer to the given expression
+    Parameters
+    ----------
+    express : str
+        Full math expression in str form
+
+    Returns
+    -------
+    str
+        Final evaluated expression
     """
     try:
         result = str(astTransversal(ast.parse(expression, mode='eval').body))
