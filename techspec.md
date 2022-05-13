@@ -3,7 +3,7 @@
 ### From main
 * [Class MultiCalcWindow](#class-multicalcwindow)
 
-	* [MultiCalcWindow.\_\_init\_\_(self)](#multicalcwindow\\init\\self)
+	* [MultiCalcWindow.\_\_init\_\_(self)](#__MultiCalcWindow.\_\_init\_\_(self)__)
 
 * [Class SecCalc](#class-seccalc)
 
