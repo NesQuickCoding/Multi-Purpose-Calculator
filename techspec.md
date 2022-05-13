@@ -20,11 +20,11 @@
 
 	* [ascii_Ui.\_\_init\_\_(self)](#asciiuiinitself)
 
-	* [ascii_Ui._createValidators(self)](#asciiuicreatevalidatorsself)
+	* [ascii_Ui.\_createValidators(self)](#asciiuicreatevalidatorsself)
 
-	* [ascii_Ui._rangeValidator(self)](#asciiuirangevalidatorself)
+	* [ascii_Ui.\_rangeValidator(self)](#asciiuirangevalidatorself)
 
-	* [ascii_Ui._setValidators(self)](#asciiuisetvalidatorsself)
+	* [ascii_Ui.\_setValidators(self)](#asciiuisetvalidatorsself)
 
 	* [ascii_Ui.printButtonPressed(self)](#asciiuiprintbuttonpressedself)
 
@@ -37,23 +37,23 @@
 
 	* [BaseConvCtrl.\_\_init\_\_(self, view, model)](#baseconvctrlinitself-view-model)
 
-	* [BaseConvCtrl._decChanged(self)](#baseconvctrldecchangedself)
+	* [BaseConvCtrl.\_decChanged(self)](#baseconvctrldecchangedself)
 
-	* [BaseConvCtrl._hexChanged(self)](#baseconvctrlhexchangedself)
+	* [BaseConvCtrl.\_hexChanged(self)](#baseconvctrlhexchangedself)
 
-	* [BaseConvCtrl._binChanged(self)](#baseconvctrlbinchangedself)
+	* [BaseConvCtrl.\_binChanged(self)](#baseconvctrlbinchangedself)
 
-	* [BaseConvCtrl._setSigned(self)](#baseconvctrlsetsignedself)
+	* [BaseConvCtrl.\_setSigned(self)](#baseconvctrlsetsignedself)
 
-	* [BaseConvCtrl._setNegate(self)](#baseconvctrlsetnegateself)
+	* [BaseConvCtrl.\_setNegate(self)](#baseconvctrlsetnegateself)
 
-	* [BaseConvCtrl._connectTextSignals(self)](#baseconvctrlconnecttextsignalsself)
+	* [BaseConvCtrl.\_connectTextSignals(self)](#baseconvctrlconnecttextsignalsself)
 
-	* [BaseConvCtrl._disconnectTextSignals(self)](#baseconvctrldisconnecttextsignalsself)
+	* [BaseConvCtrl.\_disconnectTextSignals(self)](#baseconvctrldisconnecttextsignalsself)
 
-	* [BaseConvCtrl._setAllTextBoxes(self, decOutput, hexOutput, binOutput)](#baseconvctrlsetalltextboxesself-decoutput-hexoutput-binoutput)
+	* [BaseConvCtrl.\_setAllTextBoxes(self, decOutput, hexOutput, binOutput)](#baseconvctrlsetalltextboxesself-decoutput-hexoutput-binoutput)
 
-	* [BaseConvCtrl._connectBitSignals(self)](#baseconvctrlconnectbitsignalsself)
+	* [BaseConvCtrl.\_connectBitSignals(self)](#baseconvctrlconnectbitsignalsself)
 
 
 ****************************************************
@@ -83,7 +83,7 @@
 
 	* [BaseConvUI.\_\_init\_\_(self)](#baseconvuiinitself)
 
-	* [BaseConvUI._createBitLengthBox(self)](#baseconvuicreatebitlengthboxself)
+	* [BaseConvUI.\_createBitLengthBox(self)](#baseconvuicreatebitlengthboxself)
 
 * [Class BinBase](#class-binbase)
 
@@ -101,9 +101,9 @@
 
 	* [NumBase.\_\_init\_\_(self)](#numbaseinitself)
 
-	* [NumBase._CreateNumHeader(self, headerText)](#numbasecreatenumheaderself-headertext)
+	* [NumBase.\_CreateNumHeader(self, headerText)](#numbasecreatenumheaderself-headertext)
 
-	* [NumBase._CreateNumTextBox(self)](#numbasecreatenumtextboxself)
+	* [NumBase.\_CreateNumTextBox(self)](#numbasecreatenumtextboxself)
 
 
 ****************************************************
@@ -121,7 +121,7 @@
 
 	* [birthday_Ui.\_\_init\_\_(self)](#birthdayuiinitself)
 
-	* [birthday_Ui._inputCheck(self)](#birthdayuiinputcheckself)
+	* [birthday_Ui.\_inputCheck(self)](#birthdayuiinputcheckself)
 
 	* [birthday_Ui.enterButtonPressed(self)](#birthdayuienterbuttonpressedself)
 
@@ -140,11 +140,11 @@
 
 	* [IsPrime.\_\_init\_\_(self)](#isprimeinitself)
 
-	* [IsPrime._CreateIsPrimeHeader(self)](#isprimecreateisprimeheaderself)
+	* [IsPrime.\_CreateIsPrimeHeader(self)](#isprimecreateisprimeheaderself)
 
-	* [IsPrime._CreateIsPrimeInput(self)](#isprimecreateisprimeinputself)
+	* [IsPrime.\_CreateIsPrimeInput(self)](#isprimecreateisprimeinputself)
 
-	* [IsPrime._CreateIsPrimeOutput(self)](#isprimecreateisprimeoutputself)
+	* [IsPrime.\_CreateIsPrimeOutput(self)](#isprimecreateisprimeoutputself)
 
 * [Class PrimeGenUI](#class-primegenui)
 
@@ -154,11 +154,11 @@
 
 	* [PrimeRandomGen.\_\_init\_\_(self)](#primerandomgeninitself)
 
-	* [PrimeRandomGen._CreateRandomHeader(self)](#primerandomgencreaterandomheaderself)
+	* [PrimeRandomGen.\_CreateRandomHeader(self)](#primerandomgencreaterandomheaderself)
 
-	* [PrimeRandomGen._CreateRandomInput(self)](#primerandomgencreaterandominputself)
+	* [PrimeRandomGen.\_CreateRandomInput(self)](#primerandomgencreaterandominputself)
 
-	* [PrimeRandomGen._CreateRandomButtons(self)](#primerandomgencreaterandombuttonsself)
+	* [PrimeRandomGen.\_CreateRandomButtons(self)](#primerandomgencreaterandombuttonsself)
 
 	* [PrimeRandomGen.setRandomOutput(self, text)](#primerandomgensetrandomoutputself-text)
 
@@ -170,11 +170,11 @@
 
 	* [PrimeRangeGen.\_\_init\_\_(self)](#primerangegeninitself)
 
-	* [PrimeRangeGen._CreateRangeHeader(self)](#primerangegencreaterangeheaderself)
+	* [PrimeRangeGen.\_CreateRangeHeader(self)](#primerangegencreaterangeheaderself)
 
-	* [PrimeRangeGen._CreateRangeInput(self)](#primerangegencreaterangeinputself)
+	* [PrimeRangeGen.\_CreateRangeInput(self)](#primerangegencreaterangeinputself)
 
-	* [PrimeRangeGen._CreateRangeButtons(self)](#primerangegencreaterangebuttonsself)
+	* [PrimeRangeGen.\_CreateRangeButtons(self)](#primerangegencreaterangebuttonsself)
 
 	* [PrimeRangeGen.setRangeOutput(self, text)](#primerangegensetrangeoutputself-text)
 
@@ -197,13 +197,13 @@
 
 	* [MainCalcCtrl.\_\_init\_\_(self, model, view)](#maincalcctrlinitself-model-view)
 
-	* [MainCalcCtrl._calculateResult(self)](#maincalcctrlcalculateresultself)
+	* [MainCalcCtrl.\_calculateResult(self)](#maincalcctrlcalculateresultself)
 
-	* [MainCalcCtrl._buildExpression(self, keyInput)](#maincalcctrlbuildexpressionself-keyinput)
+	* [MainCalcCtrl.\_buildExpression(self, keyInput)](#maincalcctrlbuildexpressionself-keyinput)
 
-	* [MainCalcCtrl._changeSecCalc(self)](#maincalcctrlchangeseccalcself)
+	* [MainCalcCtrl.\_changeSecCalc(self)](#maincalcctrlchangeseccalcself)
 
-	* [MainCalcCtrl._connectSignals(self)](#maincalcctrlconnectsignalsself)
+	* [MainCalcCtrl.\_connectSignals(self)](#maincalcctrlconnectsignalsself)
 
 
 ****************************************************
@@ -219,11 +219,11 @@
 
 	* [MainCalcUI.\_\_init\_\_(self, dropMenu)](#maincalcuiinitself-dropmenu)
 
-	* [MainCalcUI._createCalcOutput(self)](#maincalcuicreatecalcoutputself)
+	* [MainCalcUI.\_createCalcOutput(self)](#maincalcuicreatecalcoutputself)
 
-	* [MainCalcUI._createDropBox(self, dropMenu)](#maincalcuicreatedropboxself-dropmenu)
+	* [MainCalcUI.\_createDropBox(self, dropMenu)](#maincalcuicreatedropboxself-dropmenu)
 
-	* [MainCalcUI._createButtons(self)](#maincalcuicreatebuttonsself)
+	* [MainCalcUI.\_createButtons(self)](#maincalcuicreatebuttonsself)
 
 	* [MainCalcUI.setCalcOutput(self, text)](#maincalcuisetcalcoutputself-text)
 
@@ -240,30 +240,30 @@
 
 	* [MetricConvCtrl.\_\_init\_\_(self, view, model)](#metricconvctrlinitself-view-model)
 
-	* [MetricConvCtrl._connectComboBoxSignals(self)](#metricconvctrlconnectcomboboxsignalsself)
+	* [MetricConvCtrl.\_connectComboBoxSignals(self)](#metricconvctrlconnectcomboboxsignalsself)
 
-	* [MetricConvCtrl._connectTextSignals(self)](#metricconvctrlconnecttextsignalsself)
+	* [MetricConvCtrl.\_connectTextSignals(self)](#metricconvctrlconnecttextsignalsself)
 
-	* [MetricConvCtrl._disconnectTextSignals(self)](#metricconvctrldisconnecttextsignalsself)
+	* [MetricConvCtrl.\_disconnectTextSignals(self)](#metricconvctrldisconnecttextsignalsself)
 
-	* [MetricConvCtrl._setTextFields(self, inputField, outputField, inputString, outputString)](#metricconvctrlsettextfieldsself-inputfield-outputfield-inputstring-outputstring)
+	* [MetricConvCtrl.\_setTextFields(self, inputField, outputField, inputString, outputString)](#metricconvctrlsettextfieldsself-inputfield-outputfield-inputstring-outputstring)
 
-	* [MetricConvCtrl._textChanged(self, inputField, outputField, inputMenu, outputMenu)](#metricconvctrltextchangedself-inputfield-outputfield-inputmenu-outputmenu)
+	* [MetricConvCtrl.\_textChanged(self, inputField, outputField, inputMenu, outputMenu)](#metricconvctrltextchangedself-inputfield-outputfield-inputmenu-outputmenu)
 
-	* [MetricConvCtrl._toggleValidStyle(self)](#metricconvctrltogglevalidstyleself)
+	* [MetricConvCtrl.\_toggleValidStyle(self)](#metricconvctrltogglevalidstyleself)
 
-	* [MetricConvCtrl._toggleInvalidStyle(self)](#metricconvctrltoggleinvalidstyleself)
+	* [MetricConvCtrl.\_toggleInvalidStyle(self)](#metricconvctrltoggleinvalidstyleself)
 
 
 ****************************************************
 ### From metric_conv.models
-* [digital_space_conversion(input_value: float, input_index: int, output_index: int) -> float](#digitalspaceconversioninputvalue:-float-inputindex:-int-outputindex:-int---float)
+* [digital_space_conversion(input_value: float, input_index: int, output_index: int) -> float](#digitalspaceconversioninputvalue-float-inputindex-int-outputindex-int---float)
 
-* [length_conversion(input_value: float, input_index: int, output_index: int) -> float](#lengthconversioninputvalue:-float-inputindex:-int-outputindex:-int---float)
+* [length_conversion(input_value: float, input_index: int, output_index: int) -> float](#lengthconversioninputvalue-float-inputindex-int-outputindex-int---float)
 
-* [time_conversion(input_value: float, input_index: int, output_index: int) -> float](#timeconversioninputvalue:-float-inputindex:-int-outputindex:-int---float)
+* [time_conversion(input_value: float, input_index: int, output_index: int) -> float](#timeconversioninputvalue-float-inputindex-int-outputindex-int---float)
 
-* [weight_conversion(input_value: float, input_index: int, output_index: int) -> float](#weightconversioninputvalue:-float-inputindex:-int-outputindex:-int---float)
+* [weight_conversion(input_value: float, input_index: int, output_index: int) -> float](#weightconversioninputvalue-float-inputindex-int-outputindex-int---float)
 
 
 ****************************************************
@@ -276,7 +276,7 @@
 
 	* [MetricConvWidget.\_\_init\_\_(self, stringLabel, unitOptions)](#metricconvwidgetinitself-stringlabel-unitoptions)
 
-	* [MetricConvWidget._createOptionLayout(self, QLineEditObj, QComboBoxObj, items)](#metricconvwidgetcreateoptionlayoutself-qlineeditobj-qcomboboxobj-items)
+	* [MetricConvWidget.\_createOptionLayout(self, QLineEditObj, QComboBoxObj, items)](#metricconvwidgetcreateoptionlayoutself-qlineeditobj-qcomboboxobj-items)
 
 
 ****************************************************
@@ -294,28 +294,28 @@
 
 	* [PrimeGenCtrl.\_\_init\_\_(self, view, model)](#primegenctrlinitself-view-model)
 
-	* [PrimeGenCtrl._copyAll(self, getFunction)](#primegenctrlcopyallself-getfunction)
+	* [PrimeGenCtrl.\_copyAll(self, getFunction)](#primegenctrlcopyallself-getfunction)
 
-	* [PrimeGenCtrl._checkInputBounds(self, inputLabel, minValue, maxValue)](#primegenctrlcheckinputboundsself-inputlabel-minvalue-maxvalue)
+	* [PrimeGenCtrl.\_checkInputBounds(self, inputLabel, minValue, maxValue)](#primegenctrlcheckinputboundsself-inputlabel-minvalue-maxvalue)
 
-	* [PrimeGenCtrl._generateRange(self)](#primegenctrlgeneraterangeself)
+	* [PrimeGenCtrl.\_generateRange(self)](#primegenctrlgeneraterangeself)
 
-	* [PrimeGenCtrl._generateRandom(self)](#primegenctrlgeneraterandomself)
+	* [PrimeGenCtrl.\_generateRandom(self)](#primegenctrlgeneraterandomself)
 
-	* [PrimeGenCtrl._IsPrimeCheck(self)](#primegenctrlisprimecheckself)
+	* [PrimeGenCtrl.\_IsPrimeCheck(self)](#primegenctrlisprimecheckself)
 
-	* [PrimeGenCtrl._clearIcon(self)](#primegenctrlcleariconself)
+	* [PrimeGenCtrl.\_clearIcon(self)](#primegenctrlcleariconself)
 
-	* [PrimeGenCtrl._connectSignals(self)](#primegenctrlconnectsignalsself)
+	* [PrimeGenCtrl.\_connectSignals(self)](#primegenctrlconnectsignalsself)
 
 
 ****************************************************
 ### From prime_gen.models
-* [digit_size(digits: int, total: int)](#digitsizedigits:-int-total:-int)
+* [digit_size(digits: int, total: int)](#digitsizedigits-int-total-int)
 
-* [is_prime(n: int)](#isprimen:-int)
+* [is_prime(n: int)](#isprimen-int)
 
-* [range_1_n(limit: int)](#range1nlimit:-int)
+* [range_1_n(limit: int)](#range1nlimit-int)
 
 
 ****************************************************
@@ -324,11 +324,11 @@
 
 	* [IsPrime.\_\_init\_\_(self)](#isprimeinitself)
 
-	* [IsPrime._CreateIsPrimeHeader(self)](#isprimecreateisprimeheaderself)
+	* [IsPrime.\_CreateIsPrimeHeader(self)](#isprimecreateisprimeheaderself)
 
-	* [IsPrime._CreateIsPrimeInput(self)](#isprimecreateisprimeinputself)
+	* [IsPrime.\_CreateIsPrimeInput(self)](#isprimecreateisprimeinputself)
 
-	* [IsPrime._CreateIsPrimeOutput(self)](#isprimecreateisprimeoutputself)
+	* [IsPrime.\_CreateIsPrimeOutput(self)](#isprimecreateisprimeoutputself)
 
 * [Class PrimeGenUI](#class-primegenui)
 
@@ -338,11 +338,11 @@
 
 	* [PrimeRandomGen.\_\_init\_\_(self)](#primerandomgeninitself)
 
-	* [PrimeRandomGen._CreateRandomHeader(self)](#primerandomgencreaterandomheaderself)
+	* [PrimeRandomGen.\_CreateRandomHeader(self)](#primerandomgencreaterandomheaderself)
 
-	* [PrimeRandomGen._CreateRandomInput(self)](#primerandomgencreaterandominputself)
+	* [PrimeRandomGen.\_CreateRandomInput(self)](#primerandomgencreaterandominputself)
 
-	* [PrimeRandomGen._CreateRandomButtons(self)](#primerandomgencreaterandombuttonsself)
+	* [PrimeRandomGen.\_CreateRandomButtons(self)](#primerandomgencreaterandombuttonsself)
 
 	* [PrimeRandomGen.setRandomOutput(self, text)](#primerandomgensetrandomoutputself-text)
 
@@ -354,11 +354,11 @@
 
 	* [PrimeRangeGen.\_\_init\_\_(self)](#primerangegeninitself)
 
-	* [PrimeRangeGen._CreateRangeHeader(self)](#primerangegencreaterangeheaderself)
+	* [PrimeRangeGen.\_CreateRangeHeader(self)](#primerangegencreaterangeheaderself)
 
-	* [PrimeRangeGen._CreateRangeInput(self)](#primerangegencreaterangeinputself)
+	* [PrimeRangeGen.\_CreateRangeInput(self)](#primerangegencreaterangeinputself)
 
-	* [PrimeRangeGen._CreateRangeButtons(self)](#primerangegencreaterangebuttonsself)
+	* [PrimeRangeGen.\_CreateRangeButtons(self)](#primerangegencreaterangebuttonsself)
 
 	* [PrimeRangeGen.setRangeOutput(self, text)](#primerangegensetrangeoutputself-text)
 
@@ -400,6 +400,7 @@
 
 
 ****************************************************
+<a name="class-multicalcwindow"></a>
 ## __class MultiCalcWindow__
 Primary Widget for App. Initializes Window and Main and Sec Calc Widgets.
 Loads stylesheet for entire app. 
@@ -431,6 +432,7 @@ __None__
 
 
 ****************************************************
+<a name="multicalcwindowinitself"></a>
 ## __MultiCalcWindow.\_\_init\_\_(self)__
 Initilizer for App. Sets window size, title, loads style sheet,
 and initializes Main Calc and Sec Calc widgets
@@ -450,6 +452,7 @@ __MultiCalcWindow__
 ****************************************************
 
 ****************************************************
+<a name="class-seccalc"></a>
 ## __class SecCalc__
 Secondary calc widget display and handler. Controls which widget to render based 
 on MainCalcUI's combobox current index value.
@@ -473,6 +476,7 @@ __secCalcDisplay(i):__
 
 
 ****************************************************
+<a name="seccalcinitself"></a>
 ## __SecCalc.\_\_init\_\_(self)__
 Initializes the widget, and list from DROPBOX_MENU
 
@@ -489,6 +493,7 @@ __SecCalc__
 
 
 ****************************************************
+<a name="seccalcseccalcdisplayself-i"></a>
 ## __SecCalc.secCalcDisplay(self, i)__
 Changes which Widget to render
 
@@ -505,6 +510,7 @@ __None__
 
 
 ****************************************************
+<a name="main"></a>
 ## __main()__
 Main drivers that initializes PyQt5 application, creates a the calculator,
 as well as controllers for specific widgets.
@@ -523,6 +529,7 @@ __None__
 
 
 ****************************************************
+<a name="class-asciiui"></a>
 ## __class ascii_Ui__
 Creates a QWidget that converts between a decimal, hexidecimal, and ASCII character value
 Also creates signals, and conversion calculations
@@ -592,6 +599,7 @@ __convert_ascii(val, input_unit, output_unit):__
 
 
 ****************************************************
+<a name="asciiuiinitself"></a>
 ## __ascii_Ui.\_\_init\_\_(self)__
 Initializes the ascii_Ui, including it's layout from basic.ui, attributes, and
 signal connections
@@ -609,6 +617,7 @@ __ascii_Ui__
 
 
 ****************************************************
+<a name="asciiuicreatevalidatorsself"></a>
 ## __ascii_Ui.\_createValidators(self)__
 Creates a list of three different validators for chr, int, and hex input
 
@@ -625,6 +634,7 @@ __[QRegExpValidator, QIntValidator, QRegValidator]__
 
 
 ****************************************************
+<a name="asciiuirangevalidatorself"></a>
 ## __ascii_Ui.\_rangeValidator(self)__
 Sets roof range input for dec and hex. Changes to the input text if input value
 exceeds the range for chr() (1,114,111). Called every time input changes.
@@ -643,6 +653,7 @@ __None__
 
 
 ****************************************************
+<a name="asciiuisetvalidatorsself"></a>
 ## __ascii_Ui.\_setValidators(self)__
 Signal handler to change validation method when radiobuttons input selection changes
 
@@ -657,6 +668,7 @@ __None__
 
 
 ****************************************************
+<a name="asciiuiprintbuttonpressedself"></a>
 ## __ascii_Ui.printButtonPressed(self)__
 Sends input to convert_ascii then sets the results to output
 
@@ -671,6 +683,7 @@ __None__
 
 
 ****************************************************
+<a name="asciiuiconvertasciiself-val-inputunit-outputunit"></a>
 ## __ascii_Ui.convert_ascii(self, val, input_unit, output_unit)__
 Take the string of val and converts from input_unit to output_unit
 
@@ -706,6 +719,7 @@ __int, str__
 
 
 ****************************************************
+<a name="class-baseconvctrl"></a>
 ## __class BaseConvCtrl__
 Handles the logic and singal connections for BaseConvUI
 
@@ -782,6 +796,7 @@ ___setNegate():__
 
 
 ****************************************************
+<a name="baseconvctrlinitself-view-model"></a>
 ## __BaseConvCtrl.\_\_init\_\_(self, view, model)__
 Constructs the BaseConvCtrl, constructing signals for BaseConvUI and connecting
 them to the correct model/function for conversion calculations
@@ -807,6 +822,7 @@ __BaseConvUI__
 
 
 ****************************************************
+<a name="baseconvctrldecchangedself"></a>
 ## __BaseConvCtrl.\_decChanged(self)__
 Handles the input of the Decimal field
 1. Validates the number
@@ -829,6 +845,7 @@ __None__
 
 
 ****************************************************
+<a name="baseconvctrlhexchangedself"></a>
 ## __BaseConvCtrl.\_hexChanged(self)__
 Handles the input of the Hexadecimal field
 1. Validates the number
@@ -851,6 +868,7 @@ __None__
 
 
 ****************************************************
+<a name="baseconvctrlbinchangedself"></a>
 ## __BaseConvCtrl.\_binChanged(self)__
 Handles the input of the Binary field
 1. Validates the number
@@ -873,6 +891,7 @@ __None__
 
 
 ****************************************************
+<a name="baseconvctrlsetsignedself"></a>
 ## __BaseConvCtrl.\_setSigned(self)__
 Sets _signed based on signage selection from the QRadioButtons. Will also disable the
 negate button if _signed is 1/True. Immediately calls for conversion and changes out
@@ -889,6 +908,7 @@ __None__
 
 
 ****************************************************
+<a name="baseconvctrlsetnegateself"></a>
 ## __BaseConvCtrl.\_setNegate(self)__
 Adds a '-' to decTextBox then sets the textbox, causing conversion to happen automatically
 If a '-' is already there, it is trimmed and the conversion is triggered again
@@ -904,6 +924,7 @@ __None__
 
 
 ****************************************************
+<a name="baseconvctrlconnecttextsignalsself"></a>
 ## __BaseConvCtrl.\_connectTextSignals(self)__
 Connects decTextBox, hexTextBox, and binTextBox textChanged signals
 
@@ -918,6 +939,7 @@ __None__
 
 
 ****************************************************
+<a name="baseconvctrldisconnecttextsignalsself"></a>
 ## __BaseConvCtrl.\_disconnectTextSignals(self)__
 Disconnects decTextBox, hexTextBox, and binTextBox textChanged signals
 
@@ -932,6 +954,7 @@ __None__
 
 
 ****************************************************
+<a name="baseconvctrlsetalltextboxesself-decoutput-hexoutput-binoutput"></a>
 ## __BaseConvCtrl.\_setAllTextBoxes(self, decOutput, hexOutput, binOutput)__
 Sets decTextBox, hexTextBox, and binTextBox to their respective output. Disconnects
 signals first, then reconnects after setting text.
@@ -957,6 +980,7 @@ __None__
 
 
 ****************************************************
+<a name="baseconvctrlconnectbitsignalsself"></a>
 ## __BaseConvCtrl.\_connectBitSignals(self)__
 Connects bitDropBox, unSignedRadio and negateButton to their respective signals,
 listening to any changes in their state.
@@ -978,6 +1002,7 @@ __None__
 ****************************************************
 # From base_conv.models
 
+<a name="binformatterstringnumber-bit"></a>
 ## __binFormatter(stringNumber, bit)__
 Formats a binary string to have a space every 4 digits
 
@@ -999,6 +1024,7 @@ __str__
 
 
 ****************************************************
+<a name="binvalidatorstringnumber-limit-issigned"></a>
 ## __binValidator(stringNumber, limit, isSigned)__
 Validates a binary number in string form:
 - If a negative sign in the beginning only if isSigned is enabled
@@ -1030,6 +1056,7 @@ __str__
 
 
 ****************************************************
+<a name="decformatterstringnumber"></a>
 ## __decFormatter(stringNumber)__
 Formats a decimal number in string form to have thousands place commas
 
@@ -1047,6 +1074,7 @@ __str__
 
 
 ****************************************************
+<a name="decvalidatorstringnumber-limit-issigned"></a>
 ## __decValidator(stringNumber, limit, isSigned)__
 Validates a decimal number in string form:
 - If a negative sign in the beginning of string number, isSigned is enabled
@@ -1080,6 +1108,7 @@ __int__
 
 
 ****************************************************
+<a name="hexformatterstringnumber-bit"></a>
 ## __hexFormatter(stringNumber, bit)__
 Formats a hexadecimal string to have a space every 4 digits
 
@@ -1101,6 +1130,7 @@ __str__
 
 
 ****************************************************
+<a name="hexvalidatorstringnumber-limit-issigned"></a>
 ## __hexValidator(stringNumber, limit, isSigned)__
 Validates a hexadecimal number in string form:
 - If a negative sign in the beginning only if isSigned is enabled
@@ -1132,6 +1162,7 @@ __str__
 
 
 ****************************************************
+<a name="righttoleftinsertionstring-position-insertchar"></a>
 ## __rightToLeftInsertion(string, position, insertChar)__
 Formats a string to insert a character at every <position> place
 
@@ -1157,6 +1188,7 @@ __str__
 
 
 ****************************************************
+<a name="signedbasetointvalue-bits"></a>
 ## __signedBaseToInt(value, bits)__
 Takes an int value in hex or bin representation and performs a bit shift by bits value
 to convert to an int value with base 10
@@ -1181,6 +1213,7 @@ __int__
 
 
 ****************************************************
+<a name="signedinttobasevalue-bits-base"></a>
 ## __signedIntToBase(value, bits, base)__
 Takes an int value and performs a bit shift by bits value
 Then convert it to the base unit
@@ -1213,6 +1246,7 @@ __str__
 
 
 ****************************************************
+<a name="class-baseconvui"></a>
 ## __class BaseConvUI__
 A QWidget that creates the three main number bases of decimal, hexadecimal, and binary
 base UI widgets and layout. Also creates the layout for signed/unsigned QRadioButtons,
@@ -1259,6 +1293,7 @@ ___createBitLengthBox():__
 
 
 ****************************************************
+<a name="baseconvuiinitself"></a>
 ## __BaseConvUI.\_\_init\_\_(self)__
 Initializer for BaseConvUI. Creates all QWidgets and layouts
 
@@ -1275,6 +1310,7 @@ __BaseConvUI__
 
 
 ****************************************************
+<a name="baseconvuicreatebitlengthboxself"></a>
 ## __BaseConvUI.\_createBitLengthBox(self)__
 Internal method for creating a QComboBox with 8-64 bit-width options
 
@@ -1293,6 +1329,7 @@ __QComboBox__
 ****************************************************
 
 ****************************************************
+<a name="class-binbase"></a>
 ## __class BinBase__
 A binary base input/output widget
 
@@ -1315,6 +1352,7 @@ __None__
 
 
 ****************************************************
+<a name="binbaseinitself"></a>
 ## __BinBase.\_\_init\_\_(self)__
 Initializer for BinBase
 
@@ -1333,6 +1371,7 @@ __BinBase__
 ****************************************************
 
 ****************************************************
+<a name="class-decbase"></a>
 ## __class DecBase__
 A decimal base input/output widget
 
@@ -1355,6 +1394,7 @@ __None__
 
 
 ****************************************************
+<a name="decbaseinitself"></a>
 ## __DecBase.\_\_init\_\_(self)__
 Initializer for DecBase
 
@@ -1373,6 +1413,7 @@ __DecBase__
 ****************************************************
 
 ****************************************************
+<a name="class-hexbase"></a>
 ## __class HexBase__
 A hexadecimal base input/output widget
 
@@ -1395,6 +1436,7 @@ __None__
 
 
 ****************************************************
+<a name="hexbaseinitself"></a>
 ## __HexBase.\_\_init\_\_(self)__
 Initializer for HexBase
 
@@ -1413,6 +1455,7 @@ __HexBase__
 ****************************************************
 
 ****************************************************
+<a name="class-numbase"></a>
 ## __class NumBase__
 A QWidget that contains the foundation for three different base unit headers
 
@@ -1435,6 +1478,7 @@ ___CreateNumTextBox():__
 
 
 ****************************************************
+<a name="numbaseinitself"></a>
 ## __NumBase.\_\_init\_\_(self)__
 Constructs a NumBase widget, inheriting all of QWidget's methods and attributes
 
@@ -1451,6 +1495,7 @@ __NumBase__
 
 
 ****************************************************
+<a name="numbasecreatenumheaderself-headertext"></a>
 ## __NumBase.\_CreateNumHeader(self, headerText)__
 Constructs a QLabel header with headerText
 
@@ -1469,6 +1514,7 @@ __QLabel__
 
 
 ****************************************************
+<a name="numbasecreatenumtextboxself"></a>
 ## __NumBase.\_CreateNumTextBox(self)__
 Constructs a QPlainTextEdit widget
 
@@ -1489,6 +1535,7 @@ __QPlainTextEdit__
 
 
 ****************************************************
+<a name="class-testwindowbaseconv"></a>
 ## __class TestWindowBaseConv__
 Constructs a QMainWindow to create and append to it's window a BaseConvUI
 widget for testing purposes
@@ -1516,6 +1563,7 @@ __None__
 
 
 ****************************************************
+<a name="testwindowbaseconvinitself"></a>
 ## __TestWindowBaseConv.\_\_init\_\_(self)__
 Initilizer for TestWindow
 
@@ -1532,6 +1580,7 @@ __TestWindow__
 
 
 ****************************************************
+<a name="maintestbaseconv"></a>
 ## __main_test_base_conv()__
 Main drivers that initializes PyQt5 application, creates a TestWindow widget,
 and BaseConvCtrl object to connect to signals.
@@ -1550,6 +1599,7 @@ __None__
 
 
 ****************************************************
+<a name="class-birthdayui"></a>
 ## __class birthday_Ui__
 Creates a QWidget where the user can put in a previous date (such as a birthday), and see how
 many years, months, or days have elapsed since then.
@@ -1609,6 +1659,7 @@ __get_birthday(combo_input, calendar_input):__
 
 
 ****************************************************
+<a name="birthdayuiinitself"></a>
 ## __birthday_Ui.\_\_init\_\_(self)__
 Initializes the birthday_Ui, including it's layout from basic.ui and attributes
 
@@ -1625,6 +1676,7 @@ __birthday_Ui__
 
 
 ****************************************************
+<a name="birthdayuiinputcheckself"></a>
 ## __birthday_Ui.\_inputCheck(self)__
 Performs a date validation check for the input fields every time the
 user changes the input. Performs limit checks on fields based on
@@ -1644,6 +1696,7 @@ __None__
 
 
 ****************************************************
+<a name="birthdayuienterbuttonpressedself"></a>
 ## __birthday_Ui.enterButtonPressed(self)__
 Sends a list input that contains [month,day,year] from user input
 to get_birthday then sets the text of output to the results.
@@ -1662,6 +1715,7 @@ __None__
 
 
 ****************************************************
+<a name="birthdayuigetbirthdayself-comboinput-calendarinput"></a>
 ## __birthday_Ui.get_birthday(self, combo_input, calendar_input)__
 Takes in a list and a choice input from the combo box for the type of conversion the user wants
 Years, Months, Days and returns the conversion in text.
@@ -1688,6 +1742,7 @@ __str__
 
 
 ****************************************************
+<a name="getdaysmonth-day-year"></a>
 ## __get_days(month, day, year)__
 Takes in three int values that represents a specific day (such as a birthday)
 and calculates elapsed days based on today.
@@ -1714,6 +1769,7 @@ __int__
 
 
 ****************************************************
+<a name="getmonthsmonth-day-year"></a>
 ## __get_months(month, day, year)__
 Takes in three int values that represents a specific day (such as a birthday)
 and calculates elapsed months based on today.
@@ -1740,6 +1796,7 @@ __int__
 
 
 ****************************************************
+<a name="getyearsmonth-day-year"></a>
 ## __get_years(month, day, year)__
 Takes in three int values that represents a specific day (such as a birthday)
 and calculates elapsed years based on today.
@@ -1770,6 +1827,7 @@ __int__
 
 
 ****************************************************
+<a name="class-isprime"></a>
 ## __class IsPrime__
 Creates a QWidget that determines if a number is prime or now
 
@@ -1822,6 +1880,7 @@ ___CreateIsPrimeOutput():__
 
 
 ****************************************************
+<a name="isprimeinitself"></a>
 ## __IsPrime.\_\_init\_\_(self)__
 Initilizer for isPrime
 
@@ -1838,6 +1897,7 @@ __isPrime__
 
 
 ****************************************************
+<a name="isprimecreateisprimeheaderself"></a>
 ## __IsPrime.\_CreateIsPrimeHeader(self)__
 Creates a QLabel text header
 
@@ -1854,6 +1914,7 @@ __QLabel__
 
 
 ****************************************************
+<a name="isprimecreateisprimeinputself"></a>
 ## __IsPrime.\_CreateIsPrimeInput(self)__
 Creates a layout with QLabel, QLineEdit, and QPushButton for isPrime
 
@@ -1870,6 +1931,7 @@ __QVBoxLayout__
 
 
 ****************************************************
+<a name="isprimecreateisprimeoutputself"></a>
 ## __IsPrime.\_CreateIsPrimeOutput(self)__
 Creates a QVBoxLayout with widgets for output results
 
@@ -1888,6 +1950,7 @@ __QVBoxLayout__
 ****************************************************
 
 ****************************************************
+<a name="class-primegenui"></a>
 ## __class PrimeGenUI__
 Creates the core Prime Gen UI. Creates a tabs window, with each item being a
 PrimeRangeGen widget, PrimeRandomGen widget, and IsPrime widget.
@@ -1919,6 +1982,7 @@ __None__
 
 
 ****************************************************
+<a name="primegenuiinitself"></a>
 ## __PrimeGenUI.\_\_init\_\_(self)__
 Initilizer for PrimeGenUI. Creates Tab window with all three prime gen widgets
 
@@ -1937,6 +2001,7 @@ __IsPrime__
 ****************************************************
 
 ****************************************************
+<a name="class-primerandomgen"></a>
 ## __class PrimeRandomGen__
 Creates a Prime Number Generator QWidget that generates a specificied amount of
 random prime numbers with a specificied number of digits from user input
@@ -2010,6 +2075,7 @@ __clearRandomOutput():__
 
 
 ****************************************************
+<a name="primerandomgeninitself"></a>
 ## __PrimeRandomGen.\_\_init\_\_(self)__
 Initilizer for PrimeRandomGen
 
@@ -2026,6 +2092,7 @@ __PrimeRandomGen__
 
 
 ****************************************************
+<a name="primerandomgencreaterandomheaderself"></a>
 ## __PrimeRandomGen.\_CreateRandomHeader(self)__
 Creates a QLabel text header
 
@@ -2042,6 +2109,7 @@ __QLabel__
 
 
 ****************************************************
+<a name="primerandomgencreaterandominputself"></a>
 ## __PrimeRandomGen.\_CreateRandomInput(self)__
 Creates a layout with QLineEdit input text fields with instructions
 
@@ -2058,6 +2126,7 @@ __QHBoxLayout__
 
 
 ****************************************************
+<a name="primerandomgencreaterandombuttonsself"></a>
 ## __PrimeRandomGen.\_CreateRandomButtons(self)__
 Creates a QHBoxLayout of various QPushButtons
 
@@ -2074,6 +2143,7 @@ __QHBoxLayout__
 
 
 ****************************************************
+<a name="primerandomgensetrandomoutputself-text"></a>
 ## __PrimeRandomGen.setRandomOutput(self, text)__
 Changes the text of randomNumOutput
 
@@ -2090,6 +2160,7 @@ __None__
 
 
 ****************************************************
+<a name="primerandomgengetrandomoutputself"></a>
 ## __PrimeRandomGen.getRandomOutput(self)__
 Returns randomNumOutput's text
 
@@ -2106,6 +2177,7 @@ __str__
 
 
 ****************************************************
+<a name="primerandomgenclearrandomoutputself"></a>
 ## __PrimeRandomGen.clearRandomOutput(self)__
 Changes the text of randomNumOutput to an empty string
 
@@ -2122,6 +2194,7 @@ __None__
 ****************************************************
 
 ****************************************************
+<a name="class-primerangegen"></a>
 ## __class PrimeRangeGen__
 Creates a Prime Number Generator QWidget that generates based on the range
 from 1 to a user inputted positive integer
@@ -2183,6 +2256,7 @@ __clearRangeOutput():__
 
 
 ****************************************************
+<a name="primerangegeninitself"></a>
 ## __PrimeRangeGen.\_\_init\_\_(self)__
 Initilizer for PrimeRangeGen
 
@@ -2199,6 +2273,7 @@ __PrimeRangeGen__
 
 
 ****************************************************
+<a name="primerangegencreaterangeheaderself"></a>
 ## __PrimeRangeGen.\_CreateRangeHeader(self)__
 Creates a QLabel text with instruction limits
 
@@ -2215,6 +2290,7 @@ __QLabel__
 
 
 ****************************************************
+<a name="primerangegencreaterangeinputself"></a>
 ## __PrimeRangeGen.\_CreateRangeInput(self)__
 Creates a QLineEdit input field
 
@@ -2231,6 +2307,7 @@ __QLineEdit__
 
 
 ****************************************************
+<a name="primerangegencreaterangebuttonsself"></a>
 ## __PrimeRangeGen.\_CreateRangeButtons(self)__
 Creates a QHBoxLayout of various QPushButtons
 
@@ -2247,6 +2324,7 @@ __QHBoxLayout__
 
 
 ****************************************************
+<a name="primerangegensetrangeoutputself-text"></a>
 ## __PrimeRangeGen.setRangeOutput(self, text)__
 Changes the text of primeRangeGenOutput
 
@@ -2263,6 +2341,7 @@ __None__
 
 
 ****************************************************
+<a name="primerangegengetrangeoutputself"></a>
 ## __PrimeRangeGen.getRangeOutput(self)__
 Returns primeRangeGenOutput's text
 
@@ -2279,6 +2358,7 @@ __str__
 
 
 ****************************************************
+<a name="primerangegenclearrangeoutputself"></a>
 ## __PrimeRangeGen.clearRangeOutput(self)__
 Changes the text of primeRangeGenOutput to an empty string
 
@@ -2295,6 +2375,7 @@ __None__
 ****************************************************
 
 ****************************************************
+<a name="class-scrolllabel"></a>
 ## __class ScrollLabel__
 Custom setup of a QScrollArea to create a read-only Scroll Label for Prime Gen Output
 
@@ -2319,6 +2400,7 @@ __setText(text):__
 
 
 ****************************************************
+<a name="scrolllabelinitself"></a>
 ## __ScrollLabel.\_\_init\_\_(self)__
 Construct A ScrollLabel with certain properties
 
@@ -2337,6 +2419,7 @@ __ScrollArea__
 
 
 ****************************************************
+<a name="scrolllabelsettextself-text"></a>
 ## __ScrollLabel.setText(self, text)__
 Sets the text of label
 
@@ -2353,6 +2436,7 @@ __None__
 
 
 ****************************************************
+<a name="scrolllabeltextself"></a>
 ## __ScrollLabel.text(self)__
 Returns the string of label's text
 
@@ -2373,6 +2457,7 @@ __str__
 
 
 ****************************************************
+<a name="class-maincalcctrl"></a>
 ## __class MainCalcCtrl__
 Handles the logic and singal connections for MainCalcUI. Retrieves user input to
 perform operations or send to other functions for evaluation.
@@ -2418,6 +2503,7 @@ ___connectSignals():__
 
 
 ****************************************************
+<a name="maincalcctrlinitself-model-view"></a>
 ## __MainCalcCtrl.\_\_init\_\_(self, model, view)__
 Initilizer for MainCalcCtrl. Connects signals to their handlers.
 
@@ -2440,6 +2526,7 @@ __MainCalcCtrl__
 
 
 ****************************************************
+<a name="maincalcctrlcalculateresultself"></a>
 ## __MainCalcCtrl.\_calculateResult(self)__
 Sets _evalPressed to True and sends built expression to be evaluated
 
@@ -2454,6 +2541,7 @@ __None__
 
 
 ****************************************************
+<a name="maincalcctrlbuildexpressionself-keyinput"></a>
 ## __MainCalcCtrl.\_buildExpression(self, keyInput)__
 Handler for MainCalcUI's button to build expression. Performs certain input handling:
 - Reset expression if previous result was "ERROR"
@@ -2472,6 +2560,7 @@ __None__
 
 
 ****************************************************
+<a name="maincalcctrlchangeseccalcself"></a>
 ## __MainCalcCtrl.\_changeSecCalc(self)__
 Sets the widget to be used for the secondary display.
 
@@ -2486,6 +2575,7 @@ __None__
 
 
 ****************************************************
+<a name="maincalcctrlconnectsignalsself"></a>
 ## __MainCalcCtrl.\_connectSignals(self)__
 Connects the buttons and output signals to their proper handlers.
 
@@ -2506,6 +2596,7 @@ __None__
 ****************************************************
 # From main_calc.models
 
+<a name="asttransversalastobj"></a>
 ## __astTransversal(astObj)__
 Abstract syntax tree transversal for basic math/eval expressions.
 Recursive function that calculates an expression based on end nodes,
@@ -2533,6 +2624,7 @@ __int, float__
 
 
 ****************************************************
+<a name="evaluateexpressionexpression"></a>
 ## __evaluateExpression(expression)__
 Driver for abstract syntax tree transversal for basic math/eval expressions.
 ast.parses expression with eval mode, sending it's body to astTransversal
@@ -2558,6 +2650,7 @@ __str__
 
 
 ****************************************************
+<a name="class-maincalcui"></a>
 ## __class MainCalcUI__
 A QWidget that creates the interface widget of a standard calculator that performs
 basic functions, such as add, subtract, divide, multiply, floor division, etc.
@@ -2613,6 +2706,7 @@ __clearCalcOutput():__
 
 
 ****************************************************
+<a name="maincalcuiinitself-dropmenu"></a>
 ## __MainCalcUI.\_\_init\_\_(self, dropMenu)__
 Initializer for MainCalcUI. Creates all QWidgets and layouts.
 
@@ -2631,6 +2725,7 @@ __MainCalcUI__
 
 
 ****************************************************
+<a name="maincalcuicreatecalcoutputself"></a>
 ## __MainCalcUI.\_createCalcOutput(self)__
 Creates a QLineEdit object for calcOutput
 
@@ -2647,6 +2742,7 @@ __QLineEdit__
 
 
 ****************************************************
+<a name="maincalcuicreatedropboxself-dropmenu"></a>
 ## __MainCalcUI.\_createDropBox(self, dropMenu)__
 Creates a QComboBox for calcDropBox
 
@@ -2665,6 +2761,7 @@ __QComboBox__
 
 
 ****************************************************
+<a name="maincalcuicreatebuttonsself"></a>
 ## __MainCalcUI.\_createButtons(self)__
 Creates a all the QPushButtons for the calculator for expression
 building
@@ -2682,6 +2779,7 @@ __QGridLayout__
 
 
 ****************************************************
+<a name="maincalcuisetcalcoutputself-text"></a>
 ## __MainCalcUI.setCalcOutput(self, text)__
 Sets calcOutput text display
 
@@ -2698,6 +2796,7 @@ __None__
 
 
 ****************************************************
+<a name="maincalcuigetcalcoutputself"></a>
 ## __MainCalcUI.getCalcOutput(self)__
 Returns calcOutput's text value
 
@@ -2714,6 +2813,7 @@ __str__
 
 
 ****************************************************
+<a name="maincalcuibackspacecalcoutputself"></a>
 ## __MainCalcUI.backSpaceCalcOutput(self)__
 Reset calcOutput's text to "0" when output is empty.
 Else removes the last character from the str.
@@ -2729,6 +2829,7 @@ __None__
 
 
 ****************************************************
+<a name="maincalcuiclearcalcoutputself"></a>
 ## __MainCalcUI.clearCalcOutput(self)__
 Reset calcOutput's text to "0" when output is empty.
 Else removes the last character from the str.
@@ -2748,6 +2849,7 @@ __None__
 
 
 ****************************************************
+<a name="class-metricconvctrl"></a>
 ## __class MetricConvCtrl__
 Handles the logic and signal connections for the MetricConvUI
 
@@ -2802,6 +2904,7 @@ ___toggleValidStyle():__
 
 
 ****************************************************
+<a name="metricconvctrlinitself-view-model"></a>
 ## __MetricConvCtrl.\_\_init\_\_(self, view, model)__
 Constructs the MetricConvCtrl, building signals for MetricConvWidget and connecting
 them to the correct model/function for conversion calculations
@@ -2825,6 +2928,7 @@ __MetricConvCtrl__
 
 
 ****************************************************
+<a name="metricconvctrlconnectcomboboxsignalsself"></a>
 ## __MetricConvCtrl.\_connectComboBoxSignals(self)__
 Connects MetricConvWidget's QComboBoxs' signal whenever their current index changes
 
@@ -2839,6 +2943,7 @@ __None__
 
 
 ****************************************************
+<a name="metricconvctrlconnecttextsignalsself"></a>
 ## __MetricConvCtrl.\_connectTextSignals(self)__
 Connects MetricConvWidget's QLineEdits' signal whenever their text changes
 
@@ -2853,6 +2958,7 @@ __None__
 
 
 ****************************************************
+<a name="metricconvctrldisconnecttextsignalsself"></a>
 ## __MetricConvCtrl.\_disconnectTextSignals(self)__
 Disconnects MetricConvWidget's QLineEdits' signal
 
@@ -2867,6 +2973,7 @@ __None__
 
 
 ****************************************************
+<a name="metricconvctrlsettextfieldsself-inputfield-outputfield-inputstring-outputstring"></a>
 ## __MetricConvCtrl.\_setTextFields(self, inputField, outputField, inputString, outputString)__
 Changes inputField and outputField's text with outputString by disconnecting
 their text signals, sets their text, and reactivates the signals
@@ -2898,6 +3005,7 @@ __None__
 
 
 ****************************************************
+<a name="metricconvctrltextchangedself-inputfield-outputfield-inputmenu-outputmenu"></a>
 ## __MetricConvCtrl.\_textChanged(self, inputField, outputField, inputMenu, outputMenu)__
 Passes the text of inputField and the indexes of inputMenu and outputMenu to be
 calculated by _model.
@@ -2931,6 +3039,7 @@ __None__
 
 
 ****************************************************
+<a name="metricconvctrltogglevalidstyleself"></a>
 ## __MetricConvCtrl.\_toggleValidStyle(self)__
 Changes the object name for the left/rightTextEdit fields to valid, and loads stylesheet
 
@@ -2945,6 +3054,7 @@ __None__
 
 
 ****************************************************
+<a name="metricconvctrltoggleinvalidstyleself"></a>
 ## __MetricConvCtrl.\_toggleInvalidStyle(self)__
 Changes the object name for the left/rightTextEdit fields to invalid, and loads stylesheet
 
@@ -2965,6 +3075,7 @@ __None__
 ****************************************************
 # From metric_conv.models
 
+<a name="digitalspaceconversioninputvalue-float-inputindex-int-outputindex-int---float"></a>
 ## __digital_space_conversion(input_value: float, input_index: int, output_index: int) -> float__
 Calculates the conversion rate for different digital space units based on the input_index
 and output_index from from the MetricConvWidget.
@@ -2994,6 +3105,7 @@ __float__
 
 
 ****************************************************
+<a name="lengthconversioninputvalue-float-inputindex-int-outputindex-int---float"></a>
 ## __length_conversion(input_value: float, input_index: int, output_index: int) -> float__
 Calculates the conversion rate for length distances based on the input_index and 
 output_index from from the MetricConvWidget.
@@ -3023,6 +3135,7 @@ __float__
 
 
 ****************************************************
+<a name="timeconversioninputvalue-float-inputindex-int-outputindex-int---float"></a>
 ## __time_conversion(input_value: float, input_index: int, output_index: int) -> float__
 Calculates the conversion rate for different time units based on the input_index and 
 output_index from from the MetricConvWidget.
@@ -3051,6 +3164,7 @@ __float__
 
 
 ****************************************************
+<a name="weightconversioninputvalue-float-inputindex-int-outputindex-int---float"></a>
 ## __weight_conversion(input_value: float, input_index: int, output_index: int) -> float__
 Calculates the conversion rate for different weights based on the input_index and 
 output_index from from the MetricConvWidget.
@@ -3084,6 +3198,7 @@ __float__
 
 
 ****************************************************
+<a name="class-metricconvui"></a>
 ## __class MetricConvUI__
 A QWidget that the UI for the Metric Conversion option of the calculator.
 Makes four different MetricConvWidget objects, one for length, weight,
@@ -3117,6 +3232,7 @@ __None__
 
 
 ****************************************************
+<a name="metricconvuiinitself"></a>
 ## __MetricConvUI.\_\_init\_\_(self)__
 Initializes the MetricConvUI, with 4 MetricConvWidget objects.
 One for length, weight, time, and digital storage
@@ -3136,6 +3252,7 @@ __MetricConvUI__
 ****************************************************
 
 ****************************************************
+<a name="class-metricconvwidget"></a>
 ## __class MetricConvWidget__
 A QWidget that has two QLineEdit text fields each with their own QComboBox for a list
 of conversion options between the two sides.
@@ -3171,6 +3288,7 @@ ___createOptionLayout(QLineEditObj, QComboBoxObj, items):__
 
 
 ****************************************************
+<a name="metricconvwidgetinitself-stringlabel-unitoptions"></a>
 ## __MetricConvWidget.\_\_init\_\_(self, stringLabel, unitOptions)__
 Constructs a MetricConvWidget, including it's layout and attributes
 Used perform unit conversion between two units
@@ -3194,6 +3312,7 @@ __MetricConvWidget__
 
 
 ****************************************************
+<a name="metricconvwidgetcreateoptionlayoutself-qlineeditobj-qcomboboxobj-items"></a>
 ## __MetricConvWidget.\_createOptionLayout(self, QLineEditObj, QComboBoxObj, items)__
 Creates a QVBoxLayout for each side of the conversion, as well as settings for
 left/rightTextEdit and left/rightComboBox data attributes
@@ -3225,6 +3344,7 @@ __QVBoxLayout__
 
 
 ****************************************************
+<a name="class-testwindowmetricconv"></a>
 ## __class TestWindowMetricConv__
 Constructs a QMainWindow to create and append to it's window a MetricConvUI
 widget for testing purposes
@@ -3252,6 +3372,7 @@ __None__
 
 
 ****************************************************
+<a name="testwindowmetricconvinitself"></a>
 ## __TestWindowMetricConv.\_\_init\_\_(self)__
 Initilizer for TestWindow
 
@@ -3268,6 +3389,7 @@ __TestWindow__
 
 
 ****************************************************
+<a name="maintestmetricconv"></a>
 ## __main_test_metric_conv()__
 Main drivers that initializes PyQt5 application, creates a TestWindow widget,
 and 4 MetricConvCtrl objects to connect to four different MetricConvWidgets within
@@ -3287,6 +3409,7 @@ __None__
 
 
 ****************************************************
+<a name="class-primegenctrl"></a>
 ## __class PrimeGenCtrl__
 Handles the logic and signal connections for the PrimeGenUI
 
@@ -3341,6 +3464,7 @@ ___connectSignals():__
 
 
 ****************************************************
+<a name="primegenctrlinitself-view-model"></a>
 ## __PrimeGenCtrl.\_\_init\_\_(self, view, model)__
 Constructs the PrimeGenCtrl, building signals for PrimeGenUI and connecting
 them to the correct model/function for conversion calculations
@@ -3364,6 +3488,7 @@ __PrimeGenCtrl__
 
 
 ****************************************************
+<a name="primegenctrlcopyallself-getfunction"></a>
 ## __PrimeGenCtrl.\_copyAll(self, getFunction)__
 Copys the text return by the passed getFunction for an output field
 
@@ -3380,6 +3505,7 @@ __None__
 
 
 ****************************************************
+<a name="primegenctrlcheckinputboundsself-inputlabel-minvalue-maxvalue"></a>
 ## __PrimeGenCtrl.\_checkInputBounds(self, inputLabel, minValue, maxValue)__
 Checks to see if the value of int(inputLabel.text()) is between minValue and maxValue
 Changes to empty string if it's lower than min, and to maxValue if higher than maxValue
@@ -3406,6 +3532,7 @@ __None__
 
 
 ****************************************************
+<a name="primegenctrlgeneraterangeself"></a>
 ## __PrimeGenCtrl.\_generateRange(self)__
 Calculates the prime numbers in a range from rangeInput.text()
 Then sets rangeOutput's text to the results
@@ -3422,6 +3549,7 @@ __None__
 
 
 ****************************************************
+<a name="primegenctrlgeneraterandomself"></a>
 ## __PrimeGenCtrl.\_generateRandom(self)__
 Calculates random prime numbers from randomDigitInput and randomAmountInput
 Then sets randomOutput's text to the results
@@ -3438,6 +3566,7 @@ __None__
 
 
 ****************************************************
+<a name="primegenctrlisprimecheckself"></a>
 ## __PrimeGenCtrl.\_IsPrimeCheck(self)__
 Validates if a isPrime.text() is in fact a prime number, then outputs the results
 with an SVG image and text
@@ -3454,6 +3583,7 @@ __None__
 
 
 ****************************************************
+<a name="primegenctrlcleariconself"></a>
 ## __PrimeGenCtrl.\_clearIcon(self)__
 Clears the output results of isPrime, setting the image and text to empty
 
@@ -3468,6 +3598,7 @@ __None__
 
 
 ****************************************************
+<a name="primegenctrlconnectsignalsself"></a>
 ## __PrimeGenCtrl.\_connectSignals(self)__
 Connects the various signals for primeRangeGen, primeRandomGen, and isPrime
 Performs checkInputBounds for all input.textChanged
@@ -3492,6 +3623,7 @@ __None__
 ****************************************************
 # From prime_gen.models
 
+<a name="digitsizedigits-int-total-int"></a>
 ## __digit_size(digits: int, total: int)__
 Generate a set of random prime numbers by a digit size
 Will generate a number number that has <digits> amount of digits
@@ -3521,6 +3653,7 @@ __[int]__
 
 
 ****************************************************
+<a name="isprimen-int"></a>
 ## __is_prime(n: int)__
 Determines if a number is prime or not
 
@@ -3540,6 +3673,7 @@ __Boolean__
 
 
 ****************************************************
+<a name="range1nlimit-int"></a>
 ## __range_1_n(limit: int)__
 Finds all the prime numbers from 1 to <limit> (inclusive)
 Generates numbers based off of the Sieve of Atkin algorithm 
@@ -3567,6 +3701,7 @@ __[int], [str]__
 
 
 ****************************************************
+<a name="class-isprime"></a>
 ## __class IsPrime__
 Creates a QWidget that determines if a number is prime or now
 
@@ -3619,6 +3754,7 @@ ___CreateIsPrimeOutput():__
 
 
 ****************************************************
+<a name="isprimeinitself"></a>
 ## __IsPrime.\_\_init\_\_(self)__
 Initilizer for isPrime
 
@@ -3635,6 +3771,7 @@ __isPrime__
 
 
 ****************************************************
+<a name="isprimecreateisprimeheaderself"></a>
 ## __IsPrime.\_CreateIsPrimeHeader(self)__
 Creates a QLabel text header
 
@@ -3651,6 +3788,7 @@ __QLabel__
 
 
 ****************************************************
+<a name="isprimecreateisprimeinputself"></a>
 ## __IsPrime.\_CreateIsPrimeInput(self)__
 Creates a layout with QLabel, QLineEdit, and QPushButton for isPrime
 
@@ -3667,6 +3805,7 @@ __QVBoxLayout__
 
 
 ****************************************************
+<a name="isprimecreateisprimeoutputself"></a>
 ## __IsPrime.\_CreateIsPrimeOutput(self)__
 Creates a QVBoxLayout with widgets for output results
 
@@ -3685,6 +3824,7 @@ __QVBoxLayout__
 ****************************************************
 
 ****************************************************
+<a name="class-primegenui"></a>
 ## __class PrimeGenUI__
 Creates the core Prime Gen UI. Creates a tabs window, with each item being a
 PrimeRangeGen widget, PrimeRandomGen widget, and IsPrime widget.
@@ -3716,6 +3856,7 @@ __None__
 
 
 ****************************************************
+<a name="primegenuiinitself"></a>
 ## __PrimeGenUI.\_\_init\_\_(self)__
 Initilizer for PrimeGenUI. Creates Tab window with all three prime gen widgets
 
@@ -3734,6 +3875,7 @@ __IsPrime__
 ****************************************************
 
 ****************************************************
+<a name="class-primerandomgen"></a>
 ## __class PrimeRandomGen__
 Creates a Prime Number Generator QWidget that generates a specificied amount of
 random prime numbers with a specificied number of digits from user input
@@ -3807,6 +3949,7 @@ __clearRandomOutput():__
 
 
 ****************************************************
+<a name="primerandomgeninitself"></a>
 ## __PrimeRandomGen.\_\_init\_\_(self)__
 Initilizer for PrimeRandomGen
 
@@ -3823,6 +3966,7 @@ __PrimeRandomGen__
 
 
 ****************************************************
+<a name="primerandomgencreaterandomheaderself"></a>
 ## __PrimeRandomGen.\_CreateRandomHeader(self)__
 Creates a QLabel text header
 
@@ -3839,6 +3983,7 @@ __QLabel__
 
 
 ****************************************************
+<a name="primerandomgencreaterandominputself"></a>
 ## __PrimeRandomGen.\_CreateRandomInput(self)__
 Creates a layout with QLineEdit input text fields with instructions
 
@@ -3855,6 +4000,7 @@ __QHBoxLayout__
 
 
 ****************************************************
+<a name="primerandomgencreaterandombuttonsself"></a>
 ## __PrimeRandomGen.\_CreateRandomButtons(self)__
 Creates a QHBoxLayout of various QPushButtons
 
@@ -3871,6 +4017,7 @@ __QHBoxLayout__
 
 
 ****************************************************
+<a name="primerandomgensetrandomoutputself-text"></a>
 ## __PrimeRandomGen.setRandomOutput(self, text)__
 Changes the text of randomNumOutput
 
@@ -3887,6 +4034,7 @@ __None__
 
 
 ****************************************************
+<a name="primerandomgengetrandomoutputself"></a>
 ## __PrimeRandomGen.getRandomOutput(self)__
 Returns randomNumOutput's text
 
@@ -3903,6 +4051,7 @@ __str__
 
 
 ****************************************************
+<a name="primerandomgenclearrandomoutputself"></a>
 ## __PrimeRandomGen.clearRandomOutput(self)__
 Changes the text of randomNumOutput to an empty string
 
@@ -3919,6 +4068,7 @@ __None__
 ****************************************************
 
 ****************************************************
+<a name="class-primerangegen"></a>
 ## __class PrimeRangeGen__
 Creates a Prime Number Generator QWidget that generates based on the range
 from 1 to a user inputted positive integer
@@ -3980,6 +4130,7 @@ __clearRangeOutput():__
 
 
 ****************************************************
+<a name="primerangegeninitself"></a>
 ## __PrimeRangeGen.\_\_init\_\_(self)__
 Initilizer for PrimeRangeGen
 
@@ -3996,6 +4147,7 @@ __PrimeRangeGen__
 
 
 ****************************************************
+<a name="primerangegencreaterangeheaderself"></a>
 ## __PrimeRangeGen.\_CreateRangeHeader(self)__
 Creates a QLabel text with instruction limits
 
@@ -4012,6 +4164,7 @@ __QLabel__
 
 
 ****************************************************
+<a name="primerangegencreaterangeinputself"></a>
 ## __PrimeRangeGen.\_CreateRangeInput(self)__
 Creates a QLineEdit input field
 
@@ -4028,6 +4181,7 @@ __QLineEdit__
 
 
 ****************************************************
+<a name="primerangegencreaterangebuttonsself"></a>
 ## __PrimeRangeGen.\_CreateRangeButtons(self)__
 Creates a QHBoxLayout of various QPushButtons
 
@@ -4044,6 +4198,7 @@ __QHBoxLayout__
 
 
 ****************************************************
+<a name="primerangegensetrangeoutputself-text"></a>
 ## __PrimeRangeGen.setRangeOutput(self, text)__
 Changes the text of primeRangeGenOutput
 
@@ -4060,6 +4215,7 @@ __None__
 
 
 ****************************************************
+<a name="primerangegengetrangeoutputself"></a>
 ## __PrimeRangeGen.getRangeOutput(self)__
 Returns primeRangeGenOutput's text
 
@@ -4076,6 +4232,7 @@ __str__
 
 
 ****************************************************
+<a name="primerangegenclearrangeoutputself"></a>
 ## __PrimeRangeGen.clearRangeOutput(self)__
 Changes the text of primeRangeGenOutput to an empty string
 
@@ -4092,6 +4249,7 @@ __None__
 ****************************************************
 
 ****************************************************
+<a name="class-scrolllabel"></a>
 ## __class ScrollLabel__
 Custom setup of a QScrollArea to create a read-only Scroll Label for Prime Gen Output
 
@@ -4116,6 +4274,7 @@ __setText(text):__
 
 
 ****************************************************
+<a name="scrolllabelinitself"></a>
 ## __ScrollLabel.\_\_init\_\_(self)__
 Construct A ScrollLabel with certain properties
 
@@ -4134,6 +4293,7 @@ __ScrollArea__
 
 
 ****************************************************
+<a name="scrolllabelsettextself-text"></a>
 ## __ScrollLabel.setText(self, text)__
 Sets the text of label
 
@@ -4150,6 +4310,7 @@ __None__
 
 
 ****************************************************
+<a name="scrolllabeltextself"></a>
 ## __ScrollLabel.text(self)__
 Returns the string of label's text
 
@@ -4170,6 +4331,7 @@ __str__
 
 
 ****************************************************
+<a name="class-testwindowprimegen"></a>
 ## __class TestWindowPrimeGen__
 Constructs a QMainWindow to create and append to it's window a PrimeGenUI widget
 for testing purposes
@@ -4197,6 +4359,7 @@ __None__
 
 
 ****************************************************
+<a name="testwindowprimegeninitself"></a>
 ## __TestWindowPrimeGen.\_\_init\_\_(self)__
 Initilizer for TestWindow
 
@@ -4213,6 +4376,7 @@ __TestWindow__
 
 
 ****************************************************
+<a name="maintestprimegen"></a>
 ## __main_test_prime_gen()__
 Main drivers that initializes PyQt5 application, creates a TestWindow widget,
 and PrimeGenCtrl to connect to the primeGenUI in the main view, as well as sending
@@ -4232,6 +4396,7 @@ __None__
 
 
 ****************************************************
+<a name="class-tempui"></a>
 ## __class temp_Ui__
 Creates a QWidget that performs temperature conversion between Fahrenheit, Celcius,
 and Kelvin.
@@ -4277,6 +4442,7 @@ __convert_temp(val, original_unit, unit_to_convert_to):__
 
 
 ****************************************************
+<a name="tempuiinitself"></a>
 ## __temp_Ui.\_\_init\_\_(self)__
 Initializes the UI, including loading the widgets from its ui file, and connecting
 signals.
@@ -4294,6 +4460,7 @@ __temp_Ui__
 
 
 ****************************************************
+<a name="tempuienterbuttonpressedself"></a>
 ## __temp_Ui.enterButtonPressed(self)__
 If text field is filled, sends input value and input and output base 
 to convert_temp when pressed, then takes results and outputs them
@@ -4309,6 +4476,7 @@ __None__
 
 
 ****************************************************
+<a name="tempuiconverttempself-val-originalunit-unittoconvertto"></a>
 ## __temp_Ui.convert_temp(self, val, original_unit, unit_to_convert_to)__
 Converts val from original_unit to unit_to_convert_to
 
