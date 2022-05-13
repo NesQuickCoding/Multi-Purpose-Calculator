@@ -1,6 +1,8 @@
 import sys
+
+import PyQt5
 from PyQt5.QtWidgets import QApplication, QHBoxLayout, QWidget, QMainWindow, QStackedWidget
-from PyQt5 import QtGui
+from PyQt5 import QtGui, QtCore
 
 from birthday_conversion.views import birthday_Ui
 from main_calc.views import MainCalcUI
@@ -31,6 +33,14 @@ DROPBOX_MENU = [
     ("Temperature Conversion", temp_Ui),
     ("Birthday Conversion", birthday_Ui),
 ]
+
+if hasattr(QtCore.Qt, 'AA_EnableHighDpiScaling'):
+    PyQt5.QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
+
+if hasattr(QtCore.Qt, 'AA_UseHighDpiPixmaps'):
+    PyQt5.QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
+
+
 
 class SecCalc(QStackedWidget):
     """
@@ -64,7 +74,7 @@ class SecCalc(QStackedWidget):
             Newly constructed widget
         """
         super().__init__()
-        self.setFixedSize(425, 400)
+        self.setFixedSize(425, 450)
         self.option = {}
         for QWidgetObject in DROPBOX_MENU:
             self.option[QWidgetObject[1].__name__] = QWidgetObject[1]()
@@ -125,7 +135,7 @@ class MultiCalcWindow(QMainWindow):
         
         # Main Window setup properties
         self.setWindowTitle("Multi-Purpose Calculator")
-        self.setFixedSize(850, 400)
+        self.setFixedSize(850, 450)
         self.generalLayout = QHBoxLayout()
         self._centralWidget = QWidget(self)
         self._centralWidget.setStyleSheet(open('Ext_Stylesheet.css').read())

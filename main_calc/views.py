@@ -51,7 +51,7 @@ class MainCalcUI(QWidget):
             Initalized MainCalcUI
         """
         super().__init__()
-        self.setFixedSize(400, 400)
+        self.setFixedSize(400, 450)
         layout = QVBoxLayout()
         self.calcOutput = self._createCalcOutput()
         layout.addWidget(self.calcOutput)
