@@ -81,15 +81,12 @@ class BaseConvCtrl:
         4. Formats the value to binary
         4. Sets the input for all three fields with their respective formatted value
 
+        If a ValueError occurs when formatting the three with an invalid string or type,
+        typically null strings, no formatting is done
+
         Parameters
         ----------
         None
-
-        Raises
-        ------
-        ValueError
-            Occurs when formatting the three with an invalid string or type.
-            Typically done on null strings, passes whenever triggered.
 
         Returns
         -------
@@ -126,15 +123,12 @@ class BaseConvCtrl:
         4. Formats the value to binary
         4. Sets the input for all three fields with their respective formatted value
 
+        If a ValueError occurs when formatting the three with an invalid string or type,
+        typically null strings, no formatting is done
+
         Parameters
         ----------
         None
-
-        Raises
-        ------
-        ValueError
-            Occurs when formatting the three with an invalid string or type.
-            Typically done on null strings, passes whenever triggered.
 
         Returns
         -------
@@ -166,15 +160,12 @@ class BaseConvCtrl:
         4. Formats the value to hexadecimal
         4. Sets the input for all three fields with their respective formatted value
 
+        If a ValueError occurs when formatting the three with an invalid string or type,
+        typically null strings, no formatting is done
+
         Parameters
         ----------
         None
-
-        Raises
-        ------
-        ValueError
-            Occurs when formatting the three with an invalid string or type.
-            Typically done on null strings, passes whenever triggered.
 
         Returns
         -------

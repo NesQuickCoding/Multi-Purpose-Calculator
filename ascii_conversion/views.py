@@ -109,14 +109,12 @@ class ascii_Ui(QtWidgets.QWidget):
         Sets roof range input for dec and hex. Changes to the input text if input value
         exceeds the range for chr() (1,114,111). Called every time input changes.
 
+        If a ValueError occurs, likely for trying to int type cast an empty string,
+        does no operation.
+
         Parameters
         ----------
         None
-
-        Raises
-        ------
-        ValueError
-            If during type conversion to Int (usually an empty string) raises a ValueError
 
         Returns
         -------
@@ -177,6 +175,9 @@ class ascii_Ui(QtWidgets.QWidget):
         """
         Take the string of val and converts from input_unit to output_unit
 
+        If at any point during the type conversions fail (ValueError), usually casting empty strings,
+        set output to "Invalid Input"
+
         Parameters
         ----------
         val : int, str
@@ -186,11 +187,6 @@ class ascii_Ui(QtWidgets.QWidget):
         output_unit : str
             The desired converted output
         
-        Raises
-        ------
-        ValueError
-            If at any point during the type conversions fail, usually casting empty strings
-
         Returns
         -------
         int, str

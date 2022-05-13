@@ -95,15 +95,12 @@ class birthday_Ui(QtWidgets.QWidget):
         user changes the input. Performs limit checks on fields based on
         month and year.
 
+        If a ValueError occurs during input checks for inputDays, likely because other
+        fields are blank, the limit falls on certain defaults like 31 or 28.
+
         Parameters
         ----------
         None
-
-        Raises
-        ------
-        ValueError
-            When inputDay runs checks, sometimes the other fields are blank.
-            When this error occurs, the limit for day input is set to a default
 
         Returns
         -------
@@ -176,15 +173,13 @@ class birthday_Ui(QtWidgets.QWidget):
         Sends a list input that contains [month,day,year] from user input
         to get_birthday then sets the text of output to the results.
 
+        If a ValueError occurs, likely if certain input fields are empty,
+        submission is ignored.
+
         Parameters
         ----------
         None
 
-        Raises
-        ------
-        ValueError
-            Ignores submission if certain input fields are empty
-        
         Returns
         -------
         None
@@ -207,18 +202,15 @@ class birthday_Ui(QtWidgets.QWidget):
         Takes in a list and a choice input from the combo box for the type of conversion the user wants
         Years, Months, Days and returns the conversion in text.
 
+        If the user entered a date that is outside of a valid date range (ValueError),
+        sets output to "Invalid".
+
         Parameters
         ----------
         combo_input : str
             Input choice from the combo box depending on the conversion user picks.
         calender_input : [int]
             List of numeric date inputs from the user            
-
-        Raises
-        ------
-        ValueError
-            If the user entered a date that is outside of a valid date range.
-            Outputs "Invalid" to output.
 
         Returns
         -------
