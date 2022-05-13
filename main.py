@@ -152,6 +152,8 @@ def main():
     None
     """
     multicalc = QApplication(sys.argv)
+    # Add font to QFontDatabase
+    QtGui.QFontDatabase.addApplicationFont("assets/CascadiaCode.ttf")
     view = MultiCalcWindow()
     # Setting application icon
     app_Icon = QtGui.QIcon('graphics/mpc_logo.png')
