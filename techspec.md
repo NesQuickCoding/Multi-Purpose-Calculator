@@ -92,11 +92,11 @@
 
 	* [NumBase._CreateNumTextBox(self)](#numbasecreatenumtextboxself)
 
-* [Class TestWindow](#class-testwindow)
+* [Class TestWindowBaseConv](#class-testwindowbaseconv)
 
-	* [TestWindow.\_\_init\_\_(self)](#testwindowinitself)
+	* [TestWindowBaseConv.\_\_init\_\_(self)](#testwindowbaseconvinitself)
 
-* [main()](#main)
+* [main_test_base_conv()](#maintestbaseconv)
 
 * [Class birthday_Ui](#class-birthdayui)
 
@@ -238,11 +238,11 @@
 
 	* [MetricConvWidget._createOptionLayout(self, QLineEditObj, QComboBoxObj, items)](#metricconvwidgetcreateoptionlayoutself-qlineeditobj-qcomboboxobj-items)
 
-* [Class TestWindow](#class-testwindow)
+* [Class TestWindowMetricConv](#class-testwindowmetricconv)
 
-	* [TestWindow.\_\_init\_\_(self)](#testwindowinitself)
+	* [TestWindowMetricConv.\_\_init\_\_(self)](#testwindowmetricconvinitself)
 
-* [main()](#main)
+* [main_test_metric_conv()](#maintestmetricconv)
 
 * [Class PrimeGenCtrl](#class-primegenctrl)
 
@@ -322,11 +322,11 @@
 
 	* [ScrollLabel.text(self)](#scrolllabeltextself)
 
-* [Class TestWindow](#class-testwindow)
+* [Class TestWindowPrimeGen](#class-testwindowprimegen)
 
-	* [TestWindow.\_\_init\_\_(self)](#testwindowinitself)
+	* [TestWindowPrimeGen.\_\_init\_\_(self)](#testwindowprimegeninitself)
 
-* [main()](#main)
+* [main_test_prime_gen()](#maintestprimegen)
 
 * [Class temp_Ui](#class-tempui)
 
@@ -1429,7 +1429,7 @@ __QPlainTextEdit__
 
 
 ****************************************************
-## __class TestWindow__
+## __class TestWindowBaseConv__
 Constructs a QMainWindow to create and append to it's window a BaseConvUI
 widget for testing purposes
 
@@ -1456,7 +1456,7 @@ __None__
 
 
 ****************************************************
-## __TestWindow.\_\_init\_\_(self)__
+## __TestWindowBaseConv.\_\_init\_\_(self)__
 Initilizer for TestWindow
 
 Parameters
@@ -1472,7 +1472,7 @@ __TestWindow__
 
 
 ****************************************************
-## __main()__
+## __main_test_base_conv()__
 Main drivers that initializes PyQt5 application, creates a TestWindow widget,
 and BaseConvCtrl object to connect to signals.
 
@@ -3165,7 +3165,7 @@ __QVBoxLayout__
 
 
 ****************************************************
-## __class TestWindow__
+## __class TestWindowMetricConv__
 Constructs a QMainWindow to create and append to it's window a MetricConvUI
 widget for testing purposes
 
@@ -3192,7 +3192,7 @@ __None__
 
 
 ****************************************************
-## __TestWindow.\_\_init\_\_(self)__
+## __TestWindowMetricConv.\_\_init\_\_(self)__
 Initilizer for TestWindow
 
 Parameters
@@ -3208,7 +3208,7 @@ __TestWindow__
 
 
 ****************************************************
-## __main()__
+## __main_test_metric_conv()__
 Main drivers that initializes PyQt5 application, creates a TestWindow widget,
 and 4 MetricConvCtrl objects to connect to four different MetricConvWidgets within
 MetricConvUI, as well as the appropriate conversion functions from models.
@@ -3445,19 +3445,833 @@ __digits : int__
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number of digit places for each random number
 
-__Precondition: must be positive, non-zero integer__
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Precondition, must be positive, non-zero integer
 
 __total : int__
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;how many random prime numbers to generate
 
-__Precondition: must be positive, non-zero integer__
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Precondition, must be positive, non-zero integer
 
 Returns
 -------
 __[int]__
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Results of randomly generated prime numbers
+
+
+****************************************************
+## __is_prime(n: int)__
+Determines if a number is prime or not
+
+Parameters
+----------
+__n : int__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Precondition, n must be a positive integer
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number to test if prime
+
+Returns
+-------
+__Boolean__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;True if n is prime, False if not
+
+
+****************************************************
+## __range_1_n(limit: int)__
+Finds all the prime numbers from 1 to <limit> (inclusive)
+Generates numbers based off of the Sieve of Atkin algorithm 
+ref: https://en.wikipedia.org/wiki/Sieve_of_Atkin
+
+Parameters
+----------
+__limit : int__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Precondition, limit must be a positive, non-zero integer
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Limit of the range
+
+Returns
+-------
+__[int], [str]__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Final list of integers that are prime numbers
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If there are none, returns ["None"]
+
+
+****************************************************
+# From prime_gen.views
+
+
+****************************************************
+## __class IsPrime__
+Creates a QWidget that determines if a number is prime or now
+
+Inherits all methods and attributes from QWidget
+
+Attributes
+----------
+__isPrimeHeader : QLabel__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text header
+
+__isPrimeLabel : QLabel__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instructional text for isPrime widget
+
+__isPrimeInput : QLineEdit__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;input box for isPrime
+
+__isPrimeButton : QPushButton__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text input field
+
+__isPrimeIcon : QSvgWidget__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SVG Image to show if a number is prime or not
+
+__isPrimeText : QLabel__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text confirming if a number is prime or not
+
+__primeRangeOutput : ScrollLabel__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scroll label for output
+
+Methods
+-------
+___CreateIsPrimeHeader():__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a QLabel object for the isPrimeHeader
+
+___CreateIsPrimeInput():__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a a layout and isPrimeLabel, isPrimeInput, and isPrimeButton
+
+___CreateIsPrimeOutput():__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a layout of QPushButtons for input
+
+
+
+****************************************************
+## __IsPrime.\_\_init\_\_(self)__
+Initilizer for isPrime
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__isPrime__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Newly constructed widget
+
+
+
+****************************************************
+## __IsPrime.\_CreateIsPrimeHeader(self)__
+Creates a QLabel text header
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__QLabel__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Header text
+
+
+
+****************************************************
+## __IsPrime.\_CreateIsPrimeInput(self)__
+Creates a layout with QLabel, QLineEdit, and QPushButton for isPrime
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__QVBoxLayout__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Layout of input and submit widgets
+
+
+
+****************************************************
+## __IsPrime.\_CreateIsPrimeOutput(self)__
+Creates a QVBoxLayout with widgets for output results
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__QVBoxLayout__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Layout with Icon and Text
+
+
+
+****************************************************
+
+****************************************************
+## __class PrimeGenUI__
+Creates the core Prime Gen UI. Creates a tabs window, with each item being a
+PrimeRangeGen widget, PrimeRandomGen widget, and IsPrime widget.
+
+Inherits all methods and attributes from QWidget
+
+Attributes
+----------
+__tabs : QTabWidget__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tabs containing all the widgets
+
+__primeRangeGen : PrimeRangeGen__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates PrimeRangeGen View
+
+__primeRandomGen : PrimeRandomGen__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates PrimeRandomGen view
+
+__isPrime : IsPrime__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates IsPrime view
+
+Methods
+-------
+__None__
+
+
+
+****************************************************
+## __PrimeGenUI.\_\_init\_\_(self)__
+Initilizer for PrimeGenUI. Creates Tab window with all three prime gen widgets
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__IsPrime__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Newly constructed widget
+
+
+
+****************************************************
+
+****************************************************
+## __class PrimeRandomGen__
+Creates a Prime Number Generator QWidget that generates a specificied amount of
+random prime numbers with a specificied number of digits from user input
+
+Inherits all methods and attributes from QWidget
+
+Attributes
+----------
+__randomHeader : QLabel__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text header
+
+__randomDigitLabel : QLabel__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label for Digit Input
+
+__randomAmountLabel : QLabel__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label for Amount of numbers input
+
+__randomDigitInput : QLineEdit__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text input for number of digits
+
+__randomAmountInput : QLineEdit__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text input for how many random numbers
+
+__randomGenButton : QPushButton__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Submit button
+
+__randomGenCopy : QPushButton__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copies output to clipboard
+
+__randomGenClear : QPushButton__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clears output text
+
+__randomNumOutput : ScrollLabel__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scroll label for output
+
+Methods
+-------
+___CreateRandomHeader():__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a QLabel object for the randomHeader
+
+___CreateRandpomInput():__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a various QLineEdit object with validators and other settings
+
+___CreateRandomButtons():__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a layout of QPushButtons for input
+
+__setRandomOutput(text):__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Changes the output text of randomNumOutput
+
+__getRandomOutput():__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the output text of randomNumOutput
+
+__clearRandomOutput():__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clears the output text of randomNumOutput
+
+
+
+****************************************************
+## __PrimeRandomGen.\_\_init\_\_(self)__
+Initilizer for PrimeRandomGen
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__PrimeRandomGen__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Newly constructed widget
+
+
+
+****************************************************
+## __PrimeRandomGen.\_CreateRandomHeader(self)__
+Creates a QLabel text header
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__QLabel__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Header text
+
+
+
+****************************************************
+## __PrimeRandomGen.\_CreateRandomInput(self)__
+Creates a layout with QLineEdit input text fields with instructions
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__QHBoxLayout__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Layout of text input fields
+
+
+
+****************************************************
+## __PrimeRandomGen.\_CreateRandomButtons(self)__
+Creates a QHBoxLayout of various QPushButtons
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__QHBoxLayout__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Layout with Genereate, Copy All, and Clear buttons
+
+
+
+****************************************************
+## __PrimeRandomGen.setRandomOutput(self, text)__
+Changes the text of randomNumOutput
+
+Parameters
+----------
+__text : str__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;input of new text
+
+Returns
+-------
+__None__
+
+
+
+****************************************************
+## __PrimeRandomGen.getRandomOutput(self)__
+Returns randomNumOutput's text
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__str__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;randomNumOutput's text
+
+
+
+****************************************************
+## __PrimeRandomGen.clearRandomOutput(self)__
+Changes the text of randomNumOutput to an empty string
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__None__
+
+
+
+****************************************************
+
+****************************************************
+## __class PrimeRangeGen__
+Creates a Prime Number Generator QWidget that generates based on the range
+from 1 to a user inputted positive integer
+
+Inherits all methods and attributes from QWidget
+
+Attributes
+----------
+__rangeHeader : QLabel__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text header
+
+__rangeInput : QLineEdit__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text input field
+
+__rangeGenButton : QPushButton__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Submit button to generate input
+
+__rangeGenCopy : QPushButton__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copys results to clipboard
+
+__rangeGenClear : QPushButton__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clears output text
+
+__primeRangeOutput : ScrollLabel__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scroll label for output
+
+Methods
+-------
+___CreateRangeHeader():__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a QLabel object for the rangeHeader
+
+___CreateRangeInput():__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a QLineEdit object with validators and other settings
+
+___CreateRangeButtons(self):__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a layout of QPushButtons for input
+
+__setRangeOutput(text):__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Changes the output text of primeRangeOutput
+
+__getRangeOutput():__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the output text of primeRangeOutput
+
+__clearRangeOutput():__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clears the output text of primeRangeOutput
+
+
+
+****************************************************
+## __PrimeRangeGen.\_\_init\_\_(self)__
+Initilizer for PrimeRangeGen
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__PrimeRangeGen__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Newly constructed widget
+
+
+
+****************************************************
+## __PrimeRangeGen.\_CreateRangeHeader(self)__
+Creates a QLabel text with instruction limits
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__QLabel__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Header/instructional text
+
+
+
+****************************************************
+## __PrimeRangeGen.\_CreateRangeInput(self)__
+Creates a QLineEdit input field
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__QLineEdit__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;primeRangeInput field
+
+
+
+****************************************************
+## __PrimeRangeGen.\_CreateRangeButtons(self)__
+Creates a QHBoxLayout of various QPushButtons
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__QHBoxLayout__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Layout with Genereate, Copy All, and Clear buttons
+
+
+
+****************************************************
+## __PrimeRangeGen.setRangeOutput(self, text)__
+Changes the text of primeRangeGenOutput
+
+Parameters
+----------
+__text : str__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;input of new text
+
+Returns
+-------
+__None__
+
+
+
+****************************************************
+## __PrimeRangeGen.getRangeOutput(self)__
+Returns primeRangeGenOutput's text
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__str__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;primeRangeOutput's text
+
+
+
+****************************************************
+## __PrimeRangeGen.clearRangeOutput(self)__
+Changes the text of primeRangeGenOutput to an empty string
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__None__
+
+
+
+****************************************************
+
+****************************************************
+## __class ScrollLabel__
+Custom setup of a QScrollArea to create a read-only Scroll Label for Prime Gen Output
+
+Inherits all methods and attributes from QScrollArea
+
+Attributes
+----------
+__label : QLabel__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stores the text content of the object
+
+Methods
+-------
+__setText(text):__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Changes label's text with text
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text()
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns label's text
+
+
+
+****************************************************
+## __ScrollLabel.\_\_init\_\_(self)__
+Construct A ScrollLabel with certain properties
+
+Parameters
+----------
+__label : QLabel__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Used to store text for the ScrollArea
+
+Returns
+-------
+__ScrollArea__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Newly constructed widget
+
+
+
+****************************************************
+## __ScrollLabel.setText(self, text)__
+Sets the text of label
+
+Parameters
+----------
+__text : str__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Input for the label to change to
+
+Returns
+-------
+__None__
+
+
+
+****************************************************
+## __ScrollLabel.text(self)__
+Returns the string of label's text
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__str__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Label's text
+
+
+
+****************************************************
+# From prime_gen.test
+
+
+****************************************************
+## __class TestWindowPrimeGen__
+Constructs a QMainWindow to create and append to it's window a PrimeGenUI widget
+for testing purposes
+
+Inherits all methods and attributes from QMainWindow
+
+Attributes
+----------
+__generalLayout : QVBoxLayout__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stores the layout of the main
+
+___centralWidget : QWidget__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contains central widget bound to self
+
+__primeGenUI : PrimeGenUI__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initializes and stores PrimeGenUI
+
+Methods
+-------
+__None__
+
+
+
+****************************************************
+## __TestWindowPrimeGen.\_\_init\_\_(self)__
+Initilizer for TestWindow
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__TestWindow__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the central widget for main application
+
+
+
+****************************************************
+## __main_test_prime_gen()__
+Main drivers that initializes PyQt5 application, creates a TestWindow widget,
+and PrimeGenCtrl to connect to the primeGenUI in the main view, as well as sending
+the models module.
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__None__
+
+
+****************************************************
+# From temp_conversion.temp_conv_logic
+
+
+****************************************************
+## __class temp_Ui__
+Creates a QWidget that performs temperature conversion between Fahrenheit, Celcius,
+and Kelvin.
+
+Inhereits all methods and attributes from QWidget
+
+Attributes
+----------
+__button : QPushButton__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Submit button to initiate conversion
+
+__input : QLineEdit__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Input text field
+
+__radioButtons : [QRadioButtons]__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A list containing all the radiobuttons in the widget.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - Fahrenheit (Input)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - Celcius (Input)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - Kelvin (Input)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 - Fahrenheir (Output)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 - Celcius (Output)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 - Kelvin (Output)
+
+Methods
+-------
+__enterButtonPressed():__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Send input value and input and output base to convert_temp when pressed
+
+__convert_temp(val, original_unit, unit_to_convert_to):__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Converts val from original_unit to unit_to_convert_to
+
+
+
+****************************************************
+## __temp_Ui.\_\_init\_\_(self)__
+Initializes the UI, including loading the widgets from its ui file, and connecting
+signals.
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__temp_Ui__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Newly constructed widget
+
+
+
+****************************************************
+## __temp_Ui.enterButtonPressed(self)__
+If text field is filled, sends input value and input and output base 
+to convert_temp when pressed, then takes results and outputs them
+
+Parameters
+----------
+__None__
+
+Returns
+-------
+__None__
+
+
+
+****************************************************
+## __temp_Ui.convert_temp(self, val, original_unit, unit_to_convert_to)__
+Converts val from original_unit to unit_to_convert_to
+
+Parameters
+----------
+__val : float__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the input temperature value
+
+__original_unit : str__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;input temperature unit
+
+__unit_to_convert_to : str__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output temperature unit to convert to
+
+Returns
+-------
+__float__
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;converted temperature value
+
 
 
 ****************************************************
