@@ -25,7 +25,7 @@ def signedIntToBase(value, bits, base):
 def signedBaseToInt(value, bits):
     """
     Takes an int value in hex or bin representation and performs a bit shift by bits value
-    to achive the int value with base 10
+    to convert to an int value with base 10
 
     Parameters
     ----------
@@ -78,7 +78,7 @@ def rightToLeftInsertion(string, position, insertChar):
 def decValidator(stringNumber, limit, isSigned):
     """
     Validates a decimal number in string form:
-    - If a negative sign in the beginning only if isSigned is enabled
+    - If a negative sign in the beginning of string number, isSigned is enabled
     - Uses RegExp to confirm input is only digits
     - Splits at the commas and merges into a legal int number
     - Checks if it's in the limit bounds and manipulates based on limit:
@@ -120,11 +120,11 @@ def decValidator(stringNumber, limit, isSigned):
 
 def decFormatter(stringNumber):
     """
-    Formats a decimal number in string form have commas
+    Formats a decimal number in string form to have thousands place commas
 
     Parameters
     ----------
-    stringNumber
+    stringNumber : str
         decimal number in string form
     
     Returns
@@ -236,7 +236,7 @@ def binValidator(stringNumber, limit, isSigned):
     
 def binFormatter(stringNumber, bit):
     """
-    Formats a binarystring to have a space every 4 digits
+    Formats a binary string to have a space every 4 digits
 
     Parameters
     ----------
