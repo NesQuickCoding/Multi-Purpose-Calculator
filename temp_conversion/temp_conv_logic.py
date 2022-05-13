@@ -6,7 +6,7 @@ class temp_Ui(QtWidgets.QWidget):
     Creates a QWidget that performs temperature conversion between Fahrenheit, Celcius,
     and Kelvin.
 
-    Inhereits all methods and attributes from QWidget
+    Inherits all methods and attributes from QWidget
 
     Attributes
     ----------
