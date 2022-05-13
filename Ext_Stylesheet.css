@@ -178,7 +178,6 @@ QComboBox {
     border-width: 2px;
     border-radius: 3px;
     border-color: darkgreen;
-    font-family: "Cascadia Code";
 }
 
 QComboBox:hover {
