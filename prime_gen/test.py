@@ -2,9 +2,9 @@ import sys
 
 from PyQt5.QtWidgets import QApplication, QVBoxLayout, QWidget, QMainWindow
 
-from views import PrimeGenUI
-import models
-from controllers import PrimeGenCtrl
+# from views import PrimeGenUI
+# import models
+# from controllers import PrimeGenCtrl
 
 class TestWindow(QMainWindow):
     """
