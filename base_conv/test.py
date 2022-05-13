@@ -2,9 +2,9 @@ import sys
 
 from PyQt5.QtWidgets import QApplication, QVBoxLayout, QWidget, QMainWindow
 
-# from views import BaseConvUI
-# import models
-# from controllers import BaseConvCtrl
+from views import BaseConvUI
+import models
+from controllers import BaseConvCtrl
 
 class TestWindowBaseConv(QMainWindow):
     """
