@@ -492,7 +492,7 @@ class IsPrime(QWidget):
         Creates a QLabel object for the isPrimeHeader
     _CreateIsPrimeInput():
         Creates a a layout and isPrimeLabel, isPrimeInput, and isPrimeButton
-    _CreateIsPrimeOutput()):
+    _CreateIsPrimeOutput():
         Creates a layout of QPushButtons for input
     """
     def __init__(self):

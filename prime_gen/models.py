@@ -14,8 +14,9 @@ def range_1_n(limit : int):
 
     Returns
     -------
-    [int]
+    [int], [str]
         Final list of integers that are prime numbers
+        If there are none, returns ["None"]
     """
     # Check for positive integer
     if limit <= 0:
