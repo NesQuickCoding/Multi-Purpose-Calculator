@@ -45,7 +45,7 @@ class NumBase(QWidget):
         Returns
         -------
         QLabel
-            The QLabel header
+            A QLabel header
         """
         header = QLabel(headerText)
         header.setObjectName("baseConvHeader")
@@ -53,7 +53,7 @@ class NumBase(QWidget):
     
     def _CreateNumTextBox(self):
         """
-        Constructs a QPlainTextEdit
+        Constructs a QPlainTextEdit widget
 
         Parameters
         ----------
@@ -62,7 +62,7 @@ class NumBase(QWidget):
         Returns
         -------
         QPlainTextEdit
-            The QPlanTextEdit to be used for input/output
+            QPlanTextEdit object to be used for input/output
         """
         textbox = QPlainTextEdit()
         textbox.setObjectName("baseEditBox")
@@ -126,7 +126,7 @@ class HexBase(NumBase):
     """
     def __init__(self):
         """
-        Initializer for DecBase
+        Initializer for HexBase
 
         Parameters
         ----------
@@ -185,9 +185,9 @@ class BinBase(NumBase):
 
 class BaseConvUI(QWidget):
     """
-    A QWidget creates the three main number bases of decimal, hexadecimal, and binary.
-    Also creates the layout for signed/unsigned QRadioButtons, a negate QPushButton,
-    and QComboBox for bit-width selection.
+    A QWidget that creates the three main number bases of decimal, hexadecimal, and binary
+    base UI widgets and layout. Also creates the layout for signed/unsigned QRadioButtons,
+    a negate QPushButton, and QComboBox for bit-width selection.
 
     Inherits all methods and attributes from QWidget
 
