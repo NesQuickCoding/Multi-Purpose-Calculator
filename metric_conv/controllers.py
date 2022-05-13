@@ -20,14 +20,15 @@ class MetricConvCtrl:
     _setTextFields(inputField, outputField, inputString, outputString):
         Changes inputField and outputField's text with outputString by disconnecting
         their text signals, sets their text, and reactivates the signals
-    _toggleInputError():
-        Changes the object names for the left/rightTextEdit objects and changes their styling
-        Activates when user inputs a value that raises a ValueError
     _textChanged(inputField, outputField, inputMenu, outputMenu):
         Passes the text of inputField and the indexes of inputMenu and outputMenu to be
         calculated by _model.
         Activates when a user changes the text of the QLineEdits or changes the current index
         of the QComboBoxs
+    _toggleValidStyle():
+        Changes the object name for the left/rightTextEdit fields to valid, and loads stylesheet
+    _toggleInvalidStyle()
+        Changes the object name for the left/rightTextEdit fields to invalid, and loads stylesheet
     """
     def __init__(self, view, model):
         """
@@ -162,12 +163,34 @@ class MetricConvCtrl:
         self._setTextFields(inputField, outputField, inputString, outputString)
 
     def _toggleValidStyle(self):
+        """
+        Changes the object name for the left/rightTextEdit fields to valid, and loads stylesheet
+
+        Parameters
+        ----------
+        None
+        
+        Returns
+        -------
+        None
+        """
         self._view.leftTextEdit.setObjectName("metricValidInput")
         self._view.rightTextEdit.setObjectName("metricValidInput")
         self._view.leftTextEdit.setStyleSheet(open('./Ext_Stylesheet.css').read())
         self._view.rightTextEdit.setStyleSheet(open('./Ext_Stylesheet.css').read())
     
     def _toggleInvalidStyle(self):
+        """
+        Changes the object name for the left/rightTextEdit fields to invalid, and loads stylesheet
+
+        Parameters
+        ----------
+        None
+        
+        Returns
+        -------
+        None
+        """
         self._view.leftTextEdit.setObjectName("metricInvalidInput")
         self._view.rightTextEdit.setObjectName("metricInvalidInput")
         self._view.leftTextEdit.setStyleSheet(open('./Ext_Stylesheet.css').read())
