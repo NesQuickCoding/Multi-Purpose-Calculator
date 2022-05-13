@@ -1,11 +1,11 @@
 class BaseConvCtrl:
     """
-    Handles the logic and singal connectios for BaseConvUI
+    Handles the logic and singal connections for BaseConvUI
 
     Attributes
     ----------
     _view : BaseConvUI
-        Stores the reference to the QWidget
+        Stores the reference to the BaseConvUI widget
     _model : module
         Stores the reference base_conv/models.py with validator, formating, and calculating
         functions
@@ -18,27 +18,32 @@ class BaseConvCtrl:
     Methods
     -------
     _decChanged():
-        Handler for when the decimal textbox is changed
+        Handler for when the decimal textbox is changed. Calls conversion and format
+        functions for every base, and sends the results to their respective outputs.
     _hexChanged():
-        Handler for when the hexadecimal textbox is changed
+        Handler for when the hexadecimal textbox is changed. Calls conversion and format
+        functions for every base, and sends the results to their respective outputs.
     _binChanged():
-        Handler for when the binary textbox is changed
+        Handler for when the binary textbox is changed. Calls conversion and format
+        functions for every base, and sends the results to their respective outputs.
     _setSigned():
-        Handler for when the signed/unsigned radio buttons change
+        Handler for when the signed/unsigned radio buttons change. Calls conversion and
+        format functions for every base, and sends the results to their respective outputs.
     _setNegate():
-        Toggles negation of a number and changed every textbox
+        Toggles negation of a number and changed every textbox. Calls conversion and format
+        functions for every base, and sends the results to their respective outputs.
     _connectTextSignals
-        Connects textbox textHasChanged signals
+        Connects textbox textHasChanged signals.
     _disconnectTextSignals
-        Disconnects textbox textHasChanged signals
+        Disconnects textbox textHasChanged signals.
     _setAllTextBoxes(decOutput, hexOutput, binOutput)
-        Handlers the signals and setting the text for the textbox input/outputs
+        Disables textbox signals, sets the text, then re-enables them.
     _connectBitSignals()
-        Connects the dropbox and radio buttons to handle changes in their state
+        Connects the dropbox and radio buttons to handle changes in their state.
     """
     def __init__(self, view, model):
         """
-        Constructs the BaseConvCtrl, building signals for BaseConvUI and connecting
+        Constructs the BaseConvCtrl, constructing signals for BaseConvUI and connecting
         them to the correct model/function for conversion calculations
 
         Parameters
@@ -83,7 +88,8 @@ class BaseConvCtrl:
         Raises
         ------
         ValueError
-            If occurs when formatting the three numbers
+            Occurs when formatting the three with an invalid string or type.
+            Typically done on null strings, passes whenever triggered.
 
         Returns
         -------
@@ -127,7 +133,8 @@ class BaseConvCtrl:
         Raises
         ------
         ValueError
-            If occurs when formatting the three numbers
+            Occurs when formatting the three with an invalid string or type.
+            Typically done on null strings, passes whenever triggered.
 
         Returns
         -------
@@ -166,7 +173,8 @@ class BaseConvCtrl:
         Raises
         ------
         ValueError
-            If occurs when formatting the three numbers
+            Occurs when formatting the three with an invalid string or type.
+            Typically done on null strings, passes whenever triggered.
 
         Returns
         -------
@@ -192,7 +200,8 @@ class BaseConvCtrl:
     def _setSigned(self):
         """
         Sets _signed based on signage selection from the QRadioButtons. Will also disable the
-        negate button if _signed is 1/True
+        negate button if _signed is 1/True. Immediately calls for conversion and changes out
+        once set.
 
         Parameters
         ----------
@@ -246,7 +255,7 @@ class BaseConvCtrl:
 
     def _disconnectTextSignals(self):
         """
-        Connects decTextBox, hexTextBox, and binTextBox textChanged signals
+        Disconnects decTextBox, hexTextBox, and binTextBox textChanged signals
 
         Parameters
         ----------
@@ -262,7 +271,8 @@ class BaseConvCtrl:
     
     def _setAllTextBoxes(self, decOutput, hexOutput, binOutput):
         """
-        Sets decTextBox, hexTextBox, and binTextBox to their respective output
+        Sets decTextBox, hexTextBox, and binTextBox to their respective output. Disconnects
+        signals first, then reconnects after setting text.
 
         Parameters
         ----------
@@ -285,7 +295,8 @@ class BaseConvCtrl:
 
     def _connectBitSignals(self):
         """
-        Connects bitDropBox, unSignedRadio and negateButton to their respective signals
+        Connects bitDropBox, unSignedRadio and negateButton to their respective signals,
+        listening to any changes in their state.
 
         Parameters
         ----------
