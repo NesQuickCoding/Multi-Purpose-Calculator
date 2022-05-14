@@ -1,0 +1,2 @@
+Andrew Alagna:
+I ran into problem's trying to load the generated Qt creator UI file into our program. At first I attempted to generate the python code from the UI, but quickly realized that the generated code was too unorganized. I ended up loading the UI file directly into the temperature conversion class, and writing all of the logic to process the data manually. Instead of generating all of the python code, I found this an easier way to organize and write custom logic.
