@@ -9,6 +9,7 @@
 * Temperature conversion
 * Birthday conversion
 
+### Go to [Spec sheet](techspec.md)
 
 ## Designed graphical user interface (GUI) using PyQT5.
 
