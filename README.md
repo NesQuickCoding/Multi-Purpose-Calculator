@@ -9,7 +9,15 @@
 * Temperature conversion
 * Birthday conversion
 
-### Go to [Spec sheet](techspec.md)
+## How to install and use:
+1. In the terminal, go to the directory you wish to install the Calculator in (using the cd command).
+2. Clone our respository by typing 'clone https://github.com/NesQuickCoding/Multi-Purpose-Calculator.git' .
+3. Enter your github username and password.
+4. Go to the newly cloned directory with 'cd Graphical-App'.
+5. Type python main.py .
+6. The application will open and is ready to use. Close the application like normal when finished.
+
+### Go to [Spec sheet](techspec.md) to see the technical documentation for each class and function.
 
 ## Designed graphical user interface (GUI) using PyQT5.
 
@@ -26,3 +34,5 @@ The following functionality is completed:
 * [] need to have a window and at least 6 different widgets on the application
 * [] technical spec detailing your functions, classes and what each does
 * [] a md file which details the problems you ran into and how you solved them
+
+#### Feel free to clone and contribute via a pull request! All ideas are welcome.
