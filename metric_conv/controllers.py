@@ -176,8 +176,8 @@ class MetricConvCtrl:
         """
         self._view.leftTextEdit.setObjectName("metricValidInput")
         self._view.rightTextEdit.setObjectName("metricValidInput")
-        self._view.leftTextEdit.setStyleSheet(open('./Ext_Stylesheet.css').read())
-        self._view.rightTextEdit.setStyleSheet(open('./Ext_Stylesheet.css').read())
+        self._view.leftTextEdit.setStyleSheet(open('./style/Ext_Stylesheet.css').read())
+        self._view.rightTextEdit.setStyleSheet(open('./style/Ext_Stylesheet.css').read())
     
     def _toggleInvalidStyle(self):
         """
