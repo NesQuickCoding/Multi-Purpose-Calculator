@@ -34,12 +34,13 @@ DROPBOX_MENU = [
     ("Birthday Conversion", birthday_Ui),
 ]
 
+# Enabling High DPI Scaling
 if hasattr(QtCore.Qt, 'AA_EnableHighDpiScaling'):
     PyQt5.QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
 
+# Using High DPI Pixmaps
 if hasattr(QtCore.Qt, 'AA_UseHighDpiPixmaps'):
     PyQt5.QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
-
 
 
 class SecCalc(QStackedWidget):
