@@ -139,7 +139,7 @@ class MultiCalcWindow(QMainWindow):
         self.setFixedSize(850, 450)
         self.generalLayout = QHBoxLayout()
         self._centralWidget = QWidget(self)
-        self._centralWidget.setStyleSheet(open('Ext_Stylesheet.css').read())
+        self._centralWidget.setStyleSheet(open('style/Ext_Stylesheet.css').read())
         self.setCentralWidget(self._centralWidget)
         self._centralWidget.setLayout(self.generalLayout)
 

@@ -193,5 +193,5 @@ class MetricConvCtrl:
         """
         self._view.leftTextEdit.setObjectName("metricInvalidInput")
         self._view.rightTextEdit.setObjectName("metricInvalidInput")
-        self._view.leftTextEdit.setStyleSheet(open('./Ext_Stylesheet.css').read())
-        self._view.rightTextEdit.setStyleSheet(open('./Ext_Stylesheet.css').read())
+        self._view.leftTextEdit.setStyleSheet(open('./style/Ext_Stylesheet.css').read())
+        self._view.rightTextEdit.setStyleSheet(open('./style/Ext_Stylesheet.css').read())
