@@ -1,6 +1,5 @@
 import sys
 
-import PyQt5
 from PyQt5.QtWidgets import QApplication, QHBoxLayout, QWidget, QMainWindow, QStackedWidget
 from PyQt5 import QtGui, QtCore
 
@@ -169,6 +168,8 @@ def main():
     # Setting application icon
     app_Icon = QtGui.QIcon('graphics/mpc_logo.png')
     
+    multicalc.setStyle("windowsvista")
+    
     view = MultiCalcWindow()
     view.setWindowIcon(app_Icon)
     view.show()
@@ -187,6 +188,7 @@ def main():
     MetricConvCtrl(view=view.secCalc.option["MetricConvUI"].weightView, model=metric_conv.models.weight_conversion)
     MetricConvCtrl(view=view.secCalc.option["MetricConvUI"].timeView, model=metric_conv.models.time_conversion)
     MetricConvCtrl(view=view.secCalc.option["MetricConvUI"].digitalStorageView, model=metric_conv.models.digital_space_conversion)
+    
     # Execute program loop
     sys.exit(multicalc.exec_())
 
