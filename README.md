@@ -64,13 +64,16 @@ Multi-Purpose Calculator is a stylish calculator application that features two o
     <img src="demo/Demo7.gif" width="475" height="238" alt="Birthday Conversion Demo" />
 </details>
 
+## Requirements
+* Python 3
+* PyQt5
+
 ## How to install and use:
-1. In the terminal, go to the directory you wish to install the Calculator in (using the cd command).
-2. Clone our respository by typing 'clone https://github.com/NesQuickCoding/Multi-Purpose-Calculator.git' .
-3. Enter your github username and password.
-4. Go to the newly cloned directory with 'cd Graphical-App'.
-5. Type python main.py .
-6. The application will open and is ready to use. Close the application like normal when finished.
+1. Install the latest version of Python 3 to your machine
+2. After installation, install PyQt5 with pip by going into your terminal and typing `pip install pyqt5`
+3. Clone or download the project either with `git clone https://github.com/NesQuickCoding/Multi-Purpose-Calculator.git` or by manually downloading the ZIP and extracting its contents.
+4. Run `main.py` in the root folder, either in your terminal with `python main.py` or however you wish to run the script.
+5. The application will open and is ready to use. Close the application as you normally would close a window in your OS.
 
 ### Go to [spec sheet](techspec.md) to see the technical documentation for each class and function.
 
