@@ -85,7 +85,6 @@ To read about some issues and solutions we faced during this project, go to our 
 Our application was systlized and designed with the application's style set as `windowsvista`. We have only worked and tested our app under this set style. Because QT mimics certain styles based on the user's OS, running this app on Mac or Linux machines may have different porportions with buttons or input. 
 
 ## Purpose
-
 This project was developed during the Spring 2022 semester at Hunter College for CSCI 39538 - Advance Python course. It was developed over the period of 3 weeks and had the following requirements for the assignment:
 
 * [x] Create a GUI with Python.
@@ -97,6 +96,6 @@ This project was developed during the Spring 2022 semester at Hunter College for
 * [x] A md file which details the problems you ran into and how you solved them.
 
 ## Resources
-
+List of external resources used can be found [here](resources.md).
 
 #### Feel free to clone and contribute via a pull request! All ideas are welcome.
