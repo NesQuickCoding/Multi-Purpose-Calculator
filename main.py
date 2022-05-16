@@ -1,6 +1,5 @@
 import sys
 
-import PyQt5
 from PyQt5.QtWidgets import QApplication, QHBoxLayout, QWidget, QMainWindow, QStackedWidget
 from PyQt5 import QtGui, QtCore
 
@@ -33,15 +32,6 @@ DROPBOX_MENU = [
     ("Temperature Conversion", temp_Ui),
     ("Birthday Conversion", birthday_Ui),
 ]
-
-# Enabling High DPI Scaling
-if hasattr(QtCore.Qt, 'AA_EnableHighDpiScaling'):
-    PyQt5.QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
-
-# Using High DPI Pixmaps
-if hasattr(QtCore.Qt, 'AA_UseHighDpiPixmaps'):
-    PyQt5.QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
-
 
 class SecCalc(QStackedWidget):
     """
@@ -162,13 +152,25 @@ def main():
     -------
     None
     """
+    # Enabling High DPI Scaling
+    if hasattr(QtCore.Qt, 'AA_EnableHighDpiScaling'):
+        QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
+
+    # Using High DPI Pixmaps
+    if hasattr(QtCore.Qt, 'AA_UseHighDpiPixmaps'):
+        QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
+
     multicalc = QApplication(sys.argv)
+
     # Add font to QFontDatabase
     QtGui.QFontDatabase.addApplicationFont("assets/CascadiaCode.ttf")
-    view = MultiCalcWindow()
+    
     # Setting application icon
     app_Icon = QtGui.QIcon('graphics/mpc_logo.png')
-
+    
+    multicalc.setStyle("windowsvista")
+    
+    view = MultiCalcWindow()
     view.setWindowIcon(app_Icon)
     view.show()
 
@@ -186,6 +188,7 @@ def main():
     MetricConvCtrl(view=view.secCalc.option["MetricConvUI"].weightView, model=metric_conv.models.weight_conversion)
     MetricConvCtrl(view=view.secCalc.option["MetricConvUI"].timeView, model=metric_conv.models.time_conversion)
     MetricConvCtrl(view=view.secCalc.option["MetricConvUI"].digitalStorageView, model=metric_conv.models.digital_space_conversion)
+    
     # Execute program loop
     sys.exit(multicalc.exec_())
 
