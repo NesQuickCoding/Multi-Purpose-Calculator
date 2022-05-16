@@ -1,7 +1,6 @@
 from PyQt5.QtWidgets import QApplication
 from functools import partial
 
-
 class PrimeGenCtrl:
     """
     Handles the logic and signal connections for the PrimeGenUI

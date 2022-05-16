@@ -1,6 +1,5 @@
 from PyQt5.QtWidgets import QWidget, QScrollArea, QLabel, QTabWidget, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout
 from PyQt5.QtGui import QIntValidator, QRegExpValidator, QPixmap
-from PyQt5.QtSvg import QSvgWidget
 from PyQt5.QtCore import Qt, QRegExp
 import pathlib
 
@@ -493,7 +492,7 @@ class IsPrime(QWidget):
         Creates a QLabel object for the isPrimeHeader
     _CreateIsPrimeInput():
         Creates a a layout and isPrimeLabel, isPrimeInput, and isPrimeButton
-    _CreateIsPrimeOutput()):
+    _CreateIsPrimeOutput():
         Creates a layout of QPushButtons for input
     """
     def __init__(self):

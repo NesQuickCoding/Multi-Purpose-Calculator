@@ -6,7 +6,7 @@ from views import BaseConvUI
 import models
 from controllers import BaseConvCtrl
 
-class TestWindow(QMainWindow):
+class TestWindowBaseConv(QMainWindow):
     """
     Constructs a QMainWindow to create and append to it's window a BaseConvUI
     widget for testing purposes
@@ -17,8 +17,8 @@ class TestWindow(QMainWindow):
     ----------
     generalLayout : QVBoxLayout
         stores the layout of the main
-    _centralWidget
-        Contains central widget
+    _centralWidget : QWidget
+        Contains central widget bound to self
     metricConvUI : BaseConvGenUI
         initializes and stores BaseConvGenUI
 
@@ -51,7 +51,7 @@ class TestWindow(QMainWindow):
         self.baseConvUI = BaseConvUI()
         self.generalLayout.addWidget(self.baseConvUI)
 
-def main():
+def main_test_base_conv():
     """
     Main drivers that initializes PyQt5 application, creates a TestWindow widget,
     and BaseConvCtrl object to connect to signals.
@@ -65,10 +65,10 @@ def main():
     None
     """
     baseconv = QApplication(sys.argv)
-    view = TestWindow()
+    view = TestWindowBaseConv()
     view.show()
     BaseConvCtrl(view=view.baseConvUI, model=models)
     sys.exit(baseconv.exec())
 
 if __name__ == '__main__':
-    main()
+    main_test_base_conv()

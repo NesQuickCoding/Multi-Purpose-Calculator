@@ -77,7 +77,7 @@ class MetricConvWidget(QWidget):
         ----------
         QLineEditObj : QLineEdit
             Reference to the object's attribute for the left/rightTextEdit
-        QComboBoxObj: QComboBox
+        QComboBoxObj : QComboBox
             Reference to the object's attributefor the left/rightComboBox
         items : [str]
             A list of str objects, each one being a different measurement unit

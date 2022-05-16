@@ -6,7 +6,7 @@ from views import PrimeGenUI
 import models
 from controllers import PrimeGenCtrl
 
-class TestWindow(QMainWindow):
+class TestWindowPrimeGen(QMainWindow):
     """
     Constructs a QMainWindow to create and append to it's window a PrimeGenUI widget
     for testing purposes
@@ -17,8 +17,8 @@ class TestWindow(QMainWindow):
     ----------
     generalLayout : QVBoxLayout
         stores the layout of the main
-    _centralWidget
-        Contains central widget
+    _centralWidget : QWidget
+        Contains central widget bound to self
     primeGenUI : PrimeGenUI
         initializes and stores PrimeGenUI
 
@@ -50,7 +50,7 @@ class TestWindow(QMainWindow):
         self.primeGenUI = PrimeGenUI()
         self.generalLayout.addWidget(self.primeGenUI)
 
-def main():
+def main_test_prime_gen():
     """
     Main drivers that initializes PyQt5 application, creates a TestWindow widget,
     and PrimeGenCtrl to connect to the primeGenUI in the main view, as well as sending
@@ -65,10 +65,10 @@ def main():
     None
     """
     primegen = QApplication(sys.argv)
-    view = TestWindow()
+    view = TestWindowPrimeGen()
     view.show()
     PrimeGenCtrl(view=view.primeGenUI, model=models)
     sys.exit(primegen.exec())
 
 if __name__ == '__main__':
-    main()
+    main_test_prime_gen()

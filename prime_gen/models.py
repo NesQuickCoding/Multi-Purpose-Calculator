@@ -9,13 +9,14 @@ def range_1_n(limit : int):
     Parameters
     ----------
     limit : int
-        Precondition: limit must be a positive, non-zero integer
+        Precondition, limit must be a positive, non-zero integer
         Limit of the range
 
     Returns
     -------
-    [int]
+    [int], [str]
         Final list of integers that are prime numbers
+        If there are none, returns ["None"]
     """
     # Check for positive integer
     if limit <= 0:
@@ -96,10 +97,10 @@ def is_prime(n : int):
     """
     Determines if a number is prime or not
     
-    Parameters:
-    -----------
+    Parameters
+    ----------
     n : int
-        Precondition: n must be a positive integer
+        Precondition, n must be a positive integer
         Number to test if prime
     
     Returns
@@ -137,10 +138,10 @@ def digit_size(digits : int, total : int):
     ----------
     digits : int
         number of digit places for each random number
-        Precondition: must be positive, non-zero integer
+        Precondition, must be positive, non-zero integer
     total : int
         how many random prime numbers to generate
-        Precondition: must be positive, non-zero integer
+        Precondition, must be positive, non-zero integer
     
     Returns
     -------
