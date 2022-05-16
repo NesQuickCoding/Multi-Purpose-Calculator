@@ -68,26 +68,35 @@ Multi-Purpose Calculator is a stylish calculator application that features two o
 * Python 3
 * PyQt5
 
-## How to install and use:
+## How to install and run:
 1. Install the latest version of Python 3 to your machine
 2. After installation, install PyQt5 with pip by going into your terminal and typing `pip install pyqt5`
 3. Clone or download the project either with `git clone https://github.com/NesQuickCoding/Multi-Purpose-Calculator.git` or by manually downloading the ZIP and extracting its contents.
 4. Run `main.py` in the root folder, either in your terminal with `python main.py` or however you wish to run the script.
 5. The application will open and is ready to use. Close the application as you normally would close a window in your OS.
 
-### Go to [spec sheet](techspec.md) to see the technical documentation for each class and function.
+## Technical Specifications 
+To read about each class and function created and used in the project, go to our [spec sheet](techspec.md).
 
-### Go to [problems sheet](problems.md) to see issues with encountered along with the solutions.
+## Issues Faced
+To read about some issues and solutions we faced during this project, go to our [problems readme](problems.md).
 
-## Designed graphical user interface (GUI) using PyQT5.
+## Known Issues/Bugs
+Our application was systlized and designed with the application's style set as `windowsvista`. We have only worked and tested our app under this set style. Because QT mimics certain styles based on the user's OS, running this app on Mac or Linux machines may have different porportions with buttons or input. 
 
+## Purpose
 
-The following functionality is completed:
+This project was developed during the Spring 2022 semester at Hunter College for CSCI 39538 - Advance Python course. It was developed over the period of 3 weeks and had the following requirements for the assignment:
 
-* [x] create at least 4 functions (outside of the classes) 
-* [x] create 3 classes for the logic of the application
-* [x] need to have a window and at least 6 different widgets on the application
-* [x] technical spec detailing your functions, classes and what each does
-* [x] a md file which details the problems you ran into and how you solved them
+* [x] Create a GUI with Python.
+* [x] Work and collobrate as a group using Git/GitHub.
+* [x] Create at least 4 functions (outside of the classes).
+* [x] Create 3 classes for the logic of the application.
+* [x] Need to have a window and at least 6 different widgets on the application.
+* [x] Technical spec detailing your functions and classes and what they do.
+* [x] A md file which details the problems you ran into and how you solved them.
+
+## Resources
+
 
 #### Feel free to clone and contribute via a pull request! All ideas are welcome.
