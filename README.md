@@ -1,14 +1,68 @@
 
-# Made for the Sole Survivor
-<img src="https://github.com/NesQuickCoding/Graphical-App/blob/main/graphics/Banner.png?raw=true" width=475><br>
-### This is a stylish calculator application with some added features (besides basic arithmetic):
-<img src= "https://github.com/NesQuickCoding/Multi-Purpose-Calculator/blob/main/demo/Demo.gif?raw=true" width= 475><br> 
-* ASCII conversions 
-* Base conversions
-* Prime number generator/validator
-* Metric conversion
-* Temperature conversion
-* Birthday conversion
+<img src="graphics/Banner.png?raw=true" width=475 alt="Multi-Purpose Calculator">
+
+# Multi-Purpose Calculator
+## *Made for the sole survivor*
+
+<img src= "demo/Demo.gif?raw=true" width=475 alt="General Demo of App">
+
+Multi-Purpose Calculator is a stylish calculator application that features two on-sceen calculators and converters.
+
+## Created By
+
+* []() [Andrew Alagna](https://github.com/elchic00)
+* []() [Henry Baum](https://github.com/habmin)
+* []() [Neslie Fernandez](https://github.com/nesquickcoding)
+
+## Features
+### __Basic Calculator__
+* Performs basic mathematical functions, such as add, subtract, multiply, division, floor division, modulo, and exponent.
+* <details>
+    <summary>Demo</summary>
+    <img src="demo/Demo1.gif" width="475" alt="Calculator Demo" />
+</details>
+
+### __ASCII Conversion__
+* Convert to/from a decimal, hexidecial, and ascii character.
+* <details>
+    <summary>Demo</summary>
+    <img src="demo/Demo2.gif" width="475" alt="ASCII Conversion Demo" />
+</details>
+
+### __Base Conversion__
+* Instantly convert an integer to/from decimal, hexadecimal, and binary bases. Values can be signed/unsigned with bit widths from 8 to 64-bits
+* <details>
+    <summary>Demo</summary>
+    <img src="demo/Demo3.gif" width="475" alt="Base Conversion Demo" />
+</details>
+
+### __Prime Number Generator/Validator__ 
+* Generate prime numbers, ethier from a range starting at one, or randomlly with a set amount of digits. Also include a validator to determine if a number is prime or not
+* <details>
+    <summary>Demo</summary>
+    <img src="demo/Demo4.gif" width="475" alt="Prime Number Generator/Validator Demo" />
+</details>
+
+### __Metric Conversion__
+* Convert between various units for length, weight, time, and digital storage space
+* <details>
+    <summary>Demo</summary>
+    <img src="demo/Demo5.gif" width="475" alt="Metric Conversion Demo" />
+</details>
+
+### __Temperature Conversion__
+* Convert between fahrenheit, celcius, and kelvin
+* <details>
+    <summary>Demo</summary>
+    <img src="demo/Demo6.gif" width="475" alt="Metric Conversion Demo" />
+</details>
+
+### __Birthday Conversion__
+* Find out how much time has elapsed when given a date in either years, month, or days
+* <details>
+    <summary>Demo</summary>
+    <img src="demo/Demo7.gif" width="475" height="238" alt="Birthday Conversion Demo" />
+</details>
 
 ## How to install and use:
 1. In the terminal, go to the directory you wish to install the Calculator in (using the cd command).
@@ -24,11 +78,6 @@
 
 ## Designed graphical user interface (GUI) using PyQT5.
 
-Submitted by:
-
-* []() [Andrew Alagna](https://github.com/elchic00)
-* []() [Henry Baum](https://github.com/habmin)
-* []() [Neslie Fernandez](https://github.com/nesquickcoding)
 
 The following functionality is completed:
 
