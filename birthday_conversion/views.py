@@ -3,14 +3,6 @@ from datetime import date
 from PyQt5.QtCore import QRegExp
 from PyQt5.QtGui import QIntValidator, QRegExpValidator
 
-"""
-References:
-https://codingshiksha.com/python/python-pyqt5-gui-birthday-age-calculator-with-calendar-widget-desktop-app-full-project-for-beginners/
-https://pererapm.medium.com/find-out-how-many-seconds-old-you-are-using-python-and-explanation-of-code-ab2a48b9be3c
-https://www.geeksforgeeks.org/python-program-to-calculate-age-in-year/amp/
-https://stackoverflow.com/questions/68997443/calculate-age-in-day-month-and-year-from-birth-date-and-a-specific-day-using-py
-"""
-
 class birthday_Ui(QtWidgets.QWidget):
     """
     Creates a QWidget where the user can put in a previous date (such as a birthday), and see how
