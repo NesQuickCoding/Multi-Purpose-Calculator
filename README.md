@@ -64,9 +64,11 @@ Multi-Purpose Calculator is a stylish calculator application that features two o
     <img src="demo/Demo7.gif" width="475" height="238" alt="Birthday Conversion Demo" />
 </details>
 
-## Requirements
+## Technologies Used
 * Python 3
 * PyQt5
+
+During development, a script was also created to help generate techspec in markdown/html formatting. The script can be found [here](https://github.com/habmin/docstrings_to_md).
 
 ## How to install and run:
 1. Install the latest version of Python 3 to your machine
