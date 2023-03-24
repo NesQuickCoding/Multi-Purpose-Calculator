@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QWidget, QScrollArea, QLabel, QTabWidget, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout
-from PyQt5.QtGui import QFont, QIntValidator, QRegExpValidator
-from PyQt5.QtSvg import QSvgWidget
+from PyQt5.QtGui import QIntValidator, QRegExpValidator, QPixmap
 from PyQt5.QtCore import Qt, QRegExp
+import pathlib
 
 class ScrollLabel(QScrollArea):
     """
@@ -577,13 +577,13 @@ class IsPrime(QWidget):
             Layout with Icon and Text
         """
         layout = QHBoxLayout()
-        layout.setAlignment(Qt.AlignCenter | Qt.AlignBottom)
-        self.isPrimeIcon = QSvgWidget()
-        self.isPrimeIcon.setFixedSize(100,100)
-        self.isPrimeIcon.setObjectName("primeIcon")
+        self.pixLabel = QLabel()
+        self.isPrimeIcon = QPixmap((f'{pathlib.Path(__file__).parent.absolute()}/assets/thumb_up.png'))
+        self.isNotPrimeIcon = QPixmap((f'{pathlib.Path(__file__).parent.absolute()}/assets/thumb_down.png'))
+        self.pixLabel.resize(0, 0)
         self.isPrimeText = QLabel()
         self.isPrimeText.setObjectName("primeHeader")
-        layout.addWidget(self.isPrimeIcon, 0, Qt.AlignCenter)
+        layout.addWidget(self.pixLabel, 0, Qt.AlignCenter)
         layout.addWidget(self.isPrimeText, 0, Qt.AlignCenter)
         return layout
 
